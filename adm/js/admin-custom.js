@@ -20,3 +20,28 @@
     $("#checkAll").prop("checked", all === checked);
   });
 });
+
+$(function () {
+  // prism toolbar title 추가
+  if (typeof Prism !== "undefined") {
+    Prism.hooks.add("complete", function (env) {
+      const toolbar = env.element.closest(".code-toolbar");
+      if (!toolbar) return;
+
+      const preTag = toolbar.querySelector("pre");
+      if (!preTag) return;
+
+      // data-title 읽기
+      const dataTitle = preTag.getAttribute("data-title");
+      const existingTitle = toolbar.querySelector(".toolbar-title");
+
+      // 중복 방지 (이미 있으면 다시 안 추가)
+      if (!existingTitle) {
+        const titleTag = document.createElement("h5");
+        titleTag.classList.add("toolbar-title");
+        titleTag.textContent = dataTitle ? dataTitle : "코드 예시";
+        toolbar.prepend(titleTag);
+      }
+    });
+  }
+});

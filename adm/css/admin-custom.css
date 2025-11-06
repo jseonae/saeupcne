@@ -4,6 +4,7 @@
   --krds-contents-wrap-size: 1816px;
   /*추가*/
   --custom-bg-blue-5:#F5F9FC;
+
 }
 
 /* layout */
@@ -16,10 +17,12 @@
 .contents-box > div {padding:var(--krds-number-12) var(--krds-number-14)}
 .contents-box > .inner-top {border-bottom: 1px solid var(--krds-color-light-gray-10);}
 
+.conts-area {display: flex;flex-direction: column;gap: var(--krds-gap-4);}
+
 .krds-form-select,
 .krds-input {height:var(--krds-size-height-7)}
 
-.krds-form-select {border-color:var(--krds-color-light-gray-30)}
+.krds-form-select {border-color:var(--krds-color-light-gray-30);--krds-form-select--radius-small: var(--krds-radius-medium2);cursor: pointer;}
 .krds-form-select.completed {border-color:var(--krds-form-select--color-border)}
 
 .krds-form-check {display:flex;}
@@ -125,4 +128,67 @@
 #krds-footer .f-copy {color: var(--krds-light-color-text-subtle-inverse);font-size: var(--krds-mobile-font-size-body-xsmall);font-weight: var(--krds-font-weight-regular);}
 
 
+.search-top-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-top-box .krds-form-check .count {
+    color: var(--krds-color-high-contrast-gray-40);
+    font-weight: var(--krds-typo-font-weight-regular);
+    font-size: var(--krds-mobile-font-size-label-medium);
+}
+.search-top-box .krds-form-check .count > em {
+    display: inline-flex;
+    justify-content: center;
+    min-width:2.8rem;
+    line-height: 1.5;
+    padding: 0 0.25rem;
+    margin: 0 .2em 0 .4rem;
+    font-weight: var(--krds-font-weight-regular);
+    color:var(--krds-color-high-contrast-gray-60);
+    border-radius: 0.5rem;
+    background: var(--krds-color-light-gray-5);
+}
+
+
+.filter-section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.tab-group {
+    display: flex;
+    border: 1px solid #b1b8be;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tab-btn {
+    padding: 10px 12px;
+    min-width: 76px;
+    background: white;
+    border: none;
+    border-right: 1px solid #b1b8be;
+    font-size: 15px;
+    color: #464c53;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-btn:last-child {
+    border-right: none;
+}
+
+.tab-btn:hover {
+    background-color: #f4f5f6;
+}
 
