@@ -7,6 +7,13 @@
 
 }
 
+/* footer */
+#krds-footer {background-color: var(--custom-bg-blue-5);}
+#krds-footer > .inner {max-width: var(--krds-contents-wrap-size);padding: var(--krds-pc-padding-card-small) var(--krds-pc-padding-card-medium);}
+#krds-footer .f-copy {color: var(--krds-light-color-text-subtle-inverse);font-size: var(--krds-mobile-font-size-body-xsmall);font-weight: var(--krds-font-weight-regular);}
+
+
+
 /* layout */
 #container {flex: 1;background-color: var(--custom-bg-blue-5);}
 #container > .inner:not(.in-between) {padding: var(--krds-pc-padding-card-small) var(--krds-pc-padding-card-medium);}
@@ -15,22 +22,83 @@
 .contents-box-shadow { }
 
 .contents-box > div {padding:var(--krds-number-12) var(--krds-number-14)}
-.contents-box > .inner-top {border-bottom: 1px solid var(--krds-color-light-gray-10);}
+.contents-box .conts-ft {padding-top:0;}
+.contents-box > .conts-hd {border-bottom: 1px solid var(--krds-color-light-gray-10);}
 
 .conts-area {display: flex;flex-direction: column;gap: var(--krds-gap-4);}
 
-.krds-form-select,
-.krds-input {height:var(--krds-size-height-7)}
+.krds-pagination {margin:1rem 0}
 
 .krds-form-select {border-color:var(--krds-color-light-gray-30);--krds-form-select--radius-small: var(--krds-radius-medium2);cursor: pointer;}
 .krds-form-select.completed {border-color:var(--krds-form-select--color-border)}
 
-.krds-form-check {display:flex;}
+.krds-form-check {display:flex;align-items: flex-start;}
 .krds-form-check:focus {border-radius: var(--krds-form-check--checkbox-button-radius-medium);}
 .krds-form-check input ~ label:has(.sr-only),
 .krds-form-check input[type=checkbox] ~ label:has(.sr-only):focus {border:0;border-radius: var(--krds-form-check--checkbox-button-radius-medium);}
 .krds-form-check input[type=checkbox] ~ label:has(.sr-only):before {margin-top: 0;}
 .krds-form-check input[type=checkbox] ~ label:has(.sr-only):after {top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 6 + var(--krds-form-check--button-margin-top));}
+
+
+
+.krds-table-wrap .tbl.data thead th {padding: var(--krds-table--data-thead-th-padding) 1rem;}
+.krds-table-wrap .krds-form-check {justify-content: center;}
+.krds-table-wrap td i.svg-icon {width:var(--krds-size-height-5);height:var(--krds-size-height-5);}
+.krds-table-wrap td .data-amount {font-size:var(--krds-pc-font-size-label-medium);text-align:right;}
+.krds-table-wrap td p.data-amount {padding-right:1rem;}
+.krds-table-wrap td .krds-form-select.small {font-size:var(--krds-pc-font-size-label-medium);}
+
+
+.page-btn-wrap {
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--krds-gap-5);
+    margin-top: var(--krds-gap-4);
+}
+.page-btn-wrap.both {justify-content: space-between;}
+
+.page-btn-wrap .btn-wrap {
+    display:inline-flex;
+    align-items: center;
+    gap: var(--krds-gap-3);
+    width: auto;
+}
+.page-btn-wrap .btn-wrap:first-child {width:50%;}
+.page-btn-wrap .btn-wrap:first-child .krds-form-select.small {max-width:10rem;}
+
+.page-btn-wrap .btn-wrap .krds-btn.tertiary {
+    color: var(--krds-light-color-text-basic);
+    border-color:transparent;
+    background-color: var(--krds-color-high-contrast-gray-10);
+}
+.page-btn-wrap .btn-wrap .krds-btn.tertiary:hover {
+    background-color: var(--krds-color-high-contrast-gray-20);
+}
+
+
+.project-name {text-align:left;}
+.project-name .info-top {margin-bottom:.3srem}
+.project-name .info-top .badge {}
+.project-name strong {display: -webkit-box;overflow: hidden;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 1;}
+
+.krds-badge.badge {border-radius: 0;border: 1px solid;padding: 0.2rem 0.6rem;font-size: 1.7rem;height: 3rem;background-color:var( --krds-light-color-background-white);}
+
+.krds-badge.badge[data-name="project01"] {border-color:var(--krds-light-color-border-primary);color:var(--krds-color-light-primary-60);}
+.krds-badge.badge[data-name="project01"]::after {content:'선택사업';}
+
+.krds-badge.badge[data-name="project02"] {border-color:var(--krds-light-color-border-warning);color:var(--krds-color-light-warning-50);}
+.krds-badge.badge[data-name="project02"]::after {content:'선택외사업';}
+
+.krds-badge.badge[data-name="project03"] {border-color:var(--krds-light-color-border-secondary);color:var(--krds-color-light-secondary-70);}
+.krds-badge.badge[data-name="project03"]::after {content:'개방형사업';}
+
+.krds-badge.badge[data-name="project04"] {border-color:var(--krds-light-color-border-success);color:var(--krds-color-light-success-50);}
+.krds-badge.badge[data-name="project04"]::after {content:'자율사업';}
+
+.krds-badge.badge[data-name="project05"] {border-color:var(--krds-light-color-border-point);color:var(--krds-color-light-point-60);}
+.krds-badge.badge[data-name="project05"]::after {content:'특교·추경신규사업';}
+
 
 
 .search-list-top .sch-info li, .search-list-top .sch-sort li {
@@ -51,11 +119,9 @@
     --search-list-sort-btn-color-background: var(--krds-light-color-button-text-fill);
     --search-list-sort-btn-border: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-button-text-border);
     display: flex;
-    align-items: flex-start;
+    align-items:center;
     justify-content: space-between;
-    flex-direction: row;
     gap: var(--krds-gap-9);
-    margin:0;
 }
 .search-list-top .sch-info {
     display: inline;
@@ -122,10 +188,6 @@
 
 
 
-/* footer */
-#krds-footer {background-color: var(--custom-bg-blue-5);}
-#krds-footer > .inner {max-width: var(--krds-contents-wrap-size);padding: var(--krds-pc-padding-card-small) var(--krds-pc-padding-card-medium);}
-#krds-footer .f-copy {color: var(--krds-light-color-text-subtle-inverse);font-size: var(--krds-mobile-font-size-body-xsmall);font-weight: var(--krds-font-weight-regular);}
 
 
 .search-top-box {
@@ -137,7 +199,7 @@
 .search-top-box .krds-form-check .count {
     color: var(--krds-color-high-contrast-gray-40);
     font-weight: var(--krds-typo-font-weight-regular);
-    font-size: var(--krds-mobile-font-size-label-medium);
+    font-size: var(--krds-pc-font-size-label-medium);
 }
 .search-top-box .krds-form-check .count > em {
     display: inline-flex;
@@ -178,7 +240,7 @@
     background: white;
     border: none;
     border-right: 1px solid #b1b8be;
-    font-size: 15px;
+    font-size:1.5rem;
     color: #464c53;
     cursor: pointer;
     transition: all 0.2s;
@@ -191,4 +253,19 @@
 .tab-btn:hover {
     background-color: #f4f5f6;
 }
+
+
+
+.search-top-box .sch-form-wrap .input-group .krds-form-select,
+.search-top-box .sch-input .krds-input {font-size:var(--krds-pc-font-size-label-medium);height:var(--krds-size-height-7);}
+
+.search-list-top .file-upload .krds-btn.secondary {color:var(--krds-light-color-text-basic); border-color:var(--krds-color-light-gray-60);background-color:rgba(88, 97, 106, 0.1);}
+.search-list-top .file-upload .krds-btn.secondary:hover {background-color:rgba(88, 97, 106, 0.2);}
+.search-list-top .file-upload .krds-btn.secondary > i.svg-icon {background-color:var(--krds-color-light-gray-90);}
+
+
+
+
+
+
 

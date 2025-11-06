@@ -47,8 +47,7 @@
 
         <div class="contents contents-box contents-box-shadow">
 
-          <!-- search -->
-          <div class="inner-top search-top-box">
+          <div class="conts-hd search-top-box">
             <div class="filter-section">
                 <i class="svg-icon ico-filter"></i>
                 <div class="btn-group">
@@ -72,12 +71,12 @@
                         <span class="count"><em>48</em>개</span>
                       </div>
                       <div class="krds-form-check">
-                        <input type="checkbox" name="chk_1" id="chk_3" disabled>
+                        <input type="checkbox" name="chk_1" id="chk_3">
                         <label for="chk_3">선정</label>
                         <span class="count"><em>48</em>개</span>
                       </div>
                       <div class="krds-form-check">
-                        <input type="checkbox" name="chk_1" id="chk_4" disabled checked>
+                        <input type="checkbox" name="chk_1" id="chk_4">
                         <label for="chk_4">미선정</label>
                         <span class="count"><em>48</em>개</span>
                       </div>
@@ -104,10 +103,8 @@
               </div>
             </div>
           </div>
-          <!-- //search -->
-
+          
           <div class="conts-area">
-
             <div class="search-list-top">
               <ul class="sch-info" aria-live="polite">
                 <li>사업신청 목록 <span class="point">22,459</span>건</li>
@@ -122,9 +119,14 @@
                 </li>
                 <li>
                   <div class="w-sort-btn">
-                     <button class="krds-btn small secondary">엑셀 업로드 <i class="svg-icon ico-upload"></i></button>
-                     <button class="krds-btn small secondary">엑셀 다운로드 <i class="svg-icon ico-down"></i></button>
-                     <button class="krds-btn small secondary">신청서 일괄다운로드 <i class="svg-icon ico-down"></i></button>
+                     <div class="file-upload">
+                      <input type="file" name="myFile" id="fileu-upload" hidden>
+                      <label for="fileu-upload">
+                        <button type="button" class="krds-btn small secondary">엑셀 업로드 <i class="svg-icon ico-upload"></i></button>
+                      </label>
+                     </div>
+                     <a href="javascript:void(0)" download="" class="krds-btn small secondary">엑셀 다운로드 <i class="svg-icon ico-down"></i></a>
+                     <a href="javascript:void(0)" download="" class="krds-btn small secondary">신청서 일괄다운로드 <i class="svg-icon ico-down"></i></a>
                   </div>
                 </li>
               </ul>
@@ -134,17 +136,17 @@
               <table class="tbl col data center">
                 <caption>사업신청 목록 표</caption>
                 <colgroup>
-                  <col style="width: 40px;">
-                  <col style="width: 90px;">
-                  <col style="width: 70px;">
+                  <col style="width:2%;">
+                  <col style="width:5%;">
+                  <col style="width:5%;">
                   <col>
-                  <col style="width: 140px;">
-                  <col style="width: 150px;">
-                  <col style="width: 150px;">
-                  <col style="width: 110px;">
-                  <col style="width: 90px;">
-                  <col style="width: 110px;">
-                  <col style="width: 100px;">
+                  <col style="width:11%;">
+                  <col style="width:9%;">
+                  <col style="width:10%;">
+                  <col style="width:8%;">
+                  <col style="width:5%;">
+                  <col style="width:8%;">
+                  <col style="width:5%;">
                 </colgroup>
                 <thead>
                   <tr>
@@ -176,84 +178,382 @@
                     </td>
                     <td>2026</td>
                     <td>초등</td>
-                    <td class="project-name">
-                      <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
-                        <div style="display:flex;gap:8px;align-items:center;">
-                          <span class="krds-badge small bg-light-point">선택사업</span>
-                          <span>2026-개방형-000</span>
-                        </div>
-                        <div>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</div>
-                      </div>
-                    </td>
-                    <td><div>아산</div><div>충남아름초등학교</div></td>
                     <td>
-                      <div style="display:flex;flex-direction:column;gap:4px;">
-                        <div>1,000</div>
-                        <div><input type="text" class="krds-input small" value="0" title="결정금액 입력"></div>
+                      <div class="td-in-col2 project-name">
+                        <p class="info-top">
+                          <span class="krds-badge small badge" data-name="project01"></span>
+                          <span>2026-개방형-001</span>
+                        </p>
+                        <strong>[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
-                    <td><div>홍길동</div><div>042-222-3333</div></td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>아산</p>
+                        <p>충남아름초등학교</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p class="data-amount">1,000</p>
+                        <input type="text" class="krds-input small data-amount number-input" value="0" title="결정금액 입력">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>홍길동</p>
+                        <p>042-222-3333</p>
+                      </div>
+                    </td>
                     <td>2025-07-24</td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn line small">
-                        <span class="sr-only">신청서 다운로드</span>
+                      <a href="javascript:void(0)" download="" class="krds-btn small line">
                         <i class="svg-icon ico-docu"></i>
                       </a>
                     </td>
                     <td>
                       <select class="krds-form-select small" title="심사결과 선택">
-                        <option selected>선정</option>
+                        <option selected>심사중</option>
+                        <option>선정</option>
                         <option>미선정</option>
-                        <option>심사중</option>
                       </select>
                     </td>
-                    <td><span class="sr-only">제출</span><i class="svg-icon ico-success-fill"></i></td>
+                    <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
                   </tr>
                   <tr>
                     <td>
                       <div class="krds-form-check">
-                        <input type="checkbox" class="checkGroup" id="r1" />
-                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                        <input type="checkbox" class="checkGroup" id="r2" />
+                        <label for="r2"><span class="sr-only">2행 선택</span></label>
                       </div>
                     </td>
                     <td>2026</td>
                     <td>초등</td>
-                    <td class="project-name">
-                      <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
-                        <div style="display:flex;gap:8px;align-items:center;">
-                          <span class="krds-badge small bg-light-point">선택사업</span>
-                          <span>2026-개방형-000</span>
-                        </div>
-                        <div>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</div>
-                      </div>
-                    </td>
-                    <td><div>아산</div><div>충남아름초등학교</div></td>
                     <td>
-                      <div style="display:flex;flex-direction:column;gap:4px;">
-                        <div>1,000</div>
-                        <div><input type="text" class="krds-input small" value="0" title="결정금액 입력"></div>
+                      <div class="td-in-col2 project-name">
+                        <p class="info-top">
+                          <span class="krds-badge small badge" data-name="project02"></span>
+                          <span>2026-개방형-002</span>
+                        </p>
+                        <strong>[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
                       </div>
                     </td>
-                    <td><div>홍길동</div><div>042-222-3333</div></td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>아산</p>
+                        <p>충남아름초등학교</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p class="data-amount">1,000</p>
+                        <input type="text" class="krds-input small data-amount number-input" value="0" title="결정금액 입력">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>홍길동</p>
+                        <p>042-222-3333</p>
+                      </div>
+                    </td>
                     <td>2025-07-24</td>
-                    <td><button class="krds-btn small text">보기 <i class="svg-icon ico-angle right"></i></button></td>
+                    <td>
+                      <a href="javascript:void(0)" download="" class="krds-btn small line">
+                        <i class="svg-icon ico-docu"></i>
+                      </a>
+                    </td>
                     <td>
                       <select class="krds-form-select small" title="심사결과 선택">
+                        <option>심사중</option>
                         <option selected>선정</option>
                         <option>미선정</option>
-                        <option>심사중</option>
                       </select>
                     </td>
-                    <td><span class="sr-only">미제출</span><i class="svg-icon ico-error-fill"></i></td>
+                    <td><i class="svg-icon ico-success-fill">제출</i></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r3" />
+                        <label for="r3"><span class="sr-only">3행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>2026</td>
+                    <td>초등</td>
+                    <td>
+                      <div class="td-in-col2 project-name">
+                        <p class="info-top">
+                          <span class="krds-badge small badge" data-name="project03"></span>
+                          <span>2026-개방형-003</span>
+                        </p>
+                        <strong>[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>아산</p>
+                        <p>충남아름초등학교</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p class="data-amount">1,000</p>
+                        <input type="text" class="krds-input small data-amount number-input" value="0" title="결정금액 입력">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>홍길동</p>
+                        <p>042-222-3333</p>
+                      </div>
+                    </td>
+                    <td>2025-07-24</td>
+                    <td>
+                      <a href="javascript:void(0)" download="" class="krds-btn small line">
+                        <i class="svg-icon ico-docu"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <select class="krds-form-select small" title="심사결과 선택">
+                        <option>심사중</option>
+                        <option>선정</option>
+                        <option selected>미선정</option>
+                      </select>
+                    </td>
+                    <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r4" />
+                        <label for="r4"><span class="sr-only">4행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>2026</td>
+                    <td>초등</td>
+                    <td>
+                      <div class="td-in-col2 project-name">
+                        <p class="info-top">
+                          <span class="krds-badge small badge" data-name="project04"></span>
+                          <span>2026-개방형-004</span>
+                        </p>
+                        <strong>[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>아산</p>
+                        <p>충남아름초등학교</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p class="data-amount">1,000</p>
+                        <input type="text" class="krds-input small data-amount number-input" value="0" title="결정금액 입력">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>홍길동</p>
+                        <p>042-222-3333</p>
+                      </div>
+                    </td>
+                    <td>2025-07-24</td>
+                    <td>
+                      <a href="javascript:void(0)" download="" class="krds-btn small line">
+                        <i class="svg-icon ico-docu"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <select class="krds-form-select small" title="심사결과 선택">
+                        <option selected>심사중</option>
+                        <option>선정</option>
+                        <option>미선정</option>
+                      </select>
+                    </td>
+                    <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r5" />
+                        <label for="r5"><span class="sr-only">5행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>2026</td>
+                    <td>초등</td>
+                    <td>
+                      <div class="td-in-col2 project-name">
+                        <p class="info-top">
+                          <span class="krds-badge small badge" data-name="project05"></span>
+                          <span>2026-개방형-005</span>
+                        </p>
+                        <strong>[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>아산</p>
+                        <p>충남아름초등학교</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p class="data-amount">1,000</p>
+                        <input type="text" class="krds-input small data-amount number-input" value="0" title="결정금액 입력">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>홍길동</p>
+                        <p>042-222-3333</p>
+                      </div>
+                    </td>
+                    <td>2025-07-24</td>
+                    <td>
+                      <a href="javascript:void(0)" download="" class="krds-btn small line">
+                        <i class="svg-icon ico-docu"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <select class="krds-form-select small" title="심사결과 선택">
+                        <option>심사중</option>
+                        <option selected>선정</option>
+                        <option>미선정</option>
+                      </select>
+                    </td>
+                    <td><i class="svg-icon ico-success-fill">제출</i></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r6" />
+                        <label for="r6"><span class="sr-only">1행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>2026</td>
+                    <td>초등</td>
+                    <td>
+                      <div class="td-in-col2 project-name">
+                        <p class="info-top">
+                          <span class="krds-badge small badge" data-name="project01"></span>
+                          <span>2026-개방형-006</span>
+                        </p>
+                        <strong>[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>아산</p>
+                        <p>충남아름초등학교</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p class="data-amount">1,000</p>
+                        <input type="text" class="krds-input small data-amount number-input" value="0" title="결정금액 입력">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>홍길동</p>
+                        <p>042-222-3333</p>
+                      </div>
+                    </td>
+                    <td>2025-07-24</td>
+                    <td>
+                      <a href="javascript:void(0)" download="" class="krds-btn small line">
+                        <i class="svg-icon ico-docu"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <select class="krds-form-select small" title="심사결과 선택">
+                        <option>심사중</option>
+                        <option selected>선정</option>
+                        <option>미선정</option>
+                      </select>
+                    </td>
+                    <td><i class="svg-icon ico-danger-fill">미제출</i></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r7" />
+                        <label for="r7"><span class="sr-only">1행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>2026</td>
+                    <td>초등</td>
+                    <td>
+                      <div class="td-in-col2 project-name">
+                        <p class="info-top">
+                          <span class="krds-badge small badge" data-name="project01"></span>
+                          <span>2026-개방형-007</span>
+                        </p>
+                        <strong>[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>아산</p>
+                        <p>충남아름초등학교</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p class="data-amount">1,000</p>
+                        <input type="text" class="krds-input small data-amount number-input" value="0" title="결정금액 입력">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>홍길동</p>
+                        <p>042-222-3333</p>
+                      </div>
+                    </td>
+                    <td>2025-07-24</td>
+                    <td>
+                      <a href="javascript:void(0)" download="" class="krds-btn small line">
+                        <i class="svg-icon ico-docu"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <select class="krds-form-select small" title="심사결과 선택">
+                        <option>심사중</option>
+                        <option selected>선정</option>
+                        <option>미선정</option>
+                      </select>
+                    </td>
+                    <td><i class="svg-icon ico-danger-fill">미제출</i></td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
+            <div class="page-btn-wrap both">
+              <div class="btn-wrap">
+                <i class="svg-icon ico-lncheck-disabled"></i>
+                선택한 사업의 심사결과를
+                <select class="krds-form-select small" title="심사결과 선택">
+                  <option>심사중</option>
+                  <option selected>선정</option>
+                  <option>미선정</option>
+                </select>
+                으로 일괄적용합니다.
+                <a href="javascript:void(0)" class="krds-btn small tertiary">확인</a>
+              </div>
+              <div class="btn-wrap">
+                <a href="javascript:void(0)" class="krds-btn small tertiary">선택수정</a>
+                <a href="javascript:void(0)" class="krds-btn small tertiary">선택삭제</a>
+                <a href="javascript:void(0)" class="krds-btn small tertiary">선택SMS발송</a>
+              </div>
+            </div>
+
           </div>
 
-          <div id="pagination"></div>
+          <div id="pagination" class="conts-ft"></div>
         </div>
+
     </div>
   </main>
 

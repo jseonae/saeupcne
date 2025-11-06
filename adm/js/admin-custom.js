@@ -45,3 +45,11 @@ $(function () {
     });
   }
 });
+
+//input text 천 단위 자동 콤마
+document.addEventListener('keyup', function(e) {
+  if (e.target.classList.contains('number-input')) {
+    let value = e.target.value.replace(/[^\d]/g, '');
+    e.target.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+});

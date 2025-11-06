@@ -1,19 +1,15 @@
 @charset "UTF-8";
+/* 라인 버튼*/
+.krds-btn.line {padding:0 .7rem;border-color:var(--krds-color-light-gray-20);background-color: var(--krds-color-light-alpha-white100);}
+.krds-btn.line:active,
+.krds-btn.line:hover {border-color:var(--krds-color-light-primary-30);background-color:var(--krds-color-light-primary-5);}
+.krds-btn.line:hover > i.svg-icon {background-color:var(--krds-color-light-primary-60);}
+.krds-btn.line .svg-icon {background-color: var(--krds-light-color-text-basic);}
+.krds-btn.line.small .svg-icon {width: var(--krds-icon--size-large);height: var(--krds-icon--size-large);}
 
-
-/* 버튼 */
-.krds-btn.line {
-    padding: 0 .7rem;
-    border-color: var(--krds-color-high-contrast-gray-20);
-    background-color: var(--krds-color-light-alpha-white100);
-}
-.krds-btn.line .svg-icon {
-    background-color: var(--krds-light-color-text-basic);
-}
-.krds-btn.line.small .svg-icon {
-    width: var(--krds-icon--size-large);
-    height: var(--krds-icon--size-large);
-}
+/* 텍스트 정렬(전역 사용 클래스) */
+.aling-left {text-align:left;}
+.aling-right {text-align:right;}
 
 /* 테이블 */
 .krds-table-wrap .tbl.data.center thead th,
@@ -23,30 +19,12 @@
 .krds-table-wrap .tbl.data.center thead th.right,
 .krds-table-wrap .tbl.data.center tbody td.right {text-align:right;}
 
-
 /* 아이콘 */
-.svg-icon {
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center center;
-    -webkit-mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center center;
-    mask-size: contain;
-}
-
-[class$="-disabled"] {
-    background-color: var(--krds-light-color-icon-gray-fill);
-}
-
-[class$="-fill"] {
-    -webkit-mask-image: none;
-    mask-image: none;
-    background-color: transparent !important;
-    background-size: contain;
-    background-repeat: no-repeat;
-    -webkit-mask: none;
-    mask: none;
-}
+.svg-icon {-webkit-mask-repeat: no-repeat;-webkit-mask-position: center center;-webkit-mask-size: contain;mask-repeat: no-repeat;mask-position: center center;mask-size: contain;}
+.svg-icon.disabled {background-color: var(--krds-color-light-gray-20);}
+[class$="-disabled"] {background-color: var(--krds-light-color-icon-gray-fill);}
+[class$="-fill"] {-webkit-mask-image: none;mask-image: none;background-color: transparent !important;background-size: contain;background-repeat: no-repeat;-webkit-mask: none;mask: none;}
+i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
 
 .svg-icon.ico-docu {
     -webkit-mask-image: url(/style/resources/img/ico_document.svg);
@@ -64,7 +42,6 @@
     -webkit-mask-image: url(/style/resources/img/ico_face_sad.svg);
     mask-image: url(/style/resources/img/ico_face_sad.svg); 
 }
-
 .svg-icon.ico-access {
     -webkit-mask-image: url(/style/resources/img/ico_accessibility.svg);
     mask-image: url(/style/resources/img/ico_accessibility.svg);
@@ -89,7 +66,6 @@
     -webkit-mask-image: url(/style/resources/img/ico_certified.svg);
     mask-image: url(/style/resources/img/ico_certified.svg);
 }
-
 .svg-icon.ico-component {
     -webkit-mask-image: url(/style/resources/img/ico_component.svg);
     mask-image: url(/style/resources/img/ico_component.svg);
@@ -98,7 +74,6 @@
     -webkit-mask-image: url(/style/resources/img/ico_copy.svg);
     mask-image: url(/style/resources/img/ico_copy.svg);
 }
-
 .svg-icon.ico-docu-bold {
     -webkit-mask-image: url(/style/resources/img/ico_document_fill.svg);
     mask-image: url(/style/resources/img/ico_document_fill.svg);
@@ -195,7 +170,6 @@
     -webkit-mask-image: url(/style/resources/img/ico_payment_card.svg);
     mask-image: url(/style/resources/img/ico_payment_card.svg);
 }
-
 .svg-icon.ico-helpline {
     -webkit-mask-image: url(/style/resources/img/ico_popover_help.svg);
     mask-image: url(/style/resources/img/ico_popover_help.svg);
@@ -262,7 +236,6 @@
     -webkit-mask-image: url(/style/resources/img/ico_checkbox_line.svg);
     mask-image: url(/style/resources/img/ico_checkbox_line.svg);
 }
-
 .svg-icon.ico-cmpdisabled-fill {
     background-image: url(/style/resources/img/ico_complete_disabled.svg);
 }
@@ -290,7 +263,6 @@
 .svg-icon.ico-warning-fill {
     background-image: url(/style/resources/img/ico_system_warning.svg);
 }
-
 .svg-icon.ico-refile-fill {
     background-image: url(/style/resources/img/ico_file_return.svg);
 }
@@ -303,18 +275,18 @@
 .svg-icon.ico-roundck-fill {
     background-image: url(/style/resources/img/ico_round_check.svg);
 }
-
 .svg-icon.ico-downblue-fill {
     background-image: url(/style/resources/img/ico_stat_down_blue.svg);
 }
 .svg-icon.ico-upred-fill {
     background-image: url(/style/resources/img/ico_stat_up_red.svg);
 }
-
 .svg-icon.ico-curser-fill {
     background-image: url(/style/resources/img/ico_curser.svg);
 }
-
 .svg-icon.ico-pdf-fill {
     background-image: url(/style/resources/img/ico_pdf.svg);
 }
+
+/* 사업 뱃지 */
+
