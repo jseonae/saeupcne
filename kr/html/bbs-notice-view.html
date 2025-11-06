@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${pageTitle}">일반게시판 뷰</title>
+
+<!-- CSS -->
+<link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="../css/krds-theme.css">
+<link rel="stylesheet" href="../css/user-custom.css">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- JavaScript (defer로 지연 로드 권장) -->
+<script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
+
+<script>
+  // 문서가 준비되면 header와 footer를 불러오기
+  $(function() {
+    $("#header").load("../tmpl/header.html");
+    $("#footer").load("../tmpl/footer.html");
+  });
+</script>
+</head>
+<body>
+<div id="wrap">
+  <!-- 본문 바로가기 영역  -->
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  <!-- //본문 바로가기 영역  -->
+
+  <!-- header include -->
+  <header id="header"></header>
+  <!-- //header include -->
+
+  <div id="container">
+    <!-- breadcrumb -->
+    <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="home"><a href="#" class="txt">홈</a></li>
+      <li><a href="#" class="txt">서비스 신청</a></li>
+      <li><a href="#" class="txt">서비스 신청2</a></li>
+    </ol>
+    </nav>
+    <!-- //breadcrumb -->
+
+    <!-- inner -->
+    <div class="inner">
+
+      
+      <!-- 게시글tit -->
+      <div class="community-page-title line" id="title">
+        <h2 class="tit">권한 승계 관련 안내</h2>
+          <p class="info">
+            <span class="category">정책기획과</span>
+            <span class="date">2025.09.08</span>
+          </p>
+      </div>
+      <!-- 게시글txt -->
+      <div class="conts-area">
+          <div class="g-description-area line" id="contents">
+            게시판내용이 들어갑니다.
+          </div>
+      </div>
+      <!-- 첨부파일 -->
+      <div class="g-attach-file-wrap">
+        <div class="g-conts-area">
+          <h4 class="con-tit">첨부파일</h4>
+          <ul class="file-list" id="file-list"> 
+            <li>
+              <p class="name">디지털 정부서비스 UIUX 가이드라인(2025.08).pdf [PDF, 38.59 MB]</p>
+              <div class="btn-download">
+                <button type="button" class="krds-btn medium text">다운로드<i class="svg-icon ico-down"></i></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 목록으로 돌아가기 -->
+      <div class="page-btn-wrap m-column both">
+        <a href="#" class="krds-btn xlarge tertiary" id="btn-back">목록으로 돌아가기</a>
+      </div>
+
+
+     </div><!-- //inner -->
+  </div><!-- //container -->
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Live Server 전용 (Spring Boot에서 자동 제거) -->
+  <script th:remove="all" src="../../assets/js/api.js"></script>
+  <script th:remove="all" src="../../assets/js/common.js"></script>
+  <script th:remove="all" src="../../assets/js/board.js"></script>
+
+  <!-- 페이지별 렌더링 스크립트 -->
+  <script th:remove="all">
+    let paginationController;
+    let allItems = [];
+
+    document.addEventListener('DOMContentLoaded', async function() {
+      try {
+        // 표준 템플릿용 JSON 명시적 로드
+        const data = await loadMockData('_templates/list.json');
+        allItems = data.items || [];
+        renderPage(data);
+        initPagination();
+      } catch (error) {
+        console.error('렌더링 오류:', error);
+      }
+    });
+
+    function renderPage(data) {
+      // 공통 렌더링
+      document.title = data.pageTitle;
+      document.querySelector('h1 span').textContent = data.pageTitle;
+
+      // 검색 타입 렌더링
+      const searchTypeSelect = document.querySelector('#searchType');
+      if (searchTypeSelect && data.searchTypes) {
+        searchTypeSelect.innerHTML = '';
+        data.searchTypes.forEach(type => {
+          const option = document.createElement('option');
+          option.value = type.value;
+          option.textContent = type.label;
+          if (type.value === data.selectedSearchType) {
+            option.selected = true;
+          }
+          searchTypeSelect.appendChild(option);
+        });
+      }
+
+      // 검색 키워드
+      const searchInput = document.querySelector('#search');
+      if (searchInput && data.search) {
+        searchInput.value = data.search;
+      }
+    }
+
+    function initPagination() {
+      // ClientPagination 초기화
+      paginationController = new ClientPagination(allItems, {
+        pageSize: 10,
+        onPageChange: (pageItems, paginationInfo) => {
+          updateList(pageItems, paginationInfo);
+        }
+      });
+
+      // 페이지당 항목수 변경 이벤트
+      const itemsPerPageSelect = document.querySelector('#itemsPerPage');
+      if (itemsPerPageSelect) {
+        itemsPerPageSelect.addEventListener('change', (e) => {
+          paginationController.setPageSize(e.target.value);
+        });
+      }
+
+      // 초기 렌더링
+      updateList(paginationController.getCurrentPageItems(), paginationController.getPaginationInfo());
+    }
+
+    function updateList(pageItems, paginationInfo) {
+      // 목록 렌더링
+      renderBoardList(pageItems, {
+        tableBodySelector: 'tbody',
+        noDataMessage: '등록된 항목이 없습니다.',
+        onItemClick: (item) => {
+          window.location.href = `view.html?id=${item.id}`;
+        }
+      });
+
+      // 총 건수 업데이트
+      const totalCountEl = document.querySelector('#totalCount');
+      if (totalCountEl) {
+        totalCountEl.textContent = formatNumber(paginationInfo.totalCount);
+      }
+
+      // 페이징 렌더링
+      renderBoardPagination(paginationInfo, '.pagination', (page) => {
+        paginationController.setPage(page);
+      });
+    }
+
+    function searchItems() {
+      const searchType = document.querySelector('#searchType').value;
+      const search = document.querySelector('#search').value.trim();
+
+      if (!search) {
+        alertMessage('검색어를 입력해주세요.', 'warning');
+        return;
+      }
+
+      const params = new URLSearchParams();
+      params.set('searchType', searchType);
+      params.set('search', search);
+      params.set('page', '1');
+
+      window.location.href = `?${params.toString()}`;
+    }
+
+    function downloadExcel() {
+      alertMessage('엑셀 다운로드 (Mock 모드)', 'info');
+      // 실제 구현: window.location.href = '/api/v1/export/excel';
+    }
+  </script>
+
+
+
+ <!-- footer include -->
+  <div id="footer"></div>
+</div><!-- //wrap -->
+
+<script src="../js/user-custom.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Live Server 전용 (Spring Boot에서 자동 제거) -->
+  <script th:remove="all" src="../../assets/js/api.js"></script>
+  <script th:remove="all" src="../../assets/js/common.js"></script>
+  <script th:remove="all" src="../../assets/js/board.js"></script>
+
+  <!-- 페이지별 렌더링 스크립트 -->
+  <script th:remove="all">
+    let paginationController;
+    let allItems = [];
+
+    document.addEventListener('DOMContentLoaded', async function() {
+      try {
+        // 표준 템플릿용 JSON 명시적 로드
+        const data = await loadMockData('_templates/list.json');
+        allItems = data.items || [];
+        renderPage(data);
+        initPagination();
+      } catch (error) {
+        console.error('렌더링 오류:', error);
+      }
+    });
+
+    function renderPage(data) {
+      // 공통 렌더링
+      document.title = data.pageTitle;
+      document.querySelector('h1 span').textContent = data.pageTitle;
+
+      // 검색 타입 렌더링
+      const searchTypeSelect = document.querySelector('#searchType');
+      if (searchTypeSelect && data.searchTypes) {
+        searchTypeSelect.innerHTML = '';
+        data.searchTypes.forEach(type => {
+          const option = document.createElement('option');
+          option.value = type.value;
+          option.textContent = type.label;
+          if (type.value === data.selectedSearchType) {
+            option.selected = true;
+          }
+          searchTypeSelect.appendChild(option);
+        });
+      }
+
+      // 검색 키워드
+      const searchInput = document.querySelector('#search');
+      if (searchInput && data.search) {
+        searchInput.value = data.search;
+      }
+    }
+
+    function initPagination() {
+      // ClientPagination 초기화
+      paginationController = new ClientPagination(allItems, {
+        pageSize: 10,
+        onPageChange: (pageItems, paginationInfo) => {
+          updateList(pageItems, paginationInfo);
+        }
+      });
+
+      // 페이지당 항목수 변경 이벤트
+      const itemsPerPageSelect = document.querySelector('#itemsPerPage');
+      if (itemsPerPageSelect) {
+        itemsPerPageSelect.addEventListener('change', (e) => {
+          paginationController.setPageSize(e.target.value);
+        });
+      }
+
+      // 초기 렌더링
+      updateList(paginationController.getCurrentPageItems(), paginationController.getPaginationInfo());
+    }
+
+    function updateList(pageItems, paginationInfo) {
+      // 목록 렌더링
+      renderBoardList(pageItems, {
+        tableBodySelector: 'tbody',
+        noDataMessage: '등록된 항목이 없습니다.',
+        onItemClick: (item) => {
+          window.location.href = `view.html?id=${item.id}`;
+        }
+      });
+
+      // 총 건수 업데이트
+      const totalCountEl = document.querySelector('#totalCount');
+      if (totalCountEl) {
+        totalCountEl.textContent = formatNumber(paginationInfo.totalCount);
+      }
+
+      // 페이징 렌더링
+      renderBoardPagination(paginationInfo, '.pagination', (page) => {
+        paginationController.setPage(page);
+      });
+    }
+
+    function searchItems() {
+      const searchType = document.querySelector('#searchType').value;
+      const search = document.querySelector('#search').value.trim();
+
+      if (!search) {
+        alertMessage('검색어를 입력해주세요.', 'warning');
+        return;
+      }
+
+      const params = new URLSearchParams();
+      params.set('searchType', searchType);
+      params.set('search', search);
+      params.set('page', '1');
+
+      window.location.href = `?${params.toString()}`;
+    }
+
+    function downloadExcel() {
+      alertMessage('엑셀 다운로드 (Mock 모드)', 'info');
+      // 실제 구현: window.location.href = '/api/v1/export/excel';
+    }
+  </script>
+
+
+
+ <!-- footer include -->
+  <footer id="footer"></footer>
+
+  <script src="../js/user-custom.js"></script>
+</body>
+</html>

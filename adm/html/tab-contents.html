@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko" data-krds-mode="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="KRDS" />
+  <link rel="icon" href="./favicon.ico" />
+  <title>기본 구조 잡는 중</title>
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="/krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="/krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="/krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="/krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!--  Custom -->
+  <script src="/adm/js/user-custom.js" defer></script>
+  <link rel="stylesheet" href="/adm/css/user-custom.css">
+
+</head>
+<body>
+
+<div id="wrap" class="g-wrap">
+
+  <!-- 본문 바로가기 영역  -->
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+  <!-- //본문 바로가기 영역  -->
+
+  <!-- header -->
+  <div id="header"></div>
+  <!-- //header -->
+
+  <main id="container">
+    <div class="inner">
+        <div class="contents">
+            <div class="conts-area">
+                <!-- tab -->
+                <div class="krds-tab-area layer">
+                    <!-- tab list -->
+                    <div class="tab line full">
+                        <ul role="tablist">
+                            <li id="tab_login_01" role="tab" aria-selected="true" aria-controls="panel_login_01" class="active">
+                                <button type="button" class="btn-tab">타이틀 1 <i class="sr-only created"> 선택됨</i></button>
+                            </li>
+                            <li id="tab_login_02" role="tab" aria-selected="false" aria-controls="panel_login_02">
+                                <button type="button" class="btn-tab">타이틀 2</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //tab list -->
+                    
+                    <!-- tab contents -->
+                    <div class="tab-conts-wrap">
+                        <section id="panel_login_01" aria-labelledby="tab_login_01" class="tab-conts active" data-quick-nav="false">
+                            <h3 class="sr-only">탭 영역 타이틀</h3>
+                        <!-- 구조화 목록 -->
+                            <ul class="krds-structured-list type-full">
+                            <li class="structured-item">
+                                <div class="in">
+                                <div class="card-top">
+                                    <span class="krds-badge bg-light-primary">뱃지</span>
+                                </div>
+                                <div class="card-body">
+                                    <a href="#" class="c-text">
+                                    <p class="c-tit"><span class="span">타이틀 영역</span></p>
+                                    <p class="c-txt">
+                                        간단한 설명이 들어가는 영역입니다. 최대 3줄까지 작성합니다. 간단한 설명이 들어가는 영역입니다. 간단한 설명이 들어가는 영역입니다.
+                                    </p>
+                                    <p class="c-date">
+                                        <strong class="key">신청 기간</strong>
+                                        <span class="value">2023.00.00-2024.00.00</span>
+                                    </p>
+                                    </a>
+                                    <div class="c-btn">
+                                    <a href="#" class="krds-btn secondary" title="타이틀 영역">신청하기</a>
+                                    </div>
+                                </div>
+                                <div class="card-btm">
+                                    <span class="tag">태그</span>
+                                    <span class="tag">태그</span>
+                                </div>
+                                <div class="card-btn">
+                                    <button type="button" class="krds-btn medium text" title="타이틀 영역"><i class="svg-icon ico-share"></i> 공유하기</button>
+                                    <button type="button" class="krds-btn medium text" title="타이틀 영역"><i class="svg-icon ico-like"></i> 찜하기</button>
+                                </div>
+                                </div>
+                            </li>
+                            <li class="structured-item">
+                                <div class="in">
+                                <div class="card-top">
+                                    <span class="krds-badge bg-light-success">뱃지</span>
+                                </div>
+                                <div class="card-body">
+                                    <a href="#" class="c-text">
+                                    <p class="c-tit"><span class="span">타이틀 영역</span></p>
+                                    <p class="c-txt">
+                                        간단한 설명이 들어가는 영역입니다. 최대 3줄까지 작성합니다. 간단한 설명이 들어가는 영역입니다. 간단한 설명이 들어가는 영역입니다.
+                                    </p>
+                                    <p class="c-date">
+                                        <strong class="key">신청 기간</strong>
+                                        <span class="value">2023.00.00-2024.00.00</span>
+                                    </p>
+                                    </a>
+                                    <div class="c-btn">
+                                    <a href="#" class="krds-btn secondary" title="타이틀 영역">신청하기</a>
+                                    </div>
+                                </div>
+                                <div class="card-btm">
+                                    <span class="tag">태그</span>
+                                    <span class="tag">태그</span>
+                                </div>
+                                <div class="card-btn">
+                                    <button type="button" class="krds-btn medium text" title="타이틀 영역"><i class="svg-icon ico-share"></i> 공유하기</button>
+                                    <button type="button" class="krds-btn medium text" title="타이틀 영역"><i class="svg-icon ico-like"></i> 찜하기</button>
+                                </div>
+                                </div>
+                            </li>
+                            <li class="structured-item">
+                                <div class="in">
+                                <div class="card-top">
+                                    <span class="krds-badge bg-secondary">뱃지</span>
+                                </div>
+                                <div class="card-body">
+                                    <a href="#" class="c-text">
+                                    <p class="c-tit"><span class="span">타이틀 영역</span></p>
+                                    <p class="c-txt">
+                                        간단한 설명이 들어가는 영역입니다. 최대 3줄까지 작성합니다. 간단한 설명이 들어가는 영역입니다. 간단한 설명이 들어가는 영역입니다.
+                                    </p>
+                                    <p class="c-date">
+                                        <strong class="key">신청 기간</strong>
+                                        <span class="value">2023.00.00-2024.00.00</span>
+                                    </p>
+                                    </a>
+                                    <div class="c-btn">
+                                    <a href="#" class="krds-btn secondary" title="타이틀 영역">신청하기</a>
+                                    </div>
+                                </div>
+                                <div class="card-btm">
+                                    <span class="tag">태그</span>
+                                    <span class="tag">태그</span>
+                                </div>
+                                <div class="card-btn">
+                                    <button type="button" class="krds-btn medium text" title="타이틀 영역"><i class="svg-icon ico-share"></i> 공유하기</button>
+                                    <button type="button" class="krds-btn medium text" title="타이틀 영역"><i class="svg-icon ico-like"></i> 찜하기</button>
+                                </div>
+                                </div>
+                            </li>
+                            </ul>
+                            <!-- 구조화 목록 -->
+                        </section>
+                        <section id="panel_login_02" aria-labelledby="tab_login_02" class="tab-conts" data-quick-nav="false">
+                            <h3 class="sr-only">탭 영역 타이틀</h3>
+                            탭 2 영역
+                        </section>
+                    </div>
+                    <!-- //tab contents -->
+                </div>
+                <!-- //tab -->
+            </div>
+        </div>
+    </div>
+  </main>
+
+<!-- footer -->
+  <div id="footer"></div>
+<!-- //footer -->
+
+</div>
+
+</body>
+</html>
