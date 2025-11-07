@@ -24,11 +24,12 @@
   /* ------------------------------------------------------------------------
    * 1) 헤더/푸터/페이지네이션 로드
    *    - 각 id(#header, #footer, #pagination)가 존재하면 자동 삽입
+   *    - 상대 경로 사용: HTML 파일이 /adm/html/에 있고 템플릿이 /adm/tmpl/에 있음
    * --------------------------------------------------------------------- */
   function initPartials() {
-    $(SEL.header).load('/adm/tmpl/header.html');
-    $(SEL.footer).load('/adm/tmpl/footer.html');
-    $(SEL.pagination).load('/adm/tmpl/pagination.html');
+    $(SEL.header).load('../tmpl/header.html');
+    $(SEL.footer).load('../tmpl/footer.html');
+    $(SEL.pagination).load('../tmpl/pagination.html');
   }
 
   /* ------------------------------------------------------------------------
