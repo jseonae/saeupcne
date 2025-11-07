@@ -28,8 +28,11 @@
 
 .krds-pagination {margin:1rem 0}
 
+
 .krds-form-select {border-color:var(--krds-color-light-gray-30);--krds-form-select--radius-small: var(--krds-radius-medium2);cursor: pointer;}
 .krds-form-select.completed {border-color:var(--krds-form-select--color-border)}
+
+
 
 .krds-form-check {display:flex;align-items: flex-start;}
 .krds-form-check:focus {border-radius: var(--krds-form-check--checkbox-button-radius-medium);}
@@ -145,6 +148,8 @@
 .search-top-box {display: flex;align-items: center;justify-content: space-between;}
 .filter-section {display: flex;align-items: center;gap:1rem;}
 .btn-group {display: flex;gap:2rem;align-items: center;}
+
+.search-top-box .input-group {gap: var(--krds-gap-3);}
 
 .filter-section .krds-check-area {gap:1rem;}
 .filter-section .krds-check-area .krds-form-check input[type=checkbox] ~ label {gap:.5rem}
