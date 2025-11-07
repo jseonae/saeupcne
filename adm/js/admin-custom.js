@@ -1,55 +1,78 @@
+/* ==========================================================================
+   admin-common.js
+   - 정적 페이지 공통 스크립트 (jQuery 기반)
+   - 기능:
+     1) header / footer / pagination 템플릿 자동 로드
+     2) 체크박스 전체선택 & 개별선택 연동
+     3) 숫자 입력 시 천 단위 콤마 자동 적용
+   ========================================================================== */
+(function ($, window, document) {
+  'use strict';
 
-  // 문서가 준비되면 header와 footer를 불러오기
-  $(function() {
-    $("#header").load("/adm/tmpl/header.html");
-    $("#footer").load("/adm/tmpl/footer.html");
-    $("#pagination").load("/adm/tmpl/pagination.html");
-  });
+  /* ------------------------------------------------------------------------
+   * 상수/셀렉터
+   * --------------------------------------------------------------------- */
+  const SEL = {
+    header: '#header',
+    footer: '#footer',
+    pagination: '#pagination',
+    checkAll: '#checkAll',
+    checkGroup: '.checkGroup',
+    numberInput: '.number-input',
+  };
 
+  /* ------------------------------------------------------------------------
+   * 1) 헤더/푸터/페이지네이션 로드
+   *    - 각 id(#header, #footer, #pagination)가 존재하면 자동 삽입
+   * --------------------------------------------------------------------- */
+  function initPartials() {
+    $(SEL.header).load('/adm/tmpl/header.html');
+    $(SEL.footer).load('/adm/tmpl/footer.html');
+    $(SEL.pagination).load('/adm/tmpl/pagination.html');
+  }
 
-  $(function () {
-  // 전체선택 체크박스 클릭 시
-  $("#checkAll").on("change", function () {
-    $(".checkGroup").prop("checked", $(this).prop("checked"));
-  });
+  /* ------------------------------------------------------------------------
+   * 2) 체크박스 전체선택 / 개별선택 동기화
+   *    - #checkAll 클릭 시 .checkGroup 모두 선택/해제
+   *    - 개별 체크박스 변경 시 전체선택 상태 갱신
+   * --------------------------------------------------------------------- */
+  function initCheckboxes() {
+    // 전체선택 토글
+    $(document).on('change', SEL.checkAll, function () {
+      $(SEL.checkGroup).prop('checked', this.checked);
+    });
 
-  // 개별 체크박스가 변경되면 전체선택 상태 갱신
-  $(".checkGroup").on("change", function () {
-    const all = $(".checkGroup").length;
-    const checked = $(".checkGroup:checked").length;
-    $("#checkAll").prop("checked", all === checked);
-  });
-});
-
-$(function () {
-  // prism toolbar title 추가
-  if (typeof Prism !== "undefined") {
-    Prism.hooks.add("complete", function (env) {
-      const toolbar = env.element.closest(".code-toolbar");
-      if (!toolbar) return;
-
-      const preTag = toolbar.querySelector("pre");
-      if (!preTag) return;
-
-      // data-title 읽기
-      const dataTitle = preTag.getAttribute("data-title");
-      const existingTitle = toolbar.querySelector(".toolbar-title");
-
-      // 중복 방지 (이미 있으면 다시 안 추가)
-      if (!existingTitle) {
-        const titleTag = document.createElement("h5");
-        titleTag.classList.add("toolbar-title");
-        titleTag.textContent = dataTitle ? dataTitle : "코드 예시";
-        toolbar.prepend(titleTag);
-      }
+    // 개별 체크 시 전체선택 상태 갱신
+    $(document).on('change', SEL.checkGroup, function () {
+      const total = $(SEL.checkGroup).length;
+      const checked = $(SEL.checkGroup + ':checked').length;
+      $(SEL.checkAll).prop('checked', total === checked);
     });
   }
-});
 
-//input text 천 단위 자동 콤마
-document.addEventListener('keyup', function(e) {
-  if (e.target.classList.contains('number-input')) {
-    let value = e.target.value.replace(/[^\d]/g, '');
-    e.target.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  /* ------------------------------------------------------------------------
+   * 3) 천 단위 자동 콤마 입력
+   *    - .number-input 클래스가 있는 input에 적용
+   *    - 숫자 외 입력 제거 후 3자리마다 콤마 삽입
+   * --------------------------------------------------------------------- */
+  function initNumberInputFormat() {
+    document.addEventListener('keyup', function (e) {
+      if (!e.target.classList || !e.target.classList.contains('number-input')) return;
+
+      // 숫자만 남기고 천 단위 콤마 적용
+      const raw = e.target.value.replace(/[^\d]/g, '');
+      e.target.value = raw.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    });
   }
-});
+
+  /* ------------------------------------------------------------------------
+   * 초기화
+   * --------------------------------------------------------------------- */
+  $(function () {
+    initPartials();
+    initCheckboxes();
+    initNumberInputFormat();
+  });
+
+})(jQuery, window, document);
+

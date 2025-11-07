@@ -19,13 +19,26 @@
 .krds-table-wrap .tbl.data.center thead th.right,
 .krds-table-wrap .tbl.data.center tbody td.right {text-align:right;}
 
+/* 사업 뱃지 */
+.krds-badge.badge {border-radius:0;border:1px solid;padding:0.2rem 0.6rem;font-size:1.5rem;height:2.8rem;background-color:var(--krds-light-color-background-white);}
+.krds-badge.badge::after {margin-top:.1rem;line-height:1;}
+.krds-badge.badge[data-name="project01"] {border-color:var(--krds-light-color-border-primary);color:var(--krds-color-light-primary-60);}
+.krds-badge.badge[data-name="project01"]::after {content:'선택사업';}
+.krds-badge.badge[data-name="project02"] {border-color:var(--krds-light-color-border-warning);color:var(--krds-color-light-warning-50);}
+.krds-badge.badge[data-name="project02"]::after {content:'선택외사업';}
+.krds-badge.badge[data-name="project03"] {border-color:var(--krds-light-color-border-secondary);color:var(--krds-color-light-secondary-70);}
+.krds-badge.badge[data-name="project03"]::after {content:'개방형사업';}
+.krds-badge.badge[data-name="project04"] {border-color:var(--krds-light-color-border-success);color:var(--krds-color-light-success-50);}
+.krds-badge.badge[data-name="project04"]::after {content:'자율사업';}
+.krds-badge.badge[data-name="project05"] {border-color:var(--krds-light-color-border-point);color:var(--krds-color-light-point-60);}
+.krds-badge.badge[data-name="project05"]::after {content:'특교·추경신규사업';}
+
 /* 아이콘 */
 .svg-icon {-webkit-mask-repeat: no-repeat;-webkit-mask-position: center center;-webkit-mask-size: contain;mask-repeat: no-repeat;mask-position: center center;mask-size: contain;}
 .svg-icon.disabled {background-color: var(--krds-color-light-gray-20);}
 [class$="-disabled"] {background-color: var(--krds-light-color-icon-gray-fill);}
 [class$="-fill"] {-webkit-mask-image: none;mask-image: none;background-color: transparent !important;background-size: contain;background-repeat: no-repeat;-webkit-mask: none;mask: none;}
 i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
-
 .svg-icon.ico-docu {
     -webkit-mask-image: url(/style/resources/img/ico_document.svg);
     mask-image: url(/style/resources/img/ico_document.svg); 
@@ -226,12 +239,10 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
     -webkit-mask-image: url(/style/resources/img/ico_veiw_all.svg);
     mask-image: url(/style/resources/img/ico_veiw_all.svg);
 }
-
 .svg-icon.ico-refile-disabled {
     -webkit-mask-image: url(/style/resources/img/ico_file_return_disabled.svg);
     mask-image: url(/style/resources/img/ico_file_return_disabled.svg);
 }
-
 .svg-icon.ico-lncheck-disabled {
     -webkit-mask-image: url(/style/resources/img/ico_checkbox_line.svg);
     mask-image: url(/style/resources/img/ico_checkbox_line.svg);
@@ -288,5 +299,4 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
     background-image: url(/style/resources/img/ico_pdf.svg);
 }
 
-/* 사업 뱃지 */
 
