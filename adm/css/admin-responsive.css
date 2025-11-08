@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@media (max-width: 1440px) {
+  .header-content {
+    padding-left: var(--krds-number-12);
+  }
+
+  .nav-item {
+    padding: 0 var(--krds-number-8);
+    min-width: var(--krds-number-14);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding-left: var(--krds-number-9);
+  }
+
+  .main-nav {
+    display: none;
+  }
+}
