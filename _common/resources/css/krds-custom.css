@@ -16,11 +16,13 @@
     --c-font-weight-6: 600;
 }
 /* 텍스트 정렬(전역 사용 클래스) */
+.aling-center {text-align:center;}
 .aling-left {text-align:left;}
 .aling-right {text-align:right;}
 
 
 /* 정렬 */
+
 .flex-justify-center {justify-content: center;}
 .flex-justify-start {justify-content: flex-start;}
 .flex-justify-end {justify-content: flex-end;}
