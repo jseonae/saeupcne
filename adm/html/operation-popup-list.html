@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">충남교육청 단위학교 사업선택제 관리자 시스템</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+
+</head>
+<body>
+
+<div id="wrap" class="g-wrap">
+
+  <!-- 본문 바로가기 영역  -->
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+  <!-- //본문 바로가기 영역  -->
+
+  <!-- header -->
+  <div id="header"></div>
+  <!-- //header -->
+
+  <main id="container">
+    <div class="inner">
+        <div class="contents contents-box contents-box-shadow">
+
+          <div class="conts-hd search-top-box">
+            <div class="filter-section">
+                <a href="javascript:void(0)" class="krds-btn small primary">신규둥록</a>
+            </div>
+            <div class="sch-form-wrap flex-inline">
+              <div class="input-group">
+                <select class="krds-form-select medium" title="검색 조건">
+                  <option value="">전체</option>
+                  <option value="">제목</option>
+                  <option value="">날짜</option>
+                </select>
+                <div class="sch-input">
+                  <input type="text" class="krds-input medium" placeholder="검색어를 입력해주세요" title="검색어 입력">
+                  <button type="button" class="krds-btn medium icon ico-search">
+                    <span class="sr-only">검색</span>
+                    <i class="svg-icon ico-sch"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="conts-area">
+            <div class="search-list-top">
+              <ul class="sch-info" aria-live="polite">
+                <li>팝업 목록 <span class="point">22,459</span>건</li>
+              </ul>
+              <ul class="sch-sort">
+                <li class="m-hide">
+                  <strong class="sort-label"><label for="search_result_count">목록 표시 개수</label></strong>
+                  <select class="krds-form-select-sort" id="search_result_count">
+                    <option>15개</option>
+                    <option>10개</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
+
+            <div class="krds-table-wrap">
+              <table class="tbl col data center">
+                <caption class="sr-only">팝업 목록 관리 테이블</caption>
+                <colgroup>
+                    <col style="width:2%;">
+                    <col style="width:8%;">
+                    <col style="width:10%;">
+                    <col />
+                    <col style="width:12%;">
+                    <col style="width:12%;">
+                    <col style="width:8%;">
+                    <col style="width:4%;">
+                    <col style="width:10%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <div class="krds-form-check">
+                        <input type="checkbox" id="checkAll">
+                        <label for="checkAll"><span class="sr-only">전체 선택</span></label>
+                      </div>
+                    </th>
+                    <th scope="col">번호</th>
+                    <th scope="col">이미지</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">게시기간</th>
+                    <th scope="col">링크URL</th>
+                    <th scope="col">순서</th>
+                    <th scope="col">게시여부</th>
+                    <th scope="col">관리</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r1" />
+                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>0000</td>
+                    <td>
+                      <div class="thumbnail">
+                        <img src="../img/pop-list-no-image.png" alt="썸네일">
+                      </div>
+                    </td>
+                    <td>
+                        <div class="project-name tooltip-hs">
+                         <strong class="tooltip-tt">누리집 사용방법 및 안내사항</strong>
+                        </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>2025-07-01 09:00</p>
+                        <p>2025-09-30 23:00</p>
+                      </div>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" class="krds-btn small link" target="_blank" title="새창열림">
+                            <span class="underline">/viewer/skin/doc.html?fn=BBS_***.pdf&rs=/viewer/result/BBSMSTR_***/</span>
+                        </a>
+                    </td>
+                    <td>0000</td>
+                    <td><i class="svg-icon ico-success-fill">공개</i></td>
+                    <td>
+                      <div class="btn-group flex-justify-center">
+                        <a href="javascript:void(0)" class="krds-btn small line" title="수정">
+                            <i class="svg-icon ico-edit">수정</i>
+                        </a>
+                        <a href="javascript:void(0)" class="krds-btn small line" title="삭제">
+                            <i class="svg-icon ico-trash">삭제</i>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r1" />
+                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>0000</td>
+                    <td>
+                      <div class="thumbnail">
+                        <img src="../img/pop-list-no-image.png" alt="썸네일">
+                      </div>
+                    </td>
+                    <td>
+                        <div class="project-name tooltip-hs">
+                         <strong class="tooltip-tt">누리집 사용방법 및 안내사항</strong>
+                        </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>2025-07-01 09:00</p>
+                        <p>2025-09-30 23:00</p>
+                      </div>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" class="krds-btn small link" target="_blank" title="새창열림">
+                            <span class="underline">/viewer/skin/doc.html?fn=BBS_***.pdf&rs=/viewer/result/BBSMSTR_***/</span>
+                        </a>
+                    </td>
+                    <td>0000</td>
+                    <td><i class="svg-icon ico-success-fill">공개</i></td>
+                    <td>
+                      <div class="btn-group flex-justify-center">
+                        <a href="javascript:void(0)" class="krds-btn small line" title="수정">
+                            <i class="svg-icon ico-edit">수정</i>
+                        </a>
+                        <a href="javascript:void(0)" class="krds-btn small line" title="삭제">
+                            <i class="svg-icon ico-trash">삭제</i>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r1" />
+                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>0000</td>
+                    <td>
+                      <div class="thumbnail">
+                        <img src="../img/pop-list-no-image.png" alt="썸네일">
+                      </div>
+                    </td>
+                    <td>
+                        <div class="project-name tooltip-hs">
+                         <strong class="tooltip-tt">누리집 사용방법 및 안내사항</strong>
+                        </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>2025-07-01 09:00</p>
+                        <p>2025-09-30 23:00</p>
+                      </div>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" class="krds-btn small link" target="_blank" title="새창열림">
+                            <span class="underline">/viewer/skin/doc.html?fn=BBS_***.pdf&rs=/viewer/result/BBSMSTR_***/</span>
+                        </a>
+                    </td>
+                    <td>0000</td>
+                    <td><i class="svg-icon ico-success-fill">공개</i></td>
+                    <td>
+                      <div class="btn-group flex-justify-center">
+                        <a href="javascript:void(0)" class="krds-btn small line" title="수정">
+                            <i class="svg-icon ico-edit">수정</i>
+                        </a>
+                        <a href="javascript:void(0)" class="krds-btn small line" title="삭제">
+                            <i class="svg-icon ico-trash">삭제</i>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r1" />
+                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>0000</td>
+                    <td>
+                      <div class="thumbnail">
+                        <img src="../img/pop-list-no-image.png" alt="썸네일">
+                      </div>
+                    </td>
+                    <td>
+                        <div class="project-name tooltip-hs">
+                         <strong class="tooltip-tt">누리집 사용방법 및 안내사항</strong>
+                        </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>2025-07-01 09:00</p>
+                        <p>2025-09-30 23:00</p>
+                      </div>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" class="krds-btn small link" target="_blank" title="새창열림">
+                            <span class="underline">/viewer/skin/doc.html?fn=BBS_***.pdf&rs=/viewer/result/BBSMSTR_***/</span>
+                        </a>
+                    </td>
+                    <td>0000</td>
+                    <td><i class="svg-icon ico-success-fill">공개</i></td>
+                    <td>
+                      <div class="btn-group flex-justify-center">
+                        <a href="javascript:void(0)" download="" class="krds-btn small line" title="수정">
+                            <i class="svg-icon ico-edit">수정</i>
+                        </a>
+                        <a href="javascript:void(0)" download="" class="krds-btn small line" title="삭제">
+                            <i class="svg-icon ico-trash">삭제</i>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r1" />
+                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>0000</td>
+                    <td>
+                      <div class="thumbnail">
+                        <img src="../img/pop-list-no-image.png" alt="썸네일">
+                      </div>
+                    </td>
+                    <td>
+                        <div class="project-name tooltip-hs">
+                         <strong class="tooltip-tt">누리집 사용방법 및 안내사항</strong>
+                        </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>2025-07-01 09:00</p>
+                        <p>2025-09-30 23:00</p>
+                      </div>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" class="krds-btn small link" target="_blank" title="새창열림">
+                            <span class="underline">/viewer/skin/doc.html?fn=BBS_***.pdf&rs=/viewer/result/BBSMSTR_***/</span>
+                        </a>
+                    </td>
+                    <td>0000</td>
+                    <td><i class="svg-icon ico-danger-fill">비공개</i></td>
+                    <td>
+                      <div class="btn-group flex-justify-center">
+                        <a href="javascript:void(0)" download="" class="krds-btn small line" title="수정">
+                            <i class="svg-icon ico-edit">수정</i>
+                        </a>
+                        <a href="javascript:void(0)" download="" class="krds-btn small line" title="삭제">
+                            <i class="svg-icon ico-trash">삭제</i>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r1" />
+                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>0000</td>
+                    <td>
+                      <div class="thumbnail">
+                        <img src="../img/pop-list-no-image.png" alt="썸네일">
+                      </div>
+                    </td>
+                    <td>
+                        <div class="project-name tooltip-hs">
+                         <strong class="tooltip-tt">누리집 사용방법 및 안내사항</strong>
+                        </div>
+                    </td>
+                    <td>
+                      <div class="td-in-col2">
+                        <p>2025-07-01 09:00</p>
+                        <p>2025-09-30 23:00</p>
+                      </div>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" class="krds-btn small link" target="_blank" title="새창열림">
+                            <span class="underline">/viewer/skin/doc.html?fn=BBS_***.pdf&rs=/viewer/result/BBSMSTR_***/</span>
+                        </a>
+                    </td>
+                    <td>0000</td>
+                    <td><i class="svg-icon ico-danger-fill">비공개</i></td>
+                    <td>
+                      <div class="btn-group flex-justify-center">
+                        <a href="javascript:void(0)" download="" class="krds-btn small line" title="수정">
+                            <i class="svg-icon ico-edit">수정</i>
+                        </a>
+                        <a href="javascript:void(0)" download="" class="krds-btn small line" title="삭제">
+                            <i class="svg-icon ico-trash">삭제</i>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="page-btn-wrap">
+              <div class="btn-wrap">
+                <a href="javascript:void(0)" class="krds-btn small tertiary">선택수정</a>
+                <a href="javascript:void(0)" class="krds-btn small primary">신규둥록</a>
+              </div>
+            </div>
+          </div>
+          <div id="pagination" class="conts-ft"></div>
+        </div>
+    </div>
+  </main>
+
+<!-- footer -->
+  <div id="footer"></div>
+<!-- //footer -->
+
+</div>
+
+</body>
+</html>

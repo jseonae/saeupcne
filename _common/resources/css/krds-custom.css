@@ -15,6 +15,16 @@
     --c-font-weight-3: 300;
     --c-font-weight-6: 600;
 }
+/* 텍스트 정렬(전역 사용 클래스) */
+.aling-left {text-align:left;}
+.aling-right {text-align:right;}
+
+
+/* 정렬 */
+.flex-justify-center {justify-content: center;}
+.flex-justify-start {justify-content: flex-start;}
+.flex-justify-end {justify-content: flex-end;}
+.flex-justify-between {justify-content: space-between;}
 
 
 /* 라인 버튼*/
@@ -25,9 +35,7 @@
 .krds-btn.line .svg-icon {background-color: var(--krds-light-color-text-basic);}
 .krds-btn.line.small .svg-icon {width: var(--krds-icon--size-large);height: var(--krds-icon--size-large);}
 
-/* 텍스트 정렬(전역 사용 클래스) */
-.aling-left {text-align:left;}
-.aling-right {text-align:right;}
+
 
 /* 테이블 */
 .krds-table-wrap .tbl.data.center thead th,

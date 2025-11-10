@@ -391,7 +391,7 @@ input[disabled],
   width: auto;
 }
 
-.page-btn-wrap .btn-wrap:first-child {
+.page-btn-wrap.both .btn-wrap:first-child {
   width: 50%;
 }
 
@@ -935,3 +935,25 @@ input[disabled],
   }
 }
 
+/* ========================================
+ * POP-UP
+ * ====================================== */
+
+.thumbnail {
+  width: 15rem;
+  margin: 0 auto;
+}
+
+.krds-table-wrap .krds-btn.link {
+  display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-weight: var(--c-font-weight-6);
+    max-width: 280px;
+}
+
+.krds-table-wrap .krds-btn.link .underline {
+  white-space: nowrap;
+}

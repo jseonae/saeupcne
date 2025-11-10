@@ -1,8 +1,8 @@
 (function () {
   'use strict';
 
-  const HOST_SELECTOR = '.project-name';
-  const TEXT_SELECTOR = 'strong';
+  const HOST_SELECTOR = '.tooltip-hs';
+  const TEXT_SELECTOR = '.tooltip-tt';
 
   // 실제로 말줄임이 발생했는지 확인
   function isEllipsed(el) {
