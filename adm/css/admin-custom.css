@@ -399,7 +399,6 @@ input[disabled],
   max-width: 10rem;
 }
 
-
 .btn-wrap.flex-wrap-wrwp {
   display: flex;
   flex-wrap: wrap;
@@ -573,7 +572,6 @@ input[disabled],
   color: var(--krds-light-color-text-basic-inverse);
 }
 
-
 .nav-item.active::after {
   content: '';
   display: none;
@@ -704,7 +702,6 @@ input[disabled],
 /* ========================================
  * Join form
  * ====================================== */
-
 /* Left Section */
 .left-section {
   flex: 1;
@@ -786,8 +783,6 @@ input[disabled],
   gap: var(--krds-gap-3);
 }
 
-
-
 .separator {
   font-size: var(--krds-pc-font-size-body-large);
   color: var(--krds-color-light-gray-90);
@@ -856,7 +851,6 @@ input[disabled],
   color: var(--krds-color-light-gray-70);
 }
 
-
 .long-switch {
   width: var(--krds-number-20);
   height: var(--krds-number-10);
@@ -888,7 +882,6 @@ input[disabled],
   outline: none;
 }
 
-/* Action Section */
 .action-section {
   padding: var(--krds-number-6) var(--krds-number-9);
   display: flex;
@@ -908,14 +901,6 @@ input[disabled],
 
 /* Responsive */
 @media (max-width: 1200px) {
-  .container {
-    padding: 0 var(--krds-number-14);
-  }
-
-  .content {
-    flex-direction: column;
-  }
-
   .right-section {
     position: static;
     width: 100%;
@@ -928,10 +913,6 @@ input[disabled],
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 var(--krds-number-9);
-  }
-
   .section {
     padding: var(--krds-number-12) var(--krds-number-10) var(--krds-number-16) var(--krds-number-10);
   }
@@ -951,15 +932,6 @@ input[disabled],
 
   .info-card {
     padding: var(--krds-number-10) var(--krds-number-9);
-  }
-
-  .button-group {
-    flex-direction: column;
-  }
-
-  .btn-secondary,
-  .btn-outline {
-    width: 100%;
   }
 }
 
