@@ -77,3 +77,14 @@
 
 })(jQuery, window, document);
 
+$(function () {
+  // 회원가입 승인 토글
+  $('.member-edit input[type="checkbox"]').on('change', function () {
+    const $label = $(this).closest('.member-edit').find('.toggle-label');
+    if ($(this).is(':checked')) {
+      $label.text('승인');
+    } else {
+      $label.text('미승인');
+    }
+  });
+});

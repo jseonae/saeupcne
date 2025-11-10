@@ -1,0 +1,12 @@
+{
+  "liveServer.settings.root": "/",
+  "liveServer.settings.host": "127.0.0.1",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.mount": [
+    ["/krds", "${workspaceFolder}/krds"],
+    ["/_common", "${workspaceFolder}/_common"],
+    ["/adm", "${workspaceFolder}/adm"],
+    ["/kr", "${workspaceFolder}/kr"]
+  ],
+  "liveServer.settings.wait": 300
+}

@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 .styleguide #container {min-height:100%;}
-.styleguide #container .contents-box {min-height:100vh;padding:var(--krds-padding-10);}
+.styleguide #container .contents-box {display: flex;flex-direction: column;gap: 4rem;min-height:100vh;padding:var(--krds-padding-10);}
 
 .g-wrap .g-conts-area .con-tit {margin-bottom: var(--krds-pc-gap-layout-title-body-medium);font-size: var(--krds-pc-font-size-heading-medium);font-weight: var(--krds-typo-font-weight-bold);}
 .g-wrap .g-example-wrap .g-example {background-color: var(--krds-light-color-surface-white-subtle);border: var(--krds-light-border-width-variable-regular) solid var(--krds-light-color-border-gray);border-radius: var(--krds-radius-xlarge2);padding:4rem;}
 .g-wrap .g-example-wrap .g-example.bg-dark-gray {background-color:var(--krds-color-light-gray-5);}
-.g-wrap .g-example-wrap .g-example:has(strong) {display: flex;flex-direction: column;gap: 1rem;}
+.g-wrap .g-example-wrap .g-example:has(div) {display: flex;flex-direction: column;gap: 1rem;}
 .g-wrap .g-example-wrap .g-example > strong {color:var(--krds-light-color-text-primary)}
 .g-wrap .g-example-wrap .g-example > strong:not(strong:first-child) {margin-top:2rem}
 .g-wrap .g-example-wrap .g-example .g-example-inner {display: flex;flex-wrap: wrap;gap: 2rem}

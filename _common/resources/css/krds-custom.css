@@ -1,4 +1,22 @@
 @charset "UTF-8";
+
+@font-face {/*엘리스디지털배움체-*/
+  font-family: 'EliceDigitalBaeum';
+  font-weight:700;
+  font-style: normal;
+  font-display: swap;
+  src: url('../../resources/font/EliceDigitalBaeum-Bd.woff2') format('woff2');
+}
+
+:root {
+    /*추가*/
+    --c-font-edb:'EliceDigitalBaeum';
+
+    --c-font-weight-3: 300;
+    --c-font-weight-6: 600;
+}
+
+
 /* 라인 버튼*/
 .krds-btn.line {padding:0 .7rem;border-color:var(--krds-color-light-gray-20);background-color: var(--krds-color-light-alpha-white100);}
 .krds-btn.line:active,
@@ -41,6 +59,11 @@
 [class$="-disabled"] {background-color: var(--krds-light-color-icon-gray-fill);}
 [class$="-fill"] {-webkit-mask-image: none;mask-image: none;background-color: transparent !important;background-size: contain;background-repeat: no-repeat;-webkit-mask: none;mask: none;}
 i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
+
+.svg-icon.medium {
+    width: var(--krds-icon--size-medium);
+    height: var(--krds-icon--size-medium);   
+}
 
 .svg-icon.ico-arrsort {
     -webkit-mask-image: url(../../resources/img/ico_arrow_sort_both.svg);
