@@ -136,7 +136,7 @@ input[disabled],
 /* ========================================
  * Table
  * ====================================== */
-.krds-table-wrap .tbl.data thead th {
+/* .krds-table-wrap .tbl.data thead th {
   padding: var(--krds-table--data-thead-th-padding) 1rem;
 }
 
@@ -166,7 +166,7 @@ input[disabled],
 
 .krds-table-wrap td .krds-form-select.small {
   padding: 0 var(--krds-padding-5);
-}
+} */
 
 /* ========================================
  * Search List Top / Sort Area
@@ -458,7 +458,7 @@ input[disabled],
 /* ========================================
  * Project Name 오버 시 Tooltip
  * ====================================== */
-.project-name {
+/* .project-name {
   text-align: left;
   min-width: 0;
   position: relative;
@@ -511,7 +511,7 @@ input[disabled],
 
 .ellipsis {
   cursor: default;
-}
+} */
 
 
 /* ========================================
