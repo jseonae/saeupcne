@@ -141,10 +141,16 @@ input[disabled],
   padding: var(--krds-table--data-tbody-padding);
 }
 
+/* .krds-table-wrap td .data-amount {
+  font-size: var(--krds-pc-font-size-label-medium);
+} */
+
 .krds-table-wrap td .data-amount:first-child:not(p.data-amount) {
   margin-bottom:.4rem;
 }
-
+.krds-table-wrap td:has(> .data-amount:only-child) > .data-amount:first-child {
+  margin:0
+}
 
 /* ========================================
  * Search List Top / Sort Area
