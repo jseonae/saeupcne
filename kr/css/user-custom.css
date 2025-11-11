@@ -235,3 +235,233 @@
     gap: var(--krds-gap-5);
     width: auto;
 }
+
+
+
+/* Header Container */
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid var(--krds-color-light-gray-10);
+}
+
+/* Top Navigation Bar */
+.header-top {
+  background-color: var(--krds-color-light-background-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--krds-padding-9) var(--krds-number-20) var(--krds-padding-7);
+  position: relative;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-gap-3);
+}
+
+/* GNB */
+.gnb {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-gap-12);
+}
+
+.gnb-item {
+  font-family: 'NanumSquare Neo OTF', sans-serif;
+  font-size: var(--krds-pc-font-size-heading-small);
+  font-weight: 800; 
+  line-height: 1.5;
+  color: var(--krds-color-light-gray-90);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.gnb-item:hover { color: var(--krds-color-light-primary-60); }
+
+/* Utility */
+.utility {
+  display: flex;
+  gap: var(--krds-gap-6);
+  align-items: flex-start;
+  width: 197px;
+  justify-content: flex-end;
+}
+
+.utility-item { display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; transition: opacity 0.2s; cursor: pointer; }
+.utility-item:hover { opacity: 0.7; }
+.utility-icon { width: 24px; height: 24px; }
+
+.utility-item span {
+  font-family: 'Pretendard GOV', sans-serif;
+  font-size: var(--krds-pc-font-size-body-xsmall);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--krds-color-light-gray-90);
+  white-space: nowrap;
+}
+
+/* 2-Depth Navigation Menu */
+.depth-menu {
+  background-color: var(--krds-color-light-alpha-white100); 
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--krds-gap-12); 
+  height: 396px;
+  width: 100%;
+  position: absolute;
+  top: 99px;
+  z-index: 999;
+  overflow: hidden;
+  transform: translateY(-20px);
+  box-shadow: 0px 0px var(--krds-number-1) 0px var(--krds-light-color-alpha-shadow1), 0px var(--krds-number-5) var(--krds-number-8) 0px var(--krds-light-color-alpha-shadow2);
+}
+
+
+/* Hover open */
+.header:hover .depth-menu,
+.depth-menu:hover {
+  display: flex;
+  max-height: 396px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: var(--krds-padding-10) 0;
+}
+
+.depth-menu-content {
+  display: flex;
+  gap: var(--krds-gap-9);
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--krds-number-12);
+}
+
+/* Depth Column */
+.depth-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-4);
+  align-items: center;
+  width: 180px;
+}
+
+/* Depth Title (1st) */
+.depth-title {
+  width: 100%;
+  border: 1px solid var(--krds-color-light-gray-20);
+  border-radius: var(--krds-radius-medium1); 
+  padding: var(--krds-padding-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Pretendard GOV', sans-serif;
+  font-size: var(--krds-pc-font-size-body-medium);
+  font-weight: var(--krds-typo-font-weight-bold);
+  line-height: 1.5;
+  color: var(--krds-color-light-gray-70);
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.depth-title:hover { border-color: var(--krds-color-light-primary-50); color: var(--krds-color-light-primary-60); }
+.depth-title.active { border-color: var(--krds-color-light-primary-50); color: var(--krds-color-light-primary-60); }
+
+/* Depth Item (2nd) */
+.depth-item {
+  width: 100%;
+  padding: var(--krds-number-3) 0;
+  border-radius: var(--krds-radius-medium1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--krds-gap-4);
+  font-family: 'Pretendard GOV', sans-serif;
+  font-size: var(--krds-pc-font-size-body-small);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--krds-color-light-gray-70);
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.depth-item:hover { background-color: var(--krds-color-light-gray-5); color: var(--krds-color-light-primary-60); }
+.depth-item.active { background-color: var(--krds-color-light-primary-5); color: var(--krds-color-light-primary-60); font-weight: var(--krds-typo-font-weight-bold); }
+
+/* Focus */
+.gnb-item:focus, .utility-item:focus, .depth-title:focus, .depth-item:focus {
+  outline: 0.2rem solid var(--krds-color-light-primary-60);
+  outline-offset: 0.2rem;
+}
+
+/* Active */
+.gnb-item:active { transform: scale(0.98); }
+.utility-item:active { transform: scale(0.95); }
+
+
+/* 사업신청 list */
+/* Contents Container */
+.list-container {
+    width: 100%;
+    padding: var(--krds-number-12) 0;
+}
+
+.list-inner {
+    max-width: 1520px;
+    margin: 0 auto;
+}
+
+/* Info Box */
+.info-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--krds-light-color-surface-white);
+    border-radius: var(--krds-number-6);
+    margin-bottom: var(--krds-number-10);
+}
+
+.count-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--krds-number-4);
+    font-family: var(--krds-typo-font-type), sans-serif;
+    font-size: var(--krds-pc-font-size-label-large);
+    line-height: 1.5;
+}
+
+.count-label {
+    font-weight: var(--krds-font-weight-bold);
+    color: var(--krds-light-color-text-basic);
+}
+
+.count-number {
+    font-weight: var(--krds-font-weight-bold);
+    color: var(--krds-light-color-text-primary);
+}
+
+.count-unit {
+    font-weight: var(--krds-font-weight-bold);
+    color: var(--krds-light-color-text-basic);
+}
+
+/* list - table */
+.krds-table-wrap .tbl.data thead th {
+  padding: var(--krds-table--data-thead-th-padding-sides) 1rem;
+}
+
+/* 신청상태 배지*/
+.krds-badge.state[data-name="state01"] {background-color:var(--krds-badge--color-primary-element-lighter);color:var(--krds-badge--color-primary-text);}
+.krds-badge.state[data-name="state01"]::after {content:'모집중';}
+.krds-badge.state[data-name="state02"] {background-color:var(--krds-badge--color-warning-element-lighter);color:var(--krds-badge--color-warning-text);}
+.krds-badge.state[data-name="state02"]::after {content:'모집전';}
+.krds-badge.state[data-name="state03"] {background-color:var(--krds-badge--color-disabled-element-lighter);color:var(--krds-badge--color-disabled-text);}
+.krds-badge.state[data-name="state03"]::after {content:'모집마감';}
