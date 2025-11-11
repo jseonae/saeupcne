@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">회원목록(사업) 최고관리자 member-supervisor-list</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+
+</head>
+<body>
+
+<div id="wrap" class="g-wrap">
+
+  <!-- 본문 바로가기 영역  -->
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+  <!-- //본문 바로가기 영역  -->
+
+  <!-- header -->
+  <div id="header"></div>
+  <!-- //header -->
+
+  <main id="container">
+    <div class="inner">
+        <div class="contents contents-box contents-box-shadow">
+
+          <div class="conts-hd search-top-box">
+            <div class="filter-section">
+                <i class="svg-icon ico-filter-type2"></i>
+                <div class="btn-group">
+                  <div class="krds-check-area">
+                    <div class="krds-form-check">
+                      <input type="checkbox" name="chk_1" id="chk_1" checked>
+                      <label for="chk_1">전체</label>
+                      <span class="count"><em>48</em>개</span>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="checkbox" name="chk_1" id="chk_2">
+                      <label for="chk_2">승인</label>
+                      <span class="count"><em>48</em>개</span>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="checkbox" name="chk_1" id="chk_3">
+                      <label for="chk_3">미승인</label>
+                      <span class="count"><em>48</em>개</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="sch-form-wrap flex-inline">
+              <div class="input-group">
+                <select class="krds-form-select medium" title="검색 조건">
+                  <option value="">전체</option>
+                  <option value="">부서명</option>
+                  <option value="">아이디</option>
+                  <option value="">연락처</option>
+                  <option value="">이메일</option>
+                </select>
+                <div class="sch-input">
+                  <input type="text" class="krds-input medium" placeholder="검색어를 입력해주세요" title="검색어 입력">
+                  <button type="button" class="krds-btn medium icon ico-search">
+                    <span class="sr-only">검색</span>
+                    <i class="svg-icon ico-sch"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="conts-area">
+            <div class="search-list-top">
+              <ul class="sch-info" aria-live="polite">
+                <li>사업신청 목록 <span class="point">22,459</span>건</li>
+              </ul>
+              <ul class="sch-sort">
+                <li class="m-hide">
+                  <strong class="sort-label"><label for="search_result_count">목록 표시 개수</label></strong>
+                  <select class="krds-form-select-sort" id="search_result_count">
+                    <option>15개</option>
+                    <option>10개</option>
+                  </select>
+                </li>
+                <li>
+                  <div class="w-sort-btn">
+                     <a href="javascript:void(0)" class="krds-btn small secondary">엑셀 다운로드 <i class="svg-icon ico-down"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="krds-table-wrap">
+              <table class="tbl col data center" data-table="application-list">
+                <caption>사업신청 목록 표</caption>
+                <colgroup>
+                  <col style="width: 2%;">
+                  <col style="width: 8%;">
+                  <col style="width: 6%;">
+                  <col style="width: 6%;">
+                  <col style="width: 10%;">
+                  <col style="width: 4%;">
+                  <col style="width: 5%;">
+                  <col style="width: 5%;">
+                  <col style="width: 2%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <div class="krds-form-check">
+                        <input type="checkbox" id="checkAll">
+                        <label for="checkAll"><span class="sr-only">전체 선택</span></label>
+                      </div>
+                    </th>
+                    <th scope="col">부서명</th>
+                    <th scope="col">이름</th>
+                    <th scope="col">연락처(사무실)</th>
+                    <th scope="col">이메일</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">등록일</th>
+                    <th scope="col">최종접속일</th>
+                    <th scope="col">관리</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="krds-form-check">
+                        <input type="checkbox" class="checkGroup" id="r1" />
+                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                      </div>
+                    </td>
+                    <td>
+                        <div class="tooltip-hs">
+                         <p class="tooltip-tt long-txt">민주시민교육과</p>
+                        </div>
+                    </td>
+                    <td>
+                       <input type="text" class="krds-input small aling-center" value="홍길동">
+                    </td>
+                    <td>
+                      <input type="text" class="krds-input small aling-center" value="010-1234-1234">
+                    </td>
+                    <td>
+                        <div class="tooltip-hs">
+                         <p class="tooltip-tt long-txt">a1234@cne.co.kr</p>
+                        </div>
+                    </td>
+                    <td>
+                      <select class="krds-form-select small judge-result" title="심사결과 선택">
+                        <option value="selected" selected>승인</option>
+                        <option value="rejected" >미승인</option>
+                      </select>
+                    </td>
+                    <td>2025-07-24</td>
+                    <td>2025-07-24</td>
+                    <td>
+                      <a href="javascript:void(0)" class="krds-btn small line" title="수정">
+                          <i class="svg-icon ico-edit">수정</i>
+                      </a>
+                    </td>
+                  </tr>
+                  <!--2-->
+
+                  <!--3-->
+
+                  <!--4-->
+
+                  <!--5-->
+
+                </tbody>
+              </table>
+            </div>
+
+            <div class="page-btn-wrap ">
+              <div class="btn-wrap">
+                <a href="javascript:void(0)" class="krds-btn small tertiary">선택수정</a>
+                <a href="javascript:void(0)" class="krds-btn small tertiary">선택삭제</a>
+              </div>
+            </div>
+          </div>
+          <div id="pagination" class="conts-ft"></div>
+        </div>
+    </div>
+  </main>
+
+<!-- footer -->
+  <div id="footer"></div>
+<!-- //footer -->
+
+</div>
+
+</body>
+</html>
