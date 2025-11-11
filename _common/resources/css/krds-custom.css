@@ -22,6 +22,10 @@
 
 
 /* 정렬 */
+.flex-dire-row {flex-direction: row;}
+.flex-dire-col {flex-direction: column;}
+.flex-dire-row-rev {flex-direction: row-reverse;}
+.flex-dire-col-rev {flex-direction: column-reverse;}
 
 .flex-justify-center {justify-content: center;}
 .flex-justify-start {justify-content: flex-start;}
@@ -29,23 +33,122 @@
 .flex-justify-between {justify-content: space-between;}
 
 
-/* 라인 버튼*/
-.krds-btn.line {padding:0 .7rem;border-color:var(--krds-color-light-gray-20);background-color: var(--krds-color-light-alpha-white100);}
-.krds-btn.line:active,
-.krds-btn.line:hover {border-color:var(--krds-color-light-primary-30);background-color:var(--krds-color-light-primary-5);}
-.krds-btn.line:hover > i.svg-icon {background-color:var(--krds-color-light-primary-60);}
-.krds-btn.line .svg-icon {background-color: var(--krds-light-color-text-basic);}
-.krds-btn.line.small .svg-icon {width: var(--krds-icon--size-large);height: var(--krds-icon--size-large);}
-
-
-
-/* 테이블 */
+/* ========================================
+ * Table
+ * ====================================== */
 .krds-table-wrap .tbl.data.center thead th,
 .krds-table-wrap .tbl.data.center tbody td {text-align:center;}
-.krds-table-wrap .tbl.data.center thead th.left,
-.krds-table-wrap .tbl.data.center tbody td.left {text-align:left;}
-.krds-table-wrap .tbl.data.center thead th.right,
-.krds-table-wrap .tbl.data.center tbody td.right {text-align:right;}
+
+.krds-table-wrap .tbl.data thead th {
+  padding: var(--krds-table--data-thead-th-padding) 1rem;
+}
+
+.krds-table-wrap .krds-form-check {
+  justify-content: center;
+}
+
+.krds-table-wrap td i.svg-icon {
+  width: var(--krds-size-height-5);
+  height: var(--krds-size-height-5);
+}
+
+.krds-table-wrap td .data-amount {
+  font-size: var(--krds-pc-font-size-label-medium);
+  text-align: right;
+}
+
+.krds-table-wrap td .data-amount::placeholder {
+  font-size: 1.5rem;
+  color: var(--krds-color-high-contrast-gray-30);
+  font-weight: var(--c-font-weight-3);
+}
+
+.krds-table-wrap td p.data-amount {
+  padding-right: 1rem;
+}
+
+.krds-table-wrap td .krds-form-select.small {
+  padding: 0 var(--krds-padding-5);
+}
+/* ========================================
+ * Project Name 오버 시 Tooltip
+ * ====================================== */
+.project-name {
+  text-align: left;
+  min-width: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.project-name .info-top {
+  margin-bottom: 0.3rem;
+  color: var(--krds-light-color-text-subtle);
+}
+
+.project-name strong {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-weight: var(--c-font-weight-6);
+  white-space: nowrap;
+  max-width: 480px;
+}
+
+.project-name.krds-tooltip.tooltip-vertical:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  background: var(--krds-color-light-gray-90);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: var(--krds-radius-small3);
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: normal;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.project-name.krds-tooltip.tooltip-vertical:hover::before {
+  content: "";
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translateY(-50%) rotate(-180deg);
+  border: 6px solid transparent;
+  border-top-color: var(--krds-color-light-gray-90);
+}
+
+.ellipsis {
+  cursor: default;
+}
+
+
+/* 기본뱃지 커스텀 */
+.krds-badge.custom-bd {min-width:7.6rem}
+.krds-badge.custom-bd.bg-light-disabled {
+    font-weight: var(--c-font-weight-3);
+    background-color: var(--krds-color-high-contrast-gray-10);
+    color: var(--krds-color-high-contrast-gray-40);
+}
+
+/* 아이콘 뱃지 - 상태표시 */
+.krds-badge.custom-bd:has(i[class*="svg-icon"]) {
+    width: auto;
+    height: auto;
+    min-width: initial;
+    padding: .7rem;
+    border: 1px solid var(--krds-color-light-gray-20);
+    background-color: var(--krds-color-light-alpha-white100);
+}
+.krds-badge.custom-bd:has(i[class*="svg-icon"]).small{
+    height: var(--krds-size-height-6);
+}
 
 /* 사업 뱃지 */
 .krds-badge.badge {border-radius:0;border:1px solid;padding:0.2rem 0.6rem;font-size:1.5rem;height:2.8rem;background-color:var(--krds-light-color-background-white);}
@@ -61,12 +164,21 @@
 .krds-badge.badge[data-name="project05"] {border-color:var(--krds-light-color-border-point);color:var(--krds-color-light-point-60);}
 .krds-badge.badge[data-name="project05"]::after {content:'특교·추경신규사업';}
 
+/* 라인 버튼*/
+.krds-btn.line {padding:0 .7rem;border-color:var(--krds-color-light-gray-20);background-color: var(--krds-color-light-alpha-white100);}
+.krds-btn.line:active,
+.krds-btn.line:hover {border-color:var(--krds-color-light-primary-30);background-color:var(--krds-color-light-primary-5);}
+.krds-btn.line:hover > i.svg-icon {background-color:var(--krds-color-light-primary-60);}
+.krds-badge.small .svg-icon,
+.krds-btn.line.small .svg-icon {width: var(--krds-icon--size-large);height: var(--krds-icon--size-large);}
+.krds-btn.line .svg-icon {background-color: var(--krds-light-color-text-basic);}
+
 /* 아이콘 */
 .svg-icon {-webkit-mask-repeat: no-repeat;-webkit-mask-position: center center;-webkit-mask-size: contain;mask-repeat: no-repeat;mask-position: center center;mask-size: contain;}
 .svg-icon.disabled {background-color: var(--krds-color-light-gray-20);}
 .svg-icon.white {background-color:var(--krds-light-color-icon-inverse);}
 .svg-icon.blue {background-color:var(--krds-light-color-icon-primary);}
-[class$="-disabled"] {background-color: var(--krds-light-color-icon-gray-fill);}
+[class$="-disabled"] {background-color: var(--krds-light-color-icon-gray-fill) !important;}
 [class$="-fill"] {-webkit-mask-image: none;mask-image: none;background-color: transparent !important;background-size: contain;background-repeat: no-repeat;-webkit-mask: none;mask: none;}
 i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
 
