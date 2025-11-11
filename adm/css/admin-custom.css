@@ -134,39 +134,17 @@ input[disabled],
 }
 
 /* ========================================
- * Table
- * ====================================== */
-/* .krds-table-wrap .tbl.data thead th {
-  padding: var(--krds-table--data-thead-th-padding) 1rem;
+* Table
+* ====================================== */
+.krds-table-wrap .tbl.data.center thead th,
+.krds-table-wrap .tbl.data.center tbody td {
+  padding: var(--krds-table--data-tbody-padding);
 }
 
-.krds-table-wrap .krds-form-check {
-  justify-content: center;
+.krds-table-wrap td .data-amount:first-child:not(p.data-amount) {
+  margin-bottom:.4rem;
 }
 
-.krds-table-wrap td i.svg-icon {
-  width: var(--krds-size-height-5);
-  height: var(--krds-size-height-5);
-}
-
-.krds-table-wrap td .data-amount {
-  font-size: var(--krds-pc-font-size-label-medium);
-  text-align: right;
-}
-
-.krds-table-wrap td .data-amount::placeholder {
-  font-size: 1.5rem;
-  color: var(--krds-color-high-contrast-gray-30);
-  font-weight: var(--c-font-weight-3);
-}
-
-.krds-table-wrap td p.data-amount {
-  padding-right: 1rem;
-}
-
-.krds-table-wrap td .krds-form-select.small {
-  padding: 0 var(--krds-padding-5);
-} */
 
 /* ========================================
  * Search List Top / Sort Area
@@ -455,63 +433,6 @@ input[disabled],
   background-color: var(--krds-color-light-gray-90);
 }
 
-/* ========================================
- * Project Name 오버 시 Tooltip
- * ====================================== */
-/* .project-name {
-  text-align: left;
-  min-width: 0;
-  position: relative;
-  overflow: visible;
-}
-
-.project-name .info-top {
-  margin-bottom: 0.3rem;
-  color: var(--krds-light-color-text-subtle);
-}
-
-.project-name strong {
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  font-weight: var(--c-font-weight-6);
-  white-space: nowrap;
-  max-width: 480px;
-}
-
-.project-name.krds-tooltip.tooltip-vertical:hover::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: 105%;
-  left: 50%;
-  width: 100%;
-  transform: translateX(-50%);
-  background: var(--krds-color-light-gray-90);
-  color: #fff;
-  padding: 8px 10px;
-  border-radius: var(--krds-radius-small3);
-  font-size: 14px;
-  line-height: 1.4;
-  white-space: normal;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.project-name.krds-tooltip.tooltip-vertical:hover::before {
-  content: "";
-  position: absolute;
-  top: 95%;
-  left: 50%;
-  transform: translateY(-50%) rotate(-180deg);
-  border: 6px solid transparent;
-  border-top-color: var(--krds-color-light-gray-90);
-}
-
-.ellipsis {
-  cursor: default;
-} */
 
 
 /* ========================================
@@ -938,7 +859,6 @@ input[disabled],
 /* ========================================
  * POP-UP
  * ====================================== */
-
 .thumbnail {
   width: 15rem;
   margin: 0 auto;
@@ -946,14 +866,58 @@ input[disabled],
 
 .krds-table-wrap .krds-btn.link {
   display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    font-weight: var(--c-font-weight-6);
-    max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-weight: var(--c-font-weight-6);
+  max-width: 280px;
 }
 
 .krds-table-wrap .krds-btn.link .underline {
   white-space: nowrap;
+}
+
+
+/* ========================================
+* list 페이지 테이블
+* ====================================== */
+.krds-table-wrap .tbl[data-table="application-list"] .project-name strong {max-width:480px;} /*사업신청*/
+.krds-table-wrap .tbl[data-table="program-list"] .project-name strong {max-width:340px;} /*공모사업*/
+
+
+
+.krds-form-check input[type=radio]:disabled ~ label:before,
+.krds-form-check input[type=checkbox]:disabled ~ label:before {
+  background-color: var(--krds-color-high-contrast-gray-10) !important;
+}
+
+
+
+/* 공통 베이스 */
+.judge-result {
+  transition: background-color .2s, border-color .2s, color .2s, box-shadow .2s;
+  appearance: none;
+}
+
+/* ▶ 심사중 (대기 / 경고 상태 → Warning, 노랑 계열) */
+.judge-result:has(option:checked[value="pending"]) {
+  background-color: var(--krds-color-light-warning-5);
+  border-color: var(--krds-color-light-warning-40);
+  color: var(--krds-color-light-warning-50);
+  box-shadow: 0 0 0 2px var(--krds-light-color-alpha-shadow1);
+}
+
+/* ▶ 선정 (완료 / 성공 상태 → Success, 초록 계열) */
+.judge-result:has(option:checked[value="selected"]) {
+  background-color: var(--krds-color-light-success-5);
+  border-color: var(--krds-color-light-success-40);
+  color: var(--krds-color-light-success-50);
+}
+
+/* ▶ 미선정 (거절 / 실패 상태 → Danger, 빨강 계열) */
+.judge-result:has(option:checked[value="rejected"]) {
+  background-color: var(--krds-color-light-danger-5);
+  border-color: var(--krds-color-light-danger-40);
+  color: var(--krds-color-light-danger-50);
 }
