@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">전체사업신청 최고관리자 application-admin-all-list</title>
+  <title th:text="${pageTitle}">전체사업신청 사업담당 application-manage-list</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -173,6 +173,7 @@
                   <col style="width:5%;">
                   <col style="width:8%;">
                   <col style="width:5%;">
+                  <col style="width:5%;">
                 </colgroup>
                 <thead>
                   <tr>
@@ -192,6 +193,7 @@
                     <th scope="col">신청서</th>
                     <th scope="col">심사결과</th>
                     <th scope="col">결과보고</th>
+                    <th scope="col">비고</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -245,7 +247,9 @@
                       </select>
                     </td>
                     <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
+                    <td></td>
                   </tr>
+                  <!--2-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -296,7 +300,9 @@
                       </select>
                     </td>
                     <td><i class="svg-icon ico-success-fill">제출</i></td>
+                    <td></td>
                   </tr>
+                  <!--3-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -347,7 +353,9 @@
                       </select>
                     </td>
                     <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
+                    <td></td>
                   </tr>
+                  <!--4-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -398,7 +406,9 @@
                       </select>
                     </td>
                     <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
+                    <td></td>
                   </tr>
+                  <!--5-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -449,7 +459,9 @@
                       </select>
                     </td>
                     <td><i class="svg-icon ico-success-fill">제출</i></td>
+                    <td></td>
                   </tr>
+                  <!--6-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -500,7 +512,13 @@
                       </select>
                     </td>
                     <td><i class="svg-icon ico-danger-fill">미제출</i></td>
+                    <td>
+                        <a href="javascript:void(0)" class="krds-btn small line" title="미선정 사유 작성 전">
+                            <i class="svg-icon ico-edit2-disabled"></i>
+                        </a>
+                    </td>
                   </tr>
+                  <!--7-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -551,6 +569,11 @@
                       </select>
                     </td>
                     <td><i class="svg-icon ico-danger-fill">미제출</i></td>
+                    <td>
+                        <a href="javascript:void(0)" class="krds-btn small line" title="미선정 사유 작성 후">
+                            <i class="svg-icon ico-edit2-fill"></i>
+                        </a>
+                    </td>
                   </tr>
                 </tbody>
               </table>

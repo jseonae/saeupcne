@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">전체사업신청 최고관리자 application-admin-all-list</title>
+  <title th:text="${pageTitle}">전체사업신청 지원청 application-all-list</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -341,9 +341,9 @@
                     </td>
                     <td>
                       <select class="krds-form-select small judge-result" title="심사결과 선택">
-                        <option value="pending" >심사중</option>
+                        <option value="pending" selected>심사중</option>
                         <option value="selected" >선정</option>
-                        <option value="rejected" selected>미선정</option>
+                        <option value="rejected" >미선정</option>
                       </select>
                     </td>
                     <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
@@ -571,7 +571,6 @@
               <div class="btn-wrap">
                 <a href="javascript:void(0)" class="krds-btn small tertiary">선택수정</a>
                 <a href="javascript:void(0)" class="krds-btn small tertiary">선택삭제</a>
-                <a href="javascript:void(0)" class="krds-btn small tertiary">선택SMS발송</a>
               </div>
             </div>
           </div>

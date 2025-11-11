@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">전체사업신청 최고관리자 application-admin-all-list</title>
+  <title th:text="${pageTitle}">사업신청list 사업담당 application-selected-list</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -163,16 +163,15 @@
                 <caption>사업신청 목록 표</caption>
                 <colgroup>
                   <col style="width:2%;">
-                  <col style="width:5%;">
-                  <col style="width:4%;">
+                  <col style="width: 6%;">
+                  <col style="width: 5%;">
                   <col>
-                  <col style="width:11%;">
-                  <col style="width:9%;">
-                  <col style="width:10%;">
-                  <col style="width:8%;">
-                  <col style="width:5%;">
-                  <col style="width:8%;">
-                  <col style="width:5%;">
+                  <col style="width: 10%;">
+                  <col style="width: 9%;">
+                  <col style="width: 11%;">
+                  <col style="width: 8%;">
+                  <col style="width: 6%;">
+                  <col style="width: 8%;">
                 </colgroup>
                 <thead>
                   <tr>
@@ -191,7 +190,6 @@
                     <th scope="col">등록일</th>
                     <th scope="col">신청서</th>
                     <th scope="col">심사결과</th>
-                    <th scope="col">결과보고</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -207,7 +205,6 @@
                     <td>
                       <div class="td-in-col2 project-name tooltip-hs">
                         <p class="info-top">
-                          <span class="krds-badge small badge" data-name="project01"></span>
                           <span>2026-개방형-001</span>
                         </p>
                         <strong class="tooltip-tt">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
@@ -240,12 +237,12 @@
                     <td>
                       <select class="krds-form-select small judge-result" title="심사결과 선택">
                         <option value="pending" selected>심사중</option>
-                        <option value="selected" >선정</option>
-                        <option value="rejected" >미선정</option>
+                        <option value="selected">선정</option>
+                        <option value="rejected">미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
                   </tr>
+                  <!--2-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -258,7 +255,6 @@
                     <td>
                       <div class="td-in-col2 project-name tooltip-hs">
                         <p class="info-top">
-                          <span class="krds-badge small badge" data-name="project02"></span>
                           <span>2026-개방형-002</span>
                         </p>
                         <strong class="tooltip-tt">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
@@ -292,11 +288,11 @@
                       <select class="krds-form-select small judge-result" title="심사결과 선택">
                         <option value="pending" >심사중</option>
                         <option value="selected" selected>선정</option>
-                        <option value="rejected" >미선정</option>
+                        <option value="rejected">미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-success-fill">제출</i></td>
                   </tr>
+                  <!--3-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -309,7 +305,6 @@
                     <td>
                       <div class="td-in-col2 project-name tooltip-hs">
                         <p class="info-top">
-                          <span class="krds-badge small badge" data-name="project03"></span>
                           <span>2026-개방형-003</span>
                         </p>
                         <strong class="tooltip-tt">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
@@ -346,8 +341,8 @@
                         <option value="rejected" selected>미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
                   </tr>
+                  <!--4-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -360,7 +355,6 @@
                     <td>
                       <div class="td-in-col2 project-name tooltip-hs">
                         <p class="info-top">
-                          <span class="krds-badge small badge" data-name="project04"></span>
                           <span>2026-개방형-004</span>
                         </p>
                         <strong class="tooltip-tt">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영 개방형 사업</strong>
@@ -392,13 +386,13 @@
                     </td>
                     <td>
                       <select class="krds-form-select small judge-result" title="심사결과 선택">
-                        <option value="pending" selected>심사중</option>
+                        <option value="pending" >심사중</option>
                         <option value="selected" >선정</option>
-                        <option value="rejected" >미선정</option>
+                        <option value="rejected" selected>미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
                   </tr>
+                  <!--5-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -411,7 +405,6 @@
                     <td>
                       <div class="td-in-col2 project-name tooltip-hs">
                         <p class="info-top">
-                          <span class="krds-badge small badge" data-name="project05"></span>
                           <span>2026-개방형-005</span>
                         </p>
                         <strong class="tooltip-tt">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
@@ -448,8 +441,8 @@
                         <option value="rejected" >미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-success-fill">제출</i></td>
                   </tr>
+                  <!--6-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -462,7 +455,6 @@
                     <td>
                       <div class="td-in-col2 project-name tooltip-hs">
                         <p class="info-top">
-                          <span class="krds-badge small badge" data-name="project01"></span>
                           <span>2026-개방형-006</span>
                         </p>
                         <strong class="tooltip-tt">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
@@ -499,8 +491,8 @@
                         <option value="rejected" >미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-danger-fill">미제출</i></td>
                   </tr>
+                  <!--7-->
                   <tr>
                     <td>
                       <div class="krds-form-check">
@@ -513,7 +505,6 @@
                     <td>
                       <div class="td-in-col2 project-name tooltip-hs">
                         <p class="info-top">
-                          <span class="krds-badge small badge" data-name="project01"></span>
                           <span>2026-개방형-007</span>
                         </p>
                         <strong class="tooltip-tt">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
@@ -550,7 +541,6 @@
                         <option value="rejected" >미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-danger-fill">미제출</i></td>
                   </tr>
                 </tbody>
               </table>
@@ -571,7 +561,6 @@
               <div class="btn-wrap">
                 <a href="javascript:void(0)" class="krds-btn small tertiary">선택수정</a>
                 <a href="javascript:void(0)" class="krds-btn small tertiary">선택삭제</a>
-                <a href="javascript:void(0)" class="krds-btn small tertiary">선택SMS발송</a>
               </div>
             </div>
           </div>

@@ -70,14 +70,26 @@
 .krds-table-wrap td .krds-form-select.small {
   padding: 0 var(--krds-padding-5);
 }
+
+.td-in-col2 {
+    display: inline-block;
+}
+.td-in-col2 > p:not(.info-top, .data-amount) {
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+
+
 /* ========================================
  * Project Name 오버 시 Tooltip
  * ====================================== */
 .project-name {
   text-align: left;
-  min-width: 0;
-  position: relative;
-  overflow: visible;
 }
 
 .project-name .info-top {
@@ -93,10 +105,15 @@
   -webkit-line-clamp: 1;
   font-weight: var(--c-font-weight-6);
   white-space: nowrap;
-  max-width: 480px;
 }
 
-.project-name.krds-tooltip.tooltip-vertical:hover::after {
+.tooltip-hs {
+  min-width: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.tooltip-hs.krds-tooltip.tooltip-vertical:hover::after {
   content: attr(data-tooltip);
   position: absolute;
   top: 105%;
@@ -114,7 +131,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.project-name.krds-tooltip.tooltip-vertical:hover::before {
+.tooltip-hs.krds-tooltip.tooltip-vertical:hover::before {
   content: "";
   position: absolute;
   top: 95%;
@@ -138,7 +155,7 @@
 }
 
 /* 아이콘 뱃지 - 상태표시 */
-.krds-badge.custom-bd:has(i[class*="svg-icon"]) {
+.krds-badge.icon-bd {
     width: auto;
     height: auto;
     min-width: initial;
@@ -146,8 +163,14 @@
     border: 1px solid var(--krds-color-light-gray-20);
     background-color: var(--krds-color-light-alpha-white100);
 }
-.krds-badge.custom-bd:has(i[class*="svg-icon"]).small{
+.krds-badge.icon-bd.small{
     height: var(--krds-size-height-6);
+}
+
+/* 아이콘 + 텍스트 뱃지 - 상태표시 */
+.krds-badge.text-bd {
+    gap: var(--krds-gap-1);
+    font-size: var(--krds-badge--pc-font-size-large);
 }
 
 /* 사업 뱃지 */
@@ -168,10 +191,7 @@
 .krds-btn.line {padding:0 .7rem;border-color:var(--krds-color-light-gray-20);background-color: var(--krds-color-light-alpha-white100);}
 .krds-btn.line:active,
 .krds-btn.line:hover {border-color:var(--krds-color-light-primary-30);background-color:var(--krds-color-light-primary-5);}
-.krds-btn.line:hover > i.svg-icon {background-color:var(--krds-color-light-primary-60);}
-.krds-badge.small .svg-icon,
-.krds-btn.line.small .svg-icon {width: var(--krds-icon--size-large);height: var(--krds-icon--size-large);}
-.krds-btn.line .svg-icon {background-color: var(--krds-light-color-text-basic);}
+
 
 /* 아이콘 */
 .svg-icon {-webkit-mask-repeat: no-repeat;-webkit-mask-position: center center;-webkit-mask-size: contain;mask-repeat: no-repeat;mask-position: center center;mask-size: contain;}
@@ -181,6 +201,12 @@
 [class$="-disabled"] {background-color: var(--krds-light-color-icon-gray-fill) !important;}
 [class$="-fill"] {-webkit-mask-image: none;mask-image: none;background-color: transparent !important;background-size: contain;background-repeat: no-repeat;-webkit-mask: none;mask: none;}
 i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
+
+.krds-btn.line .svg-icon {background-color: var(--krds-light-color-text-basic);}
+.krds-btn.line:hover > i.svg-icon:not([class$="-fill"]) {background-color:var(--krds-color-light-primary-50)!important;}
+.krds-badge.small .svg-icon,
+.krds-btn.line.small .svg-icon {width: var(--krds-icon--size-large);height: var(--krds-icon--size-large);}
+
 
 .svg-icon.medium {
     width: var(--krds-icon--size-medium);
@@ -263,7 +289,7 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
     -webkit-mask-image: url(../../resources/img/ico_edit.svg);
     mask-image: url(../../resources/img/ico_edit.svg);
 }
-.svg-icon.ico-edit-type2 {
+.svg-icon.ico-edit2 {
     -webkit-mask-image: url(../../resources/img/ico_edit_type2.svg);
     mask-image: url(../../resources/img/ico_edit_type2.svg);
 }
@@ -395,6 +421,17 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
     -webkit-mask-image: url(../../resources/img/ico_checkbox_line.svg);
     mask-image: url(../../resources/img/ico_checkbox_line.svg);
 }
+.svg-icon.ico-talk-disabled {
+    -webkit-mask-image: url(../../resources/img/ico_talk.svg);
+    mask-image: url(../../resources/img/ico_talk.svg);
+}
+.svg-icon.ico-edit2-disabled {
+    -webkit-mask-image: url(../../resources/img/ico_edit_type2.svg);
+    mask-image: url(../../resources/img/ico_edit_type2.svg);
+}
+.svg-icon.ico-talk-fill {
+    background-image: url(../../resources/img/ico_talk_active.svg);
+}
 .svg-icon.ico-cmpdisabled-fill {
     background-image: url(../../resources/img/ico_complete_disabled.svg);
 }
@@ -445,6 +482,9 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
 }
 .svg-icon.ico-pdf-fill {
     background-image: url(../../resources/img/ico_pdf.svg);
+}
+.svg-icon.ico-edit2-fill {
+    background-image: url(../../resources/img/ico_edit_type2_active.svg);
 }
 
 
