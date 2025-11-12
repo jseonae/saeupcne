@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">대시보드 최고관리자</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+
+</head>
+<body>
+
+<div id="wrap" class="g-wrap">
+
+  <!-- 본문 바로가기 영역  -->
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+  <!-- //본문 바로가기 영역  -->
+
+  <!-- header -->
+  <div id="header"></div>
+  <!-- //header -->
+
+  <main id="container">
+    <div class="inner">
+        <div class="contents contents-box contents-box-shadow">
+          <div class="conts-hd">콘텐츠 헤드</div>
+          <div class="conts-area">콘텐츠 바디</div>
+          <div class="conts-ft">콘텐츠 푸터</div>
+        </div>
+    </div>
+  </main>
+
+<!-- footer -->
+  <div id="footer"></div>
+<!-- //footer -->
+
+</div>
+
+</body>
+</html>

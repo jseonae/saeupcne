@@ -892,6 +892,7 @@ input[disabled],
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   font-weight: var(--c-font-weight-6);
   max-width: 280px;
 }
