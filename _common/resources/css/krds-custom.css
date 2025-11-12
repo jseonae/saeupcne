@@ -84,6 +84,7 @@
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
 }
 
 .tooltip-hs > p.long-txt,
@@ -110,6 +111,7 @@
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   font-weight: var(--c-font-weight-6);
   white-space: nowrap;
 }
