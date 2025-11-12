@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">회원목록(사업) 최고관리자 member-supervisor-list</title>
+  <title th:text="${pageTitle}">회원목록(지원청) 최고관리자 member-program-supervisor-list</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -72,6 +72,14 @@
             </div>
             <div class="sch-form-wrap flex-inline">
               <div class="input-group">
+                <select class="krds-form-select medium" title="지역 선택">
+                  <option value="">전체</option>
+                  <option value="">공주</option>
+                  <option value="">당진</option>
+                  <option value="">홍성</option>
+                  <option value="">논산계룡</option>
+                  <option value="">천안</option>
+                </select>
                 <select class="krds-form-select medium" title="검색 조건">
                   <option value="">전체</option>
                   <option value="">부서명</option>
@@ -93,7 +101,7 @@
           <div class="conts-area">
             <div class="search-list-top">
               <ul class="sch-info" aria-live="polite">
-                <li class="list-title">교육청(본청) 총<span class="point">22,459</span>명 <em class="description">목록에서 수정하신 사항은 선택 후 선택수정을 클릭해야 내용이 저장됩니다.</em></li>
+                <li class="list-title">지원청 총<span class="point">22,459</span>명 <em class="description">목록에서 수정하신 사항은 선택 후 선택수정을 클릭해야 내용이 저장됩니다.</em></li>
               </ul>
               <ul class="sch-sort">
                 <li class="m-hide">
@@ -116,13 +124,14 @@
                 <caption>회원 목록 표</caption>
                 <colgroup>
                   <col style="width: 2%;">
-                  <col style="width: 8%;">
+                  <col style="width: 4%;">
+                  <col style="width: 6%;">
                   <col style="width: 6%;">
                   <col style="width: 6%;">
                   <col style="width: 10%;">
                   <col style="width: 4%;">
-                  <col style="width: 5%;">
-                  <col style="width: 5%;">
+                  <col style="width: 4%;">
+                  <col style="width: 4%;">
                   <col style="width: 2%;">
                 </colgroup>
                 <thead>
@@ -133,6 +142,7 @@
                         <label for="checkAll"><span class="sr-only">전체 선택</span></label>
                       </div>
                     </th>
+                    <th scope="col">지역</th>
                     <th scope="col">부서명</th>
                     <th scope="col">이름</th>
                     <th scope="col">연락처(사무실)</th>
@@ -151,9 +161,10 @@
                         <label for="r1"><span class="sr-only">1행 선택</span></label>
                       </div>
                     </td>
+                    <td>아산</td>
                     <td>
                         <div class="tooltip-hs">
-                         <p class="tooltip-tt long-txt">민주시민교육과</p>
+                         <p class="tooltip-tt long-txt">유초등팀</p>
                         </div>
                     </td>
                     <td>
@@ -189,9 +200,10 @@
                         <label for="r1"><span class="sr-only">1행 선택</span></label>
                       </div>
                     </td>
+                    <td>아산</td>
                     <td>
                         <div class="tooltip-hs">
-                         <p class="tooltip-tt long-txt">민주시민교육과</p>
+                         <p class="tooltip-tt long-txt">유초등팀</p>
                         </div>
                     </td>
                     <td>
@@ -227,9 +239,10 @@
                         <label for="r1"><span class="sr-only">1행 선택</span></label>
                       </div>
                     </td>
+                    <td>아산</td>
                     <td>
                         <div class="tooltip-hs">
-                         <p class="tooltip-tt long-txt">민주시민교육과</p>
+                         <p class="tooltip-tt long-txt">유초등팀</p>
                         </div>
                     </td>
                     <td>
@@ -265,9 +278,10 @@
                         <label for="r1"><span class="sr-only">1행 선택</span></label>
                       </div>
                     </td>
+                    <td>아산</td>
                     <td>
                         <div class="tooltip-hs">
-                         <p class="tooltip-tt long-txt">민주시민교육과</p>
+                         <p class="tooltip-tt long-txt">유초등팀</p>
                         </div>
                     </td>
                     <td>
@@ -303,9 +317,10 @@
                         <label for="r1"><span class="sr-only">1행 선택</span></label>
                       </div>
                     </td>
+                    <td>아산</td>
                     <td>
                         <div class="tooltip-hs">
-                         <p class="tooltip-tt long-txt">민주시민교육과</p>
+                         <p class="tooltip-tt long-txt">유초등팀</p>
                         </div>
                     </td>
                     <td>

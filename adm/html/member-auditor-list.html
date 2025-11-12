@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">회원목록(사업) 최고관리자 member-supervisor-list</title>
+  <title th:text="${pageTitle}">회원목록(감사) 최고관리자 member-auditor-list</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -51,6 +51,32 @@
             <div class="filter-section">
                 <i class="svg-icon ico-filter-type2"></i>
                 <div class="btn-group">
+                  <div class="krds-check-area krds-filter-area" role="group" aria-label="팀 구분 선택">
+                    <div class="krds-form-check">
+                      <input type="radio" name="team" id="rdo-all" checked>
+                      <label for="rdo-all">전체</label>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="radio" name="team" id="rdo-team1">
+                      <label for="rdo-team1">감사1팀</label>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="radio" name="team" id="rdo-team2">
+                      <label for="rdo-team2">감사2팀</label>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="radio" name="team" id="rdo-team3">
+                      <label for="rdo-team3">감사3팀</label>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="radio" name="team" id="rdo-team4">
+                      <label for="rdo-team4">감사4팀</label>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="radio" name="team" id="rdo-team5">
+                      <label for="rdo-team5">감사5팀</label>
+                    </div>
+                  </div>
                   <div class="krds-check-area">
                     <div class="krds-form-check">
                       <input type="checkbox" name="chk_1" id="chk_1" checked>
@@ -74,7 +100,6 @@
               <div class="input-group">
                 <select class="krds-form-select medium" title="검색 조건">
                   <option value="">전체</option>
-                  <option value="">부서명</option>
                   <option value="">아이디</option>
                   <option value="">연락처</option>
                   <option value="">이메일</option>
@@ -93,7 +118,7 @@
           <div class="conts-area">
             <div class="search-list-top">
               <ul class="sch-info" aria-live="polite">
-                <li class="list-title">교육청(본청) 총<span class="point">22,459</span>명 <em class="description">목록에서 수정하신 사항은 선택 후 선택수정을 클릭해야 내용이 저장됩니다.</em></li>
+                <li class="list-title">감사 총<span class="point">25</span>명 <em class="description">목록에서 수정하신 사항은 선택 후 선택수정을 클릭해야 내용이 저장됩니다.</em></li>
               </ul>
               <ul class="sch-sort">
                 <li class="m-hide">
@@ -116,13 +141,13 @@
                 <caption>회원 목록 표</caption>
                 <colgroup>
                   <col style="width: 2%;">
-                  <col style="width: 8%;">
+                  <col style="width: 6%;">
                   <col style="width: 6%;">
                   <col style="width: 6%;">
                   <col style="width: 10%;">
                   <col style="width: 4%;">
-                  <col style="width: 5%;">
-                  <col style="width: 5%;">
+                  <col style="width: 4%;">
+                  <col style="width: 4%;">
                   <col style="width: 2%;">
                 </colgroup>
                 <thead>
@@ -134,7 +159,7 @@
                       </div>
                     </th>
                     <th scope="col">부서명</th>
-                    <th scope="col">이름</th>
+                    <th scope="col">아이디</th>
                     <th scope="col">연락처(사무실)</th>
                     <th scope="col">이메일</th>
                     <th scope="col">상태</th>
@@ -151,14 +176,8 @@
                         <label for="r1"><span class="sr-only">1행 선택</span></label>
                       </div>
                     </td>
-                    <td>
-                        <div class="tooltip-hs">
-                         <p class="tooltip-tt long-txt">민주시민교육과</p>
-                        </div>
-                    </td>
-                    <td>
-                       <input type="text" class="krds-input small aling-center" value="홍길동">
-                    </td>
+                    <td>감사1팀</td>
+                    <td>saeupcne01</td>
                     <td>
                       <input type="text" class="krds-input small aling-center" value="010-1234-1234">
                     </td>
@@ -189,14 +208,8 @@
                         <label for="r1"><span class="sr-only">1행 선택</span></label>
                       </div>
                     </td>
-                    <td>
-                        <div class="tooltip-hs">
-                         <p class="tooltip-tt long-txt">민주시민교육과</p>
-                        </div>
-                    </td>
-                    <td>
-                       <input type="text" class="krds-input small aling-center" value="홍길동">
-                    </td>
+                    <td>감사2팀</td>
+                    <td>saeupcne02</td>
                     <td>
                       <input type="text" class="krds-input small aling-center" value="010-1234-1234">
                     </td>
@@ -227,14 +240,8 @@
                         <label for="r1"><span class="sr-only">1행 선택</span></label>
                       </div>
                     </td>
-                    <td>
-                        <div class="tooltip-hs">
-                         <p class="tooltip-tt long-txt">민주시민교육과</p>
-                        </div>
-                    </td>
-                    <td>
-                       <input type="text" class="krds-input small aling-center" value="홍길동">
-                    </td>
+                    <td>감사3팀</td>
+                    <td>saeupcne03</td>
                     <td>
                       <input type="text" class="krds-input small aling-center" value="010-1234-1234">
                     </td>
@@ -265,14 +272,8 @@
                         <label for="r1"><span class="sr-only">1행 선택</span></label>
                       </div>
                     </td>
-                    <td>
-                        <div class="tooltip-hs">
-                         <p class="tooltip-tt long-txt">민주시민교육과</p>
-                        </div>
-                    </td>
-                    <td>
-                       <input type="text" class="krds-input small aling-center" value="홍길동">
-                    </td>
+                    <td>감사4팀</td>
+                    <td>saeupcne04</td>
                     <td>
                       <input type="text" class="krds-input small aling-center" value="010-1234-1234">
                     </td>
@@ -303,14 +304,8 @@
                         <label for="r1"><span class="sr-only">1행 선택</span></label>
                       </div>
                     </td>
-                    <td>
-                        <div class="tooltip-hs">
-                         <p class="tooltip-tt long-txt">민주시민교육과</p>
-                        </div>
-                    </td>
-                    <td>
-                       <input type="text" class="krds-input small aling-center" value="홍길동">
-                    </td>
+                    <td>감사5팀</td>
+                    <td>saeupcne05</td>
                     <td>
                       <input type="text" class="krds-input small aling-center" value="010-1234-1234">
                     </td>
