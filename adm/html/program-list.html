@@ -25,23 +25,21 @@
   <!-- Custom -->
   <script src="../js/admin-custom.js" defer></script>
   <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
   <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
   <link rel="stylesheet" href="../css/admin-custom.css">
-
 </head>
+
 <body>
 
 <div id="wrap" class="g-wrap">
 
-  <!-- 본문 바로가기 영역  -->
   <div id="krds-skip-link">
     <a href="#container">본문 바로가기</a>
   </div>
-  <!-- //본문 바로가기 영역  -->
 
-  <!-- header -->
-  <div id="header"></div>
-  <!-- //header -->
+  <header id="header"></header>
 
   <main id="container">
     <div class="inner">
@@ -114,7 +112,9 @@
                 </li>
                 <li>
                   <div class="w-sort-btn">
-                     <a href="javascript:void(0)" class="krds-btn small secondary">엑셀 다운로드 <i class="svg-icon ico-down"></i></a>
+                     <a class="krds-btn small secondary open-modal" data-target="modal-download-exel" title="엑셀 다운로드 사유 작성">
+                          엑셀 다운로드 <i class="svg-icon ico-down"></i>
+                     </a>
                   </div>
                 </li>
               </ul>
@@ -680,16 +680,18 @@
               </div>
             </div>
           </div>
+
           <div id="pagination" class="conts-ft"></div>
+
         </div>
     </div>
   </main>
 
-<!-- footer -->
-  <div id="footer"></div>
-<!-- //footer -->
+  <footer id="footer"></footer>
 
-</div>
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
 
 </body>
 </html>

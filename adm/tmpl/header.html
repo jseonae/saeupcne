@@ -1,75 +1,60 @@
-<header class="header">
-  <div class="header-wrapper">
-      <div class="header-content">
-          <!-- Logo -->
-          <div class="logo">    
-              <a href="../html/common-dashboard.html" target="_self" title="메인으로">
+<div class="header">
+    <div class="header-wrapper">
+        <div class="header-content">
+            <!-- Logo -->
+            <div class="logo">    
+                <a href="../html/common-dashboard.html" target="_self" title="메인으로">
                 <img src="../img/logo_wh.svg" alt="충청남도교육청 단위학교 사업선택제">
-              </a>
-          </div>
-
-          <!-- Main Navigation -->
-          <nav class="main-nav">
-              <a href="../html/member-teacher-list.html" target="_self" class="nav-item active">
-                  <span>회원관리</span>
-              </a>
-              <a href="../html/program-admin-list.html" class="nav-item" target="_self">
-                  <span>공모사업관리</span>
-              </a>
-              <a href="../html/application-admin-all-list.html" class="nav-item" target="_self">
-                  <span>사업신청관리</span>
-              </a>
-              <a href="../html/report-admin-list.html" class="nav-item" target="_self">
-                  <span>결과보고관리</span>
-              </a>
-              <a href="../html/operation-program-settings.html" class="nav-item" target="_self">
-                  <span>운영관리</span>
-              </a>
-              <a href="../html/stats-school.html" class="nav-item" target="_self">
-                  <span>통계관리</span>
-              </a>
-              <a href="../board-admin-notice-list.html" class="nav-item" target="_self">
-                  <span>게시판관리</span>
-              </a>
-          </nav>
-
-          <!-- <nav class="main-nav krds-main-menu">
-            <div class="">
-
+                </a>
             </div>
+            <!-- Main Navigation (1depth) -->
+            <nav class="main-nav depth1" id="mainNav">
+                <a href="../html/member-teacher-list.html" class="nav-item" data-menu="member">
+                    <span>회원관리</span>
+                </a>
+                <a href="../html/program-admin-list.html" class="nav-item" data-menu="program">
+                    <span>공모사업신청관리</span>
+                </a>
+                <a href="../html/application-admin-all-list.html" class="nav-item" data-menu="application">
+                    <span>사업신청관리</span>
+                </a>
+                <a href="../html/report-admin-list.html" class="nav-item has-not-depth2" data-menu="report">
+                    <span>결과보고관리</span>
+                </a>
+                <a href="../html/operation-program-settings.html" class="nav-item" data-menu="operation">
+                    <span>운영관리</span>
+                </a>
+                <a href="../html/stats-region.html" class="nav-item" data-menu="statistics">
+                    <span>통계관리</span>
+                </a>
+                <a href="../html/board-admin-notice-list.html" class="nav-item" data-menu="board">
+                    <span>게시판관리</span>
+                </a>
+            </nav>
+            <!-- User Section -->
+            <div class="user-section">
+                <div class="mypage">
+                    <div class="profile-avatar">
+                        <i class="svg-icon ico-facesmile blue"></i>
+                    </div>
+                    <a href="javascript:void(0)" class="setting-badge">
+                        <i class="svg-icon ico-setting white"></i>
+                    </a>
+                    <div class="profile-info">
+                        <p class="profile-name"><strong>홍길동</strong>님</p>
+                        <p class="profile-role">최고관리자</p>
+                    </div>
+                </div>
+                <a href="#!" class="logout-btn">
+                    <i class="svg-icon ico-logout white"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 2depth -->
+    <div class="sub-nav-wrap">
+        <nav class="sub-nav depth2" id="subNav"></nav>
+    </div>
+</div>
 
-          </nav> -->
-
-
-
-          <!-- User Section -->
-          <div class="user-section">
-              <div class="mypage">
-                  <div class="profile-avatar">
-                      <i class="svg-icon ico-facesmile blue"></i>
-                  </div>
-                  <a href="javascript:void(0)" class="setting-badge">
-                      <i class="svg-icon ico-setting white"></i>
-                  </a>
-                  <div class="profile-info">
-                      <p class="profile-name"><strong>홍길동</strong>님</p>
-                      <p class="profile-role">최고관리자</p>
-                  </div>
-              </div>
-              <a href="#!" class="logout-btn">
-                  <i class="svg-icon ico-logout white"></i>
-              </a>
-          </div>
-      </div>
-  </div>
-  <!-- Sub Navigation -->
-  <div class="sub-nav-wrap">
-    <nav class="sub-nav">
-        <a href="../html/member-teacher-list.html" target="_self" class="sub-nav-item active">단위학교 담당자</a>
-        <a href="#" target="_self" class="sub-nav-item">사업담당 장학사</a>
-        <a href="#" target="_self" class="sub-nav-item">지원청 장학사</a>
-        <a href="#" target="_self" class="sub-nav-item">감사 관리</a>
-    </nav>
-  </div>
-</header>
 

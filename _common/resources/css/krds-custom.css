@@ -39,6 +39,11 @@
 .krds-table-wrap .tbl.data.center thead th,
 .krds-table-wrap .tbl.data.center tbody td {text-align:center;}
 
+.krds-table-wrap .tbl.data.center tbody th:has(.aling-left),
+.krds-table-wrap .tbl.data.center tbody td:has(.aling-left) {text-align:left;}
+.krds-table-wrap .tbl.data.center tbody th:has(.aling-right),
+.krds-table-wrap .tbl.data.center tbody td:has(.aling-right) {text-align:right;}
+
 .krds-table-wrap .tbl.data thead th {
   padding: var(--krds-table--data-thead-th-padding) 1rem;
 }
@@ -52,6 +57,7 @@
   height: var(--krds-size-height-5);
 }
 
+.krds-table-wrap .tbl.data.center tbody td:has(.data-amount),
 .krds-table-wrap td .data-amount {
   text-align: right;
 }
@@ -76,8 +82,8 @@
     vertical-align: middle;
 }
 
-.tooltip-hs > p:not(.info-top, .data-amount),
-.td-in-col2 > p:not(.info-top, .data-amount) {
+.tooltip-hs > p:not(.info-top, .data-amount, .period),
+.td-in-col2 > p:not(.info-top, .data-amount, .period) {
     max-width: 120px;
     white-space: nowrap;
     overflow: hidden;
@@ -96,6 +102,10 @@
 /* ========================================
  * Project Name 오버 시 Tooltip
  * ====================================== */
+.krds-table-wrap .tbl.data.center tbody td:has(.project-name) {
+    text-align:left;
+}
+
 .project-name {
   text-align: left;
 }
@@ -180,6 +190,14 @@
 .krds-badge.text-bd {
     gap: var(--krds-gap-1);
     font-size: var(--krds-badge--pc-font-size-large);
+}
+
+.krds-badge.text-bd.xsmall {
+    font-size: var(--krds-mobile-font-size-body-small);
+}
+.krds-badge.text-bd.xsmall .svg-icon {
+    width: var(--krds-icon--size-medium);
+    height: var(--krds-icon--size-medium);
 }
 
 /* 사업 뱃지 */
