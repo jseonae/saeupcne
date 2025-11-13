@@ -25,23 +25,21 @@
   <!-- Custom -->
   <script src="../js/admin-custom.js" defer></script>
   <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
   <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
   <link rel="stylesheet" href="../css/admin-custom.css">
-
 </head>
+
 <body>
 
 <div id="wrap" class="g-wrap">
 
-  <!-- 본문 바로가기 영역  -->
   <div id="krds-skip-link">
     <a href="#container">본문 바로가기</a>
   </div>
-  <!-- //본문 바로가기 영역  -->
 
-  <!-- header -->
-  <div id="header"></div>
-  <!-- //header -->
+  <header id="header"></header>
 
   <main id="container">
     <div class="inner">
@@ -151,7 +149,9 @@
                         <button type="button" class="krds-btn small secondary">엑셀 업로드 <i class="svg-icon ico-upload"></i></button>
                       </label>
                      </div>
-                     <a href="javascript:void(0)" class="krds-btn small secondary">엑셀 다운로드 <i class="svg-icon ico-down"></i></a>
+                     <a class="krds-btn small secondary open-modal" data-target="modal-download-exel" title="엑셀 다운로드 사유 작성">
+                          엑셀 다운로드 <i class="svg-icon ico-down"></i>
+                     </a>
                      <a href="javascript:void(0)" download="" class="krds-btn small secondary">신청서 일괄다운로드 <i class="svg-icon ico-down"></i></a>
                   </div>
                 </li>
@@ -241,13 +241,17 @@
                     </td>
                     <td>
                       <select class="krds-form-select small judge-result" title="심사결과 선택">
-                        <option value="pending" selected>심사중</option>
+                        <option value="pending" >심사중</option>
                         <option value="selected" >선정</option>
-                        <option value="rejected" >미선정</option>
+                        <option value="rejected" selected>미선정</option>
                       </select>
                     </td>
                     <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
-                    <td></td>
+                    <td>
+                        <button class="krds-btn small line open-modal" data-target="modal-application-after" title="미선정 사유 작성 후">
+                            <i class="svg-icon ico-edit2-fill"></i>
+                        </button>
+                    </td>
                   </tr>
                   <!--2-->
                   <tr>
@@ -295,12 +299,16 @@
                     <td>
                       <select class="krds-form-select small judge-result" title="심사결과 선택">
                         <option value="pending" >심사중</option>
-                        <option value="selected" selected>선정</option>
-                        <option value="rejected" >미선정</option>
+                        <option value="selected" >선정</option>
+                        <option value="rejected" selected>미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-success-fill">제출</i></td>
-                    <td></td>
+                    <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
+                    <td>
+                        <button class="krds-btn small line open-modal" data-target="modal-application-before" title="미선정 사유 작성 전">
+                            <i class="svg-icon ico-edit2-disabled"></i>
+                        </button>
+                    </td>
                   </tr>
                   <!--3-->
                   <tr>
@@ -347,9 +355,9 @@
                     </td>
                     <td>
                       <select class="krds-form-select small judge-result" title="심사결과 선택">
-                        <option value="pending" >심사중</option>
+                        <option value="pending" selected>심사중</option>
                         <option value="selected" >선정</option>
-                        <option value="rejected" selected>미선정</option>
+                        <option value="rejected" >미선정</option>
                       </select>
                     </td>
                     <td><i class="svg-icon ico-minus disabled">해당없음</i></td>
@@ -458,7 +466,7 @@
                         <option value="rejected" >미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-success-fill">제출</i></td>
+                    <td><i class="svg-icon ico-danger-fill">미제출</i></td>
                     <td></td>
                   </tr>
                   <!--6-->
@@ -511,12 +519,8 @@
                         <option value="rejected" >미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-danger-fill">미제출</i></td>
-                    <td>
-                        <a href="javascript:void(0)" class="krds-btn small line" title="미선정 사유 작성 전">
-                            <i class="svg-icon ico-edit2-disabled"></i>
-                        </a>
-                    </td>
+                    <td><i class="svg-icon ico-success-fill">제출</i></td>
+                    <td></td>
                   </tr>
                   <!--7-->
                   <tr>
@@ -568,12 +572,8 @@
                         <option value="rejected" >미선정</option>
                       </select>
                     </td>
-                    <td><i class="svg-icon ico-danger-fill">미제출</i></td>
-                    <td>
-                        <a href="javascript:void(0)" class="krds-btn small line" title="미선정 사유 작성 후">
-                            <i class="svg-icon ico-edit2-fill"></i>
-                        </a>
-                    </td>
+                    <td><i class="svg-icon ico-success-fill">제출</i></td>
+                    <td></td>
                   </tr>
                 </tbody>
               </table>
@@ -598,16 +598,18 @@
               </div>
             </div>
           </div>
+
           <div id="pagination" class="conts-ft"></div>
+
         </div>
     </div>
   </main>
 
-<!-- footer -->
-  <div id="footer"></div>
-<!-- //footer -->
+  <footer id="footer"></footer>
 
-</div>
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
 
 </body>
 </html>

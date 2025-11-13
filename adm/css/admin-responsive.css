@@ -20,3 +20,42 @@
     display: none;
   }
 }
+
+
+
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .right-section {
+    position: static;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .left-section {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--krds-number-12) var(--krds-number-10) var(--krds-number-16) var(--krds-number-10);
+  }
+
+  .form-group-inner {
+    flex-direction: column;
+    gap: var(--krds-gap-3);
+  }
+
+  .form-group-inner.email {
+    flex-direction: column;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .info-card {
+    padding: var(--krds-number-10) var(--krds-number-9);
+  }
+}

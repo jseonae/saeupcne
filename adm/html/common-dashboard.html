@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">대시보드 최고관리자</title>
+  <title th:text="${pageTitle}">대시보드 최고관리자 common-dashboard</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -25,10 +25,11 @@
   <!-- Custom -->
   <script src="../js/admin-custom.js" defer></script>
   <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
   <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
   <link rel="stylesheet" href="../css/admin-custom.css">
-
 </head>
+
 <body>
 
 <div id="wrap" class="g-wrap">
@@ -40,7 +41,7 @@
   <!-- //본문 바로가기 영역  -->
 
   <!-- header -->
-  <div id="header"></div>
+  <header id="header"></header>
   <!-- //header -->
 
   <main id="container">
@@ -53,11 +54,13 @@
     </div>
   </main>
 
-<!-- footer -->
-  <div id="footer"></div>
-<!-- //footer -->
+  <!-- footer -->
+  <footer id="footer"></footer>
+  <!-- //footer -->
 
-</div>
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
 
 </body>
 </html>

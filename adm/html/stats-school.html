@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">학교별통계 최고관리자 stats-school</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+</head>
+
+<body>
+
+<div id="wrap" class="g-wrap">
+
+    <div id="krds-skip-link">
+        <a href="#container">본문 바로가기</a>
+    </div>
+
+    <header id="header"></header>
+
+    <main id="container">
+        <div class="inner">
+            <div class="contents contents-box contents-box-shadow">
+
+                <div class="conts-hd search-top-box">
+                <div class="filter-section">
+                    <i class="svg-icon ico-filter-type2"></i>
+                    <div class="btn-group">
+                        <div class="krds-check-area krds-filter-area" role="group" aria-label="학교 구분 선택">
+                        <div class="krds-form-check">
+                            <input type="radio" name="schoolType" id="rdo-kindergarten">
+                            <label for="rdo-kindergarten">유치원</label>
+                        </div>
+                        <div class="krds-form-check">
+                            <input type="radio" name="schoolType" id="rdo-elementary">
+                            <label for="rdo-elementary">초등학교</label>
+                        </div>
+                        <div class="krds-form-check">
+                            <input type="radio" name="schoolType" id="rdo-middle">
+                            <label for="rdo-middle">중학교</label>
+                        </div>
+                        <div class="krds-form-check">
+                            <input type="radio" name="schoolType" id="rdo-high">
+                            <label for="rdo-high">고등학교</label>
+                        </div>
+                        <div class="krds-form-check">
+                            <input type="radio" name="schoolType" id="rdo-special">
+                            <label for="rdo-special">특수학교</label>
+                        </div>
+                        <div class="krds-form-check">
+                            <input type="radio" name="schoolType" id="rdo-etc">
+                            <label for="rdo-etc">각종학교</label>
+                        </div>
+                        </div>
+                        <div class="krds-check-area">
+                        <div class="krds-form-check">
+                            <input type="checkbox" name="chk_1" id="chk_1" checked>
+                            <label for="chk_1">전체</label>
+                            <span class="count"><em>48</em>개</span>
+                        </div>
+                        <div class="krds-form-check">
+                            <input type="checkbox" name="chk_1" id="chk_2">
+                            <label for="chk_2">심사중</label>
+                            <span class="count"><em>48</em>개</span>
+                        </div>
+                        <div class="krds-form-check">
+                            <input type="checkbox" name="chk_1" id="chk_3">
+                            <label for="chk_3">선정</label>
+                            <span class="count"><em>48</em>개</span>
+                        </div>
+                        <div class="krds-form-check">
+                            <input type="checkbox" name="chk_1" id="chk_4">
+                            <label for="chk_4">미선정</label>
+                            <span class="count"><em>48</em>개</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sch-form-wrap flex-inline">
+                    <div class="input-group">
+                    <select class="krds-form-select medium" title="지역 선택">
+                        <option>전 지역</option>
+                        <option>공주</option>
+                        <option>계룡</option>
+                        <option>금산</option>
+                        <option>논산</option>
+                        <option>당진</option>
+                        <option>보령</option>
+                        <option>부여</option>
+                        <option>서산</option>
+                        <option>서천</option>
+                        <option>아산</option>
+                        <option>예산</option>
+                        <option>천안</option>
+                        <option>청양</option>
+                        <option>태안</option>
+                        <option>홍성</option>
+                    </select>
+                    <div class="sch-input">
+                        <input type="text" class="krds-input medium" placeholder="학교명을 검색해주세요." title="학교명 입력" value="삼성">
+                        <button type="button" class="krds-btn medium icon ico-search">
+                        <span class="sr-only">검색</span>
+                        <i class="svg-icon ico-sch"></i>
+                        </button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="conts-area">
+                <div class="search-list-top">
+                    <ul class="sch-info" aria-live="polite">
+                    <li>학교별 통계 총 <span class="point">22,459</span>건</li>
+                    <li>
+                        <span class="krds-badge text-bd xsmall">
+                            <i class="svg-icon ico-success-fill"></i>
+                            <span>선정</span>
+                        </span>
+                        <span class="krds-badge text-bd xsmall">
+                            <i class="svg-icon ico-danger-fill"></i>
+                            <span>미선정</span>
+                        </span>
+                        <span class="krds-badge text-bd xsmall">
+                            <i class="svg-icon ico-yeling-fill"></i>
+                            <span>심사중</span>
+                        </span>
+                    </li>
+                    </ul>
+                    <ul class="sch-sort">
+                    <li class="m-hide">
+                        <strong class="sort-label"><label for="search_result_count">목록 표시 개수</label></strong>
+                        <select class="krds-form-select-sort" id="search_result_count">
+                        <option>15개</option>
+                        <option>10개</option>
+                        </select>
+                    </li>
+                    <li>
+                        <div class="w-sort-btn">
+                            <a class="krds-btn small secondary open-modal" data-target="modal-download-exel" title="엑셀 다운로드 사유 작성">
+                                엑셀 다운로드 <i class="svg-icon ico-down"></i>
+                            </a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+
+                <div class="krds-table-wrap">
+                    <table class="tbl col data center" data-table="stats-list">
+                    <caption>학교별 사업 통계 표</caption>
+                    <colgroup>
+                        <col style="width: 2%;">
+                        <col style="width: 5%;">
+                        <col style="width: 13%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 4%;">
+                        <col style="width: 7%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">
+                                <div class="krds-form-check">
+                                    <input type="checkbox" id="checkAll">
+                                    <label for="checkAll"><span class="sr-only">전체 선택</span></label>
+                                </div>
+                            </th>
+                            <th rowspan="2">지역</th>
+                            <th rowspan="2">학교명</th>
+                            <th colspan="3">선택사업</th>
+                            <th colspan="3">선택외사업</th>
+                            <th colspan="3">개방형사업</th>
+                            <th colspan="3">자율사업</th>
+                            <th colspan="3">특교사업</th>
+                            <th rowspan="2">첨부파일</th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-success-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-danger-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-yeling-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-success-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-danger-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-yeling-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-success-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-danger-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-yeling-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-success-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-danger-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-yeling-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-success-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-danger-fill"></i></span>
+                            </th>
+                            <th>
+                                <span class="krds-badge text-bd xsmall"><i class="svg-icon ico-yeling-fill"></i></span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r1" />
+                                    <label for="r1"><span class="sr-only">행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>아산</td>
+                            <td>삼성샛별유치원</td>
+                            <td>127</td>
+                            <td>89</td>
+                            <td>34</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>12</td>
+                            <td>143</td>
+                            <td>98</td>
+                            <td>76</td>
+                            <td>23</td>
+                            <td>0</td>
+                            <td>7</td>
+                            <td>56</td>
+                            <td>41</td>
+                            <td>19</td>
+                            <td>
+                                <div class="btn-group flex-justify-center">
+                                    <a href="javascript:void(0)" download="" class="krds-btn small line" title="정산서 다운로드">
+                                        <i class="svg-icon ico-receipt"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" download="" class="krds-btn small line" title="보고서 다운로드">
+                                        <i class="svg-icon ico-tray"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--2-->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r2" />
+                                    <label for="r2"><span class="sr-only">행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>서산</td>
+                            <td>삼성유치원</td>
+                            <td>65</td>
+                            <td>31</td>
+                            <td>8</td>
+                            <td>142</td>
+                            <td>78</td>
+                            <td>95</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>49</td>
+                            <td>117</td>
+                            <td>88</td>
+                            <td>26</td>
+                            <td>0</td>
+                            <td>14</td>
+                            <td>53</td>
+                            <td>
+                                <div class="btn-group flex-justify-center">
+                                    <a href="javascript:void(0)" download="" class="krds-btn small line" title="정산서 다운로드">
+                                        <i class="svg-icon ico-receipt"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" download="" class="krds-btn small line" title="보고서 다운로드">
+                                        <i class="svg-icon ico-tray"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--3-->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r3" />
+                                    <label for="r3"><span class="sr-only">행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>태안</td>
+                            <td>삼성초등학교</td>
+                            <td>91</td>
+                            <td>0</td>
+                            <td>62</td>
+                            <td>37</td>
+                            <td>104</td>
+                            <td>71</td>
+                            <td>18</td>
+                            <td>135</td>
+                            <td>43</td>
+                            <td>0</td>
+                            <td>29</td>
+                            <td>86</td>
+                            <td>122</td>
+                            <td>55</td>
+                            <td>9</td>
+                            <td>
+                                <div class="btn-group flex-justify-center">
+                                    <a href="javascript:void(0)" download="" class="krds-btn small line" title="정산서 다운로드">
+                                        <i class="svg-icon ico-receipt"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" download="" class="krds-btn small line" title="보고서 다운로드">
+                                        <i class="svg-icon ico-tray"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--4-->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r4" />
+                                    <label for="r4"><span class="sr-only">행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>태안</td>
+                            <td>삼성초등학교병설유치원</td>
+                            <td>48</td>
+                            <td>113</td>
+                            <td>67</td>
+                            <td>21</td>
+                            <td>0</td>
+                            <td>82</td>
+                            <td>139</td>
+                            <td>94</td>
+                            <td>16</td>
+                            <td>58</td>
+                            <td>125</td>
+                            <td>33</td>
+                            <td>0</td>
+                            <td>72</td>
+                            <td>101</td>
+                            <td>
+                                <div class="btn-group flex-justify-center">
+                                    <a href="javascript:void(0)" download="" class="krds-btn small line" title="정산서 다운로드">
+                                        <i class="svg-icon ico-receipt"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" download="" class="krds-btn small line" title="보고서 다운로드">
+                                        <i class="svg-icon ico-tray"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
+
+</body>
+</html>

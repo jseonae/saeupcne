@@ -88,3 +88,26 @@ $(function () {
     }
   });
 });
+
+  /* ------------------------------------------------------------------------
+   * 셀렉트 디자인 관련
+   * --------------------------------------------------------------------- */
+// admin-custom.js 같은 공통 JS에
+$(function () {
+  const $regionSelect = $('.sch-form-wrap .input-group .krds-form-select');
+
+  function updateSelectState($select) {
+    const isFirstSelected = $select.prop('selectedIndex') === 0;
+    $select.toggleClass('completed', !isFirstSelected);
+  }
+
+  // 최초 진입 시 한 번 체크
+  $regionSelect.each(function () {
+    updateSelectState($(this));
+  });
+
+  // 선택이 바뀔 때마다 상태 갱신
+  $regionSelect.on('change', function () {
+    updateSelectState($(this));
+  });
+});

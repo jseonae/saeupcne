@@ -25,23 +25,21 @@
   <!-- Custom -->
   <script src="../js/admin-custom.js" defer></script>
   <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
   <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
   <link rel="stylesheet" href="../css/admin-custom.css">
-
 </head>
+
 <body>
 
 <div id="wrap" class="g-wrap">
 
-  <!-- 본문 바로가기 영역  -->
   <div id="krds-skip-link">
     <a href="#container">본문 바로가기</a>
   </div>
-  <!-- //본문 바로가기 영역  -->
 
-  <!-- header -->
-  <div id="header"></div>
-  <!-- //header -->
+  <header id="header"></header>
 
   <main id="container">
     <div class="inner">
@@ -49,7 +47,7 @@
 
           <div class="conts-hd search-top-box">
             <div class="filter-section">
-                <a href="javascript:void(0)" class="krds-btn small primary">신규둥록</a>
+                <a href="../html/operation-popup-edit.html" target="_self" class="krds-btn small primary">신규등록</a>
             </div>
             <div class="sch-form-wrap flex-inline">
               <div class="input-group">
@@ -138,8 +136,8 @@
                     </td>
                     <td>
                       <div class="td-in-col2">
-                        <p>2025-07-01 09:00</p>
-                        <p>2025-09-30 23:00</p>
+                        <p class="period">2025-07-01 09:00</p>
+                        <p class="period">2025-09-30 23:00</p>
                       </div>
                     </td>
                     <td>
@@ -154,8 +152,8 @@
                         <a href="javascript:void(0)" class="krds-btn small line" title="수정">
                             <i class="svg-icon ico-edit">수정</i>
                         </a>
-                        <a href="javascript:void(0)" class="krds-btn small line" title="삭제">
-                            <i class="svg-icon ico-trash">삭제</i>
+                        <a class="krds-btn small line open-modal" data-target="modal-delete-confirm" title="삭제">
+                           <i class="svg-icon ico-trash">삭제</i>
                         </a>
                       </div>
                     </td>
@@ -180,13 +178,13 @@
                     </td>
                     <td>
                       <div class="td-in-col2">
-                        <p>2025-07-01 09:00</p>
-                        <p>2025-09-30 23:00</p>
+                        <p class="period">2025-07-01 09:00</p>
+                        <p class="period">2025-09-30 23:00</p>
                       </div>
                     </td>
                     <td>
                         <a href="javascript:void(0)" class="krds-btn small link" target="_blank" title="새창열림">
-                            <span class="underline">/viewer/skin/doc.html?fn=BBS_***.pdf&rs=/viewer/result/BBSMSTR_***/</span>
+                          <span class="underline">/viewer/skin/doc.html?fn=BBS_***.pdf&rs=/viewer/result/BBSMSTR_***/</span>
                         </a>
                     </td>
                     <td>0000</td>
@@ -194,10 +192,10 @@
                     <td>
                       <div class="btn-group flex-justify-center">
                         <a href="javascript:void(0)" class="krds-btn small line" title="수정">
-                            <i class="svg-icon ico-edit">수정</i>
+                          <i class="svg-icon ico-edit">수정</i>
                         </a>
-                        <a href="javascript:void(0)" class="krds-btn small line" title="삭제">
-                            <i class="svg-icon ico-trash">삭제</i>
+                        <a class="krds-btn small line open-modal" data-target="modal-delete-confirm" title="삭제">
+                           <i class="svg-icon ico-trash">삭제</i>
                         </a>
                       </div>
                     </td>
@@ -222,8 +220,8 @@
                     </td>
                     <td>
                       <div class="td-in-col2">
-                        <p>2025-07-01 09:00</p>
-                        <p>2025-09-30 23:00</p>
+                        <p class="period">2025-07-01 09:00</p>
+                        <p class="period">2025-09-30 23:00</p>
                       </div>
                     </td>
                     <td>
@@ -238,8 +236,8 @@
                         <a href="javascript:void(0)" class="krds-btn small line" title="수정">
                             <i class="svg-icon ico-edit">수정</i>
                         </a>
-                        <a href="javascript:void(0)" class="krds-btn small line" title="삭제">
-                            <i class="svg-icon ico-trash">삭제</i>
+                        <a class="krds-btn small line open-modal" data-target="modal-delete-confirm" title="삭제">
+                           <i class="svg-icon ico-trash">삭제</i>
                         </a>
                       </div>
                     </td>
@@ -264,8 +262,8 @@
                     </td>
                     <td>
                       <div class="td-in-col2">
-                        <p>2025-07-01 09:00</p>
-                        <p>2025-09-30 23:00</p>
+                        <p class="period">2025-07-01 09:00</p>
+                        <p class="period">2025-09-30 23:00</p>
                       </div>
                     </td>
                     <td>
@@ -280,8 +278,8 @@
                         <a href="javascript:void(0)" download="" class="krds-btn small line" title="수정">
                             <i class="svg-icon ico-edit">수정</i>
                         </a>
-                        <a href="javascript:void(0)" download="" class="krds-btn small line" title="삭제">
-                            <i class="svg-icon ico-trash">삭제</i>
+                        <a class="krds-btn small line open-modal" data-target="modal-delete-confirm" title="삭제">
+                           <i class="svg-icon ico-trash">삭제</i>
                         </a>
                       </div>
                     </td>
@@ -306,8 +304,8 @@
                     </td>
                     <td>
                       <div class="td-in-col2">
-                        <p>2025-07-01 09:00</p>
-                        <p>2025-09-30 23:00</p>
+                        <p class="period">2025-07-01 09:00</p>
+                        <p class="period">2025-09-30 23:00</p>
                       </div>
                     </td>
                     <td>
@@ -322,8 +320,8 @@
                         <a href="javascript:void(0)" download="" class="krds-btn small line" title="수정">
                             <i class="svg-icon ico-edit">수정</i>
                         </a>
-                        <a href="javascript:void(0)" download="" class="krds-btn small line" title="삭제">
-                            <i class="svg-icon ico-trash">삭제</i>
+                        <a class="krds-btn small line open-modal" data-target="modal-delete-confirm" title="삭제">
+                           <i class="svg-icon ico-trash">삭제</i>
                         </a>
                       </div>
                     </td>
@@ -348,8 +346,8 @@
                     </td>
                     <td>
                       <div class="td-in-col2">
-                        <p>2025-07-01 09:00</p>
-                        <p>2025-09-30 23:00</p>
+                        <p class="period">2025-07-01 09:00</p>
+                        <p class="period">2025-09-30 23:00</p>
                       </div>
                     </td>
                     <td>
@@ -364,8 +362,8 @@
                         <a href="javascript:void(0)" class="krds-btn small line" title="수정">
                             <i class="svg-icon ico-edit">수정</i>
                         </a>
-                        <a href="javascript:void(0)" class="krds-btn small line" title="삭제">
-                            <i class="svg-icon ico-trash">삭제</i>
+                        <a class="krds-btn small line open-modal" data-target="modal-delete-confirm" title="삭제">
+                           <i class="svg-icon ico-trash">삭제</i>
                         </a>
                       </div>
                     </td>
@@ -375,21 +373,23 @@
             </div>
             <div class="page-btn-wrap">
               <div class="btn-wrap">
-                <a href="javascript:void(0)" class="krds-btn small tertiary">선택삭제</a>
-                <a href="javascript:void(0)" class="krds-btn small primary">신규둥록</a>
+                <a class="krds-btn small tertiary open-modal" data-target="modal-delete-confirm">선택삭제</a>
+                <a href="../html/operation-popup-edit.html" target="_self" class="krds-btn small primary">신규등록</a>
               </div>
             </div>
           </div>
+
           <div id="pagination" class="conts-ft"></div>
+
         </div>
     </div>
   </main>
 
-<!-- footer -->
-  <div id="footer"></div>
-<!-- //footer -->
+  <footer id="footer"></footer>
 
-</div>
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
 
 </body>
 </html>

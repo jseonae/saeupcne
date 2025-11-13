@@ -25,23 +25,21 @@
   <!-- Custom -->
   <script src="../js/admin-custom.js" defer></script>
   <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
   <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
   <link rel="stylesheet" href="../css/admin-custom.css">
-
 </head>
+
 <body>
 
 <div id="wrap" class="g-wrap">
 
-  <!-- 본문 바로가기 영역  -->
   <div id="krds-skip-link">
     <a href="#container">본문 바로가기</a>
   </div>
-  <!-- //본문 바로가기 영역  -->
 
-  <!-- header -->
-  <div id="header"></div>
-  <!-- //header -->
+  <header id="header"></header>
 
   <main id="container">
     <div class="inner">
@@ -105,7 +103,9 @@
                 </li>
                 <li>
                   <div class="w-sort-btn">
-                     <a href="javascript:void(0)" class="krds-btn small secondary">엑셀 다운로드 <i class="svg-icon ico-down"></i></a>
+                     <a class="krds-btn small secondary open-modal" data-target="modal-download-exel" title="엑셀 다운로드 사유 작성">
+                          엑셀 다운로드 <i class="svg-icon ico-down"></i>
+                     </a>
                   </div>
                 </li>
               </ul>
@@ -185,8 +185,8 @@
                   <tr>
                     <td>
                       <div class="krds-form-check">
-                        <input type="checkbox" class="checkGroup" id="r1" />
-                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                        <input type="checkbox" class="checkGroup" id="r2" />
+                        <label for="r2"><span class="sr-only">2행 선택</span></label>
                       </div>
                     </td>
                     <td>
@@ -223,8 +223,8 @@
                   <tr>
                     <td>
                       <div class="krds-form-check">
-                        <input type="checkbox" class="checkGroup" id="r1" />
-                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                        <input type="checkbox" class="checkGroup" id="r3" />
+                        <label for="r3"><span class="sr-only">3행 선택</span></label>
                       </div>
                     </td>
                     <td>
@@ -261,8 +261,8 @@
                   <tr>
                     <td>
                       <div class="krds-form-check">
-                        <input type="checkbox" class="checkGroup" id="r1" />
-                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                        <input type="checkbox" class="checkGroup" id="r4" />
+                        <label for="r4"><span class="sr-only">4행 선택</span></label>
                       </div>
                     </td>
                     <td>
@@ -299,8 +299,8 @@
                   <tr>
                     <td>
                       <div class="krds-form-check">
-                        <input type="checkbox" class="checkGroup" id="r1" />
-                        <label for="r1"><span class="sr-only">1행 선택</span></label>
+                        <input type="checkbox" class="checkGroup" id="r5" />
+                        <label for="r5"><span class="sr-only">5행 선택</span></label>
                       </div>
                     </td>
                     <td>
@@ -344,16 +344,18 @@
               </div>
             </div>
           </div>
+
           <div id="pagination" class="conts-ft"></div>
+
         </div>
     </div>
   </main>
 
-<!-- footer -->
-  <div id="footer"></div>
-<!-- //footer -->
+  <footer id="footer"></footer>
 
-</div>
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
 
 </body>
 </html>

@@ -25,23 +25,21 @@
   <!-- Custom -->
   <script src="../js/admin-custom.js" defer></script>
   <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
   <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
   <link rel="stylesheet" href="../css/admin-custom.css">
-
 </head>
+
 <body>
 
 <div id="wrap" class="g-wrap">
 
-  <!-- 본문 바로가기 영역  -->
   <div id="krds-skip-link">
     <a href="#container">본문 바로가기</a>
   </div>
-  <!-- //본문 바로가기 영역  -->
 
-  <!-- header -->
-  <div id="header"></div>
-  <!-- //header -->
+  <header id="header"></header>
 
   <main id="container">
     <div class="inner">
@@ -73,12 +71,22 @@
             <div class="sch-form-wrap flex-inline">
               <div class="input-group">
                 <select class="krds-form-select medium" title="지역 선택">
-                  <option value="">전체</option>
-                  <option value="">공주</option>
-                  <option value="">당진</option>
-                  <option value="">홍성</option>
-                  <option value="">논산계룡</option>
-                  <option value="">천안</option>
+                    <option>전 지역</option>
+                    <option>공주</option>
+                    <option>계룡</option>
+                    <option>금산</option>
+                    <option>논산</option>
+                    <option>당진</option>
+                    <option>보령</option>
+                    <option>부여</option>
+                    <option>서산</option>
+                    <option>서천</option>
+                    <option>아산</option>
+                    <option>예산</option>
+                    <option>천안</option>
+                    <option>청양</option>
+                    <option>태안</option>
+                    <option>홍성</option>
                 </select>
                 <select class="krds-form-select medium" title="검색 조건">
                   <option value="">전체</option>
@@ -113,14 +121,16 @@
                 </li>
                 <li>
                   <div class="w-sort-btn">
-                     <a href="javascript:void(0)" class="krds-btn small secondary">엑셀 다운로드 <i class="svg-icon ico-down"></i></a>
+                     <a class="krds-btn small secondary open-modal" data-target="modal-download-exel" title="엑셀 다운로드 사유 작성">
+                          엑셀 다운로드 <i class="svg-icon ico-down"></i>
+                     </a>
                   </div>
                 </li>
               </ul>
             </div>
 
             <div class="krds-table-wrap">
-              <table class="tbl col data center" data-table="application-list">
+              <table class="tbl col data center" data-table="member-list">
                 <caption>회원 목록 표</caption>
                 <colgroup>
                   <col style="width: 2%;">
@@ -359,16 +369,18 @@
               </div>
             </div>
           </div>
+
           <div id="pagination" class="conts-ft"></div>
+
         </div>
     </div>
   </main>
 
-<!-- footer -->
-  <div id="footer"></div>
-<!-- //footer -->
+  <footer id="footer"></footer>
 
-</div>
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
 
 </body>
 </html>
