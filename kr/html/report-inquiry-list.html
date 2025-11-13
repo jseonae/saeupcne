@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title th:text="${pageTitle}">사업신청조회 목록</title>
+<title th:text="${pageTitle}">결과보고 목록</title>
 
 
 <!-- Pretendard GOV -->
@@ -17,11 +17,9 @@
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="../js/admin-custom.js" defer></script>
 
 <!-- JavaScript (defer로 지연 로드 권장) -->
 <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
-
 
 <script>
   // 문서가 준비되면 header와 footer를 불러오기
@@ -43,8 +41,7 @@
   <header id="header"></header>
   <!-- //header include -->
 
-
-<!-- Modal -->
+  <!-- Modal -->
 <section id="reasonDetailModal" class="krds-modal fade" role="dialog" aria-labelledby="tit_reasonDetailModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -85,20 +82,19 @@
 </section>
 <!-- //Modal -->
 
-
 <main class="list-container">
         <div class="list-inner">
-             <section class="subtitle-container sub">
+            <section class="subtitle-container sub">
                 <div class="subtitle-inner">
                     <!-- Page Title -->
-                    <h1 class="page-title">사업신청조회</h1>
+                    <h1 class="page-title">결과보고조회</h1>
                     
                     <!-- breadcrumb -->
                     <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
                       <ol class="breadcrumb">
                         <li class="home"><a href="#" class="txt">홈</a></li>
-                        <li><a href="#" class="txt">사업신청</a></li>
-                        <li><a href="#" class="txt">사업신청조회</a></li>
+                        <li><a href="#" class="txt">결과보고</a></li>
+                        <li><a href="#" class="txt">결과보고조회</a></li>
                       </ol>
                     </nav>
                     <!-- //breadcrumb -->
@@ -118,7 +114,7 @@
                         <option value="">전체</option>
                         <option value="">사업번호</option>
                         <option value="">사업명</option>
-                        <option value="">담당부서</option>
+                        <option value="">신청일</option>
                         <option value="">담당자</option>
                         </select>
                         <div class="sch-input">
@@ -136,27 +132,23 @@
               <table class="tbl col data center">
                 <caption>사업신청 목록 표</caption>
                 <colgroup>
-                  <col>
-                  <col width="12%">
-                  <col width="12%">
-                  <col width="7%">
-                  <col width="12%">
-                  <col width="6%">
-                  <col width="6%">
                 </colgroup>
                 <thead>
                   <tr>
+                    <th scope="col">년도</th>
                     <th scope="col">사업명</th>
-                    <th scope="col">교당 평균 지원액(천원)<br>결정금액(천원)</th>
-                    <th scope="col">담당부서</th>
+                    <th scope="col">신청금액(천원)<br>결정금액(천원)</th>
+                    <th scope="col">신청일</th>
+                    <th scope="col">선정결과</th>
                     <th scope="col">담당자</th>
                     <th scope="col">연락처</th>
-                    <th scope="col">결과</th>
+                    <th scope="col">결과보고(현황)</th>
                     <th scope="col">비고</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -172,13 +164,20 @@
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
+                    <td>2025-10-28</td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
+                    <td>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
+                    </td>
                     <td></td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -194,17 +193,20 @@
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>교육과정평가지원부 학력향상센터</td>
-                    <td>홍길동</td>
+                    <td>2025-10-28</td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
+                    <td>박길수</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-error-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                     <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td></td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -220,13 +222,20 @@
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>미래인재팀</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
+                    <td>2025-10-28</td>
                     <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td> </td>
+                    <td>김사업</td>
+                    <td>010-1234-5678 </td>
+                    <td>
+                      <span class="krds-badge text-bd small">
+                          <i class="svg-icon ico-yeling-fill"></i>
+                          <span>미제출</span>
+                      </span>
+                    </td>
+                    <td></td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -242,10 +251,16 @@
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
+                    <td>2025-10-28</td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-error-fill"></i></td>
+                    <td>
+                     <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-reject-fill"></i>
+                        <span>반려</span>
+                    </span>
+                    </td>
                     <td>
                       <a href="javascript:void(0)" download="" class="krds-btn small line">
                         <i class="svg-icon ico-docu"></i>
@@ -253,6 +268,7 @@
                     </td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -268,10 +284,16 @@
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
+                    <td>2025-10-28</td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-error-fill"></i></td>
+                    <td>
+                      <span class="krds-badge text-bd small">
+                          <i class="svg-icon ico-return-fill"></i>
+                          <span>반송</span>
+                      </span>
+                    </td>
                     <td>
                       <a href="javascript:void(0)" download="" class="krds-btn small line">
                         <i class="svg-icon ico-docu"></i>
@@ -279,6 +301,7 @@
                     </td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -294,18 +317,21 @@
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
+                    <td>2025-10-28</td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td></td>
                   </tr>
                   
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -321,17 +347,20 @@
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
+                    <td>2025-10-28</td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td> </td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -347,17 +376,20 @@
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
+                    <td>2025-10-28</td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td> </td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -373,17 +405,20 @@
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
+                    <td>2025-10-28</td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td> </td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -399,15 +434,17 @@
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
+                    <td>2025-10-28</td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                   <td>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td> </td>
                   </tr>
                   
                  

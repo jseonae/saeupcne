@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title th:text="${pageTitle}">사업신청조회 목록</title>
+<title th:text="${pageTitle}">사업신청관리(교감) 목록</title>
 
 
 <!-- Pretendard GOV -->
@@ -17,16 +17,14 @@
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="../js/admin-custom.js" defer></script>
 
 <!-- JavaScript (defer로 지연 로드 권장) -->
 <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
 
-
 <script>
   // 문서가 준비되면 header와 footer를 불러오기
   $(function() {
-    $("#header").load("../tmpl/header.html");
+    $("#header").load("../tmpl/header_sch_adm.html");
     $("#footer").load("../tmpl/footer.html");
   });
 </script>
@@ -43,62 +41,18 @@
   <header id="header"></header>
   <!-- //header include -->
 
-
-<!-- Modal -->
-<section id="reasonDetailModal" class="krds-modal fade" role="dialog" aria-labelledby="tit_reasonDetailModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h2 id="tit_reasonDetailModal" class="modal-title">사유 상세보기</h2>
-        <p class="modal-description">미제출, 반송, 반려 등의 사유가 출력됩니다.</p>
-      </div>
-
-      <!-- Modal Contents -->
-      <div class="modal-conts">
-        <div class="conts-area">
-          <div class="modal-box">
-            <div class="modal-box-content">
-              <p class="modal-box-text">사업 내용이 충분하지 않습니다.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal Buttons -->
-      <div class="modal-btn btn-wrap">
-        <button type="button" class="krds-btn medium primary close-modal">확인</button>
-      </div>
-
-      <!-- Close Button -->
-      <button type="button" class="krds-btn medium icon btn-close close-modal" aria-label="닫기">
-        <span class="sr-only">닫기</span>
-        <i class="svg-icon ico-popup-close"></i>
-      </button>
-
-    </div>
-  </div>
-
-  <!-- Modal Background -->
-  <div class="modal-back"></div>
-</section>
-<!-- //Modal -->
-
-
 <main class="list-container">
         <div class="list-inner">
-             <section class="subtitle-container sub">
+            <section class="subtitle-container sub02">
                 <div class="subtitle-inner">
                     <!-- Page Title -->
-                    <h1 class="page-title">사업신청조회</h1>
+                    <h1 class="page-title">사업신청관리</h1>
                     
                     <!-- breadcrumb -->
                     <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
                       <ol class="breadcrumb">
                         <li class="home"><a href="#" class="txt">홈</a></li>
-                        <li><a href="#" class="txt">사업신청</a></li>
-                        <li><a href="#" class="txt">사업신청조회</a></li>
+                        <li><a href="#" class="txt">사업신청관리</a></li>
                       </ol>
                     </nav>
                     <!-- //breadcrumb -->
@@ -118,7 +72,7 @@
                         <option value="">전체</option>
                         <option value="">사업번호</option>
                         <option value="">사업명</option>
-                        <option value="">담당부서</option>
+                        <option value="">신청일</option>
                         <option value="">담당자</option>
                         </select>
                         <div class="sch-input">
@@ -134,29 +88,30 @@
 
             <div class="krds-table-wrap">
               <table class="tbl col data center">
-                <caption>사업신청 목록 표</caption>
+                <caption>사업신청관리 목록 표</caption>
                 <colgroup>
-                  <col>
-                  <col width="12%">
-                  <col width="12%">
-                  <col width="7%">
-                  <col width="12%">
-                  <col width="6%">
-                  <col width="6%">
+                    <col style="width:8%;">
+                    <col style="width:42%;">
+                    <col style="width:15%;">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
                 </colgroup>
                 <thead>
                   <tr>
+                    <th scope="col">년도</th>
                     <th scope="col">사업명</th>
-                    <th scope="col">교당 평균 지원액(천원)<br>결정금액(천원)</th>
-                    <th scope="col">담당부서</th>
                     <th scope="col">담당자</th>
-                    <th scope="col">연락처</th>
+                    <th scope="col">신청금액(천원)<br>결정금액(천원)</th>
+                    <th scope="col">신청일</th>
+                    <th scope="col">상태</th>
                     <th scope="col">결과</th>
-                    <th scope="col">비고</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -166,19 +121,19 @@
                         <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
+                    <td>홍길동</td>
                     <td>
                         <div class="td-in-col2">
                             <p>10,000</p>
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
+                    <td>2025-10-28</td>
+                    <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
                     <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td></td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -188,23 +143,19 @@
                         <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
+                    <td>홍길동</td>
                     <td>
                         <div class="td-in-col2">
                             <p>10,000</p>
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>교육과정평가지원부 학력향상센터</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
+                    <td>2025-10-28</td>
+                    <td><span class="krds-badge small custom-bd bg-light-warning">결재중</span></td>
                     <td><i class="svg-icon ico-error-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -214,19 +165,19 @@
                         <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
+                    <td>홍길동</td>
                     <td>
                         <div class="td-in-col2">
                             <p>10,000</p>
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>미래인재팀</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td> </td>
+                    <td>2025-10-28</td>
+                    <td><span class="krds-badge small custom-bd bg-light-point">반려</span></td>
+                    <td><i class="svg-icon ico-error-fill"></i></td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -236,23 +187,19 @@
                         <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
+                    <td>홍길동</td>
                     <td>
                         <div class="td-in-col2">
                             <p>10,000</p>
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-error-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
+                    <td>2025-10-28</td>
+                    <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -262,23 +209,19 @@
                         <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
+                    <td>홍길동</td>
                     <td>
                         <div class="td-in-col2">
                             <p>10,000</p>
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-error-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
+                    <td>2025-10-28</td>
+                    <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                   </tr>
                   <tr>
+                    <td>2026</td>
                     <td>
                       <div class="td-in-col2 project-name aling-left" >
                         <p class="info-top ">
@@ -288,129 +231,106 @@
                         <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
+                    <td>홍길동</td>
                     <td>
                         <div class="td-in-col2">
                             <p>10,000</p>
                             <p>10,000</p>
                         </div>
                     </td>
-                    <td>정책기획과</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
+                    <td>2025-10-28</td>
+                    <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
                     <td><i class="svg-icon ico-success-fill"></i></td>
+                  </tr>
+                  <tr>
+                    <td>2026</td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                      <div class="td-in-col2 project-name aling-left" >
+                        <p class="info-top ">
+                          <span class="krds-badge small badge" data-name="project01"></span>
+                          <span>2026-선택-001</span>
+                        </p>
+                        <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                      </div>
                     </td>
+                    <td>홍길동</td>
+                    <td>
+                        <div class="td-in-col2">
+                            <p>10,000</p>
+                            <p>10,000</p>
+                        </div>
+                    </td>
+                    <td>2025-10-28</td>
+                    <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
+                  </tr>
+                  <tr>
+                    <td>2026</td>
+                    <td>
+                      <div class="td-in-col2 project-name aling-left" >
+                        <p class="info-top ">
+                          <span class="krds-badge small badge" data-name="project01"></span>
+                          <span>2026-선택-001</span>
+                        </p>
+                        <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                      </div>
+                    </td>
+                    <td>홍길동</td>
+                    <td>
+                        <div class="td-in-col2">
+                            <p>10,000</p>
+                            <p>10,000</p>
+                        </div>
+                    </td>
+                    <td>2025-10-28</td>
+                    <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
+                  </tr>
+                  <tr>
+                    <td>2026</td>
+                    <td>
+                      <div class="td-in-col2 project-name aling-left" >
+                        <p class="info-top ">
+                          <span class="krds-badge small badge" data-name="project01"></span>
+                          <span>2026-선택-001</span>
+                        </p>
+                        <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                      </div>
+                    </td>
+                    <td>홍길동</td>
+                    <td>
+                        <div class="td-in-col2">
+                            <p>10,000</p>
+                            <p>10,000</p>
+                        </div>
+                    </td>
+                    <td>2025-10-28</td>
+                    <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
+                  </tr>
+                  <tr>
+                    <td>2026</td>
+                    <td>
+                      <div class="td-in-col2 project-name aling-left" >
+                        <p class="info-top ">
+                          <span class="krds-badge small badge" data-name="project01"></span>
+                          <span>2026-선택-001</span>
+                        </p>
+                        <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                      </div>
+                    </td>
+                    <td>홍길동</td>
+                    <td>
+                        <div class="td-in-col2">
+                            <p>10,000</p>
+                            <p>10,000</p>
+                        </div>
+                    </td>
+                    <td>2025-10-28</td>
+                    <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                    <td><i class="svg-icon ico-success-fill"></i></td>
                   </tr>
                   
-                  <tr>
-                    <td>
-                      <div class="td-in-col2 project-name aling-left" >
-                        <p class="info-top ">
-                          <span class="krds-badge small badge" data-name="project01"></span>
-                          <span>2026-선택-001</span>
-                        </p>
-                        <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="td-in-col2">
-                            <p>10,000</p>
-                            <p>10,000</p>
-                        </div>
-                    </td>
-                    <td>정책기획과</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="td-in-col2 project-name aling-left" >
-                        <p class="info-top ">
-                          <span class="krds-badge small badge" data-name="project01"></span>
-                          <span>2026-선택-001</span>
-                        </p>
-                        <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="td-in-col2">
-                            <p>10,000</p>
-                            <p>10,000</p>
-                        </div>
-                    </td>
-                    <td>정책기획과</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="td-in-col2 project-name aling-left" >
-                        <p class="info-top ">
-                          <span class="krds-badge small badge" data-name="project01"></span>
-                          <span>2026-선택-001</span>
-                        </p>
-                        <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="td-in-col2">
-                            <p>10,000</p>
-                            <p>10,000</p>
-                        </div>
-                    </td>
-                    <td>정책기획과</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="td-in-col2 project-name aling-left" >
-                        <p class="info-top ">
-                          <span class="krds-badge small badge" data-name="project01"></span>
-                          <span>2026-선택-001</span>
-                        </p>
-                        <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="td-in-col2">
-                            <p>10,000</p>
-                            <p>10,000</p>
-                        </div>
-                    </td>
-                    <td>정책기획과</td>
-                    <td>홍길동</td>
-                    <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  
-                 
                 </tbody>
               </table>
             </div>

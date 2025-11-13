@@ -41,8 +41,65 @@
   <header id="header"></header>
   <!-- //header include -->
 
+
+  <!-- Modal -->
+<section id="reasonDetailModal" class="krds-modal fade" role="dialog" aria-labelledby="tit_reasonDetailModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h2 id="tit_reasonDetailModal" class="modal-title">사유 상세보기</h2>
+        <p class="modal-description">미제출, 반송, 반려 등의 사유가 출력됩니다.</p>
+      </div>
+
+      <!-- Modal Contents -->
+      <div class="modal-conts">
+        <div class="conts-area">
+          <div class="modal-box">
+            <div class="modal-box-content">
+              <p class="modal-box-text">사업 내용이 충분하지 않습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Buttons -->
+      <div class="modal-btn btn-wrap">
+        <button type="button" class="krds-btn medium primary close-modal">확인</button>
+      </div>
+
+      <!-- Close Button -->
+      <button type="button" class="krds-btn medium icon btn-close close-modal" aria-label="닫기">
+        <span class="sr-only">닫기</span>
+        <i class="svg-icon ico-popup-close"></i>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Modal Background -->
+  <div class="modal-back"></div>
+</section>
+<!-- //Modal -->
+
 <main class="list-container">
         <div class="list-inner">
+            <section class="subtitle-container sub">
+                <div class="subtitle-inner">
+                    <!-- Page Title -->
+                    <h1 class="page-title">결과보고</h1>
+                    
+                    <!-- breadcrumb -->
+                    <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="home"><a href="#" class="txt">홈</a></li>
+                        <li><a href="#" class="txt">결과보고</a></li>
+                      </ol>
+                    </nav>
+                    <!-- //breadcrumb -->
+                </div>
+            </section>
             <!-- Info Box (Count + Search) -->
             <div class="info-box">
                 <div class="count-wrapper">
@@ -111,7 +168,12 @@
                     <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><div class="icon_tt"><i class="svg-icon ico-success-fill"></i>제출완료</div></td>
+                    <td>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
+                    </td>
                     <td></td>
                   </tr>
                   <tr>
@@ -135,7 +197,12 @@
                     <td><i class="svg-icon ico-error-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><div class="icon_tt"><i class="svg-icon ico-yeling-fill"></i>미제출</div></td>
+                    <td>
+                     <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-minus disabled"></i>
+                        <span class="sr-only">해당없음</span>
+                    </span>
+                    </td>
                     <td>
                       <a href="javascript:void(0)" download="" class="krds-btn small line">
                         <i class="svg-icon ico-docu"></i>
@@ -163,8 +230,13 @@
                     <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td> </td>
+                    <td>
+                      <span class="krds-badge text-bd small">
+                          <i class="svg-icon ico-yeling-fill"></i>
+                          <span>미제출</span>
+                      </span>
+                    </td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td>2026</td>
@@ -184,10 +256,15 @@
                         </div>
                     </td>
                     <td>2025-10-28</td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
+                    <td><i class="svg-icon ico-error-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-error-fill"></i></td>
+                    <td>
+                     <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-reject-fill"></i>
+                        <span>반려</span>
+                    </span>
+                    </td>
                     <td>
                       <a href="javascript:void(0)" download="" class="krds-btn small line">
                         <i class="svg-icon ico-docu"></i>
@@ -212,10 +289,15 @@
                         </div>
                     </td>
                     <td>2025-10-28</td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
+                    <td><i class="svg-icon ico-error-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-error-fill"></i></td>
+                    <td>
+                      <span class="krds-badge text-bd small">
+                          <i class="svg-icon ico-return-fill"></i>
+                          <span>반송</span>
+                      </span>
+                    </td>
                     <td>
                       <a href="javascript:void(0)" download="" class="krds-btn small line">
                         <i class="svg-icon ico-docu"></i>
@@ -243,12 +325,13 @@
                     <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td></td>
                   </tr>
                   
                   <tr>
@@ -272,12 +355,13 @@
                     <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td> </td>
                   </tr>
                   <tr>
                     <td>2026</td>
@@ -300,12 +384,13 @@
                     <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td> </td>
                   </tr>
                   <tr>
                     <td>2026</td>
@@ -328,12 +413,13 @@
                     <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td> </td>
                   </tr>
                   <tr>
                     <td>2026</td>
@@ -356,12 +442,13 @@
                     <td><i class="svg-icon ico-success-fill"></i></td>
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
-                    <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
+                   <td>
+                      <span class="krds-badge text-bd small">
+                        <i class="svg-icon ico-success-fill"></i>
+                        <span class="">제출완료</span>
+                      </span>
                     </td>
+                    <td> </td>
                   </tr>
                   
                  
