@@ -8,6 +8,10 @@
   --krds-contents-wrap-size: 1816px;
   /*추가*/
   --c-bg-blue-5: #F5F9FC;
+  --krds-number-22: 12.8rem;
+  --krds-number-23: 14.4rem;
+  --krds-number-24: 16rem;
+  --krds-number-25: 20.8rem;
 }
 
 /* ========================================
@@ -37,7 +41,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: var(--krds-pc-padding-card-medium) var(--krds-pc-padding-card-large); 
+  padding: var(--krds-pc-padding-card-medium) var(--krds-number-25);
 }
 
 .cols-2 {
@@ -481,6 +485,24 @@ td .btn-group  {
 /* ========================================
  * Header
  * ====================================== */
+#krds-header.header-in {
+    position: relative;
+    transform: translateY(0);
+}
+#wrap[class*=scroll] #krds-header:not(.sample).header-in {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    border-bottom: 0.1rem solid var(--krds-header--utility-color-divider);
+    background-color: var(--krds-header--color-surface);
+    transition: transform ease 0.4s 0.01s;
+}
+#wrap.scroll-down #krds-header:not(.sample).header-in {
+  transform: translateY(-100%);
+}
+
 .header {
   width: 100%;
 }
@@ -772,6 +794,10 @@ td .btn-group  {
 .scroll-down .right-section {
   padding-top: var(--krds-number-6);
 }
+.scroll-up .right-section {
+  padding-top:15rem;
+}
+
 
 .info-card {
   background-color: var(--krds-color-light-gray-0);
@@ -1004,4 +1030,11 @@ td .btn-group  {
 .sch-form-wrap .input-group .krds-form-select:active {
   color: var(--krds-color-light-gray-90);
   border-color: var(--krds-color-light--gray-50);
+}
+
+
+
+.custom-upload {
+  display: flex;
+  flex-direction: row;
 }

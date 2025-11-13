@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">팝업등록 최고관리자 operation-popup-edit</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+</head>
+
+<body data-current-menu="operation" data-current-submenu="operation-popup" >
+
+<div id="wrap" class="g-wrap">
+
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+
+  <header id="header"></header>
+
+  <main id="container">
+    <div class="inner cols-2 in-between">
+        <!-- Left -->
+        <div class="left-section">
+            <strong class="page-title">등록</strong>
+            <!-- 1 -->
+            <div class="section contents-box contents-box-shadow">
+                <div class="section-header">
+                    <h3 class="section-title">안내사항</h3>
+                </div>
+                <div class="form">
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>제목</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                 <textarea class="krds-input" placeholder="제목을 입력해주세요."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>내용</h4>
+                            <span class="sub-label">안내 사항 기재</span>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <textarea class="krds-input" placeholder="내용을 입력해주세요."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="section contents-box contents-box-shadow">
+                <div class="section-header">
+                    <h3 class="section-title">설정</h3>
+                </div>
+                <div class="form">
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>이미지</h4>
+                            <span class="sub-label">팝업 1개당 이미지 1개까지 등록 가능합니다. ( 가로 : 490px, 세로 : 565px, 최대용량 : 999M, 파일형식 : jpg, .png, gif )</span>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+
+                                <div class="krds-file-upload line custom-upload">
+                                    <div class="file-list">
+                                        <div class="file-info">
+                                            <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
+                                            <div class="btn-wrap">
+                                                <button type="button" class="krds-btn medium text">삭제 <i class="svg-icon ico-delete-fill"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="file-upload">
+                                        <p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p>
+                                        <div class="file-upload-btn-wrap">
+                                            <input type="file" name="myFile" id="fileu-upload" hidden>
+                                            <label for="fileu-upload">
+                                                <button type="button" class="krds-btn medium"><i class="svg-icon ico-upload"></i>파일선택</button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>링크 타입</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <div class="krds-check-area">
+                                    <div class="krds-form-check">
+                                        <input type="radio" name="rdo_1" id="rdo_1" >
+                                        <label for="rdo_1">없음</label>
+                                    </div>
+                                    <div class="krds-form-check">
+                                        <input type="radio" name="rdo_1" id="rdo_2" checked>
+                                        <label for="rdo_2">현재창</label>
+                                    </div>
+                                    <div class="krds-form-check">
+                                        <input type="radio" name="rdo_1" id="rdo_3">
+                                        <label for="rdo_3">새창</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-conts">
+                                <input type="text" id="consult_name" class="krds-input" placeholder="링크를 입력하세요.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right -->
+        <div class="right-section max-wd-3">
+            <!-- 회원정보 Card -->
+            <div class="info-card">
+                <div class="card-header krds-badge-wrap">
+                    <h3>회원정보</h3>
+                    <span class="krds-badge outline-warning">수정 중</span>
+                </div>
+                <div class="divider"></div>
+                <div class="card-content">
+                    <div class="status-row">
+                        <span class="label">회원 상태</span>
+                        <div class="toggle-wrapper member-edit">
+                            <span class="toggle-label">미승인</span>
+                            <div class="krds-form-toggle-switch large long-switch">
+                                <input type="checkbox" id="switch_lg_1">
+                                <label for="switch_lg_1"><span class="switch-toggle"><i></i></span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-section">
+                <p class="action-message">회원정보를 수정하시겠습니까?</p>
+                <div class="btn-wrap flex-wrap-wrwp">
+                    <a href="#wrap" class="krds-btn tertiary top small">
+                        <span>위로</span>
+                        <i class="svg-icon ico-angle up medium"></i>
+                    </a>
+                    <a href="../html/member-supervisor-list.html" target="_self" class="krds-btn tertiary line small">목록으로</a>
+                    <a href="../html/member-supervisor-list.html" target="_self" class="krds-btn primary">네, 수정합니다.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+</body>
+</html>
