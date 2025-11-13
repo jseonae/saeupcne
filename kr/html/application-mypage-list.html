@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${pageTitle}">마이페이지 - 사업신청내역</title>
+
+
+<!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+<!-- CSS -->
+<link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="../css/krds-theme.css">
+<link rel="stylesheet" href="../css/user-custom.css">
+<link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- JavaScript (defer로 지연 로드 권장) -->
+<script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
+
+<script>
+  // 문서가 준비되면 header와 footer를 불러오기
+  $(function() {
+    $("#header").load("../tmpl/header.html");
+    $("#footer").load("../tmpl/footer.html");
+  });
+</script>
+</head>
+<body>
+<div id="wrap">
+  <!-- 본문 바로가기 영역  -->
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  <!-- //본문 바로가기 영역  -->
+
+  <!-- header include -->
+  <header id="header"></header>
+  <!-- //header include -->
+
+<!-- Main Content -->
+    <main class="list-container mypage">
+        <div class="list-inner">
+            <!-- Info Wrap -->
+            <section class="info-wrap">
+                <!-- Breadcrumb -->
+                <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="home"><a href="#" class="txt">홈</a></li>
+                        <li><a href="#" class="txt">마이페이지</a></li>
+                        <li><a href="#" class="txt">사업신청내역</a></li>
+                      </ol>
+                    </nav>
+
+                <!-- My Info Card -->
+                <div class="my-info-card">
+                    <!-- Left Section: User Info -->
+                    <div class="info-detail">
+                        <!-- User Profile -->
+                        <div class="user-profile">
+                            <h2 class="user-name">홍길동님</h2>
+                            <div class="user-badges">
+                                <span class="krds-badge small bg-light-primary">학교관리자</span>
+                               <span class="krds-badge small bg-light-information">충남초등학교</span>
+                            </div>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="contact-info">
+                            <div class="info-row">
+                                <span class="info-label">연락처</span>
+                                <span class="info-value">010-1234-5678</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">이메일</span>
+                                <span class="info-value">honggildong@cb.cne.go.kr</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Section: Statistics -->
+                    <div class="info-history">
+                        <div class="info-box">
+                            <span class="info-box-label">사업신청내역</span>
+                            <div class="info-box-count">
+                                <span class="count-number">17</span>
+                                <span class="count-unit">건</span>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-box-label">결과보고내역</span>
+                            <div class="info-box-count">
+                                <span class="count-number">12</span>
+                                <span class="count-unit">건</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edit Button -->
+                    <button class="edit-button" aria-label="정보 수정">
+                       <!--아이콘-->
+                    </button>
+                </div>
+            </section>
+
+            <!-- Tab Navigation -->
+            <div class="krds-tab-area layer">
+            <!-- tab list -->
+            <div class="tab line">
+                <ul role="tablist">
+                    <li id="tab_login_01" role="tab" aria-selected="false" aria-controls="panel_login_01" class="active" data-listener-attached="true">
+                        <button type="button" class="btn-tab">사업신청내역<i class="sr-only created"> 선택됨</i></button>
+                    </li>
+                    <li id="tab_login_02" role="tab" aria-selected="false" aria-controls="panel_login_02" data-listener-attached="true">
+                        <button type="button" class="btn-tab">결과보고내역</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- //tab list -->
+            
+            <!-- tab contents -->
+            <div class="tab-conts-wrap">
+                <section id="panel_login_01" aria-labelledby="tab_login_01" class="tab-conts active" data-quick-nav="false" role="tabpanel">
+                    <h3 class="sr-only">탭 영역 타이틀</h3>
+                    탭 1 영역
+                </section>
+                <section id="panel_login_02" aria-labelledby="tab_login_02" class="tab-conts" data-quick-nav="false" role="tabpanel">
+                    <h3 class="sr-only">탭 영역 타이틀</h3>
+                    탭 2 영역
+                </section>
+            </div>
+            <!-- //tab contents -->
+        </div>
+
+        </div>
+    </main>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Live Server 전용 (Spring Boot에서 자동 제거) -->
+  <script th:remove="all" src="../../assets/js/api.js"></script>
+  <script th:remove="all" src="../../assets/js/common.js"></script>
+  <script th:remove="all" src="../../assets/js/board.js"></script>
+
+  
+
+
+ <!-- footer include -->
+  <div id="footer"></div>
+</div><!-- //wrap -->
+
+<script src="../js/user-custom.js"></script>
+</body>
+</html>
