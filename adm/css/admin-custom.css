@@ -41,7 +41,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: var(--krds-pc-padding-card-medium) var(--krds-number-25);
+  padding: var(--krds-pc-padding-card-medium) var(--krds-number-24);
 }
 
 .cols-2 {
@@ -427,15 +427,7 @@ td .btn-group  {
 .btn-wrap.flex-wrap-wrwp {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--krds-gap-3);
-}
-
-.btn-wrap.flex-wrap-wrwp > * {
-  width: calc(50% - var(--krds-gap-2))
-}
-
-.btn-wrap.flex-wrap-wrwp > *:last-child {
-  width:100%;
+  gap: var(--krds-gap-4) var(--krds-gap-3);
 }
 
 .btn-wrap .krds-btn.tertiary {
@@ -462,6 +454,19 @@ td .btn-group  {
   gap: var(--krds-gap-2);
   font-weight: var(--c-font-weight-3);
 }
+
+
+.action-section .btn-wrap.flex-wrap-wrwp > * {
+  flex: 1;
+}
+.action-section .btn-wrap.flex-wrap-wrwp .krds-btn:first-child {
+  max-width:12rem;
+}
+.action-section .btn-wrap.flex-wrap-wrwp > *:last-child {
+  width:100%;
+}
+
+
 
 /* ========================================
  * Search List Top - Upload Button
@@ -706,6 +711,11 @@ td .btn-group  {
   border-radius: var(--krds-radius-xlarge1);
   padding:var(--krds-number-14) var(--krds-number-16) var(--krds-number-16);
 }
+
+.left-section .section:not(.left-section .section:last-child) {
+  margin-bottom:1rem;
+}
+
 .section.contents-box > div {padding:0}
 
 .section .section-header {
@@ -827,6 +837,13 @@ td .btn-group  {
   border-top: 1px solid var(--krds-color-light-gray-20);
 }
 
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-5);
+}
+
+
 .status-row {
   display: flex;
   align-items: center;
@@ -847,8 +864,14 @@ td .btn-group  {
 }
 
 .toggle-label {
+  text-align: center;
+  min-width: 3.4rem;
   font-size: var(--krds-pc-font-size-body-xsmall);
   color: var(--krds-color-light-gray-70);
+}
+
+.toggle-label.is-on {
+  color: var(--krds-color-high-contrast-primary-60);
 }
 
 .long-switch {
@@ -1033,8 +1056,125 @@ td .btn-group  {
 }
 
 
-
-.custom-upload {
+.krds-file-upload.custom-upload {
   display: flex;
   flex-direction: row;
+  gap: var(--krds-gap-6);
+  align-items: stretch;
+  padding: var(--krds-number-12);
+  border-color: var(--krds-color-high-contrast-gray-30);
+}
+
+/* 왼쪽 미리보기 영역 */
+.krds-file-upload.custom-upload .file-list {
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  max-width: 19rem;
+  height: 100%;
+  min-height: 25rem;
+  border-radius: var(--krds-radius-xlarge1);
+  border: 1px solid var(--krds-color-light-gray-20);
+  background-color: var(--krds-color-light-gray-5);
+  padding: var(--krds-padding-6);
+}
+
+/* 이미지가 있을 때(상태 클래스) */
+.krds-file-upload.custom-upload.has-image .file-list {
+  background-color: var(--krds-light-color-background-white);
+}
+
+/* 기본 텍스트/문구 */
+.krds-file-upload.custom-upload .file-info {
+  position: relative;
+  width: 100%;
+  max-width: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--krds-gap-4);
+}
+
+.preview-placeholder {
+  text-align: center;
+  color: var(--krds-color-high-contrast-alpha-black25);
+  font-weight: var(--c-font-weight-6);
+}
+
+/* 이미지 영역 */
+.krds-file-upload.custom-upload .file-info .file-img {
+  width: 100%;
+  min-height: 17rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 우측 드롭존/설명 영역 */
+.krds-file-upload.custom-upload .file-upload {
+  flex: 3;
+  gap: var(--krds-gap-5);
+  height: 100%;
+  min-height: 25rem;
+  max-width: calc(100% - 19rem);
+  padding: var(--krds-file-upload--file-padding-x);
+  background-color: var(--krds-light-color-background-gray-subtler);
+}
+
+.krds-file-upload.custom-upload .file-upload .txt {
+  font-size: var(--krds-mobile-font-size-body-medium);
+}
+
+/* 처음에는 "파일 없음" 문구만 보이게 */
+.krds-file-upload.custom-upload .txt-has-file {
+  display: none;
+}
+
+/* 이미지가 있는 상태 */
+.krds-file-upload.custom-upload.has-image .preview-placeholder {
+  display: none;
+}
+.krds-file-upload.custom-upload.has-image .txt-empty {
+  display: none;
+}
+.krds-file-upload.custom-upload.has-image .txt-has-file {
+  display: block;
+  color: var(--krds-color-high-contrast-gray-50);
+}
+.krds-file-upload.custom-upload.has-image .file-upload {
+  background-color: var(--krds-file-upload--file-color-surface);
+}
+
+/* 버튼 비활성화 스타일 */
+.krds-file-upload.custom-upload .file-upload .krds-btn[disabled],
+.krds-file-upload.custom-upload .file-upload .krds-btn.disabled {
+  border-color: transparent;
+  cursor: not-allowed;
+}
+.krds-file-upload.custom-upload .file-upload .krds-btn[disabled] .ico-upload,
+.krds-file-upload.custom-upload .file-upload .krds-btn.disabled .ico-upload {
+  background-color: var(--krds-color-light-gray-60);
+}
+
+
+
+.period-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-3);
+}
+
+.period-wrap .krds-form-item .krds-form-label {
+  font-size: var(--krds-mobile-font-size-body-xsmall);
+  font-weight: var(--c-font-weight-6);
+  color: var(--krds-light-color-text-disabled);
+}
+
+
+.page-edit textarea.pop-tit {
+  max-height: 8rem;
+}
+.page-edit textarea.pop-det {
+  min-height: 18rem;
 }
