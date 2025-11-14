@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${pageTitle}">사업신청view</title>
+
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/user-custom.css">
+  <script src="../js/user-custome.js" defer></script>
+  <script src="../js/user-modal.js" defer></script>
+
+  <!-- JavaScript (defer로 지연 로드 권장) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  <header id="header"></header>
+
+    <main class="list-container view">
+        <div class="list-inner">
+            <section class="info-wrap">
+                <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="home"><a href="#" class="txt">홈</a></li>
+                    <li><a href="#" class="txt">사업신청</a></li>
+                    </ol>
+                </nav>
+                <div class="my-info-card">
+                    <div class="info-detail">
+                         <div class="td-in-col2 project-name aling-left">
+                            <p class="info-top ">
+                            <span class="krds-badge small badge" data-name="project01"></span>
+                            <span>2026-선택-001</span>
+                            </p>
+                            <strong class="ellipsis aling-left">2025 마을기반 교육과정 자율학교 운영</strong>
+                        </div>
+                    </div>
+                    <div class="project-right">
+                        <div class="manager-info">
+                            <span class="manager-label">미래인재과</span>
+                            <span class="manager-name">홍길동</span>
+                        </div>
+                        <div class="phone-info">
+                           <i class="svg-icon ico-call"></i>
+                            <span class="phone-number">010-1234-5678</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="view-content-wrap">
+                <div class="view-contents">
+                    <h2>기본정보</h2>
+                    <div class="content-grid">
+                        <div class="info-card  info-card-full" data-name="area">
+                            <h3>공모대상</h3>
+                            
+                            <div class="target-content">
+                                <div class="target-count">
+                                    <span class="count-number">30</span>
+                                    <span class="count-unit">개교</span>
+                                </div>
+
+                                <div class="target-categories">
+                                    <div class="target-badge target-unchecked">
+                                        <span>유치원</span>
+                                    </div>
+                                    <div class="target-badge target-checked">
+                                        <i class="svg-icon ico-complete-fill"></i>
+                                        <span>초등학교</span>
+                                    </div>
+                                    <div class="target-badge target-checked">
+                                       <i class="svg-icon ico-complete-fill"></i>
+                                        <span>중학교</span>
+                                    </div>
+                                    <div class="target-badge target-checked">
+                                       <i class="svg-icon ico-complete-fill"></i>
+                                        <span>고등학교</span>
+                                    </div>
+                                    <div class="target-badge target-checked">
+                                        <i class="svg-icon ico-complete-fill"></i>
+                                        <span>특수학교</span>
+                                    </div>
+                                    <div class="target-badge target-unchecked">
+                                        <span>각종학교</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-card" data-name="area">
+                            <h3 class="info-card-title">설립별 지원가능 여부</h3>
+                            
+                            <div class="target-categories">
+                                    <div class="target-badge target-checked">
+                                        <i class="svg-icon ico-complete-fill"></i>
+                                        <span>공립</span>
+                                    </div>
+                                    <div class="target-badge target-checked">
+                                        <i class="svg-icon ico-complete-fill"></i>
+                                        <span>사립</span>
+                                    </div>
+                                    <div class="target-badge target-checked">
+                                       <i class="svg-icon ico-complete-fill"></i>
+                                        <span>국립</span>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="info-card" data-name="area" style="width:40%">
+                            <div class="budget-header">
+                                <h3 class="info-card-title">예산액</h3>
+                                <div class="budget-source">
+                                    <span class="budget-source-label">재원</span>
+                                    <span class="budget-source-value">특교+자체</span>
+                                </div>
+                            </div>
+                            <div class="budget-table">
+                                <div class="budget-thead">
+                                    <div class="budget-th">예산액</div>
+                                    <div class="budget-th">교당평균액</div>
+                                </div>
+                                <div class="budget-tbody">
+                                    <div class="budget-td">
+                                        <span class="budget-amount">800,000</span>
+                                        <span>천원</span>
+                                    </div>
+                                    <div class="budget-td">
+                                        <span class="budget-amount">20,000</span>
+                                        <span>천원</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-card" data-name="area" style="width:28.5%">
+                            <h3 class="info-card-title">기간</h3>
+                            
+                            <div class="period-content">
+                                <div class="period-item">
+                                    <span class="period-label">사업신청</span>
+                                    <span class="period-value">2025-11-03 ~ 2025-11-26</span>
+                                </div>
+                                <div class="period-item">
+                                    <span class="period-label">결과제출</span>
+                                    <span class="period-value">2026-09-01 ~ 2026-11-06</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-card info-card-last" data-name="area">
+                            <h3 class="info-card-title">공모단위</h3>
+                            
+                            <div class="unit-content">
+                                <span class="unit-value">도교육청</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="view-contents">
+                    <h2>상세설명</h2>
+                    <div class="krds-tab-area layer">
+                        <!-- tab list -->
+                        <div class="tab fill full">
+                            <ul role="tablist">
+                                <li id="tab_login_01" role="tab" aria-selected="false" aria-controls="panel_login_01" class="active" data-listener-attached="true">
+                                    <button type="button" class="btn-tab">추진배경<i class="sr-only created"> 선택됨</i></button>
+                                </li>
+                                <li id="tab_login_02" role="tab" aria-selected="false" aria-controls="panel_login_02" data-listener-attached="true">
+                                    <button type="button" class="btn-tab">추진내용</button>
+                                </li>
+                                <li id="tab_login_03" role="tab" aria-selected="false" aria-controls="panel_login_03" data-listener-attached="true">
+                                    <button type="button" class="btn-tab">기대효과</button>
+                                </li>
+                                <li id="tab_login_04" role="tab" aria-selected="false" aria-controls="panel_login_04" data-listener-attached="true">
+                                    <button type="button" class="btn-tab">신청 시 유의사항</button>
+                                </li>
+                                <li id="tab_login_05" role="tab" aria-selected="false" aria-controls="panel_login_05" data-listener-attached="true">
+                                    <button type="button" class="btn-tab">예산사용 주안점</button>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- tab contents -->
+                        <div class="tab-conts-wrap">
+                            <section id="panel_login_01" aria-labelledby="tab_login_01" class="tab-conts active" data-quick-nav="false" role="tabpanel">
+                               <textarea class="krds-input" disabled>탭영역 1</textarea>
+                            </section>
+                            <section id="panel_login_02" aria-labelledby="tab_login_02" class="tab-conts" data-quick-nav="false" role="tabpanel">
+                                <textarea class="krds-input" disabled>탭영역 2</textarea>
+                            </section>
+                            <section id="panel_login_03" aria-labelledby="tab_login_03" class="tab-conts" data-quick-nav="false" role="tabpanel">
+                                <textarea class="krds-input" disabled>탭영역 3</textarea>
+                            </section>
+                            <section id="panel_login_04" aria-labelledby="tab_login_04" class="tab-conts" data-quick-nav="false" role="tabpanel">
+                                <textarea class="krds-input" disabled>탭영역 4</textarea>
+                            </section>
+                            <section id="panel_login_05" aria-labelledby="tab_login_05" class="tab-conts" data-quick-nav="false" role="tabpanel">
+                                <textarea class="krds-input" disabled>탭영역 5</textarea>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="view-contents">
+                    <h2>첨부문서</h2>
+                    <div class="krds-file-upload">
+                        <div class="file-list">
+                            <ul class="upload-list">
+                                <li>
+                                    <div class="file-info m-column">
+                                        <div class="file-info-title"><i class="svg-icon ico-file"></i>세부계획서</div>
+                                        <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                        <div class="btn-wrap">
+                                            <button type="button" class="krds-btn medium text">다운로드 <i class="svg-icon ico-down"></i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-btn-wrap">
+                    <button type="button" class="krds-btn tertiary">목록으로 가기</button>
+                    <button type="button" class="krds-btn primary">사업신청하기</button>
+                </div>
+            </section>
+            
+
+        </div>
+    </main>
+
+
+
+
+  <div id="footer"></div>
+<div id="modalLoad"></div>
+</body>
+</html>
