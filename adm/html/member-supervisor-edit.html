@@ -40,7 +40,7 @@
 
   <header id="header"></header>
 
-  <main id="container">
+  <main id="container" class="page-edit">
     <div class="inner cols-2 in-between">
         <!-- Left -->
         <div class="left-section">
@@ -222,28 +222,29 @@
                 </div>
                 <div class="divider"></div>
                 <div class="card-content">
-                    <div class="status-row">
-                        <span class="label">회원 상태</span>
-                        <div class="toggle-wrapper member-edit">
-                            <span class="toggle-label">미승인</span>
-                            <div class="krds-form-toggle-switch large long-switch">
-                                <input type="checkbox" id="switch_lg_1">
-                                <label for="switch_lg_1"><span class="switch-toggle"><i></i></span></label>
+                    <div class="status-wrap">
+                        <div class="status-row">
+                            <span class="label">회원 상태</span>
+                            <div class="toggle-wrapper member-edit">
+                                <span class="toggle-label">미승인</span>
+                                <div class="krds-form-toggle-switch large long-switch">
+                                    <input type="checkbox" id="switch_lg_1">
+                                    <label for="switch_lg_1"><span class="switch-toggle"><i></i></span></label>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Action Buttons -->
             <div class="action-section">
                 <p class="action-message">회원정보를 수정하시겠습니까?</p>
                 <div class="btn-wrap flex-wrap-wrwp">
-                    <a href="#wrap" class="krds-btn tertiary top small">
-                        <span>위로</span>
-                        <i class="svg-icon ico-angle up medium"></i>
+                    <a href="#!" class="krds-btn tertiary top medium" onclick="location.reload(); return false;">
+                        <span>원래대로</span>
+                        <i class="svg-icon ico-reset medium"></i>
                     </a>
-                    <a href="../html/member-supervisor-list.html" target="_self" class="krds-btn tertiary line small">목록으로</a>
+                    <a href="../html/member-supervisor-list.html" target="_self" class="krds-btn tertiary line medium">목록으로</a>
                     <a href="../html/member-supervisor-list.html" target="_self" class="krds-btn primary">네, 수정합니다.</a>
                 </div>
             </div>
