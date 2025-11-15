@@ -510,5 +510,8 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
 .svg-icon.ico-edit2-fill {
     background-image: url(../../resources/img/ico_edit_type2_active.svg);
 }
+.svg-icon.ico-minusGr-fill {
+    background-image: url(../../resources/img/icon_minus_circle.svg);
+}
 
 

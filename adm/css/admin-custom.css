@@ -843,6 +843,11 @@ td .btn-group  {
   gap: var(--krds-gap-5);
 }
 
+.status-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-2);
+}
 
 .status-row {
   display: flex;
@@ -1071,7 +1076,6 @@ td .btn-group  {
   justify-content: center;
   flex: 1;
   max-width: 19rem;
-  height: 100%;
   min-height: 25rem;
   border-radius: var(--krds-radius-xlarge1);
   border: 1px solid var(--krds-color-light-gray-20);
@@ -1115,7 +1119,6 @@ td .btn-group  {
 .krds-file-upload.custom-upload .file-upload {
   flex: 3;
   gap: var(--krds-gap-5);
-  height: 100%;
   min-height: 25rem;
   max-width: calc(100% - 19rem);
   padding: var(--krds-file-upload--file-padding-x);
@@ -1226,4 +1229,173 @@ td .btn-group  {
 }
 .alert-box.msg-error .alert-tit::before {
   background-image: url(../../_common/resources/img/ico_system_danger.svg);
+}
+
+
+
+
+
+
+/* 급별 박스 */
+.grade-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--krds-number-5);
+}
+
+/* 급별 선택 */
+.grade-select {
+    display: flex;
+    flex: 1;
+    gap: var(--krds-number-5);
+    align-items: flex-end;
+}
+
+/* 라디오 아이템 */
+.radio-item {
+    flex: 1;
+    min-width: 0;
+}
+
+.radio-item.first {
+    flex: 0 0 auto;
+    width: 30.8rem;
+}
+
+.radio-item.type {
+    flex: 0 0 auto;
+    width: 10rem;
+}
+
+.radio-item label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--krds-number-7) var(--krds-number-8);
+    background: var(--krds-color-light-gray-0);
+    border: 1px solid var(--krds-color-light-gray-20);
+    border-radius: var(--krds-number-5);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.radio-item label span {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--krds-color-light-gray-70);
+    white-space: nowrap;
+}
+
+/* 선택된 상태 - 급별 선택 */
+#kindergarten:checked ~ .grade-box .grade-select .radio-item.first label,
+#middle:checked ~ .grade-box .grade-select .radio-item:nth-child(2) label,
+#high:checked ~ .grade-box .grade-select .radio-item:nth-child(3) label,
+#special:checked ~ .grade-box .grade-select .radio-item:nth-child(4) label,
+#each:checked ~ .grade-box .grade-select .radio-item:nth-child(5) label {
+    border-color: var(--krds-color-light-primary-50);
+}
+
+#kindergarten:checked ~ .grade-box .grade-select .radio-item.first label span,
+#middle:checked ~ .grade-box .grade-select .radio-item:nth-child(2) label span,
+#high:checked ~ .grade-box .grade-select .radio-item:nth-child(3) label span,
+#special:checked ~ .grade-box .grade-select .radio-item:nth-child(4) label span,
+#each:checked ~ .grade-box .grade-select .radio-item:nth-child(5) label span {
+    color: var(--krds-color-light-primary-60);
+    font-weight: bold;
+}
+
+/* 유치원 타입 선택된 상태 */
+.radio-item.type input:checked + label {
+    border-color: var(--krds-color-light-primary-50);
+}
+
+.radio-item.type input:checked + label span {
+    color: var(--krds-color-light-primary-60);
+    font-weight: bold;
+}
+
+/* 라디오 아이콘 */
+.radio-icon {
+    position: relative;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: var(--krds-color-light-gray-20);
+    flex-shrink: 0;
+}
+
+/* 급별 선택 시 체크마크 */
+#kindergarten:checked ~ .grade-box .grade-select .radio-item.first .radio-icon::before,
+#middle:checked ~ .grade-box .grade-select .radio-item:nth-child(2) .radio-icon::before,
+#high:checked ~ .grade-box .grade-select .radio-item:nth-child(3) .radio-icon::before,
+#special:checked ~ .grade-box .grade-select .radio-item:nth-child(4) .radio-icon::before,
+#each:checked ~ .grade-box .grade-select .radio-item:nth-child(5) .radio-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--krds-color-light-primary-50);
+    border-radius: 50%;
+}
+
+#kindergarten:checked ~ .grade-box .grade-select .radio-item.first .radio-icon::after,
+#middle:checked ~ .grade-box .grade-select .radio-item:nth-child(2) .radio-icon::after,
+#high:checked ~ .grade-box .grade-select .radio-item:nth-child(3) .radio-icon::after,
+#special:checked ~ .grade-box .grade-select .radio-item:nth-child(4) .radio-icon::after,
+#each:checked ~ .grade-box .grade-select .radio-item:nth-child(5) .radio-icon::after {
+    content: "";
+    position: absolute;
+    left: 0.35rem;
+    top: 0.2rem;
+    width: 0.5rem;
+    height: 0.8rem;
+    border: solid white;
+    border-width: 0 0.15rem 0.15rem 0;
+    transform: rotate(45deg);
+}
+
+/* 유치원 타입 선택 시 체크마크 */
+.radio-item.type input:checked + label .radio-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--krds-color-light-primary-50);
+    border-radius: 50%;
+}
+
+.radio-item.type input:checked + label .radio-icon::after {
+    content: "";
+    position: absolute;
+    left: 0.35rem;
+    top: 0.2rem;
+    width: 0.5rem;
+    height: 0.8rem;
+    border: solid white;
+    border-width: 0 0.15rem 0.15rem 0;
+    transform: rotate(45deg);
+}
+
+/* 마이너스 아이콘 */
+.radio-icon.minus::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.7rem;
+    height: 0.15rem;
+    background: white;
+    border-radius: 0.1rem;
+}
+
+/* 유치원 타입 섹션 */
+.kindergarten-type {
+    display: none;
+    gap: var(--krds-number-3);
+}
+
+/* 유치원 선택 시 유치원 타입 표시 */
+#kindergarten:checked ~ .grade-box .kindergarten-type {
+    display: flex;
 }

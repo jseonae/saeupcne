@@ -176,6 +176,113 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>급별</h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="radio" id="kindergarten" name="grade" hidden checked>
+                            <input type="radio" id="middle" name="grade" hidden>
+                            <input type="radio" id="high" name="grade" hidden>
+                            <input type="radio" id="special" name="grade" hidden>
+                            <input type="radio" id="each" name="grade" hidden>
+                            <div class="grade-box">
+                                <!-- 급별 선택 -->
+                                <div class="form-conts grade-select">
+                                    <div class="radio-item first">
+                                        <label for="kindergarten">
+                                            <span>유치원</span>
+                                            <i class="radio-icon"></i>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="radio-item">
+                                        <label for="middle">
+                                            <span>중등</span>
+                                            <i class="radio-icon"></i>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="radio-item">
+                                        <label for="high">
+                                            <span>고등</span>
+                                            <i class="radio-icon"></i>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="radio-item">
+                                        <label for="special">
+                                            <span>특</span>
+                                            <i class="radio-icon"></i>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="radio-item">
+                                        <label for="each">
+                                            <span>각</span>
+                                            <i class="radio-icon"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- 유치원 선택하면 나타남 -->
+                                <div class="kindergarten-type">
+                                    <div class="radio-item type">
+                                        <input type="radio" id="single" name="kindergarten-type" hidden>
+                                        <label for="single">
+                                            <span>단설유</span>
+                                            <i class="radio-icon minus"></i>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="radio-item type">
+                                        <input type="radio" id="attached" name="kindergarten-type" hidden>
+                                        <label for="attached">
+                                            <span>병설유</span>
+                                            <i class="radio-icon minus"></i>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="radio-item type">
+                                        <input type="radio" id="private" name="kindergarten-type" hidden>
+                                        <label for="private">
+                                            <span>사립유</span>
+                                            <i class="radio-icon minus"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>설립구분</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input medium disabled" value="공주" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>학급수</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input medium" value="1224">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>학생수</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input medium" value="1224">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- 기타 -->
@@ -245,6 +352,16 @@
                                 <div class="krds-form-toggle-switch large long-switch">
                                     <input type="checkbox" id="switch_lg_1">
                                     <label for="switch_lg_1"><span class="switch-toggle"><i></i></span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="status-row">
+                            <span class="label">학교 관리자</span>
+                            <div class="toggle-wrapper member-edit">
+                                <span class="toggle-label">미승인</span>
+                                <div class="krds-form-toggle-switch large long-switch">
+                                    <input type="checkbox" id="switch_lg_2">
+                                    <label for="switch_lg_2"><span class="switch-toggle"><i></i></span></label>
                                 </div>
                             </div>
                         </div>
