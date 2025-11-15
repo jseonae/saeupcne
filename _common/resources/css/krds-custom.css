@@ -393,10 +393,6 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
     -webkit-mask-image: url(../../resources/img/ico_receipt.svg);
     mask-image: url(../../resources/img/ico_receipt.svg);
 }
-.svg-icon.ico-reset-type2 {
-    -webkit-mask-image: url(../../resources/img/ico_reset_type2.svg);
-    mask-image: url(../../resources/img/ico_reset_type2.svg);
-}
 .svg-icon.ico-shadow {
     -webkit-mask-image: url(../../resources/img/ico_shadow.svg);
     mask-image: url(../../resources/img/ico_shadow.svg);
