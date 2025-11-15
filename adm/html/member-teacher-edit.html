@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">회원수정(단위) 최고관리자 member-teacher-edit</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+</head>
+
+<body data-current-menu="member" data-current-submenu="business-staff" >
+
+<div id="wrap" class="g-wrap">
+
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+
+  <header id="header"></header>
+
+  <main id="container" class="page-edit">
+    <div class="inner cols-2 in-between">
+        <!-- Left -->
+        <div class="left-section">
+            <strong class="page-title">수정 및 변경 관리</strong>
+            <!-- 기본정보 -->
+            <div class="section contents-box contents-box-shadow">
+                <div class="section-header">
+                    <h3 class="section-title">기본정보</h3>
+                </div>
+                <div class="form">
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>회원 아이디</h4>
+                            <span class="sub-label">EPKI key</span>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input disabled" value="epkikey1234-e123-e123-epkikey123456789" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>성명</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input" value="홍길동">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>연락처(사무실)</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group-inner">
+                                <div class="form-conts">
+                                    <select class="krds-form-select medium">
+                                        <option value="041">041</option>
+                                        <option value="042">042</option>
+                                        <option value="02">02</option>
+                                    </select>
+                                </div>
+                                <span class="separator">-</span>
+                                <div class="form-conts">
+                                    <input type="text" class="krds-input medium" value="123">
+                                </div>
+                                <span class="separator">-</span>
+                                <div class="form-conts">
+                                    <input type="text" class="krds-input medium" value="1234">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>연락처(휴대폰)</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group-inner">
+                                <div class="form-conts">
+                                    <select class="krds-form-select medium">
+                                        <option value="010">010</option>
+                                        <option value="011">011</option>
+                                        <option value="016">016</option>
+                                    </select>
+                                </div>
+                                <span class="separator">-</span>
+                                <div class="form-conts">
+                                    <input type="text" class="krds-input medium" value="1234">
+                                </div>
+                                <span class="separator">-</span>
+                                <div class="form-conts">
+                                    <input type="text" class="krds-input medium" value="1234">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>이메일</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group-inner email">
+                                <div class="form-conts">
+                                    <input type="text" class="krds-input medium" value="a1234">
+                                </div>
+                                <span class="separator">@</span>
+                                <div class="form-conts">
+                                    <input type="text" class="krds-input medium" value="cne.co.kr">
+                                </div>
+                                <div class="form-conts">
+                                    <select class="krds-form-select medium">
+                                        <option value="직접입력">직접입력</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                        <option value="naver.com">naver.com</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 소속정보 -->
+            <div class="section contents-box contents-box-shadow">
+                <div class="section-header">
+                    <h3 class="section-title">소속정보</h3>
+                </div>
+                <div class="form">
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>소속(기관, 학교)</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input medium" value="충남중학교">
+                            </div>
+                            <div class="form-conts">
+                                <ul class="search-result-wrap">
+                                    <li>충남중학교</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>지역</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input medium disabled" value="공주" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 기타 -->
+            <div class="section contents-box contents-box-shadow">
+                <div class="section-header">
+                    <h3 class="section-title">기타</h3>
+                </div>
+                <div class="form">
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>IP</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input medium disabled" value="122.000.000.000" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>등록일</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input medium disabled" value="2025-11-01 13:22:12" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>수정일</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input medium disabled" value="2025-11-03 16:22:12" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>최근접속일</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts">
+                                <input type="text" class="krds-input medium disabled" value="2025-11-03 18:22:12" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right -->
+        <div class="right-section max-wd-3">
+            <!-- 회원정보 Card -->
+            <div class="info-card">
+                <div class="card-header krds-badge-wrap">
+                    <h3>회원정보</h3>
+                    <span class="krds-badge outline-warning">수정 중</span>
+                </div>
+                <div class="divider"></div>
+                <div class="card-content">
+                    <div class="status-wrap">
+                        <div class="status-row">
+                            <span class="label">회원 상태</span>
+                            <div class="toggle-wrapper member-edit">
+                                <span class="toggle-label">미승인</span>
+                                <div class="krds-form-toggle-switch large long-switch">
+                                    <input type="checkbox" id="switch_lg_1">
+                                    <label for="switch_lg_1"><span class="switch-toggle"><i></i></span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <p class="action-message">회원정보를 수정하시겠습니까?</p>
+                <div class="btn-wrap flex-wrap-wrwp">
+                    <a href="#!" class="krds-btn tertiary top medium" onclick="location.reload(); return false;">
+                        <span>원래대로</span>
+                        <i class="svg-icon ico-reset medium"></i>
+                    </a>
+                    <a href="../html/member-supervisor-list.html" target="_self" class="krds-btn tertiary line medium">목록으로</a>
+                    <a href="../html/member-supervisor-list.html" target="_self" class="krds-btn primary">네, 수정합니다.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+</body>
+</html>

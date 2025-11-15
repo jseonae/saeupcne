@@ -11,7 +11,7 @@
 .g-wrap .g-example-wrap .g-example > strong:not(strong:first-child) {margin-top:2rem}
 .g-wrap .g-example-wrap .g-example .g-example-inner {display: flex;flex-wrap: wrap;gap: 2rem;align-items: center;}
 .g-wrap .g-example-wrap .g-example .g-example-inner.flex-dire-col {gap:1rem;align-items: flex-start;}
-.g-wrap .g-example-wrap .g-example .g-example-inner > div {display:flex;align-items: center;}
+.g-wrap .g-example-wrap .g-example .g-example-inner > div {display:flex;align-items: center;gap: var(--krds-gap-5);}
 .g-wrap .g-example-wrap .g-example .g-example-inner .subtitle {min-width: 10rem;color:var(--krds-color-light-gray-50);margin-right:.5rem;}
 
 
