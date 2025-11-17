@@ -1438,6 +1438,7 @@
     align-items: center;
     gap: var(--krds-number-3);
 }
+.project-right .manager-info {flex-direction: row;}
 
 .manager-name {
     font-weight: var(--krds-font-weight-bold);
