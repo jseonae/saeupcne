@@ -474,6 +474,9 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
 .svg-icon.ico-yelinfo-fill {
     background-image: url(../../resources/img/ico_system_info_type2.svg);
 }
+.svg-icon.ico-deepblinfo-fill {
+    background-image: url(../../resources/img/ico_system_info_type3.svg);
+}
 .svg-icon.ico-reject-fill {
     background-image: url(../../resources/img/ico_system_reject.svg);
 }
