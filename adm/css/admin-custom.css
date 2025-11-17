@@ -1339,10 +1339,11 @@ td .btn-group  {
 
 /* 선택된 상태 - 급별 선택 */
 #kindergarten:checked ~ .grade-box .grade-select .square-label.first,
-#middle:checked ~ .grade-box .grade-select .square-label:nth-child(2),
-#high:checked ~ .grade-box .grade-select .square-label:nth-child(3),
-#special:checked ~ .grade-box .grade-select .square-label:nth-child(4),
-#each:checked ~ .grade-box .grade-select .square-label:nth-child(5) {
+#elementary:checked ~ .grade-box .grade-select .square-label:nth-child(2),
+#middle:checked ~ .grade-box .grade-select .square-label:nth-child(3),
+#high:checked ~ .grade-box .grade-select .square-label:nth-child(4),
+#special:checked ~ .grade-box .grade-select .square-label:nth-child(5),
+#each:checked ~ .grade-box .grade-select .square-label:nth-child(6) {
   border-color: var(--krds-color-light-primary-50);
   color: var(--krds-color-light-primary-60);
   font-weight:var(--c-font-weight-6);
@@ -1351,9 +1352,10 @@ td .btn-group  {
 
 /* 급별 선택 시 체크마크 */
 #kindergarten:checked ~ .grade-box .grade-select .square-label.first .radio-icon,
-#middle:checked ~ .grade-box .grade-select .square-label:nth-child(2) .radio-icon,
-#high:checked ~ .grade-box .grade-select .square-label:nth-child(3) .radio-icon,
-#special:checked ~ .grade-box .grade-select .square-label:nth-child(4) .radio-icon,
-#each:checked ~ .grade-box .grade-select .square-label:nth-child(5) .radio-icon {
+#elementary:checked ~ .grade-box .grade-select .square-label:nth-child(2) .radio-icon,
+#middle:checked ~ .grade-box .grade-select .square-label:nth-child(3) .radio-icon,
+#high:checked ~ .grade-box .grade-select .square-label:nth-child(4) .radio-icon,
+#special:checked ~ .grade-box .grade-select .square-label:nth-child(5) .radio-icon,
+#each:checked ~ .grade-box .grade-select .square-label:nth-child(6) .radio-icon {
   background-image:url(../../krds/node_modules/krds-uiux/resources/img/component/icon/ico_complete_fill.svg);
 }
