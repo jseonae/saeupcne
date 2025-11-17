@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">로그프로그램(목록) 최고관리자 ooperation-privacy-log</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/build/jquery.datetimepicker.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/build/jquery.datetimepicker.full.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+</head>
+
+<body data-current-menu="operation" data-current-submenu="operation-log" >
+
+<div id="wrap" class="g-wrap">
+
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+
+  <header id="header"></header>
+
+  <main id="container">
+    <div class="inner menu-tab-wrap">
+        <div class="tab fill full">
+            <ul>
+                <li>
+                    <a href="../html/operation-login-log.html" target="_self" class="btn-tab">개인정보 열람 로그</a>
+                </li>
+                <li class="active">
+                    <a href="../html/operation-privacy-log.html" target="_self" class="btn-tab">개인정보 열람 로그 프로그램<i class="sr-only">선택됨</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="contents contents-box contents-box-shadow">
+          <div class="conts-hd search-top-box">
+            <div class="filter-section">
+                <a href="../html/operation-privacy-view.html" target="_self" class="krds-btn small primary">신규등록</a>
+            </div>
+            <div class="sch-form-wrap">
+              <div class="input-group">
+                <select class="krds-form-select medium" title="검색 조건">
+                  <option value="">전체</option>
+                  <option value="">프로그램 한글명</option>
+                  <option value="">프로그램 영문명</option>
+                </select>
+                <div class="sch-input">
+                  <input type="text" class="krds-input medium" placeholder="검색어를 입력해주세요" title="검색어 입력">
+                  <button type="button" class="krds-btn medium icon ico-search">
+                    <span class="sr-only">검색</span>
+                    <i class="svg-icon ico-sch"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="conts-area">
+            <div class="search-list-top">
+              <ul class="sch-info" aria-live="polite">
+                <li>목록 <span class="point">22,459</span>건</li>
+              </ul>
+              <ul class="sch-sort">
+                <li class="m-hide">
+                  <strong class="sort-label"><label for="search_result_count">목록 표시 개수</label></strong>
+                  <select class="krds-form-select-sort" id="search_result_count">
+                    <option>15개</option>
+                    <option>10개</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
+
+            <div class="krds-table-wrap">
+              <table class="tbl col data center" data-table="operation-list">
+                <caption>개인정보 열람 로그 목록 표</caption>
+                <colgroup>
+                  <col style="width:6%;">
+                  <col style="width:20%;">
+                  <col style="width:20%;">
+                  <col >
+                  <col style="width:10%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">프로그램명(국문)</th>
+                    <th scope="col">프로그램명(영문)</th>
+                    <th scope="col">개인정보 열람 항목</th>
+                    <th scope="col">관리</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>선택사업 신청 목록</td>
+                    <td>application-selected</td>
+                    <td>
+                        <div class="badge-group">
+                            <span class="krds-badge large outline-gray">이름</span>
+                            <span class="krds-badge large outline-gray">연락처(휴대폰)</span>
+                            <span class="krds-badge large outline-gray">연락처(사무실)</span>
+                            <span class="krds-badge large outline-gray">이메일</span>
+                            <span class="krds-badge large outline-gray">주소</span>
+                            <span class="krds-badge large outline-gray">생년월일</span>
+                        </div>
+                    </td>
+                    <td>
+                        <a class="krds-btn small line" href="../html/operation-privacy-modify.html" target="_self" title="수정">
+                            <i class="svg-icon ico-edit"></i>
+                        </a>
+                    </td>
+                  </tr>
+                  <!--2-->
+                  <tr>
+                    <td>1</td>
+                    <td>선택사업 신청 목록</td>
+                    <td>application-selected</td>
+                    <td>
+                        <div class="badge-group">
+                            <span class="krds-badge large outline-gray">이름</span>
+                            <span class="krds-badge large outline-gray">연락처(휴대폰)</span>
+                            <span class="krds-badge large outline-gray">연락처(사무실)</span>
+                            <span class="krds-badge large outline-gray">이메일</span>
+                            <span class="krds-badge large outline-gray">주소</span>
+                            <span class="krds-badge large outline-gray">생년월일</span>
+                        </div>
+                    </td>
+                    <td>
+                        <a class="krds-btn small line" href="../html/operation-privacy-modify.html" target="_self" title="수정">
+                            <i class="svg-icon ico-edit"></i>
+                        </a>
+                    </td>
+                  </tr>
+                  <!--3-->
+                  <tr>
+                    <td>1</td>
+                    <td>선택사업 신청 목록</td>
+                    <td>application-selected</td>
+                    <td>
+                        <div class="badge-group">
+                            <span class="krds-badge large outline-gray">이름</span>
+                            <span class="krds-badge large outline-gray">연락처(휴대폰)</span>
+                            <span class="krds-badge large outline-gray">연락처(사무실)</span>
+                            <span class="krds-badge large outline-gray">이메일</span>
+                            <span class="krds-badge large outline-gray">주소</span>
+                            <span class="krds-badge large outline-gray">생년월일</span>
+                        </div>
+                    </td>
+                    <td>
+                        <a class="krds-btn small line" href="../html/operation-privacy-modify.html" target="_self" title="수정">
+                            <i class="svg-icon ico-edit"></i>
+                        </a>
+                    </td>
+                  </tr>
+                  <!--4-->
+                  <tr>
+                    <td>1</td>
+                    <td>선택사업 신청 목록</td>
+                    <td>application-selected</td>
+                    <td>
+                        <div class="badge-group">
+                            <span class="krds-badge large outline-gray">이름</span>
+                            <span class="krds-badge large outline-gray">연락처(휴대폰)</span>
+                            <span class="krds-badge large outline-gray">연락처(사무실)</span>
+                            <span class="krds-badge large outline-gray">이메일</span>
+                            <span class="krds-badge large outline-gray">주소</span>
+                            <span class="krds-badge large outline-gray">생년월일</span>
+                        </div>
+                    </td>
+                    <td>
+                        <a class="krds-btn small line" href="../html/operation-privacy-modify.html" target="_self" title="수정">
+                            <i class="svg-icon ico-edit"></i>
+                        </a>
+                    </td>
+                  </tr>
+                  <!--5-->
+                  <tr>
+                    <td>1</td>
+                    <td>선택사업 신청 목록</td>
+                    <td>application-selected</td>
+                    <td>
+                        <div class="badge-group">
+                            <span class="krds-badge large outline-gray">이름</span>
+                            <span class="krds-badge large outline-gray">연락처(휴대폰)</span>
+                            <span class="krds-badge large outline-gray">연락처(사무실)</span>
+                            <span class="krds-badge large outline-gray">이메일</span>
+                            <span class="krds-badge large outline-gray">주소</span>
+                            <span class="krds-badge large outline-gray">생년월일</span>
+                        </div>
+                    </td>
+                    <td>
+                        <a class="krds-btn small line" href="../html/operation-privacy-modify.html" target="_self" title="수정">
+                            <i class="svg-icon ico-edit"></i>
+                        </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="page-btn-wrap">
+              <div class="btn-wrap">
+                <a href="../html/operation-privacy-view.html" target="_self" class="krds-btn small primary">신규등록</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="pagination" class="conts-ft"></div>
+
+        </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
+
+</body>
+</html>
