@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">팝업등록 최고관리자 operation-popup-edit</title>
+  <title th:text="${pageTitle}">팝업수정 최고관리자 operation-popup-modify</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -46,7 +46,7 @@
     <div class="inner cols-2 in-between">
         <!-- Left -->
         <div class="left-section">
-            <strong class="page-title">등록</strong>
+            <strong class="page-title">수정</strong>
             <!-- 1 -->
             <div class="section contents-box contents-box-shadow">
                 <div class="section-header">
@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-group">
                             <div class="form-conts">
-                                 <textarea class="krds-input pop-tit" placeholder="제목을 입력해주세요."></textarea>
+                                 <textarea class="krds-input pop-tit" placeholder="제목을 입력해주세요.">단위학교 사업선택제 누리집 사용 방법 및 안내사항</textarea>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,13 @@
                         </div>
                         <div class="form-group">
                             <div class="form-conts">
-                                <textarea class="krds-input pop-det" placeholder="내용을 입력해주세요."></textarea>
+                                <textarea class="krds-input pop-det" placeholder="내용을 입력해주세요.">
+문의 전, 첨부파일 확인해 주세요.
+누리집 사용 방법 및 자주하는 질의응답 안내
+교직원 인증서 로그인 시 오류 해결방법 안내
+2025 단위학교 사업선택제 사업목록 및 담당자 현황(2025.5.1 기준)
+자세히보기
+                                </textarea>
                             </div>
                         </div>
                     </div>
@@ -94,7 +100,9 @@
                                     <div class="file-list">
                                         <div class="file-info">
                                             <p class="preview-placeholder">이미지<br>미리보기</p>
-                                            <div class="file-img"></div>
+                                            <div class="file-img">
+                                                <img src="../img/pop-list-no-image.png" alt="첨부 파일 미리보기">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="file-upload">
@@ -121,7 +129,7 @@
                             <div class="form-conts">
                                 <div class="krds-check-area">
                                     <div class="krds-form-check">
-                                        <input type="radio" name="link-type-rdo" id="link-none" checked>
+                                        <input type="radio" name="link-type-rdo" id="link-none" >
                                         <label for="link-none">없음</label>
                                     </div>
                                     <div class="krds-form-check">
@@ -129,33 +137,33 @@
                                         <label for="link-self">현재창</label>
                                     </div>
                                     <div class="krds-form-check">
-                                        <input type="radio" name="link-type-rdo" id="link-blank">
+                                        <input type="radio" name="link-type-rdo" id="link-blank" checked>
                                         <label for="link-blank">새창</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-conts link-box">
-                                <input type="text" id="consult_name" class="krds-input link-input" placeholder="링크를 입력하세요.">
+                                <input type="text" id="consult_name" class="krds-input link-input" placeholder="링크를 입력하세요." value="/cop/bbs/BBSMSTR_000000000013/selectBoardArticle.do?nttId=1101923">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Right -->
         <div class="right-section max-wd-3">
             <div class="info-card">
                 <div class="card-header krds-badge-wrap">
-                    <h3>신규 팝업</h3>
-                    <span class="krds-badge outline-primary">작성 중</span>
+                    <h3>등록 된 팝업</h3>
+                    <span class="krds-badge outline-warning">수정 중</span>
                 </div>
                 <div class="card-content">
                     <div class="period-wrap">
                         <div class="krds-form-item">
                             <span class="krds-form-label">게시 시작일</span>
                             <div class="calendar-input">
-                                <input type="text" id="cal-start" class="start-date krds-input medium" placeholder="0000-00-00 00:00">
+                                <input type="text" id="cal-start" class="start-date krds-input medium" placeholder="0000-00-00 00:00" value="2025-11-01 00:00">
                                 <label for="cal-start" class="krds-btn small icon">
                                     <i class="svg-icon ico-calendar">달력열기</i>
                                 </label>
@@ -164,7 +172,7 @@
                         <div class="krds-form-item">
                             <span class="krds-form-label">게시 종료일</span>
                             <div class="calendar-input">
-                                <input type="text" id="cal-end" class="end-date krds-input medium" placeholder="0000-00-00 00:00">
+                                <input type="text" id="cal-end" class="end-date krds-input medium" placeholder="0000-00-00 00:00" value="2025-11-22 18:00">
                                 <label for="cal-end" class="krds-btn small icon">
                                     <i class="svg-icon ico-calendar">달력열기</i>
                                 </label>
@@ -175,9 +183,9 @@
                         <div class="status-row">
                             <span class="label">게시 여부</span>
                             <div class="toggle-wrapper post-edit">
-                                <span class="toggle-label">비공개</span>
+                                <span class="toggle-label is-on">공개</span>
                                 <div class="krds-form-toggle-switch large long-switch">
-                                    <input type="checkbox" id="switch_lg_1">
+                                    <input type="checkbox" id="switch_lg_1" checked>
                                     <label for="switch_lg_1"><span class="switch-toggle"><i></i></span></label>
                                 </div>
                             </div>
@@ -187,10 +195,10 @@
             </div>
 
             <div class="action-section">
-                <p class="action-message">새로운 팝업을 등록하시겠습니까?</p>
+                <p class="action-message">수정 사항을 등록하시겠습니까?</p>
                 <div class="btn-wrap flex-wrap-wrwp">
                     <a href="#!" class="krds-btn tertiary top medium" onclick="location.reload(); return false;">
-                        <span>다시작성</span>
+                        <span>원래대로</span>
                         <i class="svg-icon ico-reset medium"></i>
                     </a>
                     <a href="../html/operation-popup-list.html" target="_self" class="krds-btn tertiary line medium">목록으로</a>

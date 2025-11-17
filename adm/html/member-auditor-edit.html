@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">회원수정(사업) 최고관리자 member-supervisor-edit</title>
+  <title th:text="${pageTitle}">회원수정(감사) 최고관리자 member-auditor-edit</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../css/admin-custom.css">
 </head>
 
-<body data-current-menu="member" data-current-submenu="business-staff" >
+<body data-current-menu="member" data-current-submenu="auditor" >
 
 <div id="wrap" class="g-wrap">
 
@@ -54,51 +54,49 @@
                     <div class="form-box">
                         <div class="form-tt">
                             <h4>회원 아이디</h4>
-                            <span class="sub-label">EPKI key</span>
                         </div>
                         <div class="form-group">
                             <div class="form-conts">
-                                <input type="text" class="krds-input disabled" value="epkikey1234-e123-e123-epkikey123456789" readonly>
+                                <input type="text" class="krds-input disabled" value="saeupcne01" readonly>
                             </div>
                         </div>
                     </div>
                     <div class="form-box">
                         <div class="form-tt">
-                            <h4>성명</h4>
+                            <h4>비밀번호</h4>
                         </div>
                         <div class="form-group">
-                            <div class="form-conts">
-                                <input type="text" class="krds-input" value="홍길동">
+                            <div class="form-conts btn-ico-wrap">
+                                <input type="password" class="krds-input" placeholder="비밀번호를 입력해주세요" value="saeupcne01">
+                                <button type="button" class="krds-btn medium icon">
+                                    <span class="sr-only">입력한 비밀번호 보기</span>
+                                    <i class="svg-icon ico-pw-visible"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-tt">
+                            <h4>비밀번호 확인</h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-conts btn-ico-wrap">
+                                <input type="text" class="krds-input" placeholder="비밀번호를 다시 입력해주세요" value="saeupcn01">
+                                <button type="button" class="krds-btn medium icon">
+                                    <span class="sr-only">입력한 비밀번호 가리기</span>
+                                    <i class="svg-icon ico-pw-visible-on"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group alert-wrap">
+                            <div class="alert-box msg-error">
+                                <p class="alert-tit">비밀번호가 일치하지 않습니다.</p>
                             </div>
                         </div>
                     </div>
                     <div class="form-box">
                         <div class="form-tt">
                             <h4>연락처(사무실)</h4>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-group-inner">
-                                <div class="form-conts">
-                                    <select class="krds-form-select medium">
-                                        <option value="041">041</option>
-                                        <option value="042">042</option>
-                                        <option value="02">02</option>
-                                    </select>
-                                </div>
-                                <span class="separator">-</span>
-                                <div class="form-conts">
-                                    <input type="text" class="krds-input medium" value="123">
-                                </div>
-                                <span class="separator">-</span>
-                                <div class="form-conts">
-                                    <input type="text" class="krds-input medium" value="1234">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-box">
-                        <div class="form-tt">
-                            <h4>연락처(휴대폰)</h4>
                         </div>
                         <div class="form-group">
                             <div class="form-group-inner">
@@ -120,29 +118,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-box">
-                        <div class="form-tt">
-                            <h4>이메일</h4>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-group-inner email">
-                                <div class="form-conts">
-                                    <input type="text" class="krds-input medium" value="a1234">
-                                </div>
-                                <span class="separator">@</span>
-                                <div class="form-conts">
-                                    <input type="text" class="krds-input medium" value="cne.co.kr">
-                                </div>
-                                <div class="form-conts">
-                                    <select class="krds-form-select medium">
-                                        <option value="직접입력">직접입력</option>
-                                        <option value="gmail.com">gmail.com</option>
-                                        <option value="naver.com">naver.com</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- 소속정보 -->
@@ -157,7 +132,7 @@
                         </div>
                         <div class="form-group">
                             <div class="form-conts">
-                                <input type="text" class="krds-input medium" value="민주시민교육과">
+                                <input type="text" class="krds-input medium" value="감사1팀">
                             </div>
                         </div>
                     </div>
@@ -244,8 +219,8 @@
                         <span>원래대로</span>
                         <i class="svg-icon ico-reset medium"></i>
                     </a>
-                    <a href="../html/member-supervisor-list.html" target="_self" class="krds-btn tertiary line medium">목록으로</a>
-                    <a href="../html/member-supervisor-list.html" target="_self" class="krds-btn primary">네, 수정합니다.</a>
+                    <a href="../html/member-auditor-list.html" target="_self" class="krds-btn tertiary line medium">목록으로</a>
+                    <a href="../html/member-auditor-list.html" target="_self" class="krds-btn primary">네, 수정합니다.</a>
                 </div>
             </div>
         </div>
