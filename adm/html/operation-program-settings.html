@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">회원수정(사업) 최고관리자 member-supervisor-edit</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+</head>
+
+<body>
+
+<div id="wrap" class="g-wrap">
+
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+
+  <header id="header"></header>
+
+  <main id="container" class="page-edit">
+    <div class="inner cols-2 in-between">
+        <!-- Left -->
+        <div class="left-section">
+            <strong class="page-title">수정 및 변경 관리</strong>
+            <!-- 기본설정 Section -->
+            <section class="section contents-box contents-box-shadow">
+                <div class="section-header">
+                    <h3 class="section-title">기본설정</h3>
+                </div>
+                <form class="form">
+                    <!-- 사업년도 -->
+                    <fieldset class="form-box">
+                        <div class="form-tt">
+                            <h4>사업년도</h4>
+                        </div>
+                        <div class="form-group approval-group-select">
+                            <p class="input-message">선택하신 사업년도만 사용자에게 출력됩니다.</p>
+                            <select class="krds-form-select large">
+                                <option value="2026">2026</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+            <!-- 사업별 승인개수 Section -->
+            <section class="section contents-box contents-box-shadow">
+                <div class="section-header">
+                    <h3 class="section-title">사업별 승인개수</h3>
+                </div>
+                <aside class="infobox">
+                    <i class="svg-icon ico-deepblinfo-fill"></i>
+                    <p>승인 개수 제한을 두지 않을 경우 제한없음을 체크하시기 바랍니다.</p>
+                </aside>
+                <form class="form">
+                    <fieldset class="form-box">
+                        <div class="form-tt">
+                            <h4>선택 사업</h4>
+                        </div>
+                        <div class="form-group approval-group">
+                            <input type="checkbox" class="square-btn approval-check hide-input" id="project1">
+                            <label for="project1" class="square-label large">
+                                <i class="check-icon"></i>
+                                제한없음
+                            </label>
+                            <div class="form-group-inner">
+                                <input type="number" class="krds-input aling-right large approval-number" value="20">
+                                <span class="unit">개</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-box">
+                        <div class="form-tt">
+                            <h4>선택 외 사업</h4>
+                        </div>
+                        <div class="form-group approval-group">
+                            <input type="checkbox" class="square-btn approval-check hide-input" id="project2" checked>
+                            <label for="project2" class="square-label large">
+                                <i class="check-icon"></i>
+                                제한없음
+                            </label>
+                            <div class="form-group-inner">
+                                <input type="number" class="krds-input aling-right large approval-number" value="20">
+                                <span class="unit">개</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-box">
+                        <div class="form-tt">
+                            <h4>자율 사업</h4>
+                        </div>
+                        <div class="form-group approval-group">
+                            <input type="checkbox" class="square-btn approval-check hide-input" id="project3">
+                            <label for="project3" class="square-label large">
+                                <i class="check-icon"></i>
+                                제한없음
+                            </label>
+                            <div class="form-group-inner">
+                                <input type="number" class="krds-input aling-right large approval-number" value="20">
+                                <span class="unit">개</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-box">
+                        <div class="form-tt">
+                            <h4>개방형 사업</h4>
+                        </div>
+                        <div class="form-group approval-group">
+                            <input type="checkbox" class="square-btn approval-check hide-input" id="project4">
+                            <label for="project4" class="square-label large">
+                                <i class="check-icon"></i>
+                                제한없음
+                            </label>
+                            <div class="form-group-inner">
+                                <input type="number" class="krds-input aling-right large approval-number" value="20">
+                                <span class="unit">개</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-box">
+                        <div class="form-tt">
+                            <h4>특교 사업</h4>
+                        </div>
+                        <div class="form-group approval-group">
+                            <input type="checkbox" class="square-btn approval-check hide-input" id="project5">
+                            <label for="project5" class="square-label large">
+                                <i class="check-icon"></i>
+                                제한없음
+                            </label>
+                            <div class="form-group-inner">
+                                <input type="number" class="krds-input aling-right large approval-number" value="20">
+                                <span class="unit">개</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+        </div>
+
+        <!-- Right -->
+        <div class="right-section max-wd-3">
+            <div class="info-card">
+                <div class="card-header krds-badge-wrap">
+                    <h3>공모사업 설정</h3>
+                </div>
+                <div class="divider"></div>
+                <div class="card-content">
+                    <div class="status-wrap">
+                        <div class="status-row">
+                            <span class="label">전 사업 승인 개수 제한없음</span>
+                            <div class="toggle-wrapper member-edit">
+                                <div class="krds-form-toggle-switch large long-switch" data-role="approval-toggle-all">
+                                    <input type="checkbox" id="switch_lg_1">
+                                    <label for="switch_lg_1"><span class="switch-toggle"><i></i></span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-section op-action">
+                <p class="action-message op-action-msg">수정된 설정값이 있습니다. 저장하시겠습니까?</p>
+                <div class="btn-wrap">
+                    <button type="button" data-role="save-settings" class="krds-btn primary wp100" disabled>네, 수정합니다.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+</body>
+</html>
