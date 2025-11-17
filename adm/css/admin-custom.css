@@ -36,6 +36,9 @@ body {
 }
 
 #container > .inner:not(.in-between) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-4);
   padding: var(--krds-pc-padding-card-medium);
 }
 
@@ -968,6 +971,15 @@ td .btn-group  {
 .krds-table-wrap .tbl[data-table="program-list"] .project-name strong {max-width:340px;} /*공모사업*/
 .krds-table-wrap .tbl[data-table="report-list"] .project-name strong {max-width:600px;} /*결과보고*/
 
+.krds-table-wrap .tbl[data-table="operation-list"].data tbody th,
+.krds-table-wrap .tbl[data-table="operation-list"].data tbody td {padding: var(--krds-padding-8) var(--krds-padding-6);}
+.krds-table-wrap .tbl[data-table="operation-list"] .reason-dt p {max-width:400px;} /*로그프로그램*/
+.krds-table-wrap .tbl[data-table="operation-list"] .krds-btn.link {
+  max-width: 240px;
+  color: var(--krds-high-contrast-color-text-subtle-inverse);
+  font-weight: var(--c-font-weight-3);
+}
+
 
 .krds-form-check input[type=radio]:disabled ~ label:before,
 .krds-form-check input[type=checkbox]:disabled ~ label:before {
@@ -1444,16 +1456,9 @@ td .btn-group  {
     display: flex;
     align-items: center;
     gap: var(--krds-number-3);
+    min-width: 20rem;
 }
 
-.team {
-    width: 10rem;
-    flex-shrink: 0;
-}
-
-.name {
-    flex: 1;
-}
 
 /* 라벨 공통 */
 .team .label,
@@ -1568,9 +1573,6 @@ input[data-field="org-name"].open {
 }
 
 
-
-
-
 /* 정보박스 */
 .infobox {
   display: flex;
@@ -1585,4 +1587,112 @@ input[data-field="org-name"].open {
 
 .infobox > p {
     flex: 1;
+}
+
+
+#container > .inner.menu-tab-wrap {
+    padding: var(--krds-pc-padding-card-medium) var(--krds-pc-padding-card-medium) 0;
+}
+.menu-tab-wrap .tab.full > ul > li {
+  max-width: 60rem;
+}
+.menu-tab-wrap .tab.fill .btn-tab {
+  background-color: var(--krds-light-color-background-white);
+}
+.menu-tab-wrap .tab.fill .active .btn-tab {
+  background-color: var(--krds-tab--fill-button-color-action-active);
+}
+
+
+
+/* 칩 그룹 컨테이너 */
+.chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: var(--krds-number-7);
+    padding: var(--krds-number-10) var(--krds-number-12);
+    background: var(--krds-color-light-gray-0);
+    border: var(--krds-number-1) solid var(--krds-color-light-gray-20);
+    border-radius: 1rem;
+    width: 100%;
+}
+
+/* 칩 라벨 (기본 상태) */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--krds-number-3);
+    padding: var(--krds-number-3) var(--krds-number-8);
+    background: var(--krds-color-light-gray-0);
+    border: var(--krds-number-1) solid var(--krds-color-light-gray-30);
+    border-radius: var(--krds-number-5);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* 칩 텍스트 */
+.chip-text {
+    font-size: 1.9rem;
+    line-height: 1.5;
+    color: var(--krds-color-light-gray-90);
+    white-space: nowrap;
+}
+
+/* 칩 호버 상태 */
+.chip:hover {
+    background: var(--krds-color-light-gray-5);
+}
+
+/* 칩 아이콘 (기본 숨김) */
+.chip .svg-icon.ico-checkbox {
+    position: relative;
+    width: var(--krds-number-9);
+    height: var(--krds-number-9);
+    flex-shrink: 0;
+    display: none;
+}
+
+/* 체크 표시 SVG */
+.chip .svg-icon.ico-checkbox::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.33594 9.99967L9.38857 15.833L17.5026 3.33301' stroke='%23256EF4' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 체크된 상태 - 칩 배경 및 테두리 */
+.hide-input:checked + .chip {
+    background: var(--krds-color-light-primary-5);
+    border-color: var(--krds-color-light-primary-50);
+}
+
+/* 체크된 상태 - 텍스트 색상 */
+.hide-input:checked + .chip .chip-text {
+    color: var(--krds-color-light-primary-60);
+}
+
+/* 체크된 상태 - 아이콘 표시 */
+.hide-input:checked + .chip .svg-icon.ico-checkbox {
+    display: block;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .chip-group {
+        padding: var(--krds-number-8) var(--krds-number-10);
+        gap: var(--krds-number-5);
+    }
+    
+    .chip {
+        padding: var(--krds-number-2) var(--krds-number-6);
+    }
+    
+    .chip-text {
+        font-size: 1.7rem;
+    }
 }

@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">로그프로그램(등록) 최고관리자 operation-privacy-view</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+</head>
+
+<body data-current-menu="operation" data-current-submenu="operation-log" >
+
+<div id="wrap" class="g-wrap">
+
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+
+  <header id="header"></header>
+
+  <main id="container" class="page-edit">
+    <div class="inner">
+        <strong class="page-title">신규 등록</strong>
+        <div class="section contents-box contents-box-shadow">
+            <div class="section-header">
+                <h3 class="section-title">기본설정</h3>
+            </div>
+            <div class="form">
+                <div class="form-box">
+                    <div class="form-tt">
+                        <h4>프로그램 <em>국문명</em></h4>
+                        <span class="sub-label">명칭을 입력하면 목록이 나타납니다.</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-conts">
+                            <input type="text" class="krds-input medium" data-field="org-name" placeholder="프로그램 명칭을 한글로 입력하세요.">
+                            <div class="search-result-box">
+                                <ul class="result-list">
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="name">
+                                                <span class="label">국문명</span>
+                                                <span class="value">선택사업 신청 목록</span>
+                                            </div>
+                                            <div class="team">
+                                                <span class="label">영문명</span>
+                                                <span class="value">application-selected</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-tt">
+                        <h4>프로그램 <em>영문명</em></h4>
+                        <span class="sub-label">국문명을 입력하시면 자동으로 입력됩니다.</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-conts">
+                            <input type="text" class="krds-input medium disabled" readonly data-field="org-region" placeholder="자동입력">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section contents-box contents-box-shadow">
+            <div class="section-header">
+                <h3 class="section-title">필수설정</h3>
+            </div>
+            <div class="form">
+                <div class="form-box">
+                    <div class="form-tt">
+                        <h4>개인정보 열람 항목</h4>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-conts">
+                            <div class="chip-group">
+                                <input type="checkbox" id="chip1" class="chip-input hide-input" checked>
+                                <label for="chip1" class="chip">
+                                    <i class="svg-icon ico-checkbox"></i>
+                                    <span class="chip-text">이름</span>
+                                </label>
+
+                                <input type="checkbox" id="chip2" class="chip-input hide-input" checked>
+                                <label for="chip2" class="chip">
+                                    <i class="svg-icon ico-checkbox"></i>
+                                    <span class="chip-text">연락처(사무실)</span>
+                                </label>
+
+                                <input type="checkbox" id="chip3" class="chip-input hide-input">
+                                <label for="chip3" class="chip">
+                                    <i class="svg-icon ico-checkbox"></i>
+                                    <span class="chip-text">연락처(휴대폰)</span>
+                                </label>
+
+                                <input type="checkbox" id="chip4" class="chip-input hide-input" checked>
+                                <label for="chip4" class="chip">
+                                    <i class="svg-icon ico-checkbox"></i>
+                                    <span class="chip-text">이메일</span>
+                                </label>
+
+                                <input type="checkbox" id="chip5" class="chip-input hide-input">
+                                <label for="chip5" class="chip">
+                                    <i class="svg-icon ico-checkbox"></i>
+                                    <span class="chip-text">주소</span>
+                                </label>
+
+                                <input type="checkbox" id="chip6" class="chip-input hide-input">
+                                <label for="chip6" class="chip">
+                                    <i class="svg-icon ico-checkbox"></i>
+                                    <span class="chip-text">생년월일</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-btn-wrap both">
+            <div class="btn-wrap">
+                <a href="javascript:void(0)" class="krds-btn small tertiary">목록</a>
+            </div>
+            <div class="btn-wrap">
+                <a href="javascript:void(0)" class="krds-btn small tertiary">취소</a>
+                <a href="javascript:void(0)" class="krds-btn small primary">등록</a>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+</body>
+</html>
+
+
+
+
+

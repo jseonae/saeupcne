@@ -16,21 +16,21 @@
     --c-font-weight-6: 600;
 }
 /* 텍스트 정렬(전역 사용 클래스) */
-.aling-center {text-align:center;}
-.aling-left {text-align:left;}
-.aling-right {text-align:right;}
+.aling-center {text-align:center !important;}
+.aling-left {text-align:left !important;}
+.aling-right {text-align:right !important;}
 
 
 /* 정렬 */
-.flex-dire-row {flex-direction: row;}
-.flex-dire-col {flex-direction: column;}
-.flex-dire-row-rev {flex-direction: row-reverse;}
-.flex-dire-col-rev {flex-direction: column-reverse;}
+.flex-dire-row {flex-direction: row !important;}
+.flex-dire-col {flex-direction: column !important;}
+.flex-dire-row-rev {flex-direction: row-reverse !important;}
+.flex-dire-col-rev {flex-direction: column-reverse !important;}
 
-.flex-justify-center {justify-content: center;}
-.flex-justify-start {justify-content: flex-start;}
-.flex-justify-end {justify-content: flex-end;}
-.flex-justify-between {justify-content: space-between;}
+.flex-justify-center {justify-content: center !important;}
+.flex-justify-start {justify-content: flex-start !important;}
+.flex-justify-end {justify-content: flex-end !important;}
+.flex-justify-between {justify-content: space-between !important;}
 
 
 /* ========================================
@@ -108,6 +108,7 @@
 
 .project-name {
   text-align: left;
+  width:100%;
 }
 
 .project-name .info-top {
@@ -144,6 +145,7 @@
   padding: 8px 10px;
   border-radius: var(--krds-radius-small3);
   font-size: 14px;
+  text-align: left;
   line-height: 1.4;
   white-space: normal;
   z-index: 1000;

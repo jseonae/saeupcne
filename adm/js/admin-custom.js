@@ -263,7 +263,8 @@ $(function () {
 $(function(){
   $.datetimepicker.setLocale('kr');
   $('.datetimepicker').datetimepicker({
-      format:'Y-m-d H:i'
+    timepicker:false,
+    format:'Y-m-d',
   });
 
   // 시작일, 종료일 적용 버전
@@ -414,8 +415,6 @@ $(function () {
     }
   });
 });
-
-
 
 /* ------------------------------------------------------------------------
  * 비밀번호 / 비밀번호 확인 - 일치 여부 체크
