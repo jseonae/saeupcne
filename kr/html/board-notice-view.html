@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${pageTitle}">안내홍보 보기</title>
+
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/user-custom.css">
+  <script src="../js/user-custome.js" defer></script>
+  <script src="../js/user-modal.js" defer></script>
+
+  <!-- JavaScript (defer로 지연 로드 권장) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  <header id="header"></header>
+
+    <main class="bbs-wrap">
+        <section class="subtitle-container">
+            <div class="subtitle-inner">
+                <h1 class="page-title">안내홍보</h1>
+                <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="home"><a href="#" class="txt">홈</a></li>
+                    <li><a href="#" class="txt">안내홍보</a></li>
+                </ol>
+                </nav>
+            </div>
+        </section>
+        <section class="bbs-container">
+            <div class="krds-structured-list type3">
+                <div class="community-page-title line" id="title">
+                    <h2 class="tit">[공지] 권한 승계 관련 안내</h2>
+                    <div class="info_views">
+                        <p class="info">
+                            <span class="category">정책기획과</span>
+                            <span class="date">2025.09.08</span>
+                        </p>
+                        <span class="views"><img src="../img/ico-views.svg"> 258</span>
+                    </div>
+                    
+                </div>
+                <!-- 게시글txt -->
+                <div class="conts-area">
+                    <div class="g-description-area line" id="contents">
+                        게시판내용이 들어갑니다.
+                    </div>
+                </div>
+                <!-- 첨부파일 -->
+                <div class="g-attach-file-wrap">
+                    <div class="g-conts-area">
+                    <h4 class="con-tit">첨부파일</h4>
+                    <ul class="file-list" id="file-list"> 
+                        <li>
+                        <p class="name">2025 마을기반 교육과정 자율집중운영학교 정산보고서.hwpx (69.5K)</p>
+                        <div class="btn-download">
+                            <button type="button" class="krds-btn medium text">다운로드<i class="svg-icon ico-down"></i></button>
+                        </div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        <div class="page-btn-wrap m-column">
+            <a href="#" class="krds-btn xlarge tertiary" id="btn-back">목록으로 돌아가기</a>
+        </div>
+        </section>
+    </main>
+
+  <div id="footer"></div>
+</div>
+</body>
+</html>
