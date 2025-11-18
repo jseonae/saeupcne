@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">공지사항(수정) 최고관리자 board-admin-notice-modify</title>
+  <title th:text="${pageTitle}">자료실(등록) 최고관리자 board-admin-archive-create</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="../css/admin-custom.css">
 </head>
 
-<body data-current-menu="board" data-current-submenu="board-notice" >
+<body data-current-menu="board" data-current-submenu="board-archive" >
 
 <div id="wrap" class="g-wrap">
 
@@ -43,11 +43,11 @@
 
   <main id="container" class="page-edit board">
     <div class="inner">
-        <strong class="page-title">수정</strong>
+        <strong class="page-title">자료 등록</strong>
         <div class="contents contents-box contents-box-shadow">
             <div class="board-page-title line conts-hd">
                 <div class="krds-form-check large">
-                    <input type="checkbox" id="notice-fix" class="hide-input" checked>
+                    <input type="checkbox" id="notice-fix" class="hide-input">
                     <label for="notice-fix"><b>공지</b></label>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-conts">
-                                    <input type="text" class="krds-input large notice-tit" placeholder="제목을 입력해주세요." value="[공지] 권한 승계 관련 안내">
+                                    <input type="text" class="krds-input large notice-tit" placeholder="제목을 입력해주세요.">
                                 </div>
                             </div>
                         </div>
@@ -71,17 +71,9 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-conts textarea-wrap">
-                                    <textarea class="krds-input notice-det" placeholder="내용을 입력해주세요.">
-권한 승계 요청 전!!
-1. [확인 필수] 승계받으실 선생님 회원가입 하셨나요?
-2. [확인 필수] 승계받으실 선생님 소속교 현행화 하셨나요? (마이페이지에서 변경 가능)
-인사발령이나 업무변경으로 사업담당자가 변경된 경우 1:1문의란에 권한 승계를 요청해 주시기 바랍니다.
-< 사업 승계 신청 시 작성해야할 내용 >
-1. 학교명 / 2. 사업명 또는 사업번호 / 3. 인계자(전임자) / 4. 인수자(후임자)
-(작성예시: 충남초등학교/선택01, 학교도서관개선사업/박보검/아이유)
-                                    </textarea>
+                                    <textarea class="krds-input notice-det" placeholder="내용을 입력해주세요."></textarea>
                                     <p class="textarea-count">
-                                        <span class="count-now">267</span><span class="count-total">/10,000</span>
+                                        <span class="count-now">0</span><span class="count-total">/10,000</span>
                                     </p>
                                 </div>
                             </div>
@@ -109,6 +101,14 @@
                                 <div class="file-info">
                                     <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
                                     <div class="btn-wrap">
+                                        <span class="krds-spinner" role="status"><span class="sr-only">업로드 중</span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="file-info">
+                                    <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                    <div class="btn-wrap">
                                         <button type="button" class="krds-btn medium text">삭제 <i class="svg-icon ico-delete-fill"></i></button>
                                     </div>
                                 </div>
@@ -129,8 +129,8 @@
 
             <div class="page-btn-wrap conts-ft">
                 <div class="btn-wrap">
-                    <a href="../html/board-admin-notice-list.html" class="krds-btn medium tertiary">취소</a>
-                    <a href="../html/board-admin-notice-list.html" class="krds-btn medium primary pressed">수정등록</a>
+                    <a href="../html/board-admin-archive-list.html" class="krds-btn medium tertiary">취소</a>
+                    <a href="../html/board-admin-archive-list.html" class="krds-btn medium primary pressed">등록</a>
                 </div>
             </div>
         </div>

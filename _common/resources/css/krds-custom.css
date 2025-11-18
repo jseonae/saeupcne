@@ -16,9 +16,9 @@
     --c-font-weight-6: 600;
 }
 /* 텍스트 정렬(전역 사용 클래스) */
-.aling-center {text-align:center !important;}
-.aling-left {text-align:left !important;}
-.aling-right {text-align:right !important;}
+.align-center {text-align:center !important;}
+.align-left {text-align:left !important;}
+.align-right {text-align:right !important;}
 
 
 /* 정렬 */
@@ -39,10 +39,10 @@
 .krds-table-wrap .tbl.data.center thead th,
 .krds-table-wrap .tbl.data.center tbody td {text-align:center;}
 
-.krds-table-wrap .tbl.data.center tbody th:has(.aling-left),
-.krds-table-wrap .tbl.data.center tbody td:has(.aling-left) {text-align:left;}
-.krds-table-wrap .tbl.data.center tbody th:has(.aling-right),
-.krds-table-wrap .tbl.data.center tbody td:has(.aling-right) {text-align:right;}
+.krds-table-wrap .tbl.data.center tbody th:has(.align-left),
+.krds-table-wrap .tbl.data.center tbody td:has(.align-left) {text-align:left;}
+.krds-table-wrap .tbl.data.center tbody th:has(.align-right),
+.krds-table-wrap .tbl.data.center tbody td:has(.align-right) {text-align:right;}
 
 .krds-table-wrap .tbl.data thead th {
   padding: var(--krds-table--data-thead-th-padding) 1rem;
