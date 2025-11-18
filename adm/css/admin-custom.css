@@ -79,10 +79,11 @@ body {
   border-bottom: 1px solid var(--krds-color-light-gray-10);
 }
 
-.conts-area {
+.contents-box .conts-area {
   display: flex;
   flex-direction: column;
   gap: var(--krds-gap-4);
+  padding-bottom:0;
 }
 
 .krds-pagination {
@@ -964,19 +965,22 @@ td .btn-group  {
   -webkit-line-clamp: 1;
   line-clamp: 1;
   font-weight: var(--c-font-weight-6);
-  max-width: 280px;
+  font-size: var(--krds-button--mobile-font-size-medium);
 }
 
 .krds-table-wrap .krds-btn.link .underline {
   white-space: nowrap;
 }
 
+.krds-table-wrap .tbl[data-table="popup-list"] .krds-btn.link {
+  max-width: 280px;
+}
 
 /* ========================================
 * list 페이지 테이블
 * ====================================== */
 .krds-table-wrap .tbl[data-table="application-list"] .project-name strong {max-width:480px;} /*사업신청*/
-.krds-table-wrap .tbl[data-table="program-list"] .project-name strong {max-width:340px;} /*공모사업*/
+.krds-table-wrap .tbl[data-table="program-list"] .project-name strong {max-width:440px;} /*공모사업*/
 .krds-table-wrap .tbl[data-table="report-list"] .project-name strong {max-width:600px;} /*결과보고*/
 
 .krds-table-wrap .tbl[data-table="operation-list"].data tbody th,
@@ -1811,7 +1815,7 @@ input[data-field="org-name"].open {
   width: 100%;
 }
 .board-page-cont.line {
-  padding-bottom: var(--krds-gap-9);
+  padding: var(--krds-gap-9) 0;
   border-bottom: var(--krds-light-border-width-variable-regular) solid var(--krds-light-color-divider-gray-light);
 }
 
@@ -1895,3 +1899,38 @@ input[data-field="org-name"].open {
 .page-edit.board .notice-det {
   min-height:40rem;
 }
+
+.qna-list-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 var(--krds-number-6);
+}
+
+.qna-list-table tbody tr {
+    background: var(--krds-color-light-gray-0);
+    border: var(--krds-number-1) solid var(--krds-color-light-gray-20);
+    border-radius: var(--krds-number-5);
+    height: 6.6rem;
+}
+.qna-list-table tbody td {
+    padding: var(--krds-number-7) var(--krds-number-8);
+    color: var(--krds-color-light-gray-70);
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+.board-page-comment {}
+.comment-wrap {}
+.comment-wrap .comment {}
+.comment-wrap .comment p {}
+.comment-wrap .comment.none {}
+.comment-wrap .comment.none p {}
+
+
+
+

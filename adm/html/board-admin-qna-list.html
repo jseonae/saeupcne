@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">질의(목록) 최고관리자 board-admin-qna-list</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+</head>
+
+<body data-current-menu="board" data-current-submenu="board-qna" >
+
+<div id="wrap" class="g-wrap">
+
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+
+  <header id="header"></header>
+
+  <main id="container">
+    <div class="inner">
+        <div class="contents contents-box contents-box-shadow">
+          
+          <div class="conts-area">
+            <div class="search-list-top">
+                <ul class="sch-info" aria-live="polite">
+                    <li class="list-title">전체 <span class="point">22,459</span>건 <em class="description">제목을 클릭하여 문의내용을 확인하실 수 있습니다.</em></li>
+                </ul>
+                <ul class="sch-sort">
+                    <li class="m-hide">
+                        <strong class="sort-label"><label for="search_result_count">목록 표시 개수</label></strong>
+                        <select class="krds-form-select-sort" id="search_result_count">
+                            <option>15개</option>
+                            <option>10개</option>
+                        </select>
+                    </li>
+                    <li>
+                        <div class="sch-form-wrap flex-inline">
+                            <div class="input-group">
+                                <select class="krds-form-select medium" title="검색 조건">
+                                    <option value="">전체</option>
+                                    <option value="">작성자</option>
+                                    <option value="">제목</option>
+                                    <option value="">문의접수</option>
+                                    <option value="">답변완료</option>
+                                </select>
+                                <div class="sch-input">
+                                    <input type="text" class="krds-input medium" placeholder="검색어를 입력해주세요" title="검색어 입력">
+                                    <button type="button" class="krds-btn medium icon ico-search">
+                                        <span class="sr-only">검색</span>
+                                        <i class="svg-icon ico-sch"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="krds-table-wrap qna-list-container">
+                <table class="tbl col data center qna-list-table" data-table="notice-list">
+                    <colgroup>
+                        <col style="width: 4%;">
+                        <col style="width: 6%;">
+                        <col>
+                        <col style="width: 5%;">
+                        <col style="width: 8%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="krds-form-check">
+                                <input type="checkbox" id="checkAll">
+                                <label for="checkAll"><span class="sr-only">전체 선택</span></label>
+                                </div>
+                            </th>
+                            <th>순번</th>
+                            <th>제목</th>
+                            <th>답변</th>
+                            <th>상태</th>
+                            <th>작성자</th>
+                            <th>등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 1 -->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                <input type="checkbox" class="checkGroup" id="r1" />
+                                <label for="r1"><span class="sr-only">1행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>26</td>
+                            <td>
+                                <a href="../html/board-admin-qna-view.html" class="krds-btn link" target="_self" title="상세보기">
+                                    <span>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</span>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="krds-badge small icon-bd">
+                                    <i class="svg-icon ico-talk-disabled">답변 전</i>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="krds-badge small custom-bd bg-light-primary">접수</span>
+                            </td>
+                            <td>홍길동</td>
+                            <td>2025.10.22</td>
+                        </tr>
+
+                        <!-- 2 -->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                <input type="checkbox" class="checkGroup" id="r2" />
+                                <label for="r2"><span class="sr-only">2행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>25</td>
+                            <td>
+                                <a href="../html/board-admin-qna-view.html" class="krds-btn link" target="_self" title="상세보기">
+                                    <span>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</span>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="krds-badge small icon-bd">
+                                    <i class="svg-icon ico-talk-fill">답변 완료</i>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="krds-badge small custom-bd bg-light-success">완료</span>
+                            </td>
+                            <td>홍길동</td>
+                            <td>2025.10.21</td>
+                        </tr>
+
+                        <!-- 3 -->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                <input type="checkbox" class="checkGroup" id="r3" />
+                                <label for="r3"><span class="sr-only">3행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>24</td>
+                            <td>
+                                <a href="../html/board-admin-qna-view.html" class="krds-btn link" target="_self" title="상세보기">
+                                    <span>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</span>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="krds-badge small icon-bd">
+                                    <i class="svg-icon ico-talk-fill">답변 완료</i>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="krds-badge small custom-bd bg-light-success">완료</span>
+                            </td>
+                            <td>홍길동</td>
+                            <td>2025.10.20</td>
+                        </tr>
+
+                        <!-- 4 -->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                <input type="checkbox" class="checkGroup" id="r4" />
+                                <label for="r4"><span class="sr-only">4행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>23</td>
+                            <td>
+                                <a href="../html/board-admin-qna-view.html" class="krds-btn link" target="_self" title="상세보기">
+                                    <span>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</span>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="krds-badge small icon-bd">
+                                    <i class="svg-icon ico-talk-fill">답변 완료</i>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="krds-badge small custom-bd bg-light-success">완료</span>
+                            </td>
+                            <td>홍길동</td>
+                            <td>2025.10.19</td>
+                        </tr>
+
+                        <!-- 5 -->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                <input type="checkbox" class="checkGroup" id="r5" />
+                                <label for="r5"><span class="sr-only">5행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>22</td>
+                            <td>
+                                <a href="../html/board-admin-qna-view.html" class="krds-btn link" target="_self" title="상세보기">
+                                    <span>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</span>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="krds-badge small icon-bd">
+                                    <i class="svg-icon ico-talk-fill">답변 완료</i>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="krds-badge small custom-bd bg-light-success">완료</span>
+                            </td>
+                            <td>홍길동</td>
+                            <td>2025.10.18</td>
+                        </tr>
+
+                        <!-- 6 -->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                <input type="checkbox" class="checkGroup" id="r6" />
+                                <label for="r6"><span class="sr-only">1행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>21</td>
+                            <td>
+                                <a href="../html/board-admin-qna-view.html" class="krds-btn link" target="_self" title="상세보기">
+                                    <span>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</span>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="krds-badge small icon-bd">
+                                    <i class="svg-icon ico-talk-fill">답변 완료</i>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="krds-badge small custom-bd bg-light-success">완료</span>
+                            </td>
+                            <td>홍길동</td>
+                            <td>2025.10.17</td>
+                        </tr>
+
+                        <!-- 7 -->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                <input type="checkbox" class="checkGroup" id="r7" />
+                                <label for="r7"><span class="sr-only">7행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>20</td>
+                            <td>
+                                <a href="../html/board-admin-qna-view.html" class="krds-btn link" target="_self" title="상세보기">
+                                    <span>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</span>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="krds-badge small icon-bd">
+                                    <i class="svg-icon ico-talk-fill">답변 완료</i>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="krds-badge small custom-bd bg-light-success">완료</span>
+                            </td>
+                            <td>홍길동</td>
+                            <td>2025.10.16</td>
+                        </tr>
+
+                        <!-- 8 -->
+                        <tr>
+                            <td>
+                                <div class="krds-form-check">
+                                <input type="checkbox" class="checkGroup" id="r8" />
+                                <label for="r8"><span class="sr-only">8행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>19</td>
+                            <td>
+                                <a href="../html/board-admin-qna-view.html" class="krds-btn link" target="_self" title="상세보기">
+                                    <span>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</span>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="krds-badge small icon-bd">
+                                    <i class="svg-icon ico-talk-fill">답변 완료</i>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="krds-badge small custom-bd bg-light-success">완료</span>
+                            </td>
+                            <td>홍길동</td>
+                            <td>2025.10.15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="page-btn-wrap">
+              <div class="btn-wrap">
+                <a class="krds-btn small tertiary open-modal" data-target="modal-delete-confirm">선택삭제</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="pagination" class="conts-ft"></div>
+
+        </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
+
+</body>
+</html>

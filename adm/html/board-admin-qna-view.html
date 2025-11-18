@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">질의(보기) 최고관리자 board-admin-qna-view</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+</head>
+
+<body data-current-menu="board" data-current-submenu="board-qna" >
+
+<div id="wrap" class="g-wrap">
+
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+
+  <header id="header"></header>
+
+  <main id="container" class="page-view board">
+    <div class="inner">
+
+        <div class="contents contents-box contents-box-shadow">
+            <div class="board-page-title line conts-hd" id="board-title">
+                <h2 class="tit">사업승계 처리</h2>
+                <div class="info">
+                    <div class="info-txt"><span class="team">홍길동</span><span class="date">2025-09-21 11:4244</div>
+                </div>
+            </div>
+
+            <div class="conts-area">
+                <div class="board-page-cont line" id="board-txt">
+                    <p>
+                        권한권한승계 및 담당자 변경 신청합니다.<br>
+                        승계 및 담당자 변경 신청합니다.
+                    </p>
+                </div>
+                <div class="board-page-comment">
+                    <h4 class="con-tit">답변내용</h4>
+                    <div class="comment-wrap">
+                        <div class="comment done" id="comment-txt">
+                            <p>답변이 미등록되어 있습니다.</p>
+                        </div>
+                        <div class="btn-wrap">
+                            <a href="../html/board-admin-qna-answer.html" class="krds-btn small primary">답변등록</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-btn-wrap both conts-ft">
+                <div class="btn-wrap">
+                    <a href="../html/board-admin-qna-list.html" class="krds-btn medium tertiary">목록</a>
+                </div>
+                <!-- <div class="btn-wrap">
+                    <a class="krds-btn medium tertiary open-modal" data-target="modal-delete-confirm">답변삭제</a>
+                    <a href="../html/board-admin-qna-modify.html" class="krds-btn medium primary">답변수정</a>
+                </div> -->
+            </div>
+        </div>
+        
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
+
+</body>
+</html>
+
