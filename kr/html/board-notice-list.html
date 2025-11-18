@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${pageTitle}">안내홍보 목록</title>
+
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/user-custom.css">
+  <script src="../js/user-custome.js" defer></script>
+  <script src="../js/user-modal.js" defer></script>
+
+  <!-- JavaScript (defer로 지연 로드 권장) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  <header id="header"></header>
+
+    <main class="bbs-wrap">
+        <section class="subtitle-container">
+            <div class="subtitle-inner">
+                <h1 class="page-title">안내홍보</h1>
+                <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="home"><a href="#" class="txt">홈</a></li>
+                    <li><a href="#" class="txt">안내홍보</a></li>
+                </ol>
+                </nav>
+            </div>
+        </section>
+        <section class="bbs-container">
+            <div class="info-box">
+                <div class="count-wrapper">
+                    <span class="count-label">전체</span>
+                    <span class="count-number">57</span>
+                    <span class="count-unit">건</span>
+                </div>
+                
+                <div class="sch-form-wrap flex-inline">
+                    <div class="input-group">
+                        <select class="krds-form-select medium" title="검색조건">
+                        <option value="">제목</option>
+                        <option value="">부서명</option>
+                        </select>
+                        <div class="sch-input">
+                        <input type="text" class="krds-input medium" placeholder="검색어를 입력해주세요" title="검색어 입력">
+                        <button type="button" class="krds-btn medium icon ico-search">
+                            <span class="sr-only">검색</span>
+                            <i class="svg-icon ico-sch"></i>
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="krds-structured-list type3">
+                <ul class="community-notice-list"> 
+                    <li class="search-item">
+                        <a href="#" class="notif">
+                        <span class="category">공지</span>
+                        <p class="title">
+                            <strong>2025년 사제동행 공감체험 「함께 걷는 평화톡톡」</strong>
+                            <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                        </p>
+                        <span class="group">정책기획과</span>
+                        <span class="date">2025.09.08</span>
+                        </a>
+                    </li>
+                    <li class="search-item">
+                        <a href="#">
+                        <span class="category">26</span>
+                        <p class="title">
+                            <strong>2025년 사제동행 공감체험 「함께 걷는 평화톡톡」</strong>
+                            <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                        </p>
+                        <span class="group">유아교육복지과 유아교육팀</span>
+                        <span class="date">2025.09.08</span>
+                        </a>
+                    </li>
+                    <li class="search-item">
+                        <a href="#">
+                        <span class="category">25</span>
+                        <p class="title">
+                            <strong>2025년 사제동행 공감체험 「함께 걷는 평화톡톡」</strong>
+                            <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                        </p>
+                        <span class="group">중등교육과</span>
+                        <span class="date">2025.09.08</span>
+                        </a>
+                    </li>
+                    <li class="search-item">
+                        <a href="#">
+                        <span class="category">24</span>
+                        <p class="title">
+                            <strong>2025년 사제동행 공감체험 「함께 걷는 평화톡톡」</strong>
+                        </p>
+                        <span class="group">정책기획과</span>
+                        <span class="date">2025.09.08</span>
+                        </a>
+                    </li>
+                    <li class="search-item">
+                        <a href="#">
+                        <span class="category">23</span>
+                        <p class="title">
+                            <strong>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
+                            <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                        </p>
+                        <span class="group">정책기획과</span>
+                        <span class="date">2025.09.08</span>
+                        </a>
+                    </li>
+                    <li class="search-item">
+                        <a href="#">
+                        <span class="category">22</span>
+                        <p class="title">
+                            <strong>2025학년도 난독(증)경계선지능 학생지원 중점학급</strong>
+                        </p>
+                        <span class="group">정책기획과</span>
+                        <span class="date">2025.09.08</span>
+                        </a>
+                    </li>
+                    <li class="search-item">
+                        <a href="#">
+                        <span class="category">21</span>
+                        <p class="title">
+                            <strong>2025 충남형 IB학교(준비-관심) 운영</strong>
+                            <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                        </p>
+                        <span class="group">학력향상지원센터</span>
+                        <span class="date">2025.09.08</span>
+                        </a>
+                    </li>
+                    <li class="search-item">
+                        <a href="#">
+                        <span class="category">20</span>
+                        <p class="title">
+                            <strong>2025 충남형 IB학교(준비-관심) 운영</strong>
+                            <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                        </p>
+                        <span class="group">정책기획과</span>
+                        <span class="date">2025.09.08</span>
+                        </a>
+                    </li>
+                    <li class="search-item">
+                        <a href="#">
+                        <span class="category">19</span>
+                        <p class="title">
+                            <strong>2025 충남형 IB학교(준비-관심) 운영</strong>
+                            <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                        </p>
+                        <span class="group">정책기획과</span>
+                        <span class="date">2025.09.08</span>
+                        </a>
+                    </li>
+                    <li class="search-item">
+                        <a href="#">
+                        <span class="category">18</span>
+                        <p class="title">
+                            <strong>2025 충남형 IB학교(준비-관심) 운영</strong>
+                            <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                        </p>
+                        <span class="group">정책기획과</span>
+                        <span class="date">2025.09.08</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <div id="pagination"></div>
+        </section>
+    </main>
+
+  <div id="footer"></div>
+</div>
+<div id="modalLoad"></div>
+</body>
+</html>

@@ -27,20 +27,23 @@
                         </div>
 
                         <!-- Family Site -->
-                        <div class="family-site">
-                            <span class="family-site-text">관련사이트</span>
-                            <div class="family-site-icon">
-                                <i class="svg-icon ico-angle up"></i>
+                        <div class="family-site-dropdown" id="familySiteDropdown">
+                            <!-- Dropdown Menu (위로 펼쳐짐) -->
+                            <div class="dropdown-menu" id="dropdownMenu">
+                                <ul class="site-list">
+                                    <li class="site-item">
+                                        <a href="https://saeupcne.or.kr/support/" target="_blank" rel="noopener noreferrer" class="site-link">
+                                            학교지원디지털시스템
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                            
-                            <!-- Dropdown Menu -->
-                            <ul class="family-site-dropdown">
-                                <li class="family-site-item">
-                                    <a href="https://www.cne.go.kr" target="_blank" rel="noopener noreferrer" class="family-site-link">
-                                        학교지원디지털시스템
-                                    </a>
-                                </li>
-                            </ul>
+
+                            <!-- Trigger Button -->
+                            <button class="family-site-button" id="familySiteButton" aria-expanded="false" aria-controls="dropdownMenu">
+                                <span class="button-text">관련사이트</span>
+                                <i class="svg-icon ico-angle up"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -55,3 +58,56 @@
         </div>
     </div>
 </div>
+<script>
+    const button = document.getElementById('familySiteButton');
+    const menu = document.getElementById('dropdownMenu');
+    const dropdown = document.getElementById('familySiteDropdown');
+
+    // 버튼 클릭 이벤트
+    button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleDropdown();
+    });
+
+    // 드롭다운 토글 함수
+    function toggleDropdown() {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        
+        if (isExpanded) {
+            closeDropdown();
+        } else {
+            openDropdown();
+        }
+    }
+
+    // 드롭다운 열기
+    function openDropdown() {
+        menu.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+    }
+
+    // 드롭다운 닫기
+    function closeDropdown() {
+        menu.classList.remove('active');
+        button.setAttribute('aria-expanded', 'false');
+    }
+
+    // 외부 클릭시 닫기
+    document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+            closeDropdown();
+        }
+    });
+
+    // ESC 키로 닫기
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeDropdown();
+        }
+    });
+
+    // 메뉴 내부 클릭시 드롭다운 유지 (링크 클릭 제외)
+    menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+</script>
