@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle}">사업승계</title>
+
+
+    <!-- Pretendard GOV -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+    <!-- Default KRDS JS -->
+    <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+    <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+    <!-- Default KRDS CSS -->
+    <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+    <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+    <link rel="stylesheet" href="../css/user-custom.css">
+    <script src="../js/user-custome.js" defer></script>
+    <script src="../js/user-modal.js" defer></script>
+
+    <!-- JavaScript (defer로 지연 로드 권장) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js" defer></script>
+    </head>
+
+    <body>
+    <div id="wrap">
+    <div id="krds-skip-link">
+        <a href="#breadcrumb">본문 바로가기</a>
+    </div>
+
+    <header id="header_sch_adm"></header>
+
+    <main class="list-container">
+        <div class="list-inner">
+            <section class="subtitle-container sub">
+              <div class="subtitle-inner">
+                  <h1 class="page-title">사업승계</h1>
+                  <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="home"><a href="#" class="txt">홈</a></li>
+                      <li><a href="#" class="txt">사업승계</a></li>
+                    </ol>
+                  </nav>
+              </div>
+            </section>
+            <div class="info-box">
+                <div class="count-wrapper">
+                    <span class="count-label">전체</span>
+                    <span class="count-number">57</span>
+                    <span class="count-unit">건</span>
+                </div>
+                <div class="sch-form-wrap flex-inline">
+                    <div class="input-group">
+                        <select class="krds-form-select medium" title="검색조건">
+                        <option value="">전체</option>
+                        <option value="">사업번호</option>
+                        <option value="">사업명</option>
+                        <option value="">담당부서</option>
+                        <option value="">담당자</option>
+                        </select>
+                        <div class="sch-input">
+                        <input type="text" class="krds-input medium" placeholder="검색어를 입력해주세요" title="검색어 입력">
+                        <button type="button" class="krds-btn medium icon ico-search">
+                            <span class="sr-only">검색</span>
+                            <i class="svg-icon ico-sch"></i>
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reassign-wrap">
+                <div class="reassign-box">
+                    <div class="project-section">
+                        <div class="td-in-col2 project-name aling-left">
+                            <p class="info-top ">
+                            <span class="krds-badge small badge" data-name="project01"></span>
+                            <span>2026-선택-001</span>
+                            </p>
+                            <strong class="ellipsis aling-left">2025 마을기반 교육과정 자율학교 운영</strong>
+                        </div>
+                        
+                        <div class="application-date">
+                            <span class="date-label">신청일</span>
+                            <span class="date-value">2025-10-28</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <div class="amount-info">
+                            <div class="amount-item">
+                                <div class="amount-label">지원금액(천원)</div>
+                                <div class="amount-value">
+                                    <span class="amount-number">20,000</span>
+                                    <span class="amount-unit">천원</span>
+                                </div>
+                            </div>
+                            <div class="amount-item">
+                                <div class="amount-label">결정금액(천원)</div>
+                                <div class="amount-value">
+                                    <span class="amount-number">10,000</span>
+                                    <span class="amount-unit">천원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="manager-box">
+                            <div class="manager-info">
+                                <div class="manager-row">
+                                    <span class="manager-label">기존 담당자</span>
+                                    <span class="manager-name manager-old">홍길동</span>
+                                </div>
+                                <div class="manager-row">
+                                    <span class="manager-label">변경 담당자</span>
+                                    <span class="manager-name manager-new">김민수</span>
+                                </div>
+                            </div>
+                            <button type="button" class="krds-btn small open-modal" data-target="modal-reassign">변경</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="reassign-box">
+                    <div class="project-section">
+                        <div class="td-in-col2 project-name aling-left">
+                            <p class="info-top ">
+                            <span class="krds-badge small badge" data-name="project02"></span>
+                            <span>2026-선택외-001</span>
+                            </p>
+                            <strong class="ellipsis aling-left">2025 마을기반 교육과정 자율학교 운영</strong>
+                        </div>
+                        
+                        <div class="application-date">
+                            <span class="date-label">신청일</span>
+                            <span class="date-value">2025-10-28</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <div class="amount-info">
+                            <div class="amount-item">
+                                <div class="amount-label">지원금액(천원)</div>
+                                <div class="amount-value">
+                                    <span class="amount-number">20,000</span>
+                                    <span class="amount-unit">천원</span>
+                                </div>
+                            </div>
+                            <div class="amount-item">
+                                <div class="amount-label">결정금액(천원)</div>
+                                <div class="amount-value">
+                                    <span class="amount-number">10,000</span>
+                                    <span class="amount-unit">천원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="manager-box">
+                            <div class="manager-info">
+                                <div class="manager-row">
+                                    <span class="manager-label">기존 담당자</span>
+                                    <span class="manager-name manager-old">홍길동</span>
+                                </div>
+                                <div class="manager-row">
+                                    <span class="manager-label">변경 담당자</span>
+                                    <span class="manager-name manager-new">김민수</span>
+                                </div>
+                            </div>
+                            <button type="button" class="krds-btn small open-modal" data-target="modal-reassign">변경</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="reassign-box">
+                    <div class="project-section">
+                        <div class="td-in-col2 project-name aling-left">
+                            <p class="info-top ">
+                            <span class="krds-badge small badge" data-name="project03"></span>
+                            <span>2026-개방형-001</span>
+                            </p>
+                            <strong class="ellipsis aling-left">2025 마을기반 교육과정 자율학교 운영</strong>
+                        </div>
+                        
+                        <div class="application-date">
+                            <span class="date-label">신청일</span>
+                            <span class="date-value">2025-10-28</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <div class="amount-info">
+                            <div class="amount-item">
+                                <div class="amount-label">지원금액(천원)</div>
+                                <div class="amount-value">
+                                    <span class="amount-number">20,000</span>
+                                    <span class="amount-unit">천원</span>
+                                </div>
+                            </div>
+                            <div class="amount-item">
+                                <div class="amount-label">결정금액(천원)</div>
+                                <div class="amount-value">
+                                    <span class="amount-number">10,000</span>
+                                    <span class="amount-unit">천원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="manager-box">
+                            <div class="manager-info">
+                                <div class="manager-row">
+                                    <span class="manager-label">기존 담당자</span>
+                                    <span class="manager-name manager-old">홍길동</span>
+                                </div>
+                                <div class="manager-row">
+                                    <span class="manager-label">변경 담당자</span>
+                                    <span class="manager-name manager-new">김민수</span>
+                                </div>
+                            </div>
+                            <button type="button" class="krds-btn small open-modal" data-target="modal-reassign">변경</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="reassign-box">
+                    <div class="project-section">
+                        <div class="td-in-col2 project-name aling-left">
+                            <p class="info-top ">
+                            <span class="krds-badge small badge" data-name="project01"></span>
+                            <span>2026-선택-001</span>
+                            </p>
+                            <strong class="ellipsis aling-left">2025 마을기반 교육과정 자율학교 운영</strong>
+                        </div>
+                        
+                        <div class="application-date">
+                            <span class="date-label">신청일</span>
+                            <span class="date-value">2025-10-28</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <div class="amount-info">
+                            <div class="amount-item">
+                                <div class="amount-label">지원금액(천원)</div>
+                                <div class="amount-value">
+                                    <span class="amount-number">20,000</span>
+                                    <span class="amount-unit">천원</span>
+                                </div>
+                            </div>
+                            <div class="amount-item">
+                                <div class="amount-label">결정금액(천원)</div>
+                                <div class="amount-value">
+                                    <span class="amount-number">10,000</span>
+                                    <span class="amount-unit">천원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="manager-box">
+                            <div class="manager-info">
+                                <div class="manager-row">
+                                    <span class="manager-label">기존 담당자</span>
+                                    <span class="manager-name manager-old">홍길동</span>
+                                </div>
+                                <div class="manager-row">
+                                    <span class="manager-label">변경 담당자</span>
+                                    <span class="manager-name manager-new">김민수</span>
+                                </div>
+                            </div>
+                            <button type="button" class="krds-btn small open-modal" data-target="modal-reassign">변경</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="reassign-box">
+                    <div class="project-section">
+                        <div class="td-in-col2 project-name aling-left">
+                            <p class="info-top ">
+                            <span class="krds-badge small badge" data-name="project01"></span>
+                            <span>2026-선택-001</span>
+                            </p>
+                            <strong class="ellipsis aling-left">2025 마을기반 교육과정 자율학교 운영</strong>
+                        </div>
+                        
+                        <div class="application-date">
+                            <span class="date-label">신청일</span>
+                            <span class="date-value">2025-10-28</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <div class="amount-info">
+                            <div class="amount-item">
+                                <div class="amount-label">지원금액(천원)</div>
+                                <div class="amount-value">
+                                    <span class="amount-number">20,000</span>
+                                    <span class="amount-unit">천원</span>
+                                </div>
+                            </div>
+                            <div class="amount-item">
+                                <div class="amount-label">결정금액(천원)</div>
+                                <div class="amount-value">
+                                    <span class="amount-number">10,000</span>
+                                    <span class="amount-unit">천원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="manager-box">
+                            <div class="manager-info">
+                                <div class="manager-row">
+                                    <span class="manager-label">기존 담당자</span>
+                                    <span class="manager-name manager-old">홍길동</span>
+                                </div>
+                                <div class="manager-row">
+                                    <span class="manager-label">변경 담당자</span>
+                                    <span class="manager-name manager-new">김민수</span>
+                                </div>
+                            </div>
+                            <button type="button" class="krds-btn small open-modal" data-target="modal-reassign">변경</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+
+        <div id="pagination"></div>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+    </div>
+
+    <div id="modalLoad"></div>
+
+    </body>
+</html>

@@ -6,28 +6,29 @@
 <title th:text="${pageTitle}">사업신청 목록</title>
 
 
-<!-- Pretendard GOV -->
+  <!-- Pretendard GOV -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
 
-<!-- CSS -->
-<link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
-<link rel="stylesheet" href="../css/krds-theme.css">
-<link rel="stylesheet" href="../css/user-custom.css">
-<link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
 
-<!-- JavaScript (defer로 지연 로드 권장) -->
-<script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<script>
-  // 문서가 준비되면 header와 footer를 불러오기
-  $(function() {
-    $("#header").load("../tmpl/header.html");
-    $("#footer").load("../tmpl/footer.html");
-  });
-</script>
+  <!-- Custom -->
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/user-custom.css">
+  <script src="../js/user-custome.js" defer></script>
+  <script src="../js/user-modal.js" defer></script>
+
+  <!-- JavaScript (defer로 지연 로드 권장) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js" defer></script>
 </head>
 <body>
 <div id="wrap">
@@ -43,6 +44,22 @@
 
 <main class="list-container">
         <div class="list-inner">
+            <section class="subtitle-container sub">
+                <div class="subtitle-inner">
+                    <!-- Page Title -->
+                    <h1 class="page-title">개방형사업</h1>
+                    
+                    <!-- breadcrumb -->
+                    <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="home"><a href="#" class="txt">홈</a></li>
+                        <li><a href="#" class="txt">사업신청</a></li>
+                        <li><a href="#" class="txt">개방형사업</a></li>
+                      </ol>
+                    </nav>
+                    <!-- //breadcrumb -->
+                </div>
+            </section>
             <!-- Info Box (Count + Search) -->
             <div class="info-box">
                 <div class="count-wrapper">
@@ -75,6 +92,12 @@
               <table class="tbl col data center">
                 <caption>사업신청 목록 표</caption>
                 <colgroup>
+                  <col style="width:8%;">
+                  <col style="width:42%;">
+                  <col style="width:15%;">
+                  <col>
+                  <col>
+                  <col>
                 </colgroup>
                 <thead>
                   <tr>
@@ -88,14 +111,14 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="krds-badge state" data-name="state01"></span></td>
+                    <td><span class="krds-badge small custom-bd bg-light-primary">모집중</span></td>
                     <td>
-                      <div class="td-in-col2 project-name align-left" >
+                      <div class="td-in-col2 project-name">
                         <p class="info-top ">
                           <span class="krds-badge small badge" data-name="project01"></span>
                           <span>2026-선택-001</span>
                         </p>
-                        <strong class="ellipsis align-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                        <strong class="ellipsis">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
                     <td>687</td>
@@ -105,14 +128,14 @@
                     <td>010-1234-5678 </td>
                   </tr>
                   <tr>
-                    <td><span class="krds-badge state" data-name="state02"></span></td>
+                    <td><span class="krds-badge small custom-bd bg-light-warning">모집전</span></td>
                     <td>
-                      <div class="td-in-col2 project-name align-left" >
+                      <div class="td-in-col2 project-name " >
                         <p class="info-top ">
                           <span class="krds-badge small badge" data-name="project02"></span>
                           <span>2026-선택외-001</span>
                         </p>
-                        <strong class="ellipsis align-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                        <strong class="ellipsis ">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
                     <td>687</td>
@@ -122,14 +145,14 @@
                     <td>010-1234-5678 </td>
                   </tr>
                   <tr>
-                    <td><span class="krds-badge state" data-name="state03"></span></td>
+                    <td><span class="krds-badge small custom-bd bg-light-disabled">모집마감</span></td>
                     <td>
-                      <div class="td-in-col2 project-name align-left" >
+                      <div class="td-in-col2 project-name " >
                         <p class="info-top ">
                           <span class="krds-badge small badge" data-name="project03"></span>
                           <span>2026-개방형-001</span>
                         </p>
-                        <strong class="ellipsis align-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                        <strong class="ellipsis ">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
                     <td>687</td>
@@ -138,14 +161,14 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                   </tr><tr>
-                    <td><span class="krds-badge state" data-name="state01"></span></td>
+                    <td> <span class="krds-badge small custom-bd bg-light-primary">모집중</span></td>
                     <td>
-                      <div class="td-in-col2 project-name align-left" >
+                      <div class="td-in-col2 project-name " >
                         <p class="info-top ">
                           <span class="krds-badge small badge" data-name="project04"></span>
                           <span>2026-자율-001</span>
                         </p>
-                        <strong class="ellipsis align-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                        <strong class="ellipsis ">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
                     <td>687</td>
@@ -154,14 +177,14 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                   </tr><tr>
-                    <td><span class="krds-badge state" data-name="state01"></span></td>
+                    <td> <span class="krds-badge small custom-bd bg-light-primary">모집중</span></td>
                     <td>
-                      <div class="td-in-col2 project-name align-left" >
+                      <div class="td-in-col2 project-name " >
                         <p class="info-top ">
                           <span class="krds-badge small badge" data-name="project05"></span>
                           <span>2026-특교-001</span>
                         </p>
-                        <strong class="ellipsis align-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                        <strong class="ellipsis ">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
                     <td>687</td>
@@ -170,14 +193,14 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                   </tr><tr>
-                    <td><span class="krds-badge state" data-name="state01"></span></td>
+                    <td> <span class="krds-badge small custom-bd bg-light-primary">모집중</span></td>
                     <td>
-                      <div class="td-in-col2 project-name align-left" >
+                      <div class="td-in-col2 project-name " >
                         <p class="info-top ">
                           <span class="krds-badge small badge" data-name="project01"></span>
                           <span>2026-개방형-001</span>
                         </p>
-                        <strong class="ellipsis align-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                        <strong class="ellipsis ">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
                     <td>687</td>
@@ -186,14 +209,14 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                   </tr><tr>
-                    <td><span class="krds-badge state" data-name="state01"></span></td>
+                    <td> <span class="krds-badge small custom-bd bg-light-primary">모집중</span></td>
                     <td>
-                      <div class="td-in-col2 project-name align-left" >
+                      <div class="td-in-col2 project-name " >
                         <p class="info-top ">
                           <span class="krds-badge small badge" data-name="project01"></span>
                           <span>2026-개방형-001</span>
                         </p>
-                        <strong class="ellipsis align-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                        <strong class="ellipsis ">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
                     <td>687</td>
@@ -202,14 +225,14 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                   </tr><tr>
-                    <td><span class="krds-badge state" data-name="state01"></span></td>
+                    <td> <span class="krds-badge small custom-bd bg-light-primary">모집중</span></td>
                     <td>
-                      <div class="td-in-col2 project-name align-left" >
+                      <div class="td-in-col2 project-name " >
                         <p class="info-top ">
                           <span class="krds-badge small badge" data-name="project01"></span>
                           <span>2026-개방형-001</span>
                         </p>
-                        <strong class="ellipsis align-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                        <strong class="ellipsis ">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
                     <td>687</td>
@@ -218,14 +241,14 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                   </tr><tr>
-                    <td><span class="krds-badge state" data-name="state01"></span></td>
+                    <td> <span class="krds-badge small custom-bd bg-light-primary">모집중</span></td>
                     <td>
-                      <div class="td-in-col2 project-name align-left" >
+                      <div class="td-in-col2 project-name " >
                         <p class="info-top ">
                           <span class="krds-badge small badge" data-name="project01"></span>
                           <span>2026-개방형-001</span>
                         </p>
-                        <strong class="ellipsis align-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                        <strong class="ellipsis ">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
                     <td>687</td>
@@ -234,14 +257,14 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                   </tr><tr>
-                    <td><span class="krds-badge state" data-name="state01"></span></td>
+                    <td> <span class="krds-badge small custom-bd bg-light-primary">모집중</span></td>
                     <td>
-                      <div class="td-in-col2 project-name align-left" >
+                      <div class="td-in-col2 project-name " >
                         <p class="info-top ">
                           <span class="krds-badge small badge" data-name="project01"></span>
                           <span>2026-개방형-001</span>
                         </p>
-                        <strong class="ellipsis align-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                        <strong class="ellipsis ">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
                       </div>
                     </td>
                     <td>687</td>
@@ -255,50 +278,14 @@
               </table>
             </div>
 
-            <!-- Pagination -->
-            
-            <div class="krds-pagination">
-                <span class="page-navi prev disabled" href="#">이전</span>
-                <div class="page-links">
-                  <a class="page-link active" href="#">1</a>
-                  <a class="page-link" href="#">2</a>
-                  <a class="page-link" href="#">3</a>
-                  <a class="page-link" href="#">4</a>
-                  <a class="page-link" href="#">5</a>
-                  <a class="page-link" href="#">6</a>
-                  <a class="page-link" href="#">7</a>
-                  <a class="page-link" href="#">8</a>
-                  <span class="page-link link-dot"></span>
-                  <a class="page-link" href="#">99</a>
-                </div>
-                <a class="page-navi next" href="#">다음</a>
-              </div>
+           <div id="pagination"></div>
         </div>
     </main>
-
-
-
-
-
-
-
-
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Live Server 전용 (Spring Boot에서 자동 제거) -->
-  <script th:remove="all" src="../../assets/js/api.js"></script>
-  <script th:remove="all" src="../../assets/js/common.js"></script>
-  <script th:remove="all" src="../../assets/js/board.js"></script>
-
-  
 
 
  <!-- footer include -->
   <div id="footer"></div>
 </div><!-- //wrap -->
 
-<script src="../js/user-custom.js"></script>
 </body>
 </html>

@@ -1,1 +1,113 @@
-footer
+<div class="footer-container">
+    <div class="footer-inner">
+        <div class="footer-content">
+            <!-- Footer Wrap -->
+            <div class="footer-wrap">
+                <!-- Privacy -->
+                <div class="privacy-section">
+                    <a href="#" class="privacy-link">개인정보처리방침</a>
+                </div>
+
+                <!-- Content -->
+                <div class="footer-main-content">
+                    <!-- Address -->
+                    <div class="address-section">
+                        <div class="address-info">
+                            <p class="address-text">(32255) 충남 홍성군 홍북읍 선화로 22</p>
+                            <p class="address-text">대표전화: (운영 총괄) 640-6611, (누리집 관리) 640-6615, (사업 운영) 각 부서 사업 담당자</p>
+                        </div>
+                        <p class="copyright-text">copyright (C) chungcheongnamdo office of education. all rights reserved.</p>
+                    </div>
+
+                    <!-- Content Right -->
+                    <div class="content-right">
+                        <!-- Logo -->
+                        <div class="cne-logo">
+                            <a href="http://www.cne.go.kr/cne/main.do" target="_balnk"><img src="../img/cne-logo.svg"></a>
+                        </div>
+
+                        <!-- Family Site -->
+                        <div class="family-site-dropdown" id="familySiteDropdown">
+                            <!-- Dropdown Menu (위로 펼쳐짐) -->
+                            <div class="dropdown-menu" id="dropdownMenu">
+                                <ul class="site-list">
+                                    <li class="site-item">
+                                        <a href="https://saeupcne.or.kr/support/" target="_blank" rel="noopener noreferrer" class="site-link">
+                                            학교지원디지털시스템
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Trigger Button -->
+                            <button class="family-site-button" id="familySiteButton" aria-expanded="false" aria-controls="dropdownMenu">
+                                <span class="button-text">관련사이트</span>
+                                <i class="svg-icon ico-angle up"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+            <!-- Top Button -->
+            <a href="#" class="top-btn" aria-label="맨 위로 이동">
+                <i class="svg-icon ico-go-top"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    const button = document.getElementById('familySiteButton');
+    const menu = document.getElementById('dropdownMenu');
+    const dropdown = document.getElementById('familySiteDropdown');
+
+    // 버튼 클릭 이벤트
+    button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleDropdown();
+    });
+
+    // 드롭다운 토글 함수
+    function toggleDropdown() {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        
+        if (isExpanded) {
+            closeDropdown();
+        } else {
+            openDropdown();
+        }
+    }
+
+    // 드롭다운 열기
+    function openDropdown() {
+        menu.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+    }
+
+    // 드롭다운 닫기
+    function closeDropdown() {
+        menu.classList.remove('active');
+        button.setAttribute('aria-expanded', 'false');
+    }
+
+    // 외부 클릭시 닫기
+    document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+            closeDropdown();
+        }
+    });
+
+    // ESC 키로 닫기
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeDropdown();
+        }
+    });
+
+    // 메뉴 내부 클릭시 드롭다운 유지 (링크 클릭 제외)
+    menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+</script>

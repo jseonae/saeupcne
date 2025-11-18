@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title th:text="${pageTitle}">사업신청조회 목록</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${pageTitle}">사업신청조회 목록</title>
 
 
-<!-- Pretendard GOV -->
+  <!-- Pretendard GOV -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
 
-<!-- CSS -->
-<link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
-<link rel="stylesheet" href="../css/krds-theme.css">
-<link rel="stylesheet" href="../css/user-custom.css">
-<link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
 
-<!-- JavaScript (defer로 지연 로드 권장) -->
-<script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<script>
-  // 문서가 준비되면 header와 footer를 불러오기
-  $(function() {
-    $("#header").load("../tmpl/header.html");
-    $("#footer").load("../tmpl/footer.html");
-  });
-</script>
+  <!-- Custom -->
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/user-custom.css">
+  <script src="../js/user-custome.js" defer></script>
+  <script src="../js/user-modal.js" defer></script>
+
+  <!-- JavaScript (defer로 지연 로드 권장) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js" defer></script>
 </head>
+
 <body>
 <div id="wrap">
   <!-- 본문 바로가기 영역  -->
@@ -37,20 +39,28 @@
   </div>
   <!-- //본문 바로가기 영역  -->
 
-  <!-- header include -->
   <header id="header"></header>
-  <!-- //header include -->
 
-<main class="list-container">
+  <main class="list-container">
         <div class="list-inner">
-            <!-- Info Box (Count + Search) -->
+            <section class="subtitle-container sub">
+              <div class="subtitle-inner">
+                  <h1 class="page-title">사업신청조회</h1>
+                  <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="home"><a href="#" class="txt">홈</a></li>
+                      <li><a href="#" class="txt">사업신청</a></li>
+                      <li><a href="#" class="txt">사업신청조회</a></li>
+                    </ol>
+                  </nav>
+              </div>
+            </section>
             <div class="info-box">
                 <div class="count-wrapper">
                     <span class="count-label">전체</span>
                     <span class="count-number">57</span>
                     <span class="count-unit">건</span>
                 </div>
-                
                 <div class="sch-form-wrap flex-inline">
                     <div class="input-group">
                         <select class="krds-form-select medium" title="검색조건">
@@ -75,6 +85,13 @@
               <table class="tbl col data center">
                 <caption>사업신청 목록 표</caption>
                 <colgroup>
+                  <col>
+                  <col width="12%">
+                  <col width="12%">
+                  <col width="7%">
+                  <col width="12%">
+                  <col width="6%">
+                  <col width="6%">
                 </colgroup>
                 <thead>
                   <tr>
@@ -131,7 +148,7 @@
                     <td>010-1234-5678 </td>
                     <td><i class="svg-icon ico-error-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
+                      <a class="krds-btn small line open-modal" data-target="modal-reason-view" title="사유 보기">
                         <i class="svg-icon ico-docu"></i>
                       </a>
                     </td>
@@ -179,7 +196,7 @@
                     <td>010-1234-5678 </td>
                     <td><i class="svg-icon ico-error-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
+                      <a class="krds-btn small line open-modal" data-target="modal-reason-view" title="사유 보기">
                         <i class="svg-icon ico-docu"></i>
                       </a>
                     </td>
@@ -205,7 +222,7 @@
                     <td>010-1234-5678 </td>
                     <td><i class="svg-icon ico-error-fill"></i></td>
                     <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
+                      <a class="krds-btn small line open-modal" data-target="modal-reason-view" title="사유 보기">
                         <i class="svg-icon ico-docu"></i>
                       </a>
                     </td>
@@ -230,11 +247,7 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                     <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
+                    <td></td>
                   </tr>
                   
                   <tr>
@@ -257,11 +270,7 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                     <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td>
@@ -283,11 +292,7 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                     <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td>
@@ -309,11 +314,7 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                     <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td>
@@ -335,62 +336,21 @@
                     <td>홍길동</td>
                     <td>010-1234-5678 </td>
                     <td><i class="svg-icon ico-success-fill"></i></td>
-                    <td>
-                      <a href="javascript:void(0)" download="" class="krds-btn small line">
-                        <i class="svg-icon ico-docu"></i>
-                      </a>
-                    </td>
+                    <td></td>
                   </tr>
-                  
-                 
                 </tbody>
               </table>
             </div>
 
-            <!-- Pagination -->
-            
-            <div class="krds-pagination">
-                <span class="page-navi prev disabled" href="#">이전</span>
-                <div class="page-links">
-                  <a class="page-link active" href="#">1</a>
-                  <a class="page-link" href="#">2</a>
-                  <a class="page-link" href="#">3</a>
-                  <a class="page-link"  href="#">4</a>
-                  <a class="page-link" href="#">5</a>
-                  <a class="page-link" href="#">6</a>
-                  <a class="page-link" href="#">7</a>
-                  <a class="page-link" href="#">8</a>
-                  <span class="page-link link-dot"></span>
-                  <a class="page-link" href="#">99</a>
-                </div>
-                <a class="page-navi next" href="#">다음</a>
-              </div>
+          <div id="pagination"></div>
         </div>
     </main>
 
-
-
-
-
-
-
-
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Live Server 전용 (Spring Boot에서 자동 제거) -->
-  <script th:remove="all" src="../../assets/js/api.js"></script>
-  <script th:remove="all" src="../../assets/js/common.js"></script>
-  <script th:remove="all" src="../../assets/js/board.js"></script>
-
-  
-
-
  <!-- footer include -->
-  <div id="footer"></div>
+  <footer id="footer"></footer>
 </div><!-- //wrap -->
 
-<script src="../js/user-custom.js"></script>
+<div id="modalLoad"></div>
+
 </body>
 </html>

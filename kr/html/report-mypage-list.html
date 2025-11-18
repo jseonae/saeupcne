@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${pageTitle}">마이페이지 - 결과보고내역</title>
+
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/user-custom.css">
+  <script src="../js/user-custome.js" defer></script>
+  <script src="../js/user-modal.js" defer></script>
+
+  <!-- JavaScript (defer로 지연 로드 권장) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js" defer></script>
+</head>
+<body>
+<div id="wrap">
+  <!-- 본문 바로가기 영역  -->
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  <!-- //본문 바로가기 영역  -->
+
+  <!-- header include -->
+  <header id="header"></header>
+  <!-- //header include -->
+
+<!-- Main Content -->
+    <main class="list-container mypage">
+        <div class="list-inner">
+            <!-- Info Wrap -->
+            <section class="info-wrap">
+                <!-- Breadcrumb -->
+                <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="home"><a href="#" class="txt">홈</a></li>
+                        <li><a href="#" class="txt">마이페이지</a></li>
+                        <li><a href="#" class="txt">결과보고내역</a></li>
+                      </ol>
+                    </nav>
+
+                <!-- My Info Card -->
+                <div class="my-info-card">
+                    <!-- Left Section: User Info -->
+                    <div class="info-detail">
+                        <!-- User Profile -->
+                        <div class="user-profile">
+                            <h2 class="user-name">홍길동님</h2>
+                            <div class="user-badges">
+                                <span class="krds-badge small bg-light-information">학교관리자</span>
+                               <span class="krds-badge small bg-light-primary">충남초등학교</span>
+                            </div>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="contact-info">
+                            <div class="info-row">
+                                <span class="info-label">연락처</span>
+                                <span class="info-value">010-1234-5678</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">이메일</span>
+                                <span class="info-value">honggildong@cb.cne.go.kr</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Section: Statistics -->
+                    <div class="info-history">
+                        <div class="info-box">
+                            <span class="info-box-label">사업신청내역</span>
+                            <div class="info-box-count">
+                                <span class="count-number">17</span>
+                                <span class="count-unit">건</span>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-box-label">결과보고내역</span>
+                            <div class="info-box-count">
+                                <span class="count-number">12</span>
+                                <span class="count-unit">건</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="edit-button" aria-label="정보 수정">
+                       <img src="../img/user_eidt.svg">
+                    </button>
+                </div>
+            </section>
+
+            <div class="krds-tab-area layer">
+            <div class="tab line">
+                <ul role="tablist">
+                    <li id="tab_login_01" role="tab" aria-selected="false" aria-controls="panel_login_01"data-listener-attached="true">
+                        <button type="button" class="btn-tab">사업신청내역</button>
+                    </li>
+                    <li id="tab_login_02" role="tab" aria-selected="false" aria-controls="panel_login_02" class="active" data-listener-attached="true">
+                        <button type="button" class="btn-tab">결과보고내역<i class="sr-only created"> 선택됨</i></button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- tab contents -->
+            <div class="tab-conts-wrap">
+               <div class="krds-table-wrap">
+                <table class="tbl col data center">
+                    <caption>사업신청관리 목록 표</caption>
+                    <colgroup>
+                        <col style="width:2%;">
+                        <col style="width:5%;">
+                        <col>
+                        <col style="width:10%;">
+                        <col style="width:12%;">
+                        <col style="width:6%;">
+                        <col style="width:6%;">
+                        <col style="width:6%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th scope="col">
+                            <div class="krds-form-check">
+                                <input type="checkbox" id="checkAll">
+                                <label for="checkAll"><span class="sr-only">전체 선택</span></label>
+                            </div>
+                        </th>
+                        <th scope="col">년도</th>
+                        <th scope="col">사업명</th>
+                        <th scope="col">신청금액(천원)<br>결정금액(천원)</th>
+                        <th scope="col">신청일</th>
+                        <th scope="col">상태</th>
+                        <th scope="col">결과</th>
+                        <th scope="col">비고</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>      
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r1" />
+                                    <label for="r1"><span class="sr-only">1행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>2026</td>
+                            <td>
+                            <div class="td-in-col2 project-name aling-left">
+                                <p class="info-top ">
+                                <span class="krds-badge small badge" data-name="project01"></span>
+                                <span>2026-선택-001</span>
+                                </p>
+                                <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                            </div>
+                            </td>
+                            <td>
+                                <div class="td-in-col2">
+                                    <p>10,000</p>
+                                    <p>10,000</p>
+                                </div>
+                            </td>
+                            <td>2025-10-28</td>
+                            <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                            <td><i class="svg-icon ico-success-fill"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>      
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r2" />
+                                    <label for="r2"><span class="sr-only">2행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>2026</td>
+                            <td>
+                            <div class="td-in-col2 project-name aling-left">
+                                <p class="info-top ">
+                                <span class="krds-badge small badge" data-name="project02"></span>
+                                <span>2026-선택외-001</span>
+                                </p>
+                                <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                            </div>
+                            </td>
+                            <td>
+                                <div class="td-in-col2">
+                                    <p>10,000</p>
+                                    <p>10,000</p>
+                                </div>
+                            </td>
+                            <td>2025-10-28</td>
+                            <td><span class="krds-badge small custom-bd bg-light-point">반려</span></td>
+                            <td><i class="svg-icon ico-success-fill"></i></td>
+                            <td>
+                                <a class="krds-btn small line open-modal" data-target="modal-reason-view" title="사유 보기">
+                                    <i class="svg-icon ico-docu"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>      
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r3" />
+                                    <label for="r3"><span class="sr-only">2행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>2026</td>
+                            <td>
+                            <div class="td-in-col2 project-name aling-left">
+                                <p class="info-top ">
+                                <span class="krds-badge small badge" data-name="project03"></span>
+                                <span>2026-개방형-001</span>
+                                </p>
+                                <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                            </div>
+                            </td>
+                            <td>
+                                <div class="td-in-col2">
+                                    <p>10,000</p>
+                                    <p>10,000</p>
+                                </div>
+                            </td>
+                            <td>2025-10-28</td>
+                            <td><span class="krds-badge small custom-bd bg-light-warning">결재중</span></td>
+                            <td><i class="svg-icon ico-minus disabled"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>      
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r4" />
+                                    <label for="r4"><span class="sr-only">2행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>2026</td>
+                            <td>
+                            <div class="td-in-col2 project-name aling-left">
+                                <p class="info-top ">
+                                <span class="krds-badge small badge" data-name="project04"></span>
+                                <span>2026-자율-001</span>
+                                </p>
+                                <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                            </div>
+                            </td>
+                            <td>
+                                <div class="td-in-col2">
+                                    <p>10,000</p>
+                                    <p>10,000</p>
+                                </div>
+                            </td>
+                            <td>2025-10-28</td>
+                            <td><span class="krds-badge small custom-bd bg-light-information">임시저장</span></td>
+                            <td><i class="svg-icon ico-minus disabled"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>      
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r5" />
+                                    <label for="r5"><span class="sr-only">1행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>2026</td>
+                            <td>
+                            <div class="td-in-col2 project-name aling-left">
+                                <p class="info-top ">
+                                <span class="krds-badge small badge" data-name="project05"></span>
+                                <span>2026-특교-001</span>
+                                </p>
+                                <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                            </div>
+                            </td>
+                            <td>
+                                <div class="td-in-col2">
+                                    <p>10,000</p>
+                                    <p>10,000</p>
+                                </div>
+                            </td>
+                            <td>2025-10-28</td>
+                            <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                            <td><i class="svg-icon ico-error-fill"></i></td>
+                            <td>
+                                <a class="krds-btn small line open-modal" data-target="modal-reason-view" title="사유 보기">
+                                    <i class="svg-icon ico-docu"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>      
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r6" />
+                                    <label for="r6"><span class="sr-only">1행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>2026</td>
+                            <td>
+                            <div class="td-in-col2 project-name aling-left">
+                                <p class="info-top ">
+                                <span class="krds-badge small badge" data-name="project01"></span>
+                                <span>2026-선택-001</span>
+                                </p>
+                                <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                            </div>
+                            </td>
+                            <td>
+                                <div class="td-in-col2">
+                                    <p>10,000</p>
+                                    <p>10,000</p>
+                                </div>
+                            </td>
+                            <td>2025-10-28</td>
+                            <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                            <td><i class="svg-icon ico-success-fill"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>      
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r7" />
+                                    <label for="r7"><span class="sr-only">1행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>2026</td>
+                            <td>
+                            <div class="td-in-col2 project-name aling-left">
+                                <p class="info-top ">
+                                <span class="krds-badge small badge" data-name="project01"></span>
+                                <span>2026-선택-001</span>
+                                </p>
+                                <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                            </div>
+                            </td>
+                            <td>
+                                <div class="td-in-col2">
+                                    <p>10,000</p>
+                                    <p>10,000</p>
+                                </div>
+                            </td>
+                            <td>2025-10-28</td>
+                            <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                            <td><i class="svg-icon ico-success-fill"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>      
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r8" />
+                                    <label for="r8"><span class="sr-only">1행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>2026</td>
+                            <td>
+                            <div class="td-in-col2 project-name aling-left">
+                                <p class="info-top ">
+                                <span class="krds-badge small badge" data-name="project01"></span>
+                                <span>2026-선택-001</span>
+                                </p>
+                                <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                            </div>
+                            </td>
+                            <td>
+                                <div class="td-in-col2">
+                                    <p>10,000</p>
+                                    <p>10,000</p>
+                                </div>
+                            </td>
+                            <td>2025-10-28</td>
+                            <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                            <td><i class="svg-icon ico-success-fill"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>      
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r9" />
+                                    <label for="r9"><span class="sr-only">1행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>2026</td>
+                            <td>
+                            <div class="td-in-col2 project-name aling-left">
+                                <p class="info-top ">
+                                <span class="krds-badge small badge" data-name="project01"></span>
+                                <span>2026-선택-001</span>
+                                </p>
+                                <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                            </div>
+                            </td>
+                            <td>
+                                <div class="td-in-col2">
+                                    <p>10,000</p>
+                                    <p>10,000</p>
+                                </div>
+                            </td>
+                            <td>2025-10-28</td>
+                            <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                            <td><i class="svg-icon ico-success-fill"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>      
+                                <div class="krds-form-check">
+                                    <input type="checkbox" class="checkGroup" id="r10" />
+                                    <label for="r10"><span class="sr-only">1행 선택</span></label>
+                                </div>
+                            </td>
+                            <td>2026</td>
+                            <td>
+                            <div class="td-in-col2 project-name aling-left">
+                                <p class="info-top ">
+                                <span class="krds-badge small badge" data-name="project01"></span>
+                                <span>2026-선택-001</span>
+                                </p>
+                                <strong class="ellipsis aling-left">[별도모집] 2026년 충남학생온라인플랫폼 들락날락 학생 제안 정책 운영 개방형 사업</strong>
+                            </div>
+                            </td>
+                            <td>
+                                <div class="td-in-col2">
+                                    <p>10,000</p>
+                                    <p>10,000</p>
+                                </div>
+                            </td>
+                            <td>2025-10-28</td>
+                            <td><span class="krds-badge small custom-bd bg-light-success">승인</span></td>
+                            <td><i class="svg-icon ico-success-fill"></i></td>
+                            <td></td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            <!-- //tab contents -->
+        </div>
+
+        </div>
+    </main>
+
+
+
+
+ <!-- footer include -->
+  <div id="footer"></div>
+</div><!-- //wrap -->
+
+<div id="modalLoad"></div>
+</body>
+</html>

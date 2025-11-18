@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle}">회원목록(교감)</title>
+
+
+    <!-- Pretendard GOV -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+    <!-- Default KRDS JS -->
+    <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+    <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+    <!-- Default KRDS CSS -->
+    <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+    <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+    <link rel="stylesheet" href="../css/user-custom.css">
+    <script src="../js/user-custome.js" defer></script>
+    <script src="../js/user-modal.js" defer></script>
+
+    <!-- JavaScript (defer로 지연 로드 권장) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js" defer></script>
+    </head>
+
+    <body>
+    <div id="wrap">
+    <div id="krds-skip-link">
+        <a href="#breadcrumb">본문 바로가기</a>
+    </div>
+
+    <header id="header_president"></header>
+
+    <main class="list-container">
+        <div class="list-inner">
+            <section class="subtitle-container sub03">
+              <div class="subtitle-inner">
+                  <h1 class="page-title">회원목록</h1>
+                  <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="home"><a href="#" class="txt">홈</a></li>
+                      <li><a href="#" class="txt">회원목록</a></li>
+                    </ol>
+                  </nav>
+              </div>
+            </section>
+            <div class="member-list-wrap">
+                <div class="member-box">
+                    <div class="member-header">
+                        <div class="member-name">
+                            <i class="svg-icon ico-my"></i>
+                            <h3 class="member-name-text">홍길동</h3>
+                        </div>
+                        <div class="admin-setting">
+                            <label for="adminToggle" class="admin-label">관리자 지정</label>
+                            <div class="krds-form-toggle-switch medium">
+                                <input type="checkbox" id="switch_lg_md_checked" checked="">
+                                <label for="switch_lg_md_checked"><span class="switch-toggle"><i></i></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <div class="info-item">
+                            <span class="info-label">연락처</span>
+                            <span class="info-value">010-1234-5678</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">이메일</span>
+                            <span class="info-value">hoggildong@cb.cne.go.kr</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">등록일</span>
+                            <span class="info-value">2025.10.02</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">최근접속일</span>
+                            <span class="info-value">2025.12.01</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-box">
+                    <div class="member-header">
+                        <div class="member-name">
+                            <i class="svg-icon ico-my"></i>
+                            <h3 class="member-name-text">홍길동</h3>
+                        </div>
+                        <div class="admin-setting">
+                            <label for="adminToggle" class="admin-label">관리자 지정</label>
+                            <div class="krds-form-toggle-switch medium">
+                                <input type="checkbox" id="switch_lg_md_checked" checked="">
+                                <label for="switch_lg_md_checked"><span class="switch-toggle"><i></i></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <div class="info-item">
+                            <span class="info-label">연락처</span>
+                            <span class="info-value">010-1234-5678</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">이메일</span>
+                            <span class="info-value">hoggildong@cb.cne.go.kr</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">등록일</span>
+                            <span class="info-value">2025.10.02</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">최근접속일</span>
+                            <span class="info-value">2025.12.01</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-box">
+                    <div class="member-header">
+                        <div class="member-name">
+                            <i class="svg-icon ico-my"></i>
+                            <h3 class="member-name-text">홍길동</h3>
+                        </div>
+                        <div class="admin-setting">
+                            <label for="adminToggle" class="admin-label">관리자 지정</label>
+                            <div class="krds-form-toggle-switch medium">
+                                <input type="checkbox" id="switch_lg_md_checked" checked="">
+                                <label for="switch_lg_md_checked"><span class="switch-toggle"><i></i></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <div class="info-item">
+                            <span class="info-label">연락처</span>
+                            <span class="info-value">010-1234-5678</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">이메일</span>
+                            <span class="info-value">hoggildong@cb.cne.go.kr</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">등록일</span>
+                            <span class="info-value">2025.10.02</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">최근접속일</span>
+                            <span class="info-value">2025.12.01</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-box">
+                    <div class="member-header">
+                        <div class="member-name">
+                            <i class="svg-icon ico-my"></i>
+                            <h3 class="member-name-text">홍길동</h3>
+                        </div>
+                        <div class="admin-setting">
+                            <label for="adminToggle" class="admin-label">관리자 지정</label>
+                            <div class="krds-form-toggle-switch medium">
+                                <input type="checkbox" id="switch_lg_md_checked" checked="">
+                                <label for="switch_lg_md_checked"><span class="switch-toggle"><i></i></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <div class="info-item">
+                            <span class="info-label">연락처</span>
+                            <span class="info-value">010-1234-5678</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">이메일</span>
+                            <span class="info-value">hoggildong@cb.cne.go.kr</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">등록일</span>
+                            <span class="info-value">2025.10.02</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">최근접속일</span>
+                            <span class="info-value">2025.12.01</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-box">
+                    <div class="member-header">
+                        <div class="member-name">
+                            <i class="svg-icon ico-my"></i>
+                            <h3 class="member-name-text">홍길동</h3>
+                        </div>
+                        <div class="admin-setting">
+                            <label for="adminToggle" class="admin-label">관리자 지정</label>
+                            <div class="krds-form-toggle-switch medium">
+                                <input type="checkbox" id="switch_lg_md_checked" checked="">
+                                <label for="switch_lg_md_checked"><span class="switch-toggle"><i></i></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <div class="info-item">
+                            <span class="info-label">연락처</span>
+                            <span class="info-value">010-1234-5678</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">이메일</span>
+                            <span class="info-value">hoggildong@cb.cne.go.kr</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">등록일</span>
+                            <span class="info-value">2025.10.02</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">최근접속일</span>
+                            <span class="info-value">2025.12.01</span>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+
+        <div id="pagination"></div>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+    </div>
+
+    <div id="modalLoad"></div>
+
+    </body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${pageTitle}">사업신청관리(교장)</title>
+
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/user-custom.css">
+  <script src="../js/user-custome.js" defer></script>
+  <script src="../js/user-modal.js" defer></script>
+
+  <!-- JavaScript (defer로 지연 로드 권장) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  <header id="header_president"></header>
+
+    <main class="list-container view">
+        <div class="list-inner">
+            <section class="info-wrap">
+                <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="home"><a href="#" class="txt">홈</a></li>
+                    <li><a href="#" class="txt">사업신청관리</a></li>
+                    </ol>
+                </nav>
+                <div class="my-info-card" id="myInfoCard">
+                    <!-- 기본 -->
+                    <div class="info-detail">
+                        <div class="td-in-col2 project-name td-basis">
+                            <p class="info-top">
+                                <span class="krds-badge small badge" data-name="project01"></span>
+                                <span>2026-선택-001</span>
+                            </p>
+                            <strong class="ellipsis td-basis">
+                                2025 마을기반 교육과정 자율학교 운영
+                            </strong>
+                        </div>
+                    </div>
+
+                    <!-- 펼친상태 -->
+                    <div class="toggle-area" id="toggleArea">
+                        <div class="info-view">
+                            <div class="info-card" data-name="area">
+                                <div class="budget-header">
+                                    <h3 class="info-card-title">예산액</h3>
+                                    <div class="budget-source">
+                                        <span class="budget-source-label">재원</span>
+                                        <span class="budget-source-value">특교+자체</span>
+                                    </div>
+                                </div>
+
+                                <div class="budget-table">
+                                    <div class="budget-thead">
+                                        <div class="budget-th">예산액</div>
+                                        <div class="budget-th">교당평균액</div>
+                                    </div>
+                                    <div class="budget-tbody">
+                                        <div class="budget-td">
+                                            <span class="budget-amount">800,000</span>
+                                            <span>천원</span>
+                                        </div>
+                                        <div class="budget-td">
+                                            <span class="budget-amount">20,000</span>
+                                            <span>천원</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-card" data-name="area">
+                                <h3 class="info-card-title">기간</h3>
+                                <div class="period-content">
+                                    <div class="period-item">
+                                        <span class="period-label">사업신청</span>
+                                        <span class="period-value">2025-11-03 ~ 2025-11-26</span>
+                                    </div>
+                                    <div class="period-item">
+                                        <span class="period-label">결과제출</span>
+                                        <span class="period-value">2026-09-01 ~ 2026-11-06</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="krds-btn tertiary">
+                            <i class="svg-icon ico-file"></i><span>세부계획서</span>
+                            <i class="svg-icon ico-down"></i>
+                        </button>
+                    </div>
+                    <!-- 펼친상태 끝 -->
+
+                    <button class="toggle-btn" id="toggleBtn" aria-expanded="true" aria-label="상세 정보 펼치기/접기">
+                        <i class="svg-icon ico-angle up"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <div class="inner-btn">
+                <h2>사업신청정보</h2>
+                <div class="page-btn-wrap">
+                    <button type="button" class="krds-btn tertiary open-modal" data-target="modal-resect" title="반려하기">반려하기</button>
+                    <button type="button" class="krds-btn primary">승인하기</button>
+                </div>
+            </div>
+            <div class="view-contents school-info-content">
+                <div class="info-group" data-name="school-name">
+                    <span class="info-label">학교명</span>
+                    <div class="info-value-wrapper">
+                        <span class="info-value">염티초등학교</span>
+                    </div>
+                </div>
+                <div class="info-group" data-name="manager">
+                    <div class="info-label-wrapper">
+                        <span class="info-label">담당자</span>
+                    </div>
+                    <span class="info-value">홍길동</span>
+                </div>
+                <div class="info-group" data-name="contact">
+                    <div class="info-label-wrapper">
+                        <span class="info-label">연락처</span>
+                    </div>
+                    <span class="info-value">010-1234-5678</span>
+                </div>
+            </div>
+            <section class="view-content-wrap">
+                <div class="view-contents">
+                    <h3>사업명</h3>
+                    <strong class="saeup-title">2025 마을기반 교육과정 자율학교만들기프로젝트</strong>
+                </div>
+                <div class="view-contents">
+                    <h3>사업내용</h3>
+                    <div class="budget-tag-content">
+                        <div class="budget-label-group">
+                            <img src="../img/ico_budget.svg">
+                            <div class="budget-label-text">
+                                <span class="label-main">예산 계획</span>
+                                <span class="label-unit">(천원)</span>
+                            </div>
+                        </div>
+                        <div class="budget-value-group">
+                            <span class="budget-value">3,000</span>
+                        </div>
+                    </div>
+                    <div class="krds-table-wrap">
+                        <table class="tbl col data center">
+                            <caption>사업내용 에산계획 표</caption>
+                            <colgroup>
+                                <col style="width:6%;">
+                                <col style="width:15%;">
+                                <col>
+                                <col style="width:10%;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">항목</th>
+                                <th scope="col">산출근거(원)</th>
+                                <th scope="col">금액(천원)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>항목명1</td>
+                                    <td class="td-basis">산출근거산출근거산출근거산출근거</td>
+                                    <td>1,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>항목명2</td>
+                                    <td class="td-basis">산출근거산출근거산출근거산출근거산출근거산출근거산출근거산출근거산출근거산출근거산출근거산출근거</td>
+                                    <td>1,000</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>항목명3</td>
+                                    <td class="td-basis">산출근거산출근거산출근거산출근거</td>
+                                    <td>600</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>항목명4</td>
+                                    <td class="td-basis">산출근거산출근거산출근거산출근거</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>항목명1</td>
+                                    <td class="td-basis">산출근거산출근거산출근거산출근거</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr class="t-foot">
+                                    <td colspan="3">합계</td>
+                                    <td>3,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="view-contents">
+                    <h3>첨부문서</h3>
+                    <div class="krds-file-upload">
+                        <div class="file-list">
+                            <ul class="upload-list">
+                                <li>
+                                    <div class="file-info m-column">
+                                        <div class="file-info-title"><i class="svg-icon ico-file"></i></div>
+                                        <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                        <div class="btn-wrap">
+                                            <button type="button" class="krds-btn medium text">다운로드 <i class="svg-icon ico-down"></i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="file-info m-column">
+                                        <div class="file-info-title"><i class="svg-icon ico-file"></i></div>
+                                        <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                        <div class="btn-wrap">
+                                            <button type="button" class="krds-btn medium text">다운로드 <i class="svg-icon ico-down"></i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="file-info m-column">
+                                        <div class="file-info-title"><i class="svg-icon ico-file"></i></div>
+                                        <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                        <div class="btn-wrap">
+                                            <button type="button" class="krds-btn medium text">다운로드 <i class="svg-icon ico-down"></i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            <div class="page-btn-wrap">
+                <button type="button" class="krds-btn tertiary">목록으로 가기</button>
+            </div>
+
+        </div>
+    </main>
+
+  <div id="footer"></div>
+</div>
+<div id="modalLoad"></div>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${pageTitle}">사업신청 write</title>
+
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/user-custom.css">
+  <script src="../js/user-custome.js" defer></script>
+  <script src="../js/user-modal.js" defer></script>
+
+  <!-- JavaScript (defer로 지연 로드 권장) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  <header id="header"></header>
+
+    <main class="list-container write">
+        <div class="list-inner">
+            <section class="info-wrap">
+                <aside class="content-left">
+                    <div class="info-detail">
+                        <div class="td-in-col2 project-name td-basis">
+                            <p class="info-top">
+                                <span class="krds-badge small badge" data-name="project01"></span>
+                                <span>2026-선택-001</span>
+                            </p>
+                            <strong class="ellipsis td-basis">
+                                2025 마을기반 교육과정 자율학교 운영
+                            </strong>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="divider-gray"></div>
+
+                    <!-- Project Details -->
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <span class="detail-label">공모단위</span>
+                            <span class="detail-value">도교육청</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">사업신청</span>
+                            <span class="detail-value">2025-11-03 ~ 2025-11-26</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">결과제출</span>
+                            <span class="detail-value">2027-01-01 ~ 2027-01-29</span>
+                        </div>
+                    </div>
+
+                    <!-- Divider Line -->
+                    <div class="divider-line"></div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-name">
+                            <span>미래인재과</span>
+                            <span class="contact-person">홍길동</span>
+                        </div>
+                        <p>010-1234-5678</p>
+                    </div>
+                </aside>
+            </section>
+            <section class="content-right">
+                <div class="view-content-wrap">
+                    <div class="view-contents">
+                        <h3>담당자</h3>
+                        <div class="info-wrap">
+                            <div class="info-card" data-name="area">
+                                <span>학교명</span>
+                                <span class="detail-value">염티초등학교</span>
+                            </div>
+                            <div class="info-card" data-name="area">
+                                <span>담당자</span>
+                                <span class="detail-value">홍길동</span>
+                            </div>
+                            <div class="info-card" data-name="area">
+                                <span>연락처</span>
+                                <span class="detail-value">010-1234-5678</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-contents">
+                        <h3>사업명</h3>
+                        <input type="text" id="consult_name" class="krds-input" placeholder="공모주제를 입력하세요.">
+                    </div>
+                    <div class="view-contents">
+                        <h3>사업설명</h3>
+                        <div class="budget-tag-content">
+                            <div class="budget-label-group">
+                                <img src="../img/ico_budget.svg">
+                                <div class="budget-label-text">
+                                    <span class="label-main">예산 계획</span>
+                                </div>
+                            </div>
+                            <div class="budget-value-group">
+                                <span class="budget-value">3,000</span>
+                                    <span class="label-unit">천원</span>
+                            </div>
+                        </div>
+                        <div class="krds-table-wrap">
+                            <table class="tbl col data center">
+                                <caption>사업내용 에산계획 표</caption>
+                                <colgroup>
+                                    <col style="width:6%;">
+                                    <col style="width:25%;">
+                                    <col>
+                                    <col style="width:15%;">
+                                    <col style="width:4%;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><input type="text" id="" class="krds-input small" placeholder="항목명을 입력해주세요"></td>
+                                        <td class="td-basis"><input type="text" id="" class="krds-input small" placeholder="산출근거를 입력해주세요"></td>
+                                        <td><input type="text" id="" class="krds-input small aling-right" placeholder="1,000"></td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="krds-btn small line" title="삭제">
+                                                <i class="svg-icon ico-minus"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><input type="text" id="" class="krds-input small" placeholder="항목명을 입력해주세요"></td>
+                                        <td class="td-basis"><input type="text" id="" class="krds-input small" placeholder="산출근거를 입력해주세요"></td>
+                                        <td><input type="text" id="" class="krds-input small aling-right" placeholder="1,000"></td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="krds-btn small line" title="삭제">
+                                                <i class="svg-icon ico-minus"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><input type="text" id="" class="krds-input small" placeholder="항목명을 입력해주세요"></td>
+                                        <td class="td-basis"><input type="text" id="" class="krds-input small" placeholder="산출근거를 입력해주세요"></td>
+                                        <td><input type="text" id="" class="krds-input small aling-right" placeholder="1,000"></td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="krds-btn small line" title="삭제">
+                                                <i class="svg-icon ico-minus"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><input type="text" id="" class="krds-input small" placeholder="항목명을 입력해주세요"></td>
+                                        <td class="td-basis"><input type="text" id="" class="krds-input small" placeholder="산출근거를 입력해주세요"></td>
+                                        <td><input type="text" id="" class="krds-input small aling-right" placeholder="1,000"></td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="krds-btn small line" title="추가">
+                                                <i class="svg-icon ico-plus"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr class="t-foot">
+                                        <td colspan="3" class="aling-right">합계</td>
+                                        <td colspan="2"><input type="text" id="" class="krds-input small aling-right" placeholder="3,000" disabled>천원</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="view-contents">
+                        <div class="krds-file-upload line">
+                            <div class="file-head">
+                                <h3 class="tit">파일업로드</h3>
+                                <p>사업신청서를 첨부해주세요.</p>
+                            </div>  
+                            <div class="file-upload">
+                                <p class="txt">파일 용량 100MB 이하만 업로드 가능합니다.</p>
+                                <div class="file-upload-btn-wrap">
+                                    <input type="file" name="myFile" id="fileu-upload" hidden="">
+                                    <label for="fileu-upload">
+                                        <button type="button" class="krds-btn small">파일선택</button>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="file-list">
+                                <ul class="upload-list">
+                                    <li>
+                                        <div class="file-info">
+                                            <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                            <div class="btn-wrap">
+                                                <button type="button" class="krds-btn medium text">삭제 <i class="svg-icon ico-delete-fill"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="is-error">
+                                        <div class="file-info">
+                                            <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                            <div class="btn-wrap">
+                                                <button type="button" class="krds-btn medium text">삭제 <i class="svg-icon ico-delete-fill"></i></button>
+                                            </div>
+                                        </div>
+                                        <p class="file-hint-invalid">
+                                            등록 가능한 파일 용량을 초과하였습니다.<br>
+                                            100MB 미만의 파일만 등록할 수 있습니다.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-btn-wrap m-column both">
+                    <button type="button" class="krds-btn tertiary">목록으로 가기</button>
+                    <div>
+                        <button type="button" class="krds-btn tertiary">임시저장</button>
+                        <button type="button" class="krds-btn primary open-modal" data-target="modal-approve" title="결재요청">결재요청</button>
+                    </div>
+                </div>
+            </section>
+            
+
+        </div>
+    </main>
+
+  <div id="footer"></div>
+</div>
+<div id="modalLoad"></div>
+</body>
+</html>
