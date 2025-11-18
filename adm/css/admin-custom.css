@@ -1813,6 +1813,7 @@ input[data-field="org-name"].open {
 
 .board-page-cont {
   width: 100%;
+  min-height: 20rem;
 }
 .board-page-cont.line {
   padding: var(--krds-gap-9) 0;
@@ -1930,8 +1931,13 @@ main[class^="page"].board .conts-ft,
 .krds-table-wrap .tbl.qna-list-table .krds-btn.link {
   display: inline-block;
   vertical-align: middle;
+  color: var(--krds-light-color-text-basic);
+  font-weight: var(--krds-font-weight-regular);
 }
-
+.krds-table-wrap .tbl.qna-list-table .krds-btn.link:hover {
+  color:var(--krds-color-light-primary-60);
+  font-weight: var(--c-font-weight-6);
+}
 
 
 /* ----- 답변 카드 기본 ----- */
