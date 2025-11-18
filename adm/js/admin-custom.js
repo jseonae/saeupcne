@@ -263,7 +263,8 @@ $(function () {
 $(function(){
   $.datetimepicker.setLocale('kr');
   $('.datetimepicker').datetimepicker({
-      format:'Y-m-d H:i'
+    timepicker:false,
+    format:'Y-m-d',
   });
 
   // 시작일, 종료일 적용 버전
@@ -301,3 +302,331 @@ $(function(){
       }
   });
 })
+
+/* ------------------------------------------------------------------------
+ * 소속(학교) 자동완성 검색
+ * - 입력 시 결과박스 열기/닫기
+ * - 바깥 클릭 시 닫기
+ * - '선택' 버튼 클릭 시 소속/지역 인풋 값 채우기
+ * - 결과박스가 열릴 때 data-field="org-name"에 open 클래스 추가
+ * --------------------------------------------------------------------- */
+$(function () {
+
+  /* -------------------------------
+   * 1) 입력 / 포커스 시 결과 박스 표시
+   * ------------------------------- */
+  $(document).on('input focus', '.form-conts input.krds-input', function () {
+    const $input     = $(this);
+    const $formConts = $input.closest('.form-conts');
+    const $box       = $formConts.find('.search-result-box');
+
+    if (!$box.length) return;
+
+    const val = $input.val().trim();
+
+    if (val.length > 0) {
+      // 결과 박스 열기
+      $box.css('display', 'block');
+
+      // ★ data-field="org-name" open 클래스 추가
+      $('[data-field="org-name"]').addClass('open');
+    } else {
+      // 닫기
+      $box.css('display', 'none');
+
+      // ★ open 클래스 제거
+      $('[data-field="org-name"]').removeClass('open');
+    }
+  });
+
+  /* -------------------------------
+   * 2) form-conts 밖 클릭 시 모두 닫기
+   * ------------------------------- */
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.form-conts').length) {
+      $('.search-result-box').css('display', 'none');
+      $('[data-field="org-name"]').removeClass('open');
+    }
+  });
+
+  /* -------------------------------
+   * 3) 리스트에서 '선택' 클릭 시
+   * ------------------------------- */
+  $(document).on('click', '.search-result-box .select-btn', function () {
+    const $btn       = $(this);
+    const $li        = $btn.closest('li');
+    const $formConts = $btn.closest('.form-conts');
+
+    // 선택된 항목 정보
+    const orgName   = $li.find('.name .value').text().trim();
+    const orgRegion = $li.find('.team .value').text().trim();
+
+    // 3-1) 소속 input 채우기
+    const $orgInput = $formConts.find('input.krds-input').first();
+    if ($orgInput.length) $orgInput.val(orgName);
+
+    // 3-2) 지역 input 채우기
+    const $currentBox  = $formConts.closest('.form-box');
+    const $regionInput = $currentBox.next('.form-box').find('input.krds-input').first();
+    if ($regionInput.length) $regionInput.val(orgRegion);
+
+    // 3-3) 결과 박스 닫기
+    $formConts.find('.search-result-box').css('display', 'none');
+
+    // 3-4) open 클래스 제거
+    $('[data-field="org-name"]').removeClass('open');
+  });
+
+});
+
+/* ------------------------------------------------------------------------
+ * 비밀번호 보기 토글
+ * --------------------------------------------------------------------- */
+$(function () {
+  $(document).on('click', '.btn-ico-wrap .krds-btn', function () {
+    const $btn   = $(this);
+    const $wrap  = $btn.closest('.btn-ico-wrap');
+    const $input = $wrap.find('input.krds-input');
+    const $icon  = $btn.find('.svg-icon');
+    const $sr    = $btn.find('.sr-only');
+
+    if (!$input.length) return;
+
+    const isPassword = $input.attr('type') === 'password';
+
+    if (isPassword) {
+      // 비밀번호 → 텍스트로 변경
+      $input.attr('type', 'text');
+      $icon
+        .removeClass('ico-pw-visible')
+        .addClass('ico-pw-visible-on');
+      if ($sr.length) {
+        $sr.text('숨기기');
+      }
+    } else {
+      // 텍스트 → 비밀번호로 변경
+      $input.attr('type', 'password');
+      $icon
+        .removeClass('ico-pw-visible-on')
+        .addClass('ico-pw-visible');
+      if ($sr.length) {
+        $sr.text('보기');
+      }
+    }
+  });
+});
+
+/* ------------------------------------------------------------------------
+ * 비밀번호 / 비밀번호 확인 - 일치 여부 체크
+ *  - data-field="password"
+ *  - data-field="password-confirm"
+ *  - data-role="pw-alert"
+ *  - 초기 value 값이 있는 상태에서도 불일치 시 바로 에러 show
+ * --------------------------------------------------------------------- */
+$(function () {
+
+  const $pw       = $('[data-field="password"]');           // 비밀번호
+  const $pwCheck  = $('[data-field="password-confirm"]');   // 비밀번호 확인
+  const $alertBox = $('[data-role="pw-alert"]');            // 에러 메시지 영역(랩퍼)
+
+  function checkPasswordMatch() {
+    const pw  = $pw.val()?.trim() ?? '';
+    const pw2 = $pwCheck.val()?.trim() ?? '';
+
+    // 둘 다 값이 있을 때만 검사
+    if (pw && pw2) {
+      if (pw !== pw2) {
+        $alertBox.show();   // 불일치 → 에러 표시
+      } else {
+        $alertBox.hide();   // 일치 → 에러 숨김
+      }
+    } else {
+      // 둘 중 하나라도 비어있으면 에러 숨김
+      $alertBox.hide();
+    }
+  }
+
+  // 입력 변경 시 실시간 체크
+  $pw.on('input', checkPasswordMatch);
+  $pwCheck.on('input', checkPasswordMatch);
+
+  // ⭐ 페이지 최초 로딩 시 기존 value 기반으로 즉시 체크
+  checkPasswordMatch();
+
+});
+
+
+/* ------------------------------------------------------------------------
+ * 제한없음
+ * --------------------------------------------------------------------- */
+$(function () {
+
+  function updateApprovalGroup($group) {
+    const $checkbox = $group.find('.approval-check');
+    const $number   = $group.find('.approval-number');
+
+    if ($checkbox.is(':checked')) {
+      $number
+        .prop('disabled', true)
+        .addClass('disabled')
+        .val(9999);
+    } else {
+      $number
+        .prop('disabled', false)
+        .removeClass('disabled')
+        .val(0);
+    }
+  }
+
+  // 초기 상태 반영
+  $('.approval-group').each(function () {
+    updateApprovalGroup($(this));
+  });
+
+  // 체크박스 이벤트
+  $(document).on('change', '.approval-check', function () {
+    const $group = $(this).closest('.approval-group');
+    updateApprovalGroup($group);
+  });
+
+});
+
+
+/* ------------------------------------------------------------------------
+ * 운영 프로그램 설정 페이지
+ * - 사업별 승인개수 제어
+ * - 전 사업 토글 연동
+ * - 변경 감지 → .active / action-section 표시
+ * --------------------------------------------------------------------- */
+$(function () {
+  const $page = $('main.page-edit');
+  if (!$page.length) return; // 다른 페이지엔 영향 X
+
+  /* ----------------------------------------
+   * 액션 영역 (우측) — 운영페이지 전용 클래스
+   * ------------------------------------- */
+  const $actionSection = $page.find('.op-action');
+  const $actionMsg     = $page.find('.op-action-msg');
+  const $actionBtn     = $page.find('[data-role="save-settings"]');
+
+  // 초기 숨김 / 비활성
+  $actionMsg.hide();
+  $actionBtn.prop('disabled', true);
+
+  /* ----------------------------------------
+   * 1) 사업별 승인개수 그룹 제어
+   * ------------------------------------- */
+  function updateApprovalGroup($group) {
+    const $checkbox = $group.find('.approval-check');
+    const $number   = $group.find('.approval-number');
+
+    if (!$checkbox.length || !$number.length) return;
+
+    if ($checkbox.is(':checked')) {
+      // 제한없음 상태
+      $number
+        .prop('disabled', true)
+        .addClass('disabled')
+        .val(9999);
+    } else {
+      // 제한 있음
+      $number
+        .prop('disabled', false)
+        .removeClass('disabled')
+        .val(10);
+    }
+  }
+
+  // 초기 상태 적용
+  $page.find('.approval-group').each(function () {
+    updateApprovalGroup($(this));
+  });
+
+  /* ----------------------------------------
+   * 2) 변경 감지 초기값 저장
+   * ------------------------------------- */
+  const $fields = $page.find('input, select, textarea')
+    .not('[type="hidden"]')
+    .not('[data-ignore-change="true"]');
+
+  $fields.each(function () {
+    const $f = $(this);
+    if ($f.is(':checkbox,:radio')) {
+      $f.data('initial-checked', $f.prop('checked'));
+    } else {
+      $f.data('initial-value', $f.val());
+    }
+  });
+
+  function isFieldDirty($f) {
+    if ($f.is(':checkbox,:radio')) {
+      return $f.prop('checked') !== $f.data('initial-checked');
+    }
+    return $f.val() !== $f.data('initial-value');
+  }
+
+  function updateActionSection() {
+    let anyDirty = false;
+
+    $fields.each(function () {
+      if (isFieldDirty($(this))) {
+        anyDirty = true;
+        return false;
+      }
+    });
+
+    if (anyDirty) {
+      $actionSection.addClass('is-dirty');
+      $actionMsg.show();
+      $actionBtn.prop('disabled', false);
+    } else {
+      $actionSection.removeClass('is-dirty');
+      $actionMsg.hide();
+      $actionBtn.prop('disabled', true);
+    }
+  }
+
+  function markDirty($field) {
+    if (!$field.length) return;
+    $field.toggleClass('active', isFieldDirty($field));
+    updateActionSection();
+  }
+
+  /* ----------------------------------------
+   * 3) 개별 승인 체크박스 이벤트
+   * ------------------------------------- */
+  $page.on('change', '.approval-check', function () {
+    const $group  = $(this).closest('.approval-group');
+    const $number = $group.find('.approval-number');
+
+    updateApprovalGroup($group);
+
+    markDirty($(this));
+    markDirty($number);
+  });
+
+  /* ----------------------------------------
+   * 4) 전 사업 토글 → 전체 제어
+   * ------------------------------------- */
+  const $globalToggle = $page.find('[data-role="approval-toggle-all"] input[type="checkbox"]');
+
+  $globalToggle.on('change', function () {
+    const checked = $(this).is(':checked');
+
+    // 전체 .approval-check 동기화
+    $page.find('.approval-check').each(function () {
+      $(this).prop('checked', checked).trigger('change');
+    });
+
+    markDirty($(this));
+  });
+
+  /* ----------------------------------------
+   * 5) 일반 필드 변경 감지
+   * ------------------------------------- */
+  $fields.on('change input', function () {
+    markDirty($(this));
+  });
+
+  updateActionSection();
+});
