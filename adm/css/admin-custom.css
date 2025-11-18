@@ -25,7 +25,7 @@ body {
   color: var(--krds-color-high-contrast-gray-60);
 }
 
-.max-wd-3 {max-width:36rem;}
+.max-wd-3 {max-width:38rem;}
 .max-wd-8 {max-width:80rem;}
 
 .wp100 {width:100%;}
@@ -46,11 +46,11 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: var(--krds-pc-padding-card-medium) var(--krds-number-24);
+  /* padding: var(--krds-pc-padding-card-medium) var(--krds-number-24); */
 }
 
 .in-between .right-section:has(.info-card) {
-  width: 36rem;
+  width: 38rem;
 }
 
 .cols-2 {
@@ -1818,6 +1818,9 @@ input[data-field="org-name"].open {
   padding: var(--krds-gap-9) 0;
   border-bottom: var(--krds-light-border-width-variable-regular) solid var(--krds-light-color-divider-gray-light);
 }
+.board-page-cont.padding-9 {
+  padding: var(--krds-padding-9) 0;
+}
 
 .krds-file-upload.board-page-file {
   width: 100%;
@@ -1847,8 +1850,9 @@ input[data-field="org-name"].open {
   width: auto;
 }
 
+main[class^="page"].board .conts-ft,
 .page-view.board .conts-ft {
-  margin-top:var(--krds-gap-10);
+  margin-top:var(--krds-gap-8);
 }
 
 
@@ -1900,37 +1904,148 @@ input[data-field="org-name"].open {
   min-height:40rem;
 }
 
-.qna-list-table {
+
+.krds-table-wrap .qna-list-table {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0 var(--krds-number-6);
+    border-spacing: 0 var(--krds-number-7); 
 }
 
-.qna-list-table tbody tr {
-    background: var(--krds-color-light-gray-0);
-    border: var(--krds-number-1) solid var(--krds-color-light-gray-20);
-    border-radius: var(--krds-number-5);
-    height: 6.6rem;
-}
-.qna-list-table tbody td {
-    padding: var(--krds-number-7) var(--krds-number-8);
-    color: var(--krds-color-light-gray-70);
-    vertical-align: middle;
+.krds-table-wrap .tbl.qna-list-table thead th {
+  border-bottom:none;
 }
 
+.krds-table-wrap .tbl.qna-list-table tbody tr td {
+  border-top: var(--krds-table--data-border-width) solid var(--krds-table--data-tbody-color-divider);
+}
+.krds-table-wrap .tbl.qna-list-table tbody tr td:first-child {
+  border-radius: var(--krds-radius-medium3) 0 0 var(--krds-radius-medium3);
+  border-left:var(--krds-table--data-border-width) solid var(--krds-table--data-tbody-color-divider);
+}
+.krds-table-wrap .tbl.qna-list-table tbody tr td:last-child {
+  border-radius: 0 var(--krds-radius-medium3) var(--krds-radius-medium3) 0;
+  border-right:var(--krds-table--data-border-width) solid var(--krds-table--data-tbody-color-divider);
+}
+
+.krds-table-wrap .tbl.qna-list-table .krds-btn.link {
+  display: inline-block;
+  vertical-align: middle;
+}
 
 
 
+/* ----- 답변 카드 기본 ----- */
+.page-view.board .contents-box > .answer-area {
+  width: 100%;
+  border-radius: var(--krds-radius-medium4);
+  background-color: var(--krds-color-high-contrast-gray-5);
+  padding: var(--krds-padding-10);
+  border: 1px solid var(--krds-light-color-border-gray-light);
+}
 
+.answer-header {
+  margin-bottom: var(--krds-gap-5);
+}
 
+.answer-title,
+.answer-date-label {
+  font-size: var(--krds-pc-font-size-body-large);
+  font-weight: var(--krds-font-weight-bold);
+  color: var(--krds-light-color-text-static);
+}
 
-.board-page-comment {}
-.comment-wrap {}
-.comment-wrap .comment {}
-.comment-wrap .comment p {}
-.comment-wrap .comment.none {}
-.comment-wrap .comment.none p {}
+/* ----- 내용 영역 ----- */
+.answer-body {
+  border-radius: var(--krds-radius-large1);
+}
 
+/* 처음 상태 */
+.answer-empty {
+  text-align: center;
+  padding: var(--krds-padding-9) 0;
+}
 
+.answer-empty-text {
+  margin-bottom: var(--krds-gap-4);
+  color: var(--krds-light-color-text-subtle);
+  font-size: var(--krds-pc-font-size-body-medium);
+}
+
+/* 폼 영역 */
+.answer-form {
+  display: none; /* JS가 상태에 따라 토글 */
+}
+
+.answer-field + .answer-field {
+  margin-top: var(--krds-gap-6);
+}
+.answer-field + .answer-field:has(.answer-date.data-txt) {
+  margin-top: var(--krds-gap-4);
+}
+
+.answer-text {
+  font-size: var(--krds-input--pc-font-size-medium);
+}
+.answer-text.answer-txt {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--krds-light-color-text-basic);
+  padding: 0;
+  min-height: auto;
+  height: auto;
+}
+.answer-text.answer-txt + .textarea-count {
+  display: none;
+}
+
+/* 날짜 영역 */
+.answer-date-row {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--krds-gap-4);
+}
+
+.answer-date {
+  width: auto;
+  min-width:24rem;
+}
+
+.answer-date.data-txt {
+  background-color: transparent;
+  border-color: transparent;
+  padding-left: 0;
+  font-weight: var(--krds-font-weight-regular);
+  color:var(--krds-light-color-text-disabled);
+  height: auto;
+}
+
+/* ----- 하단 버튼 영역 ----- */
+.page-btn-wrap .answer-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--krds-gap-5);
+}
+
+.answer-footer-right {
+  display: flex;
+  gap: var(--krds-gap-3);
+}
+
+/* 답변 영역 버튼 초기 숨김 */
+.btn-answer-cancel,
+.btn-answer-submit,
+.btn-answer-delete,
+.btn-answer-edit {
+  display: none;
+}
+
+/* answer-area의 상태와 무관하게 버튼은 page-btn-wrap 위치 그대로 사용 */
+.page-btn-wrap .btn-answer-cancel,
+.page-btn-wrap .btn-answer-submit,
+.page-btn-wrap .btn-answer-delete,
+.page-btn-wrap .btn-answer-edit {
+  margin-left: var(--krds-gap-3);
+}
 
 
