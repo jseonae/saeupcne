@@ -59,3 +59,96 @@
     padding: var(--krds-number-10) var(--krds-number-9);
   }
 }
+
+
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .chip-group {
+        padding: var(--krds-number-8) var(--krds-number-10);
+        gap: var(--krds-number-5);
+    }
+    
+    .chip {
+        padding: var(--krds-number-2) var(--krds-number-6);
+    }
+    
+    .chip-text {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* 반응형 */
+@media (max-width: 1024px) {
+    .board-notice-list li a {
+        gap: var(--krds-number-6);
+    }
+    
+    .board-notice-list .department {
+        min-width: 12rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .board-notice-list {
+        gap: var(--krds-number-5);
+    }
+    
+    .board-notice-list li a {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: 
+            "number title date"
+            "number department department";
+        gap: var(--krds-number-5);
+        padding: var(--krds-number-5) var(--krds-number-6);
+        min-height: auto;
+    }
+    
+    .board-notice-list li.notice-item a {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: 
+            "category title date"
+            "category department department";
+    }
+    
+    .board-notice-list .title strong,
+    .board-notice-list .department,
+    .board-notice-list .date,
+    .board-notice-list .category,
+    .board-notice-list .number {
+        font-size: 1.5rem;
+    }
+    
+    .board-notice-list .department {
+        text-align: left;
+        grid-column: 1 / -1;
+        font-size: 1.3rem;
+        color: var(--krds-color-light-gray-60);
+        min-width: auto;
+    }
+    
+    .board-notice-list li.notice-item .department {
+        grid-column: 2 / -1;
+    }
+    
+    .board-notice-list li:not(.notice-item) .department {
+        grid-column: 2 / -1;
+    }
+    
+    .board-notice-list .date {
+        min-width: auto;
+        font-size: 1.3rem;
+    }
+    
+    .board-notice-list .category,
+    .board-notice-list .number {
+        min-width: auto;
+        padding-right: var(--krds-number-5);
+    }
+    
+    .board-notice-list .svg-icon.ico-file {
+        width: 1.8rem;
+        height: 2rem;
+    }
+}

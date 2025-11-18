@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">공지사항 최고관리자 board-admin-notice-list</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+</head>
+
+<body>
+
+<div id="wrap" class="g-wrap">
+
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+
+  <header id="header"></header>
+
+  <main id="container">
+    <div class="inner">
+        <div class="contents contents-box contents-box-shadow">
+          
+          <div class="conts-area">
+            <div class="search-list-top">
+                <ul class="sch-info" aria-live="polite">
+                    <li>전체 <span class="point">22,459</span>건</li>
+                </ul>
+                <div class="sch-form-wrap flex-inline">
+                    <div class="input-group">
+                        <select class="krds-form-select medium" title="검색 조건">
+                            <option value="">전체</option>
+                            <option value="">작성자</option>
+                            <option value="">제목</option>
+                            <option value="">글내용</option>
+                        </select>
+                        <div class="sch-input">
+                            <input type="text" class="krds-input medium" placeholder="검색어를 입력해주세요" title="검색어 입력">
+                            <button type="button" class="krds-btn medium icon ico-search">
+                                <span class="sr-only">검색</span>
+                                <i class="svg-icon ico-sch"></i>
+                            </button>
+                        </div>
+                        <div class="btn-wrap both">
+                            <a href="../html/board-admin-notice-create.html" target="_self" class="krds-btn medium primary">글쓰기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="krds-structured-list">
+                <ul class="board-notice-list">
+                    <li class="notice-item">
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="category">공지</span>
+                            <p class="title">
+                                <strong>단위학교 사업선택제 누리집 2.0 오픈</strong>
+                            </p>
+                            <span class="department">정책기획과</span>
+                            <span class="date">2025.12.30</span>
+                        </a>
+                    </li>
+                    <li class="notice-item">
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="category">공지</span>
+                            <p class="title">
+                                <strong>[공지] 권한 승계 관련 안내</strong>
+                            </p>
+                            <span class="department">정책기획과</span>
+                            <span class="date">2025.10.20</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="number">27</span>
+                            <p class="title">
+                                <strong>2025년 사제동행 공감체험 「함께 걷는 평화톡톡」</strong>
+                            </p>
+                            <span class="department">유아교육복지과 유아교육팀</span>
+                            <span class="date">2025.10.24</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="number">26</span>
+                            <p class="title">
+                                <strong>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
+                                <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                            </p>
+                            <span class="department">중등교육과</span>
+                            <span class="date">2025.10.22</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="number">25</span>
+                            <p class="title">
+                                <strong>2025학년도 난독(증)경계선지능 학생지원 중점학급</strong>
+                            </p>
+                            <span class="department">미래인재과</span>
+                            <span class="date">2025.10.21</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="number">24</span>
+                            <p class="title">
+                                <strong>2025년 사제동행 공감체험 「함께 걷는 평화톡톡」</strong>
+                                <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                            </p>
+                            <span class="department">정책기획과</span>
+                            <span class="date">2025.10.19</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="number">23</span>
+                            <p class="title">
+                                <strong>2025 충남형 IB학교(준비-관심) 운영</strong>
+                                <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                            </p>
+                            <span class="department">학력향상지원센터</span>
+                            <span class="date">2025.10.19</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="number">22</span>
+                            <p class="title">
+                                <strong>우리지역 예술가와의 만남_학교갤러리 운영 프로그램 지원</strong>
+                            </p>
+                            <span class="department">초등특수교육과</span>
+                            <span class="date">2025.10.19</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="number">21</span>
+                            <p class="title">
+                                <strong>[별도모집-자료집계] 2025 으라차차! 아이사랑 프로그램</strong>
+                            </p>
+                            <span class="department">중등교육과</span>
+                            <span class="date">2025.10.19</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="number">20</span>
+                            <p class="title">
+                                <strong>[별도모집] 2025년 충남학생온라인플랫폼 들락날락 학생제안 정책 운영</strong>
+                            </p>
+                            <span class="department">중등교육과</span>
+                            <span class="date">2025.10.19</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="number">19</span>
+                            <p class="title">
+                                <strong>어깨동무 활동(학교별 학교폭력 예방활동) 프로그램 운영</strong>
+                                <i class="svg-icon ico-file"><span class="sr-only">첨부파일</span></i>
+                            </p>
+                            <span class="department">중등교육과</span>
+                            <span class="date">2025.10.19</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../html/board-admin-notice-view.html" target="_self" title="게시글보기">
+                            <span class="number">18</span>
+                            <p class="title">
+                                <strong>2025 충남형 IB학교(준비-관심) 운영</strong>
+                            </p>
+                            <span class="department">학력향상지원센터</span>
+                            <span class="date">2025.10.19</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page-btn-wrap">
+              <div class="btn-wrap">
+                <a href="../html/board-admin-notice-create.html" target="_self" class="krds-btn medium primary">글쓰기</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="pagination" class="conts-ft"></div>
+
+        </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
+
+</body>
+</html>

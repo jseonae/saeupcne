@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">공지사항(등록) 최고관리자 board-admin-notice-create</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+</head>
+
+<body data-current-menu="board" data-current-submenu="board-notice" >
+
+<div id="wrap" class="g-wrap">
+
+  <div id="krds-skip-link">
+    <a href="#container">본문 바로가기</a>
+  </div>
+
+  <header id="header"></header>
+
+  <main id="container" class="page-edit board">
+    <div class="inner">
+        <strong class="page-title">글쓰기</strong>
+        <div class="contents contents-box contents-box-shadow">
+            <div class="board-page-title line conts-hd">
+                <div class="krds-form-check large">
+                    <input type="checkbox" id="notice-fix" class="hide-input">
+                    <label for="notice-fix"><b>공지</b></label>
+                </div>
+            </div>
+
+            <div class="conts-area">
+                <div class="board-page-cont">
+                    <div class="form">
+                        <div class="form-box">
+                            <div class="form-tt">
+                                <h4>제목</h4>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-conts">
+                                    <input type="text" class="krds-input large notice-tit" placeholder="제목을 입력해주세요.">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-box">
+                            <div class="form-tt">
+                                <h4>내용</h4>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-conts textarea-wrap">
+                                    <textarea class="krds-input notice-det" placeholder="내용을 입력해주세요."></textarea>
+                                    <p class="textarea-count">
+                                        <span class="count-now">0</span><span class="count-total">/10,000</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="board-page-file krds-file-upload line">
+                    <div class="file-head">
+                        <h3 class="tit">파일업로드 <small class="sub-label">파일 용량 100M 이하만 업로드 가능합니다.</small></h3>
+                    </div>
+
+                    <div class="file-upload">
+                        <p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p>
+                        <div class="file-upload-btn-wrap">
+                        <input type="file" name="myFile" id="fileu-upload" hidden>
+                        <label for="fileu-upload">
+                            <button type="button" class="krds-btn secondary medium">파일선택</button>
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="file-list">
+                        <ul class="upload-list">
+                            <li>
+                                <div class="file-info">
+                                    <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                    <div class="btn-wrap">
+                                        <span class="krds-spinner" role="status"><span class="sr-only">업로드 중</span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="file-info">
+                                    <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                    <div class="btn-wrap">
+                                        <button type="button" class="krds-btn medium text">삭제 <i class="svg-icon ico-delete-fill"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="is-error">
+                                <div class="file-info">
+                                    <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                    <div class="btn-wrap">
+                                        <button type="button" class="krds-btn medium text">삭제 <i class="svg-icon ico-delete-fill"></i></button>
+                                    </div>
+                                </div>
+                                <p class="file-hint-invalid">등록 가능한 파일 용량을 초과하였습니다.<br> 100M 미만의 파일만 등록할 수 있습니다.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-btn-wrap conts-ft">
+                <div class="btn-wrap">
+                    <a href="../html/board-admin-notice-list.html" class="krds-btn medium tertiary">취소</a>
+                    <a href="../html/board-admin-notice-list.html" class="krds-btn medium primary pressed">등록</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+<div id="modalLoad"></div>
+
+</body>
+</html>
+
