@@ -49,3 +49,24 @@ $(document).ready(function () {
     });
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("toggleBtn");
+    const toggleArea = document.getElementById("toggleArea");
+    const icon = toggleBtn.querySelector(".svg-icon");
+
+    toggleBtn.addEventListener("click", () => {
+        const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+
+        // aria 상태 변경
+        toggleBtn.setAttribute("aria-expanded", !expanded);
+
+        // 접힘/펼침 클래스 토글
+        toggleArea.classList.toggle("collapsed");
+        myInfoCard.classList.toggle("collapsed"); // ← 추가
+
+        // 아이콘 방향 변경 (up ↔ down)
+        icon.classList.toggle("down", expanded);
+        icon.classList.toggle("up", !expanded);
+    });
+});

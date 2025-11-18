@@ -219,12 +219,11 @@
 
 /* ** 페이지 하단 버튼 ** */
 .page-btn-wrap {
-    z-index: 10;
     display: flex;
     justify-content: flex-end;
     gap: var(--krds-gap-5);
     margin-top: var(--krds-gap-9);
-    background-color: var(--krds-light-color-background-white);}
+}
 .page-btn-wrap.guide {flex-direction: column;}
 .page-btn-wrap.guide .krds-btn {flex: initial;}
 .page-btn-wrap.guide .guide-txt {
@@ -240,7 +239,8 @@
     gap: var(--krds-gap-5);
     width: auto;
 }
-
+.inner-btn {display: flex; align-items: center; justify-content: space-between; margin-top: var(--krds-gap-6);}
+.inner-btn .page-btn-wrap {margin:0;}
 
 
 /* Header Container */
@@ -750,7 +750,7 @@
 .top-btn .svg-icon.ico-go-top {mask-size:90%;}
 
 /* 모달 */
-#modal-reason-view.krds-modal .modal-dialog, #modal-reassign.krds-modal .modal-dialog {width:var(--krds-modal--size-medium);}
+.krds-modal .modal-dialog {width:var(--krds-modal--size-medium);}
 #modal-reassign.krds-modal .modal-dialog .sch-input {width:100%;}
 
 /* 마이페이지 */
@@ -771,7 +771,7 @@
 .my-info-card {
     position: relative;
     background-color: var(--krds-light-color-surface-white);
-    border: 2px solid var(--krds-color-light-secondary-60);
+    border: 3px solid var(--krds-color-light-secondary-60);
     border-radius: var(--krds-number-8);
     box-shadow: 0px 0px 0.2rem 0px rgba(0, 0, 0, 0.05), 
                 0px var(--krds-number-2) var(--krds-number-4) 0px rgba(0, 0, 0, 0.08);
@@ -779,7 +779,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--krds-number-14);
 }
 
 /* Info Detail */
@@ -1403,35 +1402,44 @@
 }
 
 /* Info Item */
-.info-item {
+.mypage .info-item {
     display: flex;
     align-items: center;
     gap: var(--krds-number-8);
 }
 
-.info-label {
+.mypage .info-label {
     width: 7.4rem;
     font-weight: var(--krds-font-weight-bold);
     color: var(--krds-light-color-text-subtle);
 }
 
-.info-value {
+.mypage .info-value {
     font-weight: var(--krds-font-weight-regular);
     color: var(--krds-light-color-text-subtle);
 }
 
 
-/*----------사업신청view----------*/
-.list-container.view::before {content:''; display: block; background:url(../img/subtitle-view-bg.png); width:100%; height:190px; position:absolute; z-index: -1;}
+/*----------view----------*/
+.list-container.view {background-color:var(--krds-color-light-secondary-5)}
+.list-container.view h2 {margin:var(--krds-gap-9) 0 var(--krds-gap-6) 0;}
+.list-container.view h3 {color:var(--krds-light-color-text-primary)}
 .list-container.view .info-wrap {padding-top: var(--krds-number-14);}
-.list-container.view .my-info-card {align-items: flex-end; padding:var(--krds-number-14) var(--krds-number-17);}
+.list-container.view .my-info-card {flex-direction: column; align-items: flex-start; padding:var(--krds-number-14) var(--krds-number-17); gap:0}
 .list-container.view .my-info-card .project-name .info-top {margin-bottom:var(--krds-gap-4)}
 .list-container.view .my-info-card .project-name strong {font-size:var(--krds-pc-font-size-heading-medium);}
+
+/*----------사업신청view----------*/
+.list-container.view.step1 h2 {margin-bottom: 0;}
+.list-container.view.step1 h3 {color:var(--krds-light-color-text-basic)}
+.list-container.view.step1 {background-color:var(--krds-color-light-background-white)}
+.list-container.view.step1::before {content:''; display: block; background:url(../img/subtitle-view-bg.png); width:100%; height:190px; position:absolute; z-index: -1;}
+.list-container.view.step1 .my-info-card {flex-direction: row; align-items: flex-end; }
+
 .project-right {
     display: flex;
     gap: var(--krds-number-9);
 }
-
 .manager-info {
     display: flex;
     flex-direction: column;
@@ -1439,11 +1447,9 @@
     gap: var(--krds-number-3);
 }
 .project-right .manager-info {flex-direction: row;}
-
 .manager-name {
     font-weight: var(--krds-font-weight-bold);
 }
-
 .phone-info {
     display: flex;
     align-items: center;
@@ -1452,24 +1458,57 @@
 .phone-info i {mask-size:90% !important;}
 
 /* View Contents Container */
-.view-content-wrap {display: flex; flex-direction: column; gap: var(--krds-gap-12); margin-top: var(--krds-number-14);}
+.view-content-wrap {display: flex; flex-direction: column; gap: var(--krds-gap-10); background-color: var(--krds-color-light-alpha-white100);padding:var(--krds-gap-9) var(--krds-gap-11); border-radius:0 0 var(--krds-radius-xlarge1) var(--krds-radius-xlarge1);}
+.view.step1.view-content-wrap {gap:var(--krds-gap-12)}
+.view.step1 .view-content-wrap {padding:0;}
 .view-contents {
     display: flex;
     flex-direction: column;
     gap: var(--krds-number-9);
     width: 100%;
+    position:relative
 }
+.view-contents .saeup-title {font-size:var(--krds-pc-font-size-heading-large); margin-bottom:var(--krds-gap-6)}
+.view-contents .saeup-title:before {display:block; content:''; background-color: var(--krds-color-high-contrast-gray-5); width:100%; height:8px; position: absolute; bottom: 0;}
 .view-contents textarea {background: var(--krds-color-high-contrast-gray-5) !important; border: none; padding: var(--krds-number-12); font-size: var(--krds-mobile-font-size-body-medium);}
-.view-contents .file-info-title {font-weight:var(--krds-font-weight-bold); color:var(--krds-light-color-text-subtle)}
+.view-contents .file-info-title {font-weight:var(--krds-font-weight-bold); color:var(--krds-light-color-text-subtle); gap:var(--krds-gap-3)}
 .view-contents .file-name {color:var(--krds-light-color-text-subtle)}
-.view .page-btn-wrap {justify-content: space-between;}
+.view.step1 .page-btn-wrap {justify-content: space-between;}
+
+
+/* view-Info Group */
+.view-contents.school-info-content {flex-direction: row; justify-content: flex-end; gap:var(--krds-gap-7); padding:var(--krds-number-12) var(--krds-number-18);     background: var(--krds-color-high-contrast-alpha-white100);
+    border-radius: var(--krds-radius-xlarge1) var(--krds-radius-xlarge1) 0 0; border-bottom: 1px solid  var(--krds-color-light-gray-10);}
+.view-contents .info-group {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--krds-number-6);
+}
+.view-contents .info-label {width: auto;}
+.view-contents .info-label-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--krds-number-5);
+}
+.view-contents .info-value {
+    color: var(--krds-light-color-text-subtle);
+    white-space: nowrap;
+}
+.view-contents .info-value-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--krds-number-5);
+}
 
 /* Content Grid */
 .content-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--krds-number-9);
+    gap: var(--krds-number-8);
     width: 100%;
+    justify-content: space-between;
 }
 
 /* Info Card */
@@ -1641,3 +1680,175 @@
 .unit-value {
     color: var(--krds-light-color-text-subtle);
 }
+
+
+/* 사업신청관리view */
+.budget-tag-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--krds-number-5);
+    padding: var(--krds-number-8) var(--krds-number-12);
+    width: 100%;
+    height: 100%;
+    background: var(--krds-color-high-contrast-gray-5);
+    border-radius: var(--krds-radius-xlarge1);
+}
+.budget-label-group {
+    display: flex;
+    align-items: center;
+    gap: var(--krds-number-4);
+}
+.budget-label-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--krds-number-2);
+    padding: var(--krds-number-8) 0;
+    height: 3.6rem;
+    color:var(--krds-light-color-text-secondary);
+}
+.label-main {
+    font-weight: var(--krds-font-weight-bold);
+    font-size: var(--krds-pc-font-size-body-medium);
+    line-height: 1.5;
+    color: var(--krds-light-color-text-primary-bold);
+    white-space: nowrap;
+}
+.label-unit {
+    font-weight: var(--krds-font-weight-bold);
+    font-size: var(--krds-pc-font-size-body-small);
+    white-space: nowrap;
+}
+.budget-value-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--krds-number-4);
+}
+.budget-value {
+    font-weight: var(--krds-font-weight-bold);
+    font-size: var(--krds-pc-font-size-body-large);
+    color: var(--krds-light-color-text-primary);
+    white-space: nowrap;
+}
+.list-container.view .krds-table-wrap .tbl.data thead th {background:none;}
+.list-container.view .krds-table-wrap .tbl.data td.td-basis {text-align:left !important;}
+.list-container.view .krds-table-wrap .tbl.data td p {display:-webkit-box; max-width:800px; overflow:hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 1;}
+.list-container.view .krds-table-wrap .tbl.data .t-foot td {font-weight: var(--krds-font-weight-bold);}
+.list-container.view .info-view {display: flex; gap: var(--krds-gap-5); }
+.list-container.view .info-view .info-card {height:18rem}
+.list-container.view .info-view h3 {color:var(--krds-light-color-text-basic);}
+
+.list-container.view .my-info-card .toggle-area {display: flex; flex-direction: row-reverse; align-items: flex-end; justify-content: space-between; width: 100%;}
+.list-container.view .my-info-card .toggle-btn {position: absolute; right:var(--krds-number-17);}
+
+#toggleArea {
+    overflow: hidden;
+    max-height: 200px; /* 충분히 크게 잡아줌 */
+    opacity: 1;
+    transition: max-height .35s ease, opacity .25s ease;
+}
+
+#toggleArea.collapsed {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+}
+/* 접힌 상태에서 info-detail 안의 레이아웃 변경 */
+.my-info-card.collapsed .info-detail .td-in-col2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--krds-gap-6)
+}
+
+.my-info-card.collapsed {gap:0 !important;}
+.my-info-card.collapsed .project-name .info-top {margin-bottom: 0 !important;}
+/* 아이콘 회전 효과 */
+.toggle-btn .svg-icon.up {
+    transform: rotate(0);
+    transition: transform .25s ease;
+}
+
+.toggle-btn .svg-icon.down {
+    transform: rotate(180deg);
+    transition: transform .25s ease;
+}
+
+
+/* ========================================
+   사업신청 write
+   LEFT SIDEBAR - Project Info Card
+======================================== */
+.list-container.write {padding-top:var(--krds-number-14); background-color: var(--krds-color-light-secondary-5);}
+.list-container.write .list-inner {display: flex; flex-direction: row; gap:var(--krds-number-14);}
+.list-container.write .view-content-wrap {border-radius:var(--krds-radius-xlarge1);}
+
+.list-container.write .info-wrap {width:362px;}
+.content-left {
+    flex-shrink: 0;
+    min-width:362px;
+    background-color: var(--krds-light-color-surface-white);
+    border: 2px solid #063a74;
+    border-radius: var(--krds-number-8);
+    padding: var(--krds-number-14);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05), 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: var(--krds-number-10);
+}
+.list-container.write .content-left .project-name strong {display: block; white-space: normal; font-size:var(--krds-pc-font-size-heading-medium); color:var(--krds-light-color-text-secondary);}
+.list-container.write .content-right {flex-direction: column; gap:var(--krds-number-12)}
+.list-container.write .content-right .page-btn-wrap {margin:0; width:100%; justify-content: space-between;}
+.list-container.write .content-right .info-wrap {flex-direction: row; width:100%; gap:var(--krds-gap-4)}
+.list-container.write .content-right .info-wrap .info-card {flex-direction: row; height:auto; width:calc(100% / 3); gap:var(--krds-gap-4); justify-content: normal;}
+.list-container.write .budget-tag-content {justify-content: space-between;}
+.list-container.write .budget-value {padding: var(--krds-padding-3); background: var(--krds-light-color-background-white);width: 140px;text-align: right;border-radius: var(--krds-radius-medium4);
+}
+
+/* Dividers */
+.divider-gray {
+    width: 100%;
+    height: var(--krds-number-4);
+    background-color: var(--krds-light-color-surface-gray-subtler);
+}
+
+.divider-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--krds-light-color-border-gray);
+}
+
+/* Project Details */
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--krds-number-4);
+    font-size: var(--krds-pc-font-size-body-small);
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--krds-gap-4);
+}
+
+.detail-value {
+    font-weight: var(--krds-font-weight-bold);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--krds-number-2);
+    font-size: var(--krds-pc-font-size-body-small);
+}
+
+.contact-name {
+    display: flex;
+    gap: var(--krds-number-4);
+    font-size: var(--krds-pc-font-size-body-small);
+}
+.contact-person {font-weight: var(--krds-font-weight-bold);}
