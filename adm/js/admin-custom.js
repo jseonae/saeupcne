@@ -630,3 +630,182 @@ $(function () {
 
   updateActionSection();
 });
+
+
+/* ------------------------------------------------------------------------
+ * 답변 등록/수정/삭제 동작 — 삭제는 공용 모달로 확인
+ * --------------------------------------------------------------------- */
+$(function () {
+
+  // 🔹 현재 어떤 answer-area를 삭제하려고 하는지 임시로 기억하는 전역 변수
+  let answerDeleteTarget = null;
+
+  $('.answer-area').each(function () {
+    const $wrap       = $(this);
+    const $empty      = $wrap.find('.answer-empty');
+    const $form       = $wrap.find('.answer-form');
+    const $text       = $wrap.find('.answer-text');
+    const $dateLabel  = $wrap.find('.answer-date-label');
+    const $dateInput  = $wrap.find('.answer-date');
+    const $counter    = $wrap.find('.count-current');
+
+    // 버튼들은 answer-area 바로 아래의 page-btn-wrap 안에 있음
+    const $footer     = $wrap.nextAll('.page-btn-wrap').first();
+    const $btnCancel  = $footer.find('.btn-answer-cancel');
+    const $btnSubmit  = $footer.find('.btn-answer-submit');
+    const $btnDelete  = $footer.find('.btn-answer-delete');
+    const $btnEdit    = $footer.find('.btn-answer-edit');
+    const $btnStart   = $wrap.find('.btn-answer-start'); // 처음 “답변등록” 버튼
+
+    const STATE_EMPTY = 'empty';
+    const STATE_EDIT  = 'edit';
+    const STATE_VIEW  = 'view';
+
+    /* ----------------------------- 상태 전환 ----------------------------- */
+    function setState(state) {
+      $wrap.attr('data-answer-state', state);
+
+      if (state === STATE_EMPTY) {
+        $empty.show();
+        $form.hide();
+
+        $btnStart.show();
+        $btnCancel.hide();
+        $btnSubmit.hide();
+        $btnDelete.hide();
+        $btnEdit.hide();
+
+        $text.prop('disabled', false).removeClass('answer-txt').val('');
+        $dateLabel.show();
+        $dateInput.prop('disabled', false).removeClass('data-txt').val('');
+
+        updateCount();
+        $wrap.data('has-answer', false);
+      }
+
+      if (state === STATE_EDIT) {
+        $empty.hide();
+        $form.show();
+
+        $btnStart.hide();
+        $btnCancel.show();
+        $btnSubmit.show().text($wrap.data('has-answer') ? '수정등록' : '답변등록');
+        $btnDelete.toggle($wrap.data('has-answer') === true);
+        $btnEdit.hide();
+
+        $text.prop('disabled', false).removeClass('answer-txt');
+        $dateLabel.show();
+        $dateInput.prop('disabled', false).removeClass('data-txt');
+
+        // 🔹 새 답변을 처음 작성할 때만 현재 시간 자동 입력
+        if ($wrap.data('has-answer') !== true && !$.trim($dateInput.val())) {
+          $dateInput.val(getNow());
+        }
+      }
+
+      if (state === STATE_VIEW) {
+        $empty.hide();
+        $form.show();
+
+        $btnStart.hide();
+        $btnCancel.hide();
+        $btnSubmit.hide();
+        $btnDelete.show();
+        $btnEdit.show();
+
+        $text.prop('disabled', true).addClass('answer-txt');
+        $dateLabel.hide();
+        $dateInput.prop('disabled', true).addClass('data-txt');
+
+        $wrap.data('has-answer', true);
+      }
+    }
+
+    /* ----------------------------- 글자수 ----------------------------- */
+    function updateCount() {
+      $counter.text($text.val().length);
+    }
+    $text.on('input', updateCount);
+
+    /* ----------------------------- 현재 시간 문자열 ----------------------------- */
+    function getNow() {
+      const n = new Date();
+      return (
+        `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(
+          n.getDate()
+        ).padStart(2, '0')} ` +
+        `${String(n.getHours()).padStart(2, '0')}:${String(n.getMinutes()).padStart(
+          2,
+          '0'
+        )}`
+      );
+    }
+
+    /* ----------------------------- 초기 상태 ----------------------------- */
+    const hasInitial = $.trim($text.val()) !== '';
+    $wrap.data('has-answer', hasInitial);
+
+    if (hasInitial) {
+      if (!$.trim($dateInput.val())) $dateInput.val(getNow());
+      setState(STATE_VIEW);
+    } else {
+      setState(STATE_EMPTY);
+    }
+
+    /* ----------------------------- 이벤트 바인딩 ----------------------------- */
+
+    // 1) 처음 “답변등록”
+    $btnStart.on('click', () => setState(STATE_EDIT));
+
+    // 2) 취소
+    $btnCancel.on('click', () => {
+      setState($wrap.data('has-answer') ? STATE_VIEW : STATE_EMPTY);
+    });
+
+    // 3) 등록 / 수정등록
+    $btnSubmit.on('click', () => {
+      if (!$.trim($text.val())) {
+        alert('답변 내용을 입력해주세요.');
+        $text.focus();
+        return;
+      }
+      if (!$.trim($dateInput.val())) $dateInput.val(getNow());
+      setState(STATE_VIEW);
+    });
+
+    // 4) “답변수정” → 편집 모드로
+    $btnEdit.on('click', () => setState(STATE_EDIT));
+
+    // 5) “답변삭제” 클릭
+    //    - 여기서는 모달만 띄우고, 어떤 답변을 삭제하려는지만 기억해 둔다.
+    $btnDelete.on('click', function () {
+      answerDeleteTarget = $wrap; // 이 answer-area가 삭제 대상
+      // 모달 열기는 기존 KRDS .open-modal 스크립트가 처리 (우리는 건드리지 않음)
+    });
+
+    // 6) 실제 삭제(모달에서 확인 눌렀을 때)를 위한 커스텀 이벤트
+    $wrap.on('answer:deleteConfirmed', function () {
+      setState(STATE_EMPTY);
+    });
+  });
+
+  /* ----------------------------------------------------------------------
+   * 공용 삭제 확인 모달의 "삭제" 버튼
+   *  - 어떤 answer-area에서 삭제 요청했는지 전역 변수로 꺼내 처리
+   * ------------------------------------------------------------------- */
+  $(document).on('click', '.modal-confirm-delete', function () {
+    if (answerDeleteTarget && answerDeleteTarget.length) {
+      answerDeleteTarget.trigger('answer:deleteConfirmed');
+    }
+    answerDeleteTarget = null; // 사용 후 초기화
+
+    // 모달 닫기 (KRDS 모달 스크립트 사용)
+    const $modal = $(this).closest('.krds-modal');
+    if (window.krds_modal && typeof krds_modal.closeModal === 'function') {
+      krds_modal.closeModal($modal.attr('id'));
+    } else {
+      // 혹시 몰라서 fallback
+      $modal.removeClass('in shown');
+    }
+  });
+});
