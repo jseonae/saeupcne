@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">관리자 로그인</title>
+  <title th:text="${pageTitle}">아이디 찾기 결과</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -29,27 +29,47 @@
   <script src="../js/admin-modal.js" defer></script>
   <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
   <link rel="stylesheet" href="../css/admin-custom.css">
+  <link rel="stylesheet" href="../css/admin-responsive.css">
 </head>
 
 <body>
 
-<div id="wrap" class="login-page">
+<div id="wrap" class="auth-page main-bg">
 
   <header class="main-header">
     <div class="header-top">
         <div class="logo">
-            <a href=""><img src="../img/logo_cne.svg"></a>
+            <a href="..//html/auth-admin-login.html" target="_self" title="로그인페이지로 이동"><img src="../img/logo_bk.svg" alt="충청남도교육청 단위학교사업선택제"></a>
         </div>
+        <!-- <div class="btn-wrap">
+          <a href="#!" class="krds-btn medium text" target="_self"><i class="svg-icon ico-angle left"></i>이전 페이지로 돌아가기</a>
+        </div> -->
     </div>
   </header>
 
-  <main id="container" class="login">
+  <main id="container" class="find result">
     <div class="inner">
-
-        <div class="contents contents-box contents-box-shadow">
-
+        <div class="page-title-wrap">
+          <h1 class="h-tit">
+            아이디 찾기 결과
+          </h1>
         </div>
-        
+        <div class="contents contents-box contents-box-shadow">
+          <div class="auth-form-area">
+            <div class="auth-wrap">
+              <p class="auth-result-tt"><b>홍길동</b>님의 아이디는 다음과 같습니다.</p>
+              <div class="auth-result-box">
+                <strong>test1234</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-btn-wrap">
+            <div class="btn-wrap">
+                <a href="#!" target="_parent" class="krds-btn tertiary">뒤로가기</a>
+                <a href="../html/auth-admin-login.html" target="_parent" class="krds-btn primary">로그인하기</a>
+            </div>
+        </div>
     </div>
   </main>
 
@@ -57,7 +77,6 @@
 
 </div><!--//wrap-->
 
-<div id="modalLoad"></div>
 
 </body>
 </html>

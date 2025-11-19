@@ -256,53 +256,6 @@ $(function () {
 });
 
 
-
-/* ------------------------------------------------------------------------
-* 제이쿼리 datetimepicker
-* --------------------------------------------------------------------- */
-$(function(){
-  $.datetimepicker.setLocale('kr');
-  $('.datetimepicker').datetimepicker({
-    timepicker:false,
-    format:'Y-m-d',
-  });
-
-  // 시작일, 종료일 적용 버전
-  let startDate = $('.start-date').datetimepicker();
-  let endDate = $('.end-date').datetimepicker();
-  startDate.datetimepicker({
-      format: 'Y-m-d H:i',
-      scrollMonth: false,
-      scrollInput: false,
-      onShow: function (ct, $i) {
-          this.setOptions({
-              maxDate: endDate.val() ? endDate.val() : false
-          })
-      },
-      onClose: function (ct, $i) {
-          if (!endDate.val()) {
-              endDate.val($i.val());
-          }
-      }
-  });
-
-  endDate.datetimepicker({
-      format: 'Y-m-d H:i',
-      scrollMonth: false,
-      scrollInput: false,
-      onShow: function (ct) {
-          this.setOptions({
-              minDate: startDate.val() ? startDate.val() : false
-          })
-      },
-      onClose: function (ct, $i) {
-          if (!startDate.val()) {
-              startDate.val($i.val());
-          }
-      }
-  });
-})
-
 /* ------------------------------------------------------------------------
  * 소속(학교) 자동완성 검색
  * - 입력 시 결과박스 열기/닫기
@@ -380,7 +333,7 @@ $(function () {
 });
 
 /* ------------------------------------------------------------------------
- * 비밀번호 보기 토글
+ * 비밀번호 보기 토글(로그인, 회원가입, 회원관리)
  * --------------------------------------------------------------------- */
 $(function () {
   $(document).on('click', '.btn-ico-wrap .krds-btn', function () {
@@ -808,4 +761,90 @@ $(function () {
       $modal.removeClass('in shown');
     }
   });
+});
+
+
+
+
+
+/* ------------------------------------------------------------------------
+ * jQuery datetimepicker (심플 버전)
+ *  - .datetimepicker : 일반 날짜만
+ *  - .start-date / .end-date : 시작일 / 종료일 (날짜+시간, 서로 제약)
+ * --------------------------------------------------------------------- */
+$(function () {
+
+  // 플러그인이 안 들어온 페이지에서는 그냥 종료
+  if (!$.fn.datetimepicker) return;
+
+  // 로케일(한국어) 설정
+  if ($.datetimepicker && $.datetimepicker.setLocale) {
+    $.datetimepicker.setLocale('ko'); // 'kr' 말고 'ko' 사용
+  }
+
+  /* -------------------------------
+   * 1) 일반 날짜 인풋 (.datetimepicker)
+   *    - 시작/종료용은 제외하고 적용
+   * ----------------------------- */
+  $('.datetimepicker')
+    .not('.start-date, .end-date')
+    .datetimepicker({
+      timepicker: false,
+      format: 'Y-m-d',
+      scrollMonth: false,
+      scrollInput: false
+    });
+
+  /* -------------------------------
+   * 2) 시작일 / 종료일 (날짜+시간)
+   *    - 서로 min/maxDate 제약
+   * ----------------------------- */
+  const $start = $('.start-date');
+  const $end   = $('.end-date');
+
+  // 둘 다 있을 때만 적용
+  if ($start.length && $end.length) {
+
+    // 시작일
+    $start.datetimepicker({
+      format: 'Y-m-d H:i',
+      step: 10,              // 10분 단위
+      scrollMonth: false,
+      scrollInput: false,
+      onShow: function () {
+        const endVal = $end.val();
+        this.setOptions({
+          // 종료일이 있으면 그 날짜까지만 선택 가능
+          maxDate: endVal || false
+        });
+      },
+      onClose: function (currentDateTime, $input) {
+        // 종료일이 비어 있으면 시작일로 채워줌
+        if (!$end.val()) {
+          $end.val($input.val());
+        }
+      }
+    });
+
+    // 종료일
+    $end.datetimepicker({
+      format: 'Y-m-d H:i',
+      step: 10,
+      scrollMonth: false,
+      scrollInput: false,
+      onShow: function () {
+        const startVal = $start.val();
+        this.setOptions({
+          // 시작일이 있으면 그 이후로만 선택 가능
+          minDate: startVal || false
+        });
+      },
+      onClose: function (currentDateTime, $input) {
+        // 시작일이 비어 있으면 종료일로 채워줌
+        if (!$start.val()) {
+          $start.val($input.val());
+        }
+      }
+    });
+  }
 });
