@@ -26,13 +26,15 @@
   <script src="../js/admin-custom.js" defer></script>
   <script src="../js/admin-tooltip.js" defer></script>
   <script src="../js/admin-modal.js" defer></script>
+  <script src="../js/admin-dashboard.js" defer></script>
   <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
   <link rel="stylesheet" href="../css/admin-custom.css">
+  <link rel="stylesheet" href="../css/admin-dashboard.css">
 </head>
 
 <body>
 
-<div id="wrap" class="g-wrap">
+<div id="wrap" class="g-wrap dashboard">
 
   <!-- 본문 바로가기 영역  -->
   <div id="krds-skip-link">
@@ -44,7 +46,7 @@
   <header id="header"></header>
   <!-- //header -->
 
-  <main id="container">
+  <!-- <main id="container">
     <div class="inner">
         <div class="contents contents-box contents-box-shadow">
           <div class="conts-hd">콘텐츠 헤드</div>
@@ -52,7 +54,305 @@
           <div class="conts-ft">콘텐츠 푸터</div>
         </div>
     </div>
+  </main> -->
+
+
+  <main id="container" class="main-content">
+    <div class="content-inner">
+      <!-- Greeting -->
+      <div class="greeting">
+        <h1 class="greeting-title">홍길동 장학사님, 안녕하세요.</h1>
+        <div class="greeting-date">
+          <span class="today-badge">Today</span>
+          <span class="date-text">2025.04.11.금</span>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <section class="charts-section">
+        <!-- Chart 1: 사업별 현황 (도넛 차트) -->
+        <article class="chart-card">
+          <div class="chart-container">
+            <div class="donut-chart">
+              <div class="chart-center-label">사업별 현황</div>
+              <i class="donut-placeholder"></i>
+            </div>
+            <ul class="chart-legend">
+              <li><i class="legend-dot color-1"></i>선택사업</li>
+              <li><i class="legend-dot color-2"></i>선택 외 사업</li>
+              <li><i class="legend-dot color-3"></i>개방형 사업</li>
+              <li><i class="legend-dot color-4"></i>특교·추경신규 사업</li>
+              <li><i class="legend-dot color-5"></i>자율자업</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Chart 2: 연도별 현황 (막대 차트) -->
+        <article class="chart-card">
+          <header class="chart-header">
+            <h2 class="chart-title">연도별 현황</h2>
+            <p class="chart-date">2025.10.16일 기준</p>
+          </header>
+          <div class="bar-chart">
+            <i class="bar-chart-placeholder"></i>
+          </div>
+          <ul class="chart-legend horizontal">
+            <li><i class="legend-dot color-1"></i>선택사업</li>
+            <li><i class="legend-dot color-2"></i>선택 외 사업</li>
+            <li><i class="legend-dot color-3"></i>개방형 사업</li>
+            <li><i class="legend-dot color-4"></i>특교·추경신규 사업</li>
+            <li><i class="legend-dot color-5"></i>자율자업</li>
+          </ul>
+        </article>
+
+        <!-- Chart 3: 진행 현황 (막대 차트) -->
+        <article class="chart-card">
+          <header class="chart-header">
+            <h2 class="chart-title">진행 현황</h2>
+            <p class="chart-date">2025.10.16일 기준</p>
+          </header>
+          <div class="bar-chart">
+            <i class="bar-chart-placeholder"></i>
+          </div>
+          <ul class="chart-legend horizontal">
+            <li><i class="legend-dot color-6"></i>요청</li>
+            <li><i class="legend-dot color-7"></i>접수완료</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- 최근 사업신청 -->
+      <section class="table-section">
+        <header class="section-header">
+          <h2 class="section-title">최근 사업신청</h2>
+          <i class="icon-arrow-right"></i>
+        </header>
+
+        <table class="data-table">
+          <colgroup>
+            <col width="8%">
+            <col width="8%">
+            <col width="20%">
+            <col width="12%">
+            <col width="10%">
+            <col width="10%">
+            <col width="8%">
+            <col width="8%">
+            <col width="8%">
+            <col width="8%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>사업신청</th>
+              <th>공백</th>
+              <th>사업명</th>
+              <th>과업 학교명</th>
+              <th>심사결과(안) 영액결과(안)</th>
+              <th>담당자 연락처</th>
+              <th>등록일</th>
+              <th>신청일</th>
+              <th>심사결과</th>
+              <th>결과보고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026</td>
+              <td>초등</td>
+              <td>
+                <span class="badge badge-선택사업">선택사업</span>
+                2026~개방형~000<br>
+                [별도사업] 2025년 충남혁명생리교육특별 클럽내역 현장방역 정책 운영
+              </td>
+              <td>아산 충남미래초학교</td>
+              <td>1,000<br>0</td>
+              <td>홍길동<br>042-222-3333</td>
+              <td>2025-07-24</td>
+              <td><i class="icon-doc"></i></td>
+              <td>
+                <select class="status-select">
+                  <option>미선정</option>
+                </select>
+              </td>
+              <td><i class="icon-check-circle"></i></td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td>초등</td>
+              <td>
+                <span class="badge badge-선택사업">선택사업</span>
+                2026~개방형~000<br>
+                [별도사업] 2025년 충남혁명생리교육특별 클럽내역 현장방역 정책 운영
+              </td>
+              <td>아산 충남미래초학교</td>
+              <td>1,000<br>0</td>
+              <td>홍길동<br>042-222-3333</td>
+              <td>2025-07-24</td>
+              <td><i class="icon-doc"></i></td>
+              <td>
+                <select class="status-select">
+                  <option>미선정</option>
+                </select>
+              </td>
+              <td><i class="icon-check-circle"></i></td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td>초등</td>
+              <td>
+                <span class="badge badge-선택사업">선택사업</span>
+                2026~개방형~000<br>
+                [별도사업] 2025년 충남혁명생리교육특별 클럽내역 현장방역 정책 운영
+              </td>
+              <td>아산 충남미래초학교</td>
+              <td>1,000<br>0</td>
+              <td>홍길동<br>042-222-3333</td>
+              <td>2025-07-24</td>
+              <td><i class="icon-doc"></i></td>
+              <td>
+                <select class="status-select">
+                  <option>미선정</option>
+                </select>
+              </td>
+              <td><i class="icon-check-circle"></i></td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td>초등</td>
+              <td>
+                <span class="badge badge-선택사업">선택사업</span>
+                2026~개방형~000<br>
+                [별도사업] 2025년 충남혁명생리교육특별 클럽내역 현장방역 정책 운영
+              </td>
+              <td>아산 충남미래초학교</td>
+              <td>1,000<br>0</td>
+              <td>홍길동<br>042-222-3333</td>
+              <td>2025-07-24</td>
+              <td><i class="icon-doc"></i></td>
+              <td>
+                <select class="status-select">
+                  <option>미선정</option>
+                </select>
+              </td>
+              <td><i class="icon-check-circle"></i></td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td>초등</td>
+              <td>
+                <span class="badge badge-선택사업">선택사업</span>
+                2026~개방형~000<br>
+                [별도사업] 2025년 충남혁명생리교육특별 클럽내역 현장방역 정책 운영
+              </td>
+              <td>아산 충남미래초학교</td>
+              <td>1,000<br>0</td>
+              <td>홍길동<br>042-222-3333</td>
+              <td>2025-07-24</td>
+              <td><i class="icon-doc"></i></td>
+              <td>
+                <select class="status-select">
+                  <option>미선정</option>
+                </select>
+              </td>
+              <td><i class="icon-check-circle"></i></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="table-footer">총 사업 : 20,727 개</p>
+      </section>
+
+      <!-- 최근 결과보고 -->
+      <section class="table-section">
+        <header class="section-header">
+          <h2 class="section-title">최근 결과보고</h2>
+          <i class="icon-arrow-right"></i>
+        </header>
+
+        <table class="data-table">
+          <colgroup>
+            <col width="8%">
+            <col width="10%">
+            <col width="15%">
+            <col width="37%">
+            <col width="8%">
+            <col width="10%">
+            <col width="8%">
+            <col width="4%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>사업연도</th>
+              <th>사업구분</th>
+              <th>사업번호</th>
+              <th>사업명</th>
+              <th>담당자</th>
+              <th>연락처</th>
+              <th>등록일</th>
+              <th>결과보고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026</td>
+              <td><span class="badge badge-선택사업">선택사업</span></td>
+              <td>2026~개방형~000</td>
+              <td>[별도모집] 2025년 충남혁명생리교육특별 클럽내역 현장방역 정책 운영</td>
+              <td>홍길동</td>
+              <td>041-640-1234</td>
+              <td>2025-07-24</td>
+              <td><i class="icon-doc"></i><i class="icon-mail"></i></td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td><span class="badge badge-개방형사업">개방형사업</span></td>
+              <td>2026~개방형~000</td>
+              <td>[별도모집] 2025년 충남혁명생리교육특별 클럽내역 현장방역 정책 운영</td>
+              <td>홍길동</td>
+              <td>041-640-1234</td>
+              <td>2025-07-24</td>
+              <td><i class="icon-doc"></i><i class="icon-mail"></i></td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td><span class="badge badge-신규사업">신규사업</span></td>
+              <td>2026~개방형~000</td>
+              <td>[별도모집] 2025년 충남혁명생리교육특별 클럽내역 현장방역 정책 운영</td>
+              <td>홍길동</td>
+              <td>041-640-1234</td>
+              <td>2025-07-24</td>
+              <td><i class="icon-doc"></i><i class="icon-mail"></i></td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td><span class="badge badge-자율사업">자율사업</span></td>
+              <td>2026~개방형~000</td>
+              <td>[별도모집] 2025년 충남혁명생리교육특별 클럽내역 현장방역 정책 운영</td>
+              <td>홍길동</td>
+              <td>041-640-1234</td>
+              <td>2025-07-24</td>
+              <td><i class="icon-doc"></i><i class="icon-mail"></i></td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td><span class="badge badge-특교추경신규사업">특교·추경신규사업</span></td>
+              <td>2026~개방형~000</td>
+              <td>[별도모집] 2025년 충남혁명생리교육특별 클럽내역 현장방역 정책 운영</td>
+              <td>홍길동</td>
+              <td>041-640-1234</td>
+              <td>2025-07-24</td>
+              <td><i class="icon-doc"></i><i class="icon-mail"></i></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="table-footer">총 사업 : 20,727 개</p>
+      </section>
+    </div>
   </main>
+
+
+
 
   <!-- footer -->
   <footer id="footer"></footer>
