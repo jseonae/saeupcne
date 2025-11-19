@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${pageTitle}">단위학교사업선택제</title>
+
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/user-custom.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/user-custome.js" defer></script>
+  <script src="../js/user-modal.js" defer></script>
+
+  <!-- JavaScript (defer로 지연 로드 권장) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  <header id="header"></header>
+  <div class="main-container">  
+    <div class="main-inner">    
+        <section class="hero-section">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1 class="hero-title">단위학교 사업선택제</h1>
+                    <p>단위학교에서 <strong>교육과정 운영 효율성</strong>을 높이는데 필요한 사업이 있으면<br>구성원들이 협의를 통해 신청하고 교육청이 이를 심사하여 <strong>예산을 지원하는 제도</strong> 입니다.</p>
+                </div>
+                <div class="hero-search">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="원하는 사업명을 검색해 보세요." />
+                        <button class="search-button" aria-label="검색">
+                            <div class="search-icon"></div>
+                        </button>
+                    </div>
+                    <div class="search-tags">
+                        <a href="#" class="tag">#선택사업</a>
+                        <a href="#" class="tag">#기획형사업</a>
+                        <a href="#" class="tag">#우수경영사업</a>
+                        <a href="#" class="tag">#자율사업</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cards-inner">
+            <a href="" class="card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>선택사업</h2>
+                        <p class="card-subtitle">(교당 1개 선정 가능)</p>
+                    </div>
+                    <p class="card-description">
+                        교당 지원금 3,000만원 이상 시설환경 개선<br>
+                        지원 사업, 5,000만원 이상 프로그램 지원 사업<br>(유치원 대상사업 2개 포함)
+                    </p>
+                </div>
+                <div class="card-icon card-icon-1"></div>
+                <button class="card-arrow" aria-label="자세히 보기">
+                    <div class="arrow-icon"></div>
+                </button>
+            </a>
+            <a href="" class="card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>선택 외 사업</h2>
+                        <p class="card-subtitle">(교당 3개 선정 가능)</p>
+                    </div>
+                    <p class="card-description">
+                        교당 지원금3,000만원 미만 시설환경 개선 사업, 5,000만원 미만 프로그램 지원 사업
+                    </p>
+                </div>
+                <div class="card-icon card-icon-2"></div>
+                <button class="card-arrow" aria-label="자세히 보기">
+                    <div class="arrow-icon"></div>
+                </button>
+            </a>
+            <a href="" class="card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>개방형 사업</h2>
+                        <p class="card-subtitle">(신청제한 없음)</p>
+                    </div>
+                    <p class="card-description">
+                        교사 개인이 선택하여 학급 또는 동아리 단위<br>
+                        학생 지원 사업, 학교 신청이 어려운 정책사업
+                    </p>
+                </div>
+                <div class="card-icon card-icon-3"></div>
+                <button class="card-arrow" aria-label="자세히 보기">
+                    <div class="arrow-icon"></div>
+                </button>
+            </a>
+            <a href="" class="card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>특교·추경신규 사업</h2>
+                        <p class="card-subtitle">(신청제한 없음)</p>
+                    </div>
+                    <p class="card-description">
+                        사업선택제 운영 시기 및 선정 방법 등 일원화하여<br>
+                        추진하기 어려운 교육부 특별교부금 지원사업,<br>
+                        또는 추가경정예산 확보로 당해연도 신규 모집하는 사업
+                    </p>
+                </div>
+                <div class="card-icon card-icon-4"></div>
+                <button class="card-arrow" aria-label="자세히 보기">
+                    <div class="arrow-icon"></div>
+                </button>
+            </a>
+            <a href="" class="card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>자율사업</h2>
+                        <p class="card-subtitle">(교당 1개 선정 가능)</p>
+                    </div>
+                    <p class="card-description">
+                        선택,선택외,개방형사업 외 학교 운영상 필요한 사업으로, 구성원 협의를 통해 자율적으로 계획하여 신청하는 사업
+                    </p>
+                </div>
+                <div class="card-icon card-icon-5"></div>
+                <button class="card-arrow" aria-label="자세히 보기">
+                    <div class="arrow-icon"></div>
+                </button>
+            </a>
+            <a href="" class="action-card data">
+                <div class="action-card-content">
+                    <p class="action-card-label">자료 모아보기!</p>
+                    <h3 class="action-card-title">필요한 자료를<br>빠르게 찾아보세요!</h3>
+                </div>
+                <button class="action-card-btn">바로가기</button>
+                <div class="action-card-character"></div>
+            </a>
+            <a href="" class="action-card qna">
+                <div class="action-card-content">
+                    <p class="action-card-label">궁금한 점이 있나요?</p>
+                    <h3 class="action-card-title">자주 묻는 질문을<br>확인해 보세요!</h3>
+                </div>
+                <button class="action-card-btn">바로가기</button>
+                <div class="action-card-character"></div>
+            </a>
+            <div class="notice-inner">
+                <div class="notice-board">
+                    <div class="notice-header">
+                        <h2 class="notice-title">공지사항</h2>
+                        <div class="notice-controls">
+                            <button class="notice-nav-btn" aria-label="이전">
+                                <i class="svg-icon ico-angle left"></i>
+                            </button>
+                            <button class="notice-nav-btn" aria-label="일시정지">
+                                <i class="svg-icon ico-swiper-stop"></i>
+                            </button>
+                            <button class="notice-nav-btn" aria-label="다음">
+                                <i class="svg-icon ico-angle right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="notice-content">
+                        <div class="notice-badge">N</div>
+                        <a href="#" class="notice-link">2025(추가 및 신규) 모집사업 주요사항 안내</a>
+                        <span class="notice-date">2025.10.14</span>
+                    </div>
+                </div>
+                <div class="bottom-link">
+                    <a href="https://saeupcne.or.kr/support/" class="link-button" target="_blank">
+                        학교지원디지털시스템
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+    </div>   
+    <div class="popup-floating">
+        <button class="popup-btn" aria-label="팝업 열기">
+            <div class="popup-circle"></div>
+            <div class="popup-icon"></div>
+            <div class="popup-text">
+                <span class="popup-label">팝업</span>
+                <span class="popup-status">OPEN</span>
+            </div>
+            <div class="popup-count">4</div>
+        </button>
+        <div class="popup-triangle"></div>
+    </div>
+     <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-copyright">
+                copyright (C) chungcheongnam office of education. all rights reserved.
+            </p>
+        </div>
+    </footer>
+  </div>
+   
+</div>
+<div id="modalLoad"></div>
+</body>
+</html>
