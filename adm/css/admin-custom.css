@@ -768,6 +768,12 @@ td .btn-group  {
   gap: var(--krds-gap-8);
 }
 
+.form-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-8);
+}
+
 .form-box {
   display: flex;
   flex-direction: column;
@@ -2069,7 +2075,6 @@ body:has(.main-bg) {
   position: relative;
   background-image: url(../img/img_bg.png);
   background-repeat: no-repeat;
-  background-size: cover;
 }
 .main-bg::after {
   position: absolute;
@@ -2081,7 +2086,18 @@ body:has(.main-bg) {
   min-height: 20rem;
   max-height: 40rem;
   background-color: var(--krds-light-color-background-white);
+  pointer-events: none;
 }
+
+.main-bg.type2::after {
+   height:calc(100% - 64rem);
+   max-height:initial;
+}
+
+
+
+
+
 
 .main-header {
   padding: var(--krds-mobile-padding-card-medium);
@@ -2191,12 +2207,16 @@ body:has(.main-bg) {
 .auth-page #container.find .inner {
   max-width: 1060px;
 }
-.find .page-title-wrap .h-tit,
-.find .page-title-wrap .h-tit .small-txt {
+.page-title-wrap.left .h-tit,
+.page-title-wrap.left .h-tit .small-txt {
   text-align: left;
 }
-.find .page-title-wrap .h-tit .small-txt {
+.page-title-wrap.left .h-tit .small-txt {
   margin-top: var(--krds-number-10);
+}
+.page-title-wrap.left .h-tit .small-txt > em {
+  font-weight: var(--c-font-weight-6);
+  color: var(--krds-light-color-text-secondary);
 }
 
 .find .auth-form-area {
@@ -2230,24 +2250,24 @@ body:has(.main-bg) {
   max-width:80rem;
 }
 
-.auth-page .result .page-btn-wrap {
+.auth-page .page-btn-wrap.wp100 {
   justify-content: center;
   margin-top: var(--krds-number-18);
 }
-.auth-page .result .page-btn-wrap .btn-wrap {
+.auth-page .page-btn-wrap.wp100 .btn-wrap {
   width:100%;
 }
-.auth-page .result .page-btn-wrap .btn-wrap .krds-btn {
+.auth-page .page-btn-wrap.wp100 .btn-wrap .krds-btn {
   flex:1;
 }
 
-.result .page-btn-wrap .btn-wrap .krds-btn.tertiary {
-  background-color: var(--krds-button--color-tertiary-fill);
+.page-btn-wrap.wp100 .btn-wrap .krds-btn.tertiary {
+  background-color: var(--krds-color-light-alpha-white100);
   border-color: var(--krds-button--color-tertiary-border);
   color: var(--krds-button--color-tertiary-text);
 }
 
-.result .page-btn-wrap .btn-wrap .krds-btn.tertiary:hover {
+.page-btn-wrap.wp100 .btn-wrap .krds-btn.tertiary:hover {
   background-color: var(--krds-button--color-tertiary-fill-hover);
 }
 
@@ -2284,4 +2304,169 @@ body:has(.main-bg) {
   font-size: var(--krds-pc-font-size-body-large);
   font-weight: var(--krds-font-weight-regular); 
   letter-spacing: 0;
+}
+
+
+.auth-page #container.join .inner {
+  max-width:1000px;
+}
+
+
+/* =========================================================
+ * 섹션 헤더 (1, 2 단계 표시)
+ * ======================================================= */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-10);
+}
+
+.form-section + .form-section {
+  border-top: 3px solid var(--krds-color-light-gray-10);
+  padding-top: var(--krds-number-18);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-gap-3);
+}
+
+.section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--krds-size-height-5);
+  height: var(--krds-size-height-5);
+  border-radius: var(--krds-radius-small2);
+  background-color:var(--krds-color-light-gray-70);
+  color: var(--krds-light-color-text-basic-inverse);
+  font-size: var(--krds-pc-font-size-label-large);
+  font-weight: var(--krds-font-weight-regular);
+}
+
+.section-title {
+  font-size: var(--krds-mobile-font-size-heading-medium);
+  font-weight: var(--krds-font-weight-bold);
+  color:var(--krds-color-light-gray-80);
+}
+
+.join .form-tt h4 {
+  color:var(--krds-color-light-gray-70);
+}
+
+/* =========================================================
+ * form-box : 라벨 / 컨트롤 2열 레이아웃
+ * ======================================================= */
+.form-section .form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-7);
+}
+
+/* =========================================================
+ * 아이디 / 비밀번호 / 경고 메시지
+ * ======================================================= */
+
+.form-group-inner .btn-check {
+  white-space: nowrap;
+}
+
+.alert-messages .alert {
+  display: inline-block;
+  padding: 0 var(--krds-number-3);
+  font-size: var(--krds-mobile-font-size-body-small);
+}
+
+.alert-messages .alert.success {
+  color: var(--krds-color-light-primary-50);
+  background-color: var(--krds-color-high-contrast-primary-5);
+}
+
+.alert-messages .alert.error {
+  color: var(--krds-color-light-danger-50);
+  background-color: var(--krds-color-high-contrast-danger-5);
+}
+
+/* 비밀번호 불일치 경고 */
+.join .alert-wrap[data-role="pw-alert"] {
+  margin-top:0
+}
+
+.form-group.alert-wrap .alert {
+  font-size: var(--krds-mobile-font-size-body-xsmall);
+  color: var(--krds-light-color-danger-strong);
+}
+
+.separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--krds-color-high-contrast-gray-60);
+  font-size: var(--krds-pc-font-size-body-medium);
+}
+
+/* =========================================================
+ * 개인정보 안내 박스
+ * ======================================================= */
+.privacy-box {
+  margin-top: var(--krds-number-4);
+  padding: var(--krds-number-12) var(--krds-number-16);
+  border-radius: var(--krds-radius-large1);
+  background-color: var(--krds-color-light-gray-5);
+  color: var(--krds-light-color-text-subtle);
+  font-size: var(--krds-mobile-font-size-body-medium);
+  border: 1px solid var(--krds-color-light-gray-20);
+}
+
+.privacy-list {
+  list-style: disc;
+  padding-left: var(--krds-padding-7);
+  color: var(--krds-color-high-contrast-graphic-70);
+}
+
+.privacy-notice {
+  margin-top: var(--krds-number-5);
+  font-size: var(--krds-mobile-font-size-body-medium);
+  color: var(--krds-light-color-text-subtle);
+}
+
+/* 체크박스 영역 */
+.privacy-notice + .krds-check-area {
+  margin-top: var(--krds-number-6);
+  justify-content: flex-end;
+}
+
+
+.auth-page #container.join .inner {
+  gap: var(--krds-gap-10);
+  padding: var(--krds-number-20) 0 var(--krds-padding-8);
+}
+
+.auth-page .join .contents-box {
+  border-radius: var(--krds-number-7);
+}
+
+.auth-page .join .auth-form-area {
+  padding: var(--krds-number-21);
+  flex-direction: column;
+  gap: var(--krds-gap-11);
+}
+
+.join .square-label {
+  padding: var(--krds-number-8) var(--krds-number-10);
+  border-color: var(--krds-color-light-gray-30);
+  background-color: var(--krds-color-light-gray-5);
+  color: var(--krds-color-light-gray-50);
+}
+
+.join .square-btn:checked + .square-label {
+  color: var(--krds-light-color-text-primary);
+  border-color: var(--krds-color-light-primary-50);
+  background-color: var(--krds-light-color-background-white);
+}
+
+/* 소속지원청 기본 숨김 */
+.form-box.org-region {
+  display: none;
 }
