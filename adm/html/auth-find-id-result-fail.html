@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">아이디 찾기 결과</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+  <link rel="stylesheet" href="../css/admin-responsive.css">
+</head>
+
+<body>
+
+<div id="wrap" class="auth-page main-bg">
+
+  <header class="main-header">
+    <div class="header-top">
+        <div class="logo">
+            <a href="..//html/auth-admin-login.html" target="_self" title="로그인페이지로 이동"><img src="../img/logo_bk.svg" alt="충청남도교육청 단위학교사업선택제"></a>
+        </div>
+        <div class="btn-wrap">
+          <a href="#!" class="krds-btn medium text" target="_self"><i class="svg-icon ico-angle left"></i>이전 페이지로 돌아가기</a>
+        </div>
+    </div>
+  </header>
+
+  <main id="container" class="find result">
+    <div class="inner">
+        <div class="page-title-wrap">
+          <h1 class="h-tit">
+            아이디 찾기 결과
+          </h1>
+        </div>
+        <div class="contents contents-box contents-box-shadow">
+          <div class="auth-form-area">
+            <div class="auth-wrap">
+              <p class="auth-result-tt">요청하신 결과는 다음과 같습니다.</p>
+              <div class="auth-result-box">
+                <p>검색결과가 없습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-btn-wrap">
+            <div class="btn-wrap">
+                <a href="#!" target="_parent" class="krds-btn tertiary">회원가입</a>
+                <a href="../html/auth-find.html" target="_self" class="krds-btn primary">다시찾기</a>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+
+</body>
+</html>
+
