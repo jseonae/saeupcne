@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">관리자 로그인</title>
+  <title th:text="${pageTitle}">로그인</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -32,17 +32,15 @@
   <link rel="stylesheet" href="../css/admin-responsive.css">
 </head>
 
-<body>
-
 <div id="wrap" class="auth-page main-bg">
 
   <header class="main-header">
     <div class="header-top">
         <div class="logo">
-            <a href="..//html/auth-admin-login.html" target="_self" title="로그인페이지로 이동"><img src="../img/logo_bk.svg" alt="충청남도교육청 단위학교사업선택제"></a>
+            <a href="../html/auth-admin-login.html" target="_self" title="로그인페이지로 이동"><img src="../img/logo_bk.svg" alt="충청남도교육청 단위학교사업선택제"></a>
         </div>
         <!-- <div class="btn-wrap">
-          <a href="#!" class="krds-btn medium text" target="_self"><i class="svg-icon ico-angle left"></i>이전 페이지로 돌아가기</a>
+          <a href="#!" class="krds-btn medium text" target="_parent"><i class="svg-icon ico-angle left"></i>이전 페이지로 돌아가기</a>
         </div> -->
     </div>
   </header>
@@ -60,8 +58,7 @@
           <div class="auth-form-area">
             <div class="auth-wrap">
               <strong class="auth-tit">관리자 로그인</strong>
-              <fieldset>
-                <legend>로그인 폼</legend>
+              <form class="form">
                 <div class="fieldset">
                   <div class="form-group">
                     <div class="form-tit">
@@ -102,7 +99,7 @@
                     </div>
                   </div>
                 </div>
-              </fieldset>
+              </form>
             </div>
           </div>
         </div>

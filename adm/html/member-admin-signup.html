@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">회원가입 - 정보입력</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+  <link rel="stylesheet" href="../css/admin-responsive.css">
+</head>
+
+<body>
+
+<div id="wrap" class="auth-page main-bg type2">
+
+  <header class="main-header">
+    <div class="header-top">
+        <div class="logo">
+            <a href="../html/auth-admin-login.html" target="_self" title="로그인페이지로 이동"><img src="../img/logo_bk.svg" alt="충청남도교육청 단위학교사업선택제"></a>
+        </div>
+        <div class="btn-wrap">
+          <a href="#!" class="krds-btn medium text" target="_self"><i class="svg-icon ico-angle left"></i>이전 페이지로 돌아가기</a>
+        </div>
+    </div>
+  </header>
+
+  <main id="container" class="join">
+    <div class="inner">
+      <div class="page-title-wrap left">
+        <h1 class="h-tit">
+          정보입력
+          <span class="small-txt"><em>회원가입을 위해 아래 정보를 입력</em>해주세요.<br>가입 승인 완료 후 입력하신 정보로 로그인이 가능합니다.</span>
+        </h1>
+      </div>
+      <div class="contents contents-box contents-box-shadow">
+        <form class="form">
+          <div class="auth-form-area">
+            <!-- Section 1: 기본정보 -->
+            <section class="form-section">
+              <div class="section-header">
+                <span class="section-number">1</span>
+                <h2 class="section-title">기본정보를 입력해주세요.</h2>
+              </div>
+
+              <div class="form-fields">
+                <!-- 회원 구분 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>회원 구분</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group-inner grade-select">
+                      <input type="radio" class="square-btn type hide-input" id="admin-type1" name="admin">
+                      <label for="admin-type1" class="square-label">
+                        <span>지원청 담당자</span>
+                        <i class="radio-icon"></i>
+                      </label>
+
+                      <input type="radio" class="square-btn type hide-input" id="admin-type2" name="admin">
+                      <label for="admin-type2" class="square-label">
+                        <span>본청 사업담당자</span>
+                        <i class="radio-icon"></i>
+                      </label>
+
+                      <input type="radio" class="square-btn type hide-input" id="admin-type3" name="admin">
+                      <label for="admin-type3" class="square-label">
+                        <span>사업담당 장학사</span>
+                        <i class="radio-icon"></i>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 이름 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>이름</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input" placeholder="이름을 입력하세요">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 아이디 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>아이디</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group-inner">
+                      <input type="text" class="krds-input" data-field="admin-id" placeholder="아이디를 입력하세요">
+                      <button type="button" class="krds-btn primary btn-check">중복확인</button>
+                    </div>
+                    <div class="form-group-inner alert-messages">
+                      <p class="alert success">사용 가능한 아이디 입니다.</p>
+                      <p class="alert error">이미 사용중인 아이디 입니다. 다시 입력해주세요.</p>
+                      <p class="alert error">아이디 중복확인을 해주세요.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                      <h4>비밀번호</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-conts btn-ico-wrap">
+                        <input type="password" class="krds-input large" data-field="password" placeholder="비밀번호를 입력해주세요" value="1234">
+                        <button type="button" class="krds-btn medium icon">
+                            <span class="sr-only">보기</span>
+                            <i class="svg-icon ico-pw-visible"></i>
+                        </button>
+                    </div>
+                    <div class="form-conts btn-ico-wrap">
+                        <input type="password" class="krds-input large" data-field="password-confirm" placeholder="비밀번호를 다시 입력해주세요" value="123">
+                        <button type="button" class="krds-btn medium icon">
+                            <span class="sr-only">보기</span>
+                            <i class="svg-icon ico-pw-visible"></i>
+                        </button>
+                    </div>
+                    <div class="form-group-inner alert-messages alert-wrap" data-role="pw-alert">
+                        <p class="alert error">비밀번호가 일치하지 않습니다.</p>
+                    </div>
+                  </div>
+                  
+                </div>
+
+                <!-- 연락처(사무실) -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>연락처(사무실)</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group-inner">
+                      <div class="form-conts">
+                        <select class="krds-form-select large">
+                            <option value="041">041</option>
+                            <option value="042">042</option>
+                            <option value="02">02</option>
+                        </select>
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="form-conts">
+                          <input type="text" class="krds-input large" value="123">
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="form-conts">
+                          <input type="text" class="krds-input large" value="1234">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 연락처(휴대폰) -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>연락처(휴대폰)</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group-inner">
+                      <div class="form-conts">
+                        <select class="krds-form-select large">
+                            <option>010</option>
+                            <option>011</option>
+                            <option>016</option>
+                            <option>017</option>
+                            <option>018</option>
+                            <option>019</option>
+                        </select>
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="form-conts">
+                        <input type="text" class="krds-input large" value="1234">
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="form-conts">
+                        <input type="text" class="krds-input large" value="1234">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 이메일 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>이메일</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group-inner email">
+                      <div class="form-conts">
+                          <input type="text" class="krds-input large" value="a1234">
+                      </div>
+                      <span class="separator">@</span>
+                      <div class="form-conts">
+                          <input type="text" class="krds-input large" value="cne.co.kr">
+                      </div>
+                      <div class="form-conts">
+                        <select class="krds-form-select large">
+                          <option>직접입력</option>
+                          <option>korea.kr</option>
+                          <option>ai.cne.go.kr</option>
+                          <option>hanmail.net</option>
+                          <option>naver.com</option>
+                          <option>gmail.com</option>
+                          <option>hotmail.com</option>
+                          <option>nate.com</option>
+                          <option>kakao.com</option>
+                          <option>yahoo.co.kr</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 2: 소속정보 -->
+            <section class="form-section">
+              <header class="section-header">
+                <span class="section-number">2</span>
+                <h2 class="section-title">소속정보를 입력해주세요.</h2>
+              </header>
+
+              <div class="form-fields">
+                <!-- 소속지원청 -->
+                <div class="form-box org-region">
+                  <div class="form-tt">
+                    <h4>소속지원청</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select">
+                        <option>선택해주세요.</option>
+                        <option>천안교육지원청</option>
+                        <option>공주교육지원청</option>
+                        <option>보령교육지원청</option>
+                        <option>아산교육지원청</option>
+                        <option>서산교육지원청</option>
+                        <option>논산계룡교육지원청</option>
+                        <option>당진교육지원청</option>
+                        <option>금산교육지원청</option>
+                        <option>부여교육지원청</option>
+                        <option>서천교육지원청</option>
+                        <option>청양교육지원청</option>
+                        <option>홍성교육지원청</option>
+                        <option>예산교육지원청</option>
+                        <option>태안교육지원청</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 부서명 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>부서명</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input" placeholder="교육혁신팀">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 개인정보 수집·이용 내역 -->
+            <section class="form-section">
+              <div class="form-box">
+                <div class="form-tt">
+                  <h4>개인정보 수집·이용 내역</h4>
+                </div>
+                <div class="form-group">
+                  <div class="privacy-box">
+                    <ul class="privacy-list">
+                      <li>항목 : 이름, 연락처, 이메일</li>
+                      <li>수집 이용 목적 : 사업신청, 공모사업모집, </li>
+                      <li>보유 이용기간 : 회원탈퇴시까지</li>
+                    </ul>
+                  </div>
+                  <p class="privacy-notice">
+                    위의 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 가입이 제한됩니다. <br>위와 같이 개인정보 수집·이용하는데 동의하십니까?
+                  </p>
+                  <div class="krds-check-area">
+                    <div class="krds-form-check medium">
+                      <input type="checkbox" id="privacy-agree" name="privacy-agree">
+                      <label for="privacy-agree">개인정보 수집 이용에 동의합니다.</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="page-btn-wrap wp100">
+              <div class="btn-wrap">
+                <button type="button" class="krds-btn tertiary">취소하기</button>
+                <button type="submit" class="krds-btn primary">가입하기</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+
+</body>
+</html>
+

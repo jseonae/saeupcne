@@ -848,3 +848,23 @@ $(function () {
     });
   }
 });
+
+/* ------------------------------------------------------------------------
+ * 회원가입 :: 소속지원청 노출 제어
+ * --------------------------------------------------------------------- */
+$(function () {
+  const $orgRegion   = $('.form-box.org-region');   // 소속지원청 박스
+  const $adminRadios = $('input[name="admin"]');    // 회원 구분 라디오들
+
+  function updateOrgRegion() {
+    // 지원청 담당자(id="admin-type1")가 선택됐는지 체크
+    const isOfficeAdmin = $('#admin-type1').is(':checked');
+    $orgRegion.toggle(isOfficeAdmin);
+  }
+
+  // 최초 진입 시 한 번 상태 맞추기 (수정화면에서 미리 체크되어 있을 수도 있으니까)
+  updateOrgRegion();
+
+  // 회원구분 변경될 때마다 상태 갱신
+  $adminRadios.on('change', updateOrgRegion);
+});
