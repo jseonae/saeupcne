@@ -1,0 +1,389 @@
+@charset "utf-8";
+
+/* ================================================
+   Main Content
+   ================================================ */
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  padding: var(--krds-number-12);
+}
+
+
+/* ================================================
+   Greeting
+   ================================================ */
+
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-number-7);
+  margin-bottom: var(--krds-number-12);
+}
+
+.greeting-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--krds-color-light-gray-90);
+}
+
+.greeting-date {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-number-7);
+}
+
+.today-badge {
+  padding: 0.125rem var(--krds-number-5);
+  border: 0.0625rem solid var(--krds-color-light-gray-30);
+  border-radius: 2.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #464c53;
+}
+
+.date-text {
+  font-size: 0.9375rem;
+  color: #464c53;
+}
+
+/* ================================================
+   Charts Section
+   ================================================ */
+
+.charts-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--krds-number-12);
+  margin-bottom: var(--krds-number-12);
+}
+
+.chart-card {
+  background: var(--krds-color-light-gray-0);
+  border-radius: var(--krds-number-6);
+  box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.05),
+              0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.08);
+  padding: var(--krds-number-11) var(--krds-number-14);
+  min-height: 22.5rem;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--krds-number-9);
+}
+
+.chart-title {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--krds-color-light-gray-90);
+}
+
+.chart-date {
+  font-size: 0.8125rem;
+  color: var(--krds-color-light-gray-30);
+}
+
+/* Donut Chart */
+.chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--krds-number-12);
+}
+
+.donut-chart {
+  width: 15.625rem;
+  height: 15.625rem;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.chart-center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--krds-color-light-gray-90);
+  text-align: center;
+}
+
+.donut-placeholder {
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(
+    from 0deg,
+    #8979ff 0deg 187deg,
+    #ff928a 187deg 252deg,
+    #3cc3df 252deg 302deg,
+    #ffae4c 302deg 335deg,
+    #537ff1 335deg 360deg
+  );
+  border-radius: 50%;
+  display: block;
+}
+
+.donut-placeholder::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: var(--krds-color-light-gray-0);
+  border-radius: 50%;
+}
+
+/* Bar Charts */
+.bar-chart {
+  height: 12.5rem;
+  margin-bottom: var(--krds-number-9);
+}
+
+.bar-chart-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #e6e8ea 0%,
+    #e6e8ea 33%,
+    #e6e8ea 33%,
+    #e6e8ea 66%,
+    #b1b8be 100%
+  );
+  display: block;
+  border-radius: var(--krds-number-3);
+}
+
+/* Chart Legend */
+.chart-legend {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-number-3);
+}
+
+.chart-legend.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--krds-number-5);
+}
+
+.chart-legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-number-3);
+  font-size: 0.8125rem;
+  color: #464c53;
+}
+
+.legend-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+}
+
+.legend-dot.color-1 {
+  background: #8979ff;
+}
+
+.legend-dot.color-2 {
+  background: #ff928a;
+}
+
+.legend-dot.color-3 {
+  background: #3cc3df;
+}
+
+.legend-dot.color-4 {
+  background: #ffae4c;
+}
+
+.legend-dot.color-5 {
+  background: #537ff1;
+  border: 0.0625rem solid var(--krds-color-light-gray-0);
+}
+
+.legend-dot.color-6 {
+  background: #4caf50;
+}
+
+.legend-dot.color-7 {
+  background: #64b5f6;
+}
+
+/* ================================================
+   Table Section
+   ================================================ */
+
+.table-section {
+  background: var(--krds-color-light-gray-0);
+  border-radius: var(--krds-number-6);
+  box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.05),
+              0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.08);
+  padding: var(--krds-number-12);
+  margin-bottom: var(--krds-number-12);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-number-5);
+  margin-bottom: var(--krds-number-9);
+}
+
+.section-title {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--krds-color-light-gray-90);
+}
+
+.icon-arrow-right {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--krds-color-light-gray-20);
+  display: block;
+}
+
+/* ================================================
+   Data Table
+   ================================================ */
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: var(--krds-number-9);
+}
+
+.data-table thead tr {
+  background: #f4f5f9;
+  border-top: 0.125rem solid var(--krds-color-light-gray-90);
+  border-bottom: 0.0625rem solid var(--krds-color-light-gray-30);
+}
+
+.data-table thead th {
+  padding: var(--krds-number-8);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--krds-color-light-gray-90);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.data-table tbody tr {
+  border-bottom: 0.0625rem solid #e6e8ea;
+}
+
+.data-table tbody tr:hover {
+  background: #f8f9fd;
+}
+
+.data-table tbody td {
+  padding: var(--krds-number-8);
+  font-size: 0.9375rem;
+  color: #464c53;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.data-table tbody td:nth-child(3) {
+  text-align: left;
+}
+
+/* ================================================
+   Badge
+   ================================================ */
+
+.badge {
+  display: inline-block;
+  padding: 0.125rem var(--krds-number-5);
+  border-radius: var(--krds-number-3);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.badge-선택사업 {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: 0.0625rem solid #1976d2;
+}
+
+.badge-개방형사업 {
+  background: #e0f7fa;
+  color: #00838f;
+  border: 0.0625rem solid #00838f;
+}
+
+.badge-신규사업 {
+  background: #fff3e0;
+  color: #e65100;
+  border: 0.0625rem solid #e65100;
+}
+
+.badge-자율사업 {
+  background: #f3e5f5;
+  color: #6a1b9a;
+  border: 0.0625rem solid #6a1b9a;
+}
+
+.badge-특교추경신규사업 {
+  background: #ffebee;
+  color: #c62828;
+  border: 0.0625rem solid #c62828;
+}
+
+/* ================================================
+   Status Select
+   ================================================ */
+
+.status-select {
+  padding: var(--krds-number-3) var(--krds-number-5);
+  border: 0.0625rem solid var(--krds-color-light-gray-30);
+  border-radius: var(--krds-number-3);
+  font-size: 0.875rem;
+  background: var(--krds-color-light-gray-0);
+  cursor: pointer;
+}
+
+/* ================================================
+   Icons
+   ================================================ */
+
+.icon-doc,
+.icon-mail,
+.icon-check-circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--krds-color-light-gray-30);
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.125rem;
+}
+
+.icon-check-circle {
+  background: #4caf50;
+  border-radius: 50%;
+}
+
+/* ================================================
+   Table Footer
+   ================================================ */
+
+.table-footer {
+  font-size: 0.875rem;
+  color: #8491a7;
+}
+
+
+.dashboard #header .sub-nav-wrap {
+    display: none;
+}
