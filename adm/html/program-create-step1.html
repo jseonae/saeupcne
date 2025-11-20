@@ -41,7 +41,7 @@
 
   <header id="header"></header>
 
-  <main id="container" class="page-edit">
+  <main id="container" class="page-edit program">
     <div class="inner cols-2 in-between">
       
       <!-- Left Section -->
@@ -53,11 +53,11 @@
           <div class="info-header">
             <div class="info-badges">
               <div class="badge-item">
-                <span class="krds-badge outline-information">사업년도</span>
+                <span class="krds-badge medium bg-light-information">사업년도</span>
                 <strong>2026</strong>
               </div>
               <div class="badge-item">
-                <span class="krds-badge outline-information">사업구분</span>
+                <span class="krds-badge medium bg-light-information">사업구분</span>
                 <strong>선택사업</strong>
               </div>
             </div>
@@ -78,7 +78,7 @@
           </div>
           <form class="form">
             <!-- 사업명 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-tt">
                 <h4>사업명</h4>
               </div>
@@ -87,35 +87,36 @@
                   <input type="text" class="krds-input large" value="단위학교 선택사업제 사업명">
                 </div>
               </div>
-            </fieldset>
+            </div>
 
             <!-- 사업번호 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-tt">
                 <h4>사업번호</h4>
               </div>
               <div class="form-group">
-                <div class="form-group-inner program-number">
-                  <div class="form-conts sm">
-                    <input type="text" class="krds-input medium disabled" value="2026" readonly>
+                <div class="form-group-inner">
+                  <div class="form-group-inner program-number">
+                    <div class="form-conts sm">
+                      <input type="text" class="krds-input medium disabled" value="2026" readonly>
+                    </div>
+                    <span class="separator">-</span>
+                    <div class="form-conts md">
+                      <input type="text" class="krds-input medium disabled" value="선택사업" readonly>
+                    </div>
+                    <span class="separator">-</span>
+                    <div class="form-conts sm">
+                      <input type="text" class="krds-input medium error" value="102" data-field="program-number">
+                    </div>
                   </div>
-                  <span class="separator">-</span>
-                  <div class="form-conts md">
-                    <input type="text" class="krds-input medium disabled" value="선택사업" readonly>
-                  </div>
-                  <span class="separator">-</span>
-                  <div class="form-conts sm">
-                    <input type="text" class="krds-input medium error" value="102" data-field="program-number">
-                  </div>
-                </div>
-                <div class="form-group-inner alert-wrap" data-role="program-number-alert">
-                  <div class="alert-box msg-error">
-                    <i class="svg-icon ico-danger"></i>
-                    <p class="alert-tit">중복된 번호입니다. <strong>102</strong>번부터 가능합니다.</p>
+                  <div class="form-group-inner alert-wrap" data-role="program-number-alert">
+                    <div class="alert-box msg-error">
+                      <p class="alert-tit">중복된 번호입니다. <strong>102</strong>번부터 가능합니다.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </fieldset>
+            </div>
           </form>
         </section>
 
@@ -126,124 +127,149 @@
           </div>
           <form class="form">
             <!-- 대상 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-tt">
                 <h4>대상</h4>
               </div>
-              <div class="form-group">
-                <div class="form-group-wrap target-row">
-                  <div class="btn-group toggle-group">
-                    <button type="button" class="krds-btn primary medium toggle-btn active" data-target="유치원">
-                      <span>유치원</span>
-                      <i class="svg-icon ico-check-round"></i>
-                    </button>
-                    <button type="button" class="krds-btn primary medium toggle-btn active" data-target="초등학교">
-                      <span>초등학교</span>
-                      <i class="svg-icon ico-check-round"></i>
-                    </button>
-                    <button type="button" class="krds-btn tertiary line medium toggle-btn" data-target="중학교">
-                      <span>중학교</span>
-                    </button>
-                    <button type="button" class="krds-btn tertiary line medium toggle-btn" data-target="고등학교">
-                      <span>고등학교</span>
-                    </button>
-                    <button type="button" class="krds-btn tertiary line medium toggle-btn" data-target="특수학교">
-                      <span>특수학교</span>
-                    </button>
-                    <button type="button" class="krds-btn tertiary line medium toggle-btn" data-target="각종학교">
-                      <span>각종학교</span>
-                    </button>
-                  </div>
-                  <div class="school-count">
-                    <div class="form-conts count-input">
-                      <input type="number" class="krds-input medium count" value="33" readonly>
+
+              <div class="form-group wp100">
+                <input type="radio" class="square-btn hide-input" id="kindergarten" name="grade">
+                <input type="radio" class="square-btn hide-input" id="elementary" name="grade">
+                <input type="radio" class="square-btn hide-input" id="middle" name="grade">
+                <input type="radio" class="square-btn hide-input" id="high" name="grade">
+                <input type="radio" class="square-btn hide-input" id="special" name="grade">
+                <input type="radio" class="square-btn hide-input" id="each" name="grade">
+                <div class="form-conts grade-box">
+                  <!-- 급별 선택 -->
+                  <div class="form-group-inner wp100">
+                    <div class="grade-select">
+                      <label for="kindergarten" class="square-label">
+                        <span>유치원</span>
+                        <i class="radio-icon"></i>
+                      </label>
+
+                      <label for="elementary" class="square-label">
+                        <span>초등학교</span>
+                        <i class="radio-icon"></i>
+                      </label>
+
+                      <label for="middle" class="square-label">
+                        <span>중학교</span>
+                        <i class="radio-icon"></i>
+                      </label>
+
+                      <label for="high" class="square-label">
+                        <span>고등학교</span>
+                        <i class="radio-icon"></i>
+                      </label>
+
+                      <label for="special" class="square-label">
+                        <span>특수학교</span>
+                        <i class="radio-icon"></i>
+                      </label>
+
+                      <label for="each" class="square-label">
+                        <span>각종학교</span>
+                        <i class="radio-icon"></i>
+                      </label>
                     </div>
-                    <span>개교</span>
+                    <div class="school-count">
+                      <div class="form-conts count-input">
+                        <input type="number" class="krds-input medium count" value="33" placeholder="00">
+                      </div>
+                      <span>개교</span>
+                    </div>
+                  </div>
+                  <!-- 유치원 선택하면 나타남 -->
+                  <div class="kindergarten-type disclosure-panel"  data-disclosure="유치원">
+                    <input type="radio" class="square-btn type hide-input" id="single" name="kindergarten-type">
+                    <label for="single" class="square-label">
+                        <span>단설 유치원</span>
+                        <i class="radio-icon minus"></i>
+                    </label>
+
+                    <input type="radio" class="square-btn type hide-input" id="attached" name="kindergarten-type">
+                    <label for="attached" class="square-label">
+                        <span>병설 유치원</span>
+                        <i class="radio-icon minus"></i>
+                    </label>
+
+                    <input type="radio" class="square-btn type hide-input" id="private" name="kindergarten-type">
+                    <label for="private" class="square-label">
+                        <span>사립 유치원</span>
+                        <i class="radio-icon minus"></i>
+                    </label>
+
+                    <input type="radio" class="square-btn type hide-input" id="allKinder" name="kindergarten-type">
+                    <label for="allKinder" class="square-label">
+                        <span>전체 유치원</span>
+                        <i class="radio-icon minus"></i>
+                    </label>
                   </div>
                 </div>
               </div>
-
-              <!-- 유치원 disclosure panel -->
-              <div class="form-group disclosure-panel" data-disclosure="유치원">
-                <div class="chip-group-box">
-                  <button type="button" class="chip-btn active">
-                    <i class="svg-icon ico-check-chip"></i>
-                    <span>단설 유치원</span>
-                  </button>
-                  <button type="button" class="chip-btn active">
-                    <i class="svg-icon ico-check-chip"></i>
-                    <span>병설 유치원</span>
-                  </button>
-                  <button type="button" class="chip-btn">
-                    <span>사립 유치원</span>
-                  </button>
-                  <button type="button" class="chip-btn">
-                    <span>전체 유치원</span>
-                  </button>
-                </div>
-              </div>
-
+              
               <!-- 설립별 지원 가능 학교 -->
-              <div class="form-group-wrap sub-form-group">
+              <div class="form-group-inner sub-form-group">
                 <div class="sub-title">
-                  <i class="svg-icon ico-document"></i>
+                  <i class="svg-icon ico-docu-twin dpblue"></i>
                   <strong>설립별 지원 가능 학교</strong>
                 </div>
-                <div class="checkbox-group">
-                  <label class="krds-form-checkbox large">
-                    <input type="checkbox" checked>
-                    <span class="checkbox-label">공립</span>
-                  </label>
-                  <label class="krds-form-checkbox large">
-                    <input type="checkbox" checked>
-                    <span class="checkbox-label">사립</span>
-                  </label>
-                  <label class="krds-form-checkbox large">
-                    <input type="checkbox">
-                    <span class="checkbox-label">국립</span>
-                  </label>
+                <div class="krds-check-area">
+                  <div class="krds-form-check">
+                    <input type="checkbox" name="chk_1" id="chk_1">
+                    <label for="chk_1">공립</label>
+                  </div>
+                  <div class="krds-form-check">
+                    <input type="checkbox" name="chk_1" id="chk_2">
+                    <label for="chk_2">사립</label>
+                  </div>
+                  <div class="krds-form-check">
+                    <input type="checkbox" name="chk_1" id="chk_3">
+                    <label for="chk_3">국립</label>
+                  </div>
                 </div>
               </div>
-            </fieldset>
+            </div>
 
             <!-- 단위 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-tt">
                 <h4>단위</h4>
               </div>
               <div class="form-group">
-                <div class="radio-card-group">
-                  <label class="radio-card active">
-                    <strong>도교육청</strong>
-                    <div class="krds-form-radio large">
-                      <input type="radio" name="unit" value="도교육청" checked>
-                      <span class="radio-icon"></span>
+                <div class="form-conts">
+                
+                    <div class="krds-form-check">
+                      <input type="radio" name="ro_1" id="do_1">
+                      <label for="do_1" class="square-rdo">
+                        <span>도교육청</span>
+                      </label>
                     </div>
-                  </label>
-                  <label class="radio-card">
-                    <strong>교육지원청</strong>
-                    <div class="krds-form-radio large">
-                      <input type="radio" name="unit" value="교육지원청">
-                      <span class="radio-icon"></span>
+
+                    <div class="krds-form-check">
+                      <input type="radio" name="ro_1" id="do_2">
+                      <label for="do_2" class="square-rdo">
+                          <span>교육지원청</span>
+                      </label>
                     </div>
-                  </label>
                 </div>
               </div>
-            </fieldset>
+            </div>
 
             <!-- 예산 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-tt">
                 <h4>예산</h4>
               </div>
 
-              <div class="form-group-wrap">
+              <div class="form-group">
                 <!-- 예산액 -->
-                <div class="form-group budget-row">
+                <div class="form-group-inner budget-row">
                   <div class="budget-input-wrap">
                     <span class="budget-label">예산액</span>
-                    <div class="form-conts budget-input">
-                      <input type="text" class="krds-input medium text-right" value="800,000" data-format="number">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input medium align-right" value="800,000" data-format="number">
                     </div>
                     <strong class="unit">천원</strong>
                   </div>
@@ -275,11 +301,11 @@
                 </div>
 
                 <!-- 교당평균액 -->
-                <div class="form-group budget-row">
+                <div class="form-group-inner budget-row">
                   <div class="budget-input-wrap">
                     <span class="budget-label">교당평균액</span>
                     <div class="form-conts budget-input">
-                      <input type="text" class="krds-input medium text-right active" value="10,000" data-format="number">
+                      <input type="text" class="krds-input medium align-right active" value="10,000" data-format="number">
                     </div>
                     <strong class="unit">천원</strong>
                   </div>
@@ -315,47 +341,43 @@
                 </div>
 
                 <!-- 예산 재원 -->
-                <div class="sub-form-group">
+                <div class="form-group-inner sub-form-group">
                   <div class="sub-title">
-                    <i class="svg-icon ico-card"></i>
+                    <i class="svg-icon ico-paycard dpblue"></i>
                     <strong>예산 재원</strong>
                   </div>
-                  <div class="radio-group">
-                    <label class="krds-form-radio large">
-                      <input type="radio" name="budget-source" value="자체">
-                      <span class="radio-icon"></span>
-                      <span class="radio-label">자체</span>
-                    </label>
-                    <label class="krds-form-radio large">
-                      <input type="radio" name="budget-source" value="특교">
-                      <span class="radio-icon"></span>
-                      <span class="radio-label">특교</span>
-                    </label>
-                    <label class="krds-form-radio large">
-                      <input type="radio" name="budget-source" value="특교+자체" checked>
-                      <span class="radio-icon"></span>
-                      <span class="radio-label">특교+자체</span>
-                    </label>
-                    <label class="krds-form-radio large">
-                      <input type="radio" name="budget-source" value="기타">
-                      <span class="radio-icon"></span>
-                      <span class="radio-label">기타</span>
-                    </label>
+                  <div class="krds-check-area">
+                    <div class="krds-form-check">
+                      <input type="radio" name="rdo_1" id="rdo_1">
+                      <label for="rdo_1">자체</label>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="radio" name="rdo_1" id="rdo_2">
+                      <label for="rdo_2">특교</label>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="radio" name="rdo_1" id="rdo_3">
+                      <label for="rdo_3">자체+특교</label>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="radio" name="rdo_1a" id="rdo_4">
+                      <label for="rdo_4">기타</label>
+                    </div>
                   </div>
                 </div>
               </div>
-            </fieldset>
+            </div>
 
             <!-- 기간 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-tt">
                 <h4>기간</h4>
               </div>
 
               <div class="form-group-wrap">
                 <!-- 사업신청 -->
-                <div class="form-group period-row">
-                  <span class="period-label">사업신청</span>
+                <div class="form-group-inner period-row">
+                  <span class="budget-label">사업신청</span>
                   <div class="date-range">
                     <div class="date-input">
                       <label class="date-label start">시작일</label>
@@ -375,8 +397,8 @@
                 </div>
 
                 <!-- 결과제출 -->
-                <div class="form-group period-row">
-                  <span class="period-label">결과제출</span>
+                <div class="form-group-inner period-row">
+                  <span class="budget-label">결과제출</span>
                   <div class="date-range">
                     <div class="date-input">
                       <label class="date-label start">시작일</label>
@@ -395,7 +417,7 @@
                   </div>
                 </div>
               </div>
-            </fieldset>
+            </div>
           </form>
         </section>
 
@@ -406,7 +428,7 @@
           </div>
           <form class="form">
             <!-- 담당자 지정 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-tt">
                 <h4>담당자 지정<span class="count-badge"><strong>1</strong> 명</span></h4>
               </div>
@@ -415,32 +437,71 @@
                   <p class="placeholder-text">담당자 검색 및 지정 영역</p>
                 </div>
               </div>
-            </fieldset>
+            </div>
 
             <!-- 첨부문서 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-tt">
                 <h4>첨부문서</h4>
+                <span class="sub-label">파일 용량 100M 이하만 업로드 가능합니다.</span>
               </div>
               <div class="form-group">
-                <div class="file-upload-box">
-                  <p class="upload-placeholder">파일을 여기에 드래그하거나 클릭하여 업로드</p>
+                <div class="krds-file-upload line">
+                    <div class="file-upload">
+                        <p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p>
+                        <div class="file-upload-btn-wrap">
+                        <input type="file" name="myFile" id="fileu-upload" hidden="">
+                        <label for="fileu-upload">
+                            <button type="button" class="krds-btn secondary medium">파일선택</button>
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="file-list">
+                        <ul class="upload-list">
+                            <li>
+                                <div class="file-info">
+                                    <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                    <div class="btn-wrap">
+                                        <span class="krds-spinner" role="status"><span class="sr-only">업로드 중</span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="file-info">
+                                    <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                    <div class="btn-wrap">
+                                        <button type="button" class="krds-btn medium text">삭제 <i class="svg-icon ico-delete-fill"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="is-error">
+                                <div class="file-info">
+                                    <div class="file-name">2025 마을기반 교육과정 자율집중운영학교 운영 계획.hwpx (69.5K)</div>
+                                    <div class="btn-wrap">
+                                        <button type="button" class="krds-btn medium text">삭제 <i class="svg-icon ico-delete-fill"></i></button>
+                                    </div>
+                                </div>
+                                <p class="file-hint-invalid">등록 가능한 파일 용량을 초과하였습니다.<br> 100M 미만의 파일만 등록할 수 있습니다.</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
               </div>
-            </fieldset>
+            </div>
 
             <!-- 사업 중복 접수 허용 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-group">
-                <div class="toggle-area">
+                <div class="sub-form-group duplicate">
                   <strong>사업 중복 접수를 허용 하시겠습니까?</strong>
-                  <div class="krds-form-toggle-switch large">
-                    <input type="checkbox" id="switch_duplicate">
+                  <div class="krds-form-toggle-switch medium">
+                    <input type="checkbox" id="switch_duplicate" class="toggle-duplicate">
                     <label for="switch_duplicate"><span class="switch-toggle"><i></i></span></label>
                   </div>
                 </div>
               </div>
-            </fieldset>
+            </div>
           </form>
         </section>
 
@@ -448,43 +509,53 @@
         <section class="section contents-box contents-box-shadow">
           <div class="section-header">
             <h3 class="section-title">추가정보</h3>
-            <aside class="info-box">
-              <i class="svg-icon ico-info"></i>
-              <p>추가정보는 사업신청 확인서 인쇄에 포함됩니다.</p>
-            </aside>
           </div>
+          <aside class="infobox">
+              <i class="svg-icon ico-deepblinfo-fill"></i>
+              <p>추가정보 입력을 원하실 경우 오른쪽 메뉴바에서 원하시는 항목을 클릭하시면 입력칸이 추가됩니다.</p>
+          </aside>
           <form class="form">
             <!-- 추진배경 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-tt">
                 <h4>추진배경
-                  <button type="button" class="krds-btn tertiary icon small" aria-label="접기">
-                    <i class="svg-icon ico-minus"></i>
+                  <button type="button" class="krds-btn tertiary line xsmall" aria-label="삭제">
+                    삭제<i class="svg-icon ico-minus"></i>
                   </button>
                 </h4>
               </div>
               <div class="form-group">
                 <div class="form-conts">
-                  <textarea class="krds-textarea large" rows="5" placeholder="추진배경을 입력하세요"></textarea>
+                  <div class="textarea-wrap">
+                    <textarea class="krds-input" placeholder="추진배경을 입력하세요" id="detail-txt-01"></textarea>
+                    <p class="textarea-count">
+                      <span class="count-now">0</span><span class="count-total">/10,000</span>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </fieldset>
+            </div>
 
             <!-- 추진내용 -->
-            <fieldset class="form-box">
+            <div class="form-box">
               <div class="form-tt">
                 <h4>추진내용
-                  <button type="button" class="krds-btn tertiary icon small" aria-label="접기">
-                    <i class="svg-icon ico-minus"></i>
+                  <button type="button" class="krds-btn tertiary line xsmall" aria-label="삭제">
+                    삭제<i class="svg-icon ico-minus"></i>
                   </button>
                 </h4>
               </div>
               <div class="form-group">
                 <div class="form-conts">
-                  <textarea class="krds-textarea large" rows="5" placeholder="추진내용을 입력하세요"></textarea>
+                  <div class="textarea-wrap">
+                    <textarea class="krds-input" placeholder="추진내용을 입력하세요" id="detail-txt-02"></textarea>
+                    <p class="textarea-count">
+                      <span class="count-now">0</span><span class="count-total">/10,000</span>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </fieldset>
+            </div>
           </form>
         </section>
 
@@ -493,94 +564,95 @@
       <!-- Right Section -->
       <div class="right-section max-wd-3">
         <!-- Status Tracker Box -->
-        <div class="status-tracker">
-          <header class="status-header">
-            <strong>공모사업</strong>
-            <span class="status-badge writing">작성 중</span>
-          </header>
+        <div class="info-card status-tracker">
+          <div class="card-header krds-badge-wrap">
+              <h3>공모사업</h3>
+              <span class="krds-badge outline-primary">작성 중</span>
+          </div>
+          <div class="card-content">
+            <!-- 필수항목 -->
+            <section class="status-group">
+              <h4 class="status-group-header">필수항목</h4>
+              <div class="status-item completed">
+                <span>사업명 작성</span>
+                <i class="svg-icon ico-check-circle"></i>
+              </div>
+              <div class="status-item error">
+                <span>사업번호 입력</span>
+                <i class="svg-icon ico-error-circle"></i>
+              </div>
+              <div class="status-item completed">
+                <span>공모대상 체크</span>
+                <i class="svg-icon ico-check-circle"></i>
+              </div>
+              <div class="status-item completed">
+                <span>공모단위 체크</span>
+                <i class="svg-icon ico-check-circle"></i>
+              </div>
+              <div class="status-item active">
+                <span>예산 설정</span>
+                <i class="svg-icon ico-pen-circle"></i>
+              </div>
+              <div class="status-item">
+                <span>기간 설정</span>
+                <i class="svg-icon ico-circle-empty"></i>
+              </div>
+            </section>
 
-          <!-- 필수항목 -->
-          <section class="status-group">
-            <h4 class="status-group-header">필수항목</h4>
-            <div class="status-item completed">
-              <span>사업명 작성</span>
-              <i class="svg-icon ico-check-circle"></i>
-            </div>
-            <div class="status-item error">
-              <span>사업번호 입력</span>
-              <i class="svg-icon ico-error-circle"></i>
-            </div>
-            <div class="status-item completed">
-              <span>공모대상 체크</span>
-              <i class="svg-icon ico-check-circle"></i>
-            </div>
-            <div class="status-item completed">
-              <span>공모단위 체크</span>
-              <i class="svg-icon ico-check-circle"></i>
-            </div>
-            <div class="status-item active">
-              <span>예산 설정</span>
-              <i class="svg-icon ico-pen-circle"></i>
-            </div>
-            <div class="status-item">
-              <span>기간 설정</span>
-              <i class="svg-icon ico-circle-empty"></i>
-            </div>
-          </section>
+            <!-- 선택항목 -->
+            <section class="status-group">
+              <h4 class="status-group-header">선택항목</h4>
+              <div class="status-item completed">
+                <span>담당자 지정</span>
+                <i class="svg-icon ico-check-circle"></i>
+              </div>
+              <div class="status-item completed">
+                <span>첨부문서 추가</span>
+                <i class="svg-icon ico-check-circle"></i>
+              </div>
+              <div class="status-item">
+                <span>중복접수 허용</span>
+                <i class="svg-icon ico-circle-empty"></i>
+              </div>
+            </section>
 
-          <!-- 선택항목 -->
-          <section class="status-group">
-            <h4 class="status-group-header">선택항목</h4>
-            <div class="status-item completed">
-              <span>담당자 지정</span>
-              <i class="svg-icon ico-check-circle"></i>
-            </div>
-            <div class="status-item completed">
-              <span>첨부문서 추가</span>
-              <i class="svg-icon ico-check-circle"></i>
-            </div>
-            <div class="status-item">
-              <span>중복접수 허용</span>
-              <i class="svg-icon ico-circle-empty"></i>
-            </div>
-          </section>
-
-          <!-- 추가항목 -->
-          <section class="status-group">
-            <h4 class="status-group-header">추가항목</h4>
-            <div class="status-item completed">
-              <span>추진배경 작성</span>
-              <i class="svg-icon ico-minus-circle"></i>
-            </div>
-            <div class="status-item completed">
-              <span>추진내용 작성</span>
-              <i class="svg-icon ico-minus-circle"></i>
-            </div>
-            <button type="button" class="status-item add-btn">
-              <span>기대효과 작성</span>
-              <i class="svg-icon ico-plus-circle"></i>
-            </button>
-            <button type="button" class="status-item add-btn">
-              <span>신청 시 유의사항 작성</span>
-              <i class="svg-icon ico-plus-circle"></i>
-            </button>
-            <button type="button" class="status-item add-btn">
-              <span>예산 사용 주안점 작성</span>
-              <i class="svg-icon ico-plus-circle"></i>
-            </button>
-          </section>
+            <!-- 추가항목 -->
+            <section class="status-group">
+              <h4 class="status-group-header">추가항목</h4>
+              <div class="status-item completed">
+                <span>추진배경 작성</span>
+                <i class="svg-icon ico-minus-circle"></i>
+              </div>
+              <div class="status-item completed">
+                <span>추진내용 작성</span>
+                <i class="svg-icon ico-minus-circle"></i>
+              </div>
+              <button type="button" class="status-item add-btn">
+                <span>기대효과 작성</span>
+                <i class="svg-icon ico-plus-circle"></i>
+              </button>
+              <button type="button" class="status-item add-btn">
+                <span>신청 시 유의사항 작성</span>
+                <i class="svg-icon ico-plus-circle"></i>
+              </button>
+              <button type="button" class="status-item add-btn">
+                <span>예산 사용 주안점 작성</span>
+                <i class="svg-icon ico-plus-circle"></i>
+              </button>
+            </section>
+          </div>
         </div>
 
         <!-- Action Box -->
-        <div class="action-box">
+        <div class="action-section">
           <p class="action-message">본 사업을 등록하시겠습니까?</p>
-          <div class="btn-wrap">
-            <button type="button" class="krds-btn tertiary top medium">
-              위로
-              <i class="svg-icon ico-arrow-top"></i>
-            </button>
-            <button type="button" class="krds-btn tertiary line medium">목록으로</button>
-            <button type="submit" class="krds-btn primary large">네, 등록하겠습니다.</button>
+          <div class="btn-wrap flex-wrap-wrwp">
+            <a href="#!" class="krds-btn tertiary top medium" onclick="location.reload(); return false;">
+                <span>다시작성</span>
+                <i class="svg-icon ico-reset medium"></i>
+            </a>
+            <a href="../html/program-admin-list.html" target="_self" class="krds-btn tertiary line medium">목록으로</a>
+            <a href="../html/program-admin-list.html" target="_self" class="krds-btn primary">네, 수정합니다.</a>
           </div>
         </div>
       </div><!--//right-section-->
