@@ -1,1 +1,766 @@
 @charset "UTF-8";
+
+
+/* ========================================
+ * 로그인 및 회원가입 반응형
+ * ====================================== */
+
+@media (min-width: 1921px) {
+  .main-bg::after {
+    height: 37vh;
+    max-height: 48rem;
+  }
+  .auth-page #container > .inner:not(.in-between) {
+    padding:var(--krds-number-22) 0 var(--krds-padding-8)
+  }
+  .page-title-wrap {
+    margin-bottom: var(--krds-number-14);
+  }
+}
+
+/* ========================================
+   공통 컴포넌트 스타일
+   ======================================== */
+
+/* 접근성을 위한 input 숨김 처리 */
+.hide-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ========================================
+ * 로그인, 회원가입 공통 :: bg, layout
+ * ====================================== */
+body:has(.main-bg) {
+  background-color: var(--krds-light-color-background-white);
+}
+.main-bg {
+  position: relative;
+  background-image: url(../img/img_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.main-bg::after {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height:30vh;
+  min-height: 20rem;
+  max-height: 40rem;
+  background-color: var(--krds-light-color-background-white);
+  pointer-events: none;
+}
+
+.main-bg.type2::after {
+   height:calc(100% - 64rem);
+   max-height:initial;
+}
+
+.auth-page .contents-box {
+  position: relative;
+  border-radius: var(--krds-number-10);
+}
+
+.auth-page #container > .inner:not(.in-between) {
+  padding:var(--krds-number-17) 0 var(--krds-padding-8)
+}
+
+
+/* ========================================
+ * 로그인, 회원가입 공통 :: 헤더
+ * ====================================== */
+.main-header {
+  padding: var(--krds-mobile-padding-card-medium);
+  background-color: transparent;
+}
+.main-header .header-top {
+  display: flex;
+  align-items: center;
+}
+.main-header .header-top:has(.btn-wrap) {
+  justify-content: space-between;
+}
+.main-header .header-top .btn-wrap {
+  width: initial;
+}
+
+
+/* ========================================
+ * 로그인, 회원가입 공통 :: 폼 영역
+ * ====================================== */
+
+.auth-page .auth-form-area {
+  display: flex;;
+  gap: var(--krds-gap-8);
+  padding: var(--krds-number-18) var(--krds-number-20);
+}
+.auth-page .auth-form-area .auth-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-8);
+  width: 100%;
+}
+.auth-page .auth-form-area .auth-wrap .auth-tit {
+  font-size: var(--krds-pc-font-size-heading-medium);
+  color:var(--krds-light-color-text-secondary);
+}
+
+.auth-page .form-group:has(.form-tit) {
+  flex-direction: row;
+  align-items: center;
+}
+
+.auth-page .form-group .form-tit {
+  width: var(--krds-number-21);
+  font-size: var(--krds-mobile-font-size-body-large);
+  font-weight: var(--c-font-weight-6);
+}
+
+.auth-page .page-btn-wrap {
+  margin:0
+}
+
+.page-title-wrap {
+  margin-bottom: var(--krds-number-12);
+}
+
+.page-title-wrap .h-tit {
+  font-size: var(--krds-mobile-font-size-display-large);
+  font-family: var(--c-font-edb);
+  text-align: center;
+  color: var(--krds-light-color-text-bolder);
+}
+
+.page-title-wrap .h-tit .small-txt {
+  display: block;
+  text-align: center;
+  font-size: var(--krds-pc-font-size-label-large);
+  font-family: var(--krds-font-family-base);
+  font-weight: var(--c-font-weight-3);
+}
+
+.auth-page .page-btn-wrap .krds-btn.text:hover {
+  background-color: transparent;
+}
+
+.auth-page .page-btn-wrap .find-go .krds-btn.text {
+  color: var(--krds-color-high-contrast-gray-40);
+}
+.auth-page .page-btn-wrap .find-go .krds-btn.text:hover{
+  color: var(--krds-color-high-contrast-gray-90);
+}
+.auth-page .page-btn-wrap .join-go .krds-btn.text {
+  color: var(--krds-button--color-link-text);
+}
+.auth-page .page-btn-wrap .join-go .krds-btn.text .svg-icon {
+  background-color:var(--krds-color-light-primary-50);
+} 
+.auth-page .page-btn-wrap .join-go .krds-btn.text:hover {
+  color: var(--krds-color-light-primary-70);
+}
+.auth-page .page-btn-wrap .join-go .krds-btn.text:hover .svg-icon {
+  background-color:var(--krds-color-light-primary-70);
+}
+
+
+.page-title-wrap.left .h-tit,
+.page-title-wrap.left .h-tit .small-txt {
+  text-align: left;
+}
+.page-title-wrap.left .h-tit .small-txt {
+  margin-top: var(--krds-number-10);
+}
+.page-title-wrap.left .h-tit .small-txt > em {
+  font-weight: var(--c-font-weight-6);
+  color: var(--krds-light-color-text-secondary);
+}
+
+
+/* ========================================
+ * 로그인, 회원가입 공통 :: 버튼 영역
+ * ====================================== */
+
+.auth-page .page-btn-wrap.wp100 {
+  justify-content: center;
+  margin-top: var(--krds-number-18);
+}
+.auth-page .page-btn-wrap.wp100 .btn-wrap {
+  width:100%;
+}
+.auth-page .page-btn-wrap.wp100 .btn-wrap .krds-btn {
+  flex:1;
+}
+
+.page-btn-wrap.wp100 .btn-wrap .krds-btn.tertiary {
+  background-color: var(--krds-color-light-alpha-white100);
+  border-color: var(--krds-button--color-tertiary-border);
+  color: var(--krds-button--color-tertiary-text);
+}
+
+.page-btn-wrap.wp100 .btn-wrap .krds-btn.tertiary:hover {
+  background-color: var(--krds-button--color-tertiary-fill-hover);
+}
+
+
+
+/* ========================================
+ * 로그인, 회원가입 공통 :: Square 버튼
+ * ====================================== */
+.square-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--krds-number-7) var(--krds-number-8);
+  background: var(--krds-color-light-gray-0);
+  border: 1px solid var(--krds-color-light-gray-20);
+  border-radius: var(--krds-number-5);
+  font-size: var(--krds-mobile-font-size-body-medium);
+  transition: all 0.2s;
+}
+
+.square-label.medium {
+  height: var(--krds-size-height-7);
+  border-radius: var(--krds-radius-medium2);
+  font-size: var(--krds-pc-font-size-label-medium);
+}
+
+.square-label.large {
+  height: var(--krds-size-height-8);
+  border-radius: var(--krds-radius-medium3);
+  font-size: var(--krds-pc-font-size-label-large);
+}
+
+.radio-icon,
+.check-icon {
+  position: relative;
+  display: inline-block;
+  width: var(--krds-number-9);
+  height: var(--krds-number-9);
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image:url(../img/ico_complete_disabled.svg);
+}
+
+.radio-icon.minus,
+.check-icon.minus {
+  background-image:url(../img/icon_minus_circle.svg);
+}
+
+.square-label.large .radio-icon,
+.square-label.large .check-icon {
+  width: var(--krds-number-10);
+  height: var(--krds-number-10);
+}
+
+/* 선택된 상태 - 라벨 */
+.square-btn:checked + .square-label {
+  color: var(--krds-light-color-text-primary);
+  border-color: var(--krds-color-light-primary-50);
+  font-weight: var(--c-font-weight-6);
+}
+
+.square-btn:checked + .square-label .radio-icon,
+.square-btn:checked + .square-label .radio-icon.minus,
+.square-btn:checked + .square-label .check-icon,
+.square-btn:checked + .square-label .check-icon.minus {
+  background-image:url(../krds/node_modules/krds-uiux/resources/img/component/icon/ico_complete_fill.svg);
+}
+
+/* 급별 선택 */
+.grade-select {
+    display: flex;
+    flex: 1;
+    gap: var(--krds-number-5);
+    align-items: flex-end;
+    width: 100%;
+}
+
+/* 급별 선택 - 라벨 레이아웃 */
+.grade-select .square-label {
+    flex: 1;
+    min-width: 0;
+}
+
+.grade-select .square-label.first {
+    flex: 0 0 auto;
+    width: 30.8rem;
+}
+
+/* 유치원 타입 섹션 */
+.kindergarten-type {
+    display: none;
+    gap: var(--krds-number-3);
+}
+
+/* 유치원 선택 시 유치원 타입 표시 */
+#kindergarten:checked ~ .form-conts .kindergarten-type {
+    display: flex;
+}
+
+/* 유치원 타입 라벨 레이아웃 */
+.kindergarten-type .square-label {
+    flex: 0 0 auto;
+    width: 10rem;
+}
+
+/* 선택된 상태 - 급별 선택 */
+#kindergarten:checked ~ .grade-box .grade-select .square-label.first,
+#kindergarten:checked ~ .grade-box .grade-select .square-label:nth-child(1),
+#elementary:checked ~ .grade-box .grade-select .square-label:nth-child(2),
+#middle:checked ~ .grade-box .grade-select .square-label:nth-child(3),
+#high:checked ~ .grade-box .grade-select .square-label:nth-child(4),
+#special:checked ~ .grade-box .grade-select .square-label:nth-child(5),
+#each:checked ~ .grade-box .grade-select .square-label:nth-child(6) {
+  border-color: var(--krds-color-light-primary-50);
+  color: var(--krds-color-light-primary-60);
+  font-weight:var(--c-font-weight-6);
+  background: var(--krds-light-color-background-white);
+}
+
+/* 급별 선택 시 체크마크 */
+#kindergarten:checked ~ .grade-box .grade-select .square-label.first .radio-icon,
+#kindergarten:checked ~ .grade-box .grade-select .square-label:nth-child(1) .radio-icon,
+#elementary:checked ~ .grade-box .grade-select .square-label:nth-child(2) .radio-icon,
+#middle:checked ~ .grade-box .grade-select .square-label:nth-child(3) .radio-icon,
+#high:checked ~ .grade-box .grade-select .square-label:nth-child(4) .radio-icon,
+#special:checked ~ .grade-box .grade-select .square-label:nth-child(5) .radio-icon,
+#each:checked ~ .grade-box .grade-select .square-label:nth-child(6) .radio-icon {
+  background-image:url(../krds/node_modules/krds-uiux/resources/img/component/icon/ico_complete_fill.svg);
+}
+
+/* 검색 결과 박스 */
+.search-result-box {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 48px;
+  width: 100%;
+  background: var(--krds-color-light-gray-0);
+  border: 0 solid var(--krds-color-light-gray-20);
+  border-width: 0 1px 1px 1px;
+  border-radius: 0 0 var(--krds-number-4) var(--krds-number-4);
+  box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.08);
+}
+
+/* 결과 리스트 */
+.result-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--krds-number-5);
+    margin: 0;
+    padding: var(--krds-number-7) var(--krds-number-8);
+    list-style: none;
+    max-height: 30rem;
+    overflow-y: auto;
+}
+
+/* 리스트 아이템 */
+.result-list > li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--krds-number-5);
+  padding: var(--krds-number-2) 0;
+}
+.result-list > li:hover {
+  background-color: #f6f9ff;
+}
+
+/* 검색 결과 */
+.search-result {
+    display: flex;
+    gap: var(--krds-number-10);
+    flex: 1;
+    align-items: center;
+}
+
+/* 지역 / 소속명 공통 */
+.team,
+.name {
+    display: flex;
+    align-items: center;
+    gap: var(--krds-number-6);
+    min-width: 24rem;
+}
+
+/* 라벨 공통 */
+.team .label,
+.name .label {
+    font-size: var(--krds-form-group--label-pc-font-size);
+    color: var(--krds-color-light-gray-40);
+    font-weight: var(--c-font-weight-6);
+    white-space: nowrap;
+}
+
+/* 값 공통 */
+.team .value,
+.name .value {
+    font-size: var(--krds-mobile-font-size-body-medium);
+    color: var(--krds-color-light-gray-90);
+}
+
+.team .value {
+    white-space: nowrap;
+}
+
+.name .value {
+    flex: 1;
+}
+
+/* 선택 버튼 */
+.select-btn {
+    padding: var(--krds-number-3) var(--krds-number-8);
+    border: 1px solid var(--krds-color-light-gray-60);
+    border-radius: var(--krds-number-3);
+    font-size: var(--krds-form-group--label-pc-font-size);
+    color: var(--krds-color-light-gray-90);
+    transition: all 0.2s;
+}
+
+.select-btn:active,
+.select-btn:hover {
+  border-color: var(--krds-color-high-contrast-primary-30);
+  color: var(--krds-color-light-primary-60);
+  background-color: var(--krds-color-high-contrast-primary-5)
+}
+
+/* 스크롤바 커스텀 (선택적) */
+.result-list::-webkit-scrollbar {
+    width: var(--krds-number-4);
+}
+.result-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+.result-list::-webkit-scrollbar-thumb {
+    background: var(--krds-color-light-gray-20);
+    border-radius: var(--krds-number-3);
+}
+.result-list::-webkit-scrollbar-thumb:hover {
+    background: var(--krds-color-light-gray-30);
+}
+
+input[data-field="org-name"].open {
+  border-radius: var(--krds-input--radius-medium) var(--krds-input--radius-medium) 0 0;
+  border-bottom: 0;
+}
+
+
+
+.approval-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.approval-group .square-label {
+  width: 26rem;
+  justify-content: center;
+  gap: var(--krds-gap-3);
+}
+
+.approval-group .form-group-inner {
+  flex:1;
+}
+
+.approval-group .unit {
+  font-size: 1.9rem;
+  color: var(--krds-color-light-gray-70);
+  font-weight: bold;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+.approval-group .krds-input.active,
+.approval-group-select .krds-form-select.active {
+  border-color: var(--krds-color-light-primary-50);
+  border-width: 2px;
+  color: var(--krds-light-color-text-primary);
+  font-weight: var(--c-font-weight-6);
+}
+
+
+/* 정보박스 */
+.infobox {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-number-5);
+  padding: var(--krds-number-8);
+  background: var(--krds-color-light-secondary-5);
+  border: var(--krds-number-1) solid var(--krds-color-light-secondary-10);
+  border-radius: var(--krds-number-5);
+  margin-bottom: var(--krds-number-12);
+}
+
+.infobox > p {
+    flex: 1;
+}
+
+
+/* ========================================
+ * 아이디,비밀번호 찾기 ~ 결과
+ * ====================================== */
+
+.auth-page #container.find .inner {
+  max-width: 1060px;
+}
+
+.find .auth-form-area {
+  align-items: center;
+  gap: var(--krds-gap-12);
+}
+.find .line {
+  display: block;
+  width: 1px;
+  height:28rem;
+  background:var(--krds-color-light-gray-20);
+}
+
+.find .contents-box:before {
+  content: '';
+  z-index: 1;
+  position: absolute;
+  top: -14rem;
+  right: -10rem;
+  display: block;
+  width: 300px;
+  height: 188px;
+  bottom: initial;
+  background: url(../img/img_obj.png) no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.auth-page #container.find.result .inner {
+  max-width:80rem;
+}
+
+.auth-result-tt {
+  font-size: var(--krds-mobile-font-size-body-large);
+  color: var(--krds-light-color-text-basic);
+}
+
+.auth-result-box {
+  display: flex;
+  height: var(--krds-number-22);
+  padding: var(--krds-padding-8); 
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: var(--krds-radius-medium2); 
+  border: 1px solid var(--krds-color-light-gray-30);
+  background: var(--krds-color-high-contrast-gray-5);
+}
+
+.auth-result-box strong {
+  color: var(--krds-color-high-contrast-gray-100);
+  font-size: var(--krds-pc-font-size-heading-medium); 
+  font-weight: var(--krds-font-weight-bold); 
+  letter-spacing: 0;
+}
+
+.auth-result-box p {
+  color: var(--krds-color-light-gray-40);
+  font-size: var(--krds-pc-font-size-body-large);
+  font-weight: var(--krds-font-weight-regular); 
+  letter-spacing: 0;
+}
+
+/* ========================================
+ * 회원가입 - 정보입력 signup
+ * ====================================== */
+
+.auth-page #container.join .inner {
+  max-width:1000px;
+}
+
+.auth-page #container.join .inner {
+    max-width: 110rem;
+}
+.join .square-label {
+    padding: var(--krds-number-8) var(--krds-number-9);
+    border-color: var(--krds-color-light-gray-30);
+    background-color: var(--krds-color-light-gray-5);
+    color: var(--krds-color-light-gray-50);
+}
+
+.join .grade-select .square-label.first {
+    width: 37.6rem;
+}
+.join .kindergarten-type {
+    gap: var(--krds-number-5);
+}
+.join .kindergarten-type .square-label {
+    width: 12rem;
+}
+.join .grade-select.establish .square-label {
+   max-width: 22rem;
+}
+
+
+
+
+/* =========================================================
+ * 섹션 헤더 (1, 2 단계 표시)
+ * ======================================================= */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-10);
+}
+
+.form-section + .form-section {
+  border-top: 3px solid var(--krds-color-light-gray-10);
+  padding-top: var(--krds-number-18);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-gap-3);
+}
+
+.section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--krds-size-height-5);
+  height: var(--krds-size-height-5);
+  border-radius: var(--krds-radius-small2);
+  background-color:var(--krds-color-light-gray-70);
+  color: var(--krds-light-color-text-basic-inverse);
+  font-size: var(--krds-pc-font-size-label-large);
+  font-weight: var(--krds-font-weight-regular);
+}
+
+.join .section-title {
+  font-size: var(--krds-mobile-font-size-heading-medium);
+  font-weight: var(--krds-font-weight-bold);
+  color:var(--krds-color-light-gray-80);
+}
+
+.join .form-tt h4 {
+  color:var(--krds-color-light-gray-70);
+}
+
+/* =========================================================
+ * form-box : 라벨 / 컨트롤 2열 레이아웃
+ * ======================================================= */
+.form-section .form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-7);
+}
+
+/* =========================================================
+ * 아이디 / 비밀번호 / 경고 메시지
+ * ======================================================= */
+
+.form-group-inner .btn-check {
+  white-space: nowrap;
+}
+
+.alert-messages .alert {
+  display: inline-block;
+  padding: 0 var(--krds-number-3);
+  font-size: var(--krds-mobile-font-size-body-small);
+}
+
+.alert-messages .alert.success {
+  color: var(--krds-color-light-primary-50);
+  background-color: var(--krds-color-high-contrast-primary-5);
+}
+
+.alert-messages .alert.error {
+  color: var(--krds-color-light-danger-50);
+  background-color: var(--krds-color-high-contrast-danger-5);
+}
+
+/* 비밀번호 불일치 경고 */
+.join .alert-wrap[data-role="pw-alert"] {
+  margin-top:0
+}
+
+.form-group.alert-wrap .alert {
+  font-size: var(--krds-mobile-font-size-body-xsmall);
+  color: var(--krds-light-color-danger-strong);
+}
+
+.separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--krds-color-high-contrast-gray-60);
+  font-size: var(--krds-pc-font-size-body-medium);
+}
+
+/* =========================================================
+ * 개인정보 안내 박스
+ * ======================================================= */
+.privacy-box {
+  margin-top: var(--krds-number-4);
+  padding: var(--krds-number-12) var(--krds-number-16);
+  border-radius: var(--krds-radius-large1);
+  background-color: var(--krds-color-light-gray-5);
+  color: var(--krds-light-color-text-subtle);
+  font-size: var(--krds-mobile-font-size-body-medium);
+  border: 1px solid var(--krds-color-light-gray-20);
+}
+
+.privacy-list {
+  list-style: disc;
+  padding-left: var(--krds-padding-7);
+  color: var(--krds-color-high-contrast-graphic-70);
+}
+
+.privacy-notice {
+  margin-top: var(--krds-number-5);
+  font-size: var(--krds-mobile-font-size-body-medium);
+  color: var(--krds-light-color-text-subtle);
+}
+
+/* 체크박스 영역 */
+.privacy-notice + .krds-check-area {
+  margin-top: var(--krds-number-6);
+  justify-content: flex-end;
+}
+
+
+.auth-page #container.join .inner {
+  gap: var(--krds-gap-10);
+  padding: var(--krds-number-20) 0 var(--krds-padding-8);
+}
+
+.auth-page .join .contents-box {
+  border-radius: var(--krds-number-7);
+}
+
+.auth-page .join .auth-form-area {
+  padding: var(--krds-number-21);
+  flex-direction: column;
+  gap: var(--krds-gap-11);
+}
+
+.join .square-label {
+  padding: var(--krds-number-8) var(--krds-number-10);
+  border-color: var(--krds-color-light-gray-30);
+  background-color: var(--krds-color-light-gray-5);
+  color: var(--krds-color-light-gray-50);
+}
+
+.join .square-btn:checked + .square-label {
+  color: var(--krds-light-color-text-primary);
+  border-color: var(--krds-color-light-primary-50);
+  background-color: var(--krds-light-color-background-white);
+}
+
+/* 소속지원청 기본 숨김 */
+.form-box.org-region {
+  display: none;
+}
