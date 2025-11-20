@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">teacher 회원가입 - 정보입력</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script href="../../_common/resources/js/contents.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+  
+</head>
+
+<body>
+
+<div id="wrap" class="auth-page main-bg type2">
+
+  <header class="main-header">
+    <div class="header-top">
+        <div class="logo">
+            <a href="../html/auth-admin-login.html" target="_self" title="로그인페이지로 이동"><img src="../img/logo_bk.svg" alt="충청남도교육청 단위학교사업선택제"></a>
+        </div>
+        <div class="btn-wrap">
+          <a href="#!" class="krds-btn medium text" target="_self"><i class="svg-icon ico-angle left"></i>이전 페이지로 돌아가기</a>
+        </div>
+    </div>
+  </header>
+
+  <main id="container" class="join">
+    <div class="inner">
+      <div class="page-title-wrap left">
+        <h1 class="h-tit">
+          정보입력
+          <span class="small-txt"><em>회원가입을 위해 아래 정보를 입력</em>해주세요.<br>가입 승인 완료 후 입력하신 정보로 로그인이 가능합니다.</span>
+        </h1>
+      </div>
+      <div class="contents contents-box contents-box-shadow">
+        <form class="form">
+          <div class="auth-form-area">
+            <!-- Section 1: 기본정보 -->
+            <section class="form-section">
+              <div class="section-header">
+                <span class="section-number">1</span>
+                <h2 class="section-title">기본정보를 입력해주세요.</h2>
+              </div>
+
+              <div class="form-fields">
+                <!-- 회원 구분 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>회원 구분</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group-inner grade-select">
+                      <input type="radio" class="square-btn type hide-input" id="teacher-type1" name="teacher">
+                      <label for="teacher-type1" class="square-label">
+                        <span>교사</span>
+                        <i class="radio-icon"></i>
+                      </label>
+
+                      <input type="radio" class="square-btn type hide-input" id="teacher-type2" name="teacher">
+                      <label for="teacher-type2" class="square-label">
+                        <span>교감</span>
+                        <i class="radio-icon"></i>
+                      </label>
+
+                      <input type="radio" class="square-btn type hide-input" id="teacher-type3" name="teacher">
+                      <label for="teacher-type3" class="square-label">
+                        <span>교장</span>
+                        <i class="radio-icon"></i>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 이름 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>이름</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input disabled" placeholder="자동입력" value="홍길동" readonly>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 연락처(사무실) -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>연락처(사무실)</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group-inner">
+                      <div class="form-conts">
+                        <select class="krds-form-select large">
+                            <option value="041">041</option>
+                            <option value="042">042</option>
+                            <option value="02">02</option>
+                        </select>
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="form-conts">
+                          <input type="text" class="krds-input large" value="123">
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="form-conts">
+                          <input type="text" class="krds-input large" value="1234">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 연락처(휴대폰) -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>연락처(휴대폰)</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group-inner">
+                      <div class="form-conts">
+                        <select class="krds-form-select large">
+                            <option>010</option>
+                            <option>011</option>
+                            <option>016</option>
+                            <option>017</option>
+                            <option>018</option>
+                            <option>019</option>
+                        </select>
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="form-conts">
+                        <input type="text" class="krds-input large" value="1234">
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="form-conts">
+                        <input type="text" class="krds-input large" value="1234">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 이메일 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>이메일</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group-inner email">
+                      <div class="form-conts">
+                          <input type="text" class="krds-input large" value="a1234">
+                      </div>
+                      <span class="separator">@</span>
+                      <div class="form-conts">
+                          <input type="text" class="krds-input large" value="ai.cne.go.kr">
+                      </div>
+                      <div class="form-conts">
+                        <select class="krds-form-select large">
+                          <option>직접입력</option>
+                          <option>korea.kr</option>
+                          <option>ai.cne.go.kr</option>
+                          <option>hanmail.net</option>
+                          <option>naver.com</option>
+                          <option>gmail.com</option>
+                          <option>hotmail.com</option>
+                          <option>nate.com</option>
+                          <option>kakao.com</option>
+                          <option>yahoo.co.kr</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 2: 소속정보 -->
+            <section class="form-section">
+              <header class="section-header">
+                <span class="section-number">2</span>
+                <h2 class="section-title">소속정보를 입력해주세요.</h2>
+              </header>
+
+              <div class="form-fields">
+                <div class="form-box">
+                    <div class="form-tt">
+                        <h4>학교</h4>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-conts">
+                            <input type="text" class="krds-input large" data-field="org-name" placeholder="정식 명칭으로 기재해주세요. 입력 시 목록이 나타납니다.">
+                            <!--학교 검색 리스트-->
+                            <div class="search-result-box">
+                                <ul class="result-list">
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남중학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">논산</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남고등학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">당진</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남여자고등학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남초등학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남유치원</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남특수고등학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남중학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남중학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남중학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남중학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남중학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남중학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                    <li>
+                                        <div class="search-result">
+                                            <div class="team">
+                                                <span class="label">지역</span>
+                                                <span class="value">공주</span>
+                                            </div>
+                                            <div class="name">
+                                                <span class="label">소속명</span>
+                                                <span class="value">충남중학교</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="select-btn">선택</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-tt">
+                        <h4>지역</h4>
+                        <span class="sub-label">학교를 선택하시면 자동으로 입력됩니다.</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-conts">
+                            <input type="text" class="krds-input large disabled" readonly data-field="org-region" placeholder="자동입력">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-box">
+                    <div class="form-tt">
+                        <h4>급별</h4>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" class="square-btn hide-input" id="kindergarten" name="grade">
+                        <input type="radio" class="square-btn hide-input" id="elementary" name="grade">
+                        <input type="radio" class="square-btn hide-input" id="middle" name="grade">
+                        <input type="radio" class="square-btn hide-input" id="high" name="grade">
+                        <input type="radio" class="square-btn hide-input" id="special" name="grade">
+                        <input type="radio" class="square-btn hide-input" id="each" name="grade">
+                        <div class="form-conts grade-box">
+                            <!-- 급별 선택 -->
+                            <div class="grade-select">
+                                <label for="kindergarten" class="square-label first">
+                                    <span>유치원</span>
+                                    <i class="radio-icon"></i>
+                                </label>
+
+                                    <label for="elementary" class="square-label">
+                                    <span>초등</span>
+                                    <i class="radio-icon"></i>
+                                </label>
+
+                                <label for="middle" class="square-label">
+                                    <span>중등</span>
+                                    <i class="radio-icon"></i>
+                                </label>
+
+                                <label for="high" class="square-label">
+                                    <span>고등</span>
+                                    <i class="radio-icon"></i>
+                                </label>
+
+                                <label for="special" class="square-label">
+                                    <span>특</span>
+                                    <i class="radio-icon"></i>
+                                </label>
+
+                                <label for="each" class="square-label">
+                                    <span>각</span>
+                                    <i class="radio-icon"></i>
+                                </label>
+                            </div>
+                            <!-- 유치원 선택하면 나타남 -->
+                            <div class="kindergarten-type">
+                                <input type="radio" class="square-btn type hide-input" id="single" name="kindergarten-type">
+                                <label for="single" class="square-label">
+                                    <span>단설유</span>
+                                    <i class="radio-icon minus"></i>
+                                </label>
+
+                                <input type="radio" class="square-btn type hide-input" id="attached" name="kindergarten-type">
+                                <label for="attached" class="square-label">
+                                    <span>병설유</span>
+                                    <i class="radio-icon minus"></i>
+                                </label>
+
+                                <input type="radio" class="square-btn type hide-input" id="private" name="kindergarten-type">
+                                <label for="private" class="square-label">
+                                    <span>사립유</span>
+                                    <i class="radio-icon minus"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-box">
+                    <div class="form-tt">
+                        <h4>설립구분</h4>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-conts">
+                            <div class="grade-select establish">
+                                <input type="radio" class="square-btn hide-input" id="establish-01" name="establish-type">
+                                <label for="establish-01" class="square-label">
+                                    <span>공립</span>
+                                    <i class="radio-icon"></i>
+                                </label>
+
+                                <input type="radio" class="square-btn hide-input" id="establish-02" name="establish-type">
+                                <label for="establish-02" class="square-label">
+                                    <span>사립</span>
+                                    <i class="radio-icon"></i>
+                                </label>
+
+                                <input type="radio" class="square-btn hide-input" id="establish-03" name="establish-type">
+                                <label for="establish-03" class="square-label">
+                                    <span>국립</span>
+                                    <i class="radio-icon"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+              </div>
+            </section>
+
+            <!-- 개인정보 수집·이용 내역 -->
+            <section class="form-section">
+              <div class="form-box">
+                <div class="form-tt">
+                  <h4>개인정보 수집·이용 내역</h4>
+                </div>
+                <div class="form-group">
+                  <div class="privacy-box">
+                    <ul class="privacy-list">
+                      <li>항목 : 이름, 연락처, 이메일</li>
+                      <li>수집 이용 목적 : 사업신청, 공모사업모집, </li>
+                      <li>보유 이용기간 : 회원탈퇴시까지</li>
+                    </ul>
+                  </div>
+                  <p class="privacy-notice">
+                    위의 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 가입이 제한됩니다. <br>위와 같이 개인정보 수집·이용하는데 동의하십니까?
+                  </p>
+                  <div class="krds-check-area">
+                    <div class="krds-form-check medium">
+                      <input type="checkbox" id="privacy-agree" name="privacy-agree">
+                      <label for="privacy-agree">개인정보 수집 이용에 동의합니다.</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="page-btn-wrap wp100">
+              <div class="btn-wrap">
+                <button type="button" class="krds-btn tertiary">취소하기</button>
+                <button type="submit" class="krds-btn primary">가입하기</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+
+</body>
+</html>
+
