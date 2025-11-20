@@ -23,8 +23,7 @@
 }
 
 .greeting-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+
   color: var(--krds-color-light-gray-90);
 }
 
@@ -38,13 +37,12 @@
   padding: 0.125rem var(--krds-number-5);
   border: 0.0625rem solid var(--krds-color-light-gray-30);
   border-radius: 2.5rem;
-  font-size: 0.8125rem;
-  font-weight: 700;
+
   color: #464c53;
 }
 
 .date-text {
-  font-size: 0.9375rem;
+
   color: #464c53;
 }
 
@@ -65,7 +63,7 @@
   box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.05),
               0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.08);
   padding: var(--krds-number-11) var(--krds-number-14);
-  min-height: 22.5rem;
+
 }
 
 .chart-header {
@@ -76,13 +74,12 @@
 }
 
 .chart-title {
-  font-size: 1.1875rem;
-  font-weight: 700;
+
   color: var(--krds-color-light-gray-90);
 }
 
 .chart-date {
-  font-size: 0.8125rem;
+
   color: var(--krds-color-light-gray-30);
 }
 
@@ -95,8 +92,6 @@
 }
 
 .donut-chart {
-  width: 15.625rem;
-  height: 15.625rem;
   position: relative;
   flex-shrink: 0;
 }
@@ -106,7 +101,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.1875rem;
+
   font-weight: 700;
   color: var(--krds-color-light-gray-90);
   text-align: center;
@@ -141,7 +136,7 @@
 
 /* Bar Charts */
 .bar-chart {
-  height: 12.5rem;
+
   margin-bottom: var(--krds-number-9);
 }
 
@@ -178,13 +173,12 @@
   display: flex;
   align-items: center;
   gap: var(--krds-number-3);
-  font-size: 0.8125rem;
+
   color: #464c53;
 }
 
 .legend-dot {
-  width: 0.75rem;
-  height: 0.75rem;
+
   border-radius: 50%;
   display: block;
   flex-shrink: 0;
@@ -240,14 +234,13 @@
 }
 
 .section-title {
-  font-size: 1.1875rem;
+
   font-weight: 700;
   color: var(--krds-color-light-gray-90);
 }
 
 .icon-arrow-right {
-  width: 1.5rem;
-  height: 1.5rem;
+
   background: var(--krds-color-light-gray-20);
   display: block;
 }
@@ -271,8 +264,7 @@
 
 .data-table thead th {
   padding: var(--krds-number-8);
-  font-size: 0.9375rem;
-  font-weight: 700;
+
   color: var(--krds-color-light-gray-90);
   text-align: center;
   vertical-align: middle;
@@ -288,7 +280,7 @@
 
 .data-table tbody td {
   padding: var(--krds-number-8);
-  font-size: 0.9375rem;
+
   color: #464c53;
   text-align: center;
   vertical-align: middle;
@@ -304,11 +296,9 @@
 
 .badge {
   display: inline-block;
-  padding: 0.125rem var(--krds-number-5);
+  padding: var(--krds-number-5);
   border-radius: var(--krds-number-3);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  line-height: 1.5;
+
 }
 
 .badge-선택사업 {
@@ -347,9 +337,9 @@
 
 .status-select {
   padding: var(--krds-number-3) var(--krds-number-5);
-  border: 0.0625rem solid var(--krds-color-light-gray-30);
+  border: 1px solid var(--krds-color-light-gray-30);
   border-radius: var(--krds-number-3);
-  font-size: 0.875rem;
+
   background: var(--krds-color-light-gray-0);
   cursor: pointer;
 }
@@ -379,7 +369,7 @@
    ================================================ */
 
 .table-footer {
-  font-size: 0.875rem;
+
   color: #8491a7;
 }
 
