@@ -26,7 +26,9 @@ body {
 }
 
 .max-wd-3 {max-width:38rem;}
-.max-wd-8 {max-width:80rem;}
+.max-wd-8 {max-width:88rem;}
+.max-wd-12 {max-width:120rem;}
+
 
 .wp100 {width:100%;}
 
@@ -1363,12 +1365,9 @@ td .btn-group  {
 .square-btn:checked + .square-label {
   color: var(--krds-light-color-text-primary);
   border-color: var(--krds-color-light-primary-50);
+  font-weight: var(--c-font-weight-6);
 }
 
-.square-btn:checked + .square-label span {
-    color: var(--krds-color-light-primary-60);
-    font-weight: bold;
-}
 
 .square-btn:checked + .square-label .radio-icon,
 .square-btn:checked + .square-label .radio-icon.minus,
@@ -1395,7 +1394,7 @@ td .btn-group  {
 
 .grade-select .square-label.first {
     flex: 0 0 auto;
-    width: 36.8rem;
+    width: 30.8rem;
 }
 
 /* 유치원 타입 섹션 */
@@ -1412,12 +1411,13 @@ td .btn-group  {
 /* 유치원 타입 라벨 레이아웃 */
 .kindergarten-type .square-label {
     flex: 0 0 auto;
-    width: 12rem;
+    width: 10rem;
 }
 
 
 /* 선택된 상태 - 급별 선택 */
 #kindergarten:checked ~ .grade-box .grade-select .square-label.first,
+#kindergarten:checked ~ .grade-box .grade-select .square-label:nth-child(1),
 #elementary:checked ~ .grade-box .grade-select .square-label:nth-child(2),
 #middle:checked ~ .grade-box .grade-select .square-label:nth-child(3),
 #high:checked ~ .grade-box .grade-select .square-label:nth-child(4),
@@ -1431,6 +1431,7 @@ td .btn-group  {
 
 /* 급별 선택 시 체크마크 */
 #kindergarten:checked ~ .grade-box .grade-select .square-label.first .radio-icon,
+#kindergarten:checked ~ .grade-box .grade-select .square-label:nth-child(1) .radio-icon,
 #elementary:checked ~ .grade-box .grade-select .square-label:nth-child(2) .radio-icon,
 #middle:checked ~ .grade-box .grade-select .square-label:nth-child(3) .radio-icon,
 #high:checked ~ .grade-box .grade-select .square-label:nth-child(4) .radio-icon,
@@ -2075,6 +2076,7 @@ body:has(.main-bg) {
   position: relative;
   background-image: url(../img/img_bg.png);
   background-repeat: no-repeat;
+  background-size: contain;
 }
 .main-bg::after {
   position: absolute;
@@ -2345,7 +2347,7 @@ body:has(.main-bg) {
   font-weight: var(--krds-font-weight-regular);
 }
 
-.section-title {
+.join .section-title {
   font-size: var(--krds-mobile-font-size-heading-medium);
   font-weight: var(--krds-font-weight-bold);
   color:var(--krds-color-light-gray-80);

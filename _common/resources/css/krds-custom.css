@@ -225,9 +225,10 @@
 /* 아이콘 */
 .svg-icon {-webkit-mask-repeat: no-repeat;-webkit-mask-position: center center;-webkit-mask-size: contain;mask-repeat: no-repeat;mask-position: center center;mask-size: contain;}
 .svg-icon.disabled {background-color: var(--krds-color-light-gray-20);}
-.svg-icon.disabled-on {background-color: var(--krds-color-light-gray-60);}
+.svg-icon.disabled-on {background-color: var(--krds-color-light-gray-40);}
 .svg-icon.white {background-color:var(--krds-light-color-icon-inverse);}
 .svg-icon.blue {background-color:var(--krds-light-color-icon-primary);}
+.svg-icon.dpblue {background-color:var(--krds-light-color-icon-secondary);}
 [class$="-disabled"] {background-color: var(--krds-light-color-icon-gray-fill) !important;}
 [class$="-fill"] {-webkit-mask-image: none;mask-image: none;background-color: transparent !important;background-size: contain;background-repeat: no-repeat;-webkit-mask: none;mask: none;}
 i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
@@ -438,6 +439,10 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
 .svg-icon.ico-veiwall {
     -webkit-mask-image: url(../../resources/img/ico_veiw_all.svg);
     mask-image: url(../../resources/img/ico_veiw_all.svg);
+}
+.svg-icon.ico-roundck {
+    -webkit-mask-image: url(../../resources/img/ico_round_check.svg);
+    mask-image: url(../../resources/img/ico_round_check.svg);
 }
 .svg-icon.ico-refile-disabled {
     -webkit-mask-image: url(../../resources/img/ico_file_return_disabled.svg);
