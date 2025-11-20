@@ -1,62 +1,45 @@
-// Dashboard Admin Scripts
-
-(function() {
-  'use strict';
-
-  // DOM Ready
-  document.addEventListener('DOMContentLoaded', function() {
-    initLogoutButton();
-    initStatusSelects();
-    updateCurrentDate();
-  });
-
-  /**
-   * Initialize Logout Button
-   */
-  function initLogoutButton() {
-    const logoutBtn = document.querySelector('.logout-btn');
-    
-    if (logoutBtn) {
-      logoutBtn.addEventListener('click', function() {
-        if (confirm('로그아웃 하시겠습니까?')) {
-          // Logout logic here
-          window.location.href = '/login.html';
-        }
-      });
+$(function () {
+  const tableConfigs = [
+    {
+      target: '#application-list',
+      file: '../html/application-admin-all-list.html',
+      selector: 'table[data-table="application-list"]'
+    },
+    {
+      target: '#report-list',
+      file: '../html/report-admin-list.html',
+      selector: 'table[data-table="report-list"]'
     }
-  }
+  ];
 
-  /**
-   * Initialize Status Selects
-   */
-  function initStatusSelects() {
-    const statusSelects = document.querySelectorAll('.status-select');
-    
-    statusSelects.forEach(select => {
-      select.addEventListener('change', function() {
-        console.log('Status changed to:', this.value);
-        // Update status logic here
+  tableConfigs.forEach(cfg => {
+    const $target = $(cfg.target);
+    if (!$target.length) return;
+
+    $target.load(`${cfg.file} ${cfg.selector}`, function (res, status) {
+      if (status !== 'success') {
+        console.warn('테이블 로드 실패:', cfg.file, status);
+        return;
+      }
+
+      const $table = $target.find('table');
+      const $rows = $table.find('tbody tr');
+
+      // 🔹 1) tbody에서 6줄 이후를 제거
+      $rows.slice(5).remove();
+
+      $table.find('colgroup').each(function () {
+        $(this).find('col:first').remove();
       });
+
+      $table.find('thead tr').each(function () {
+        $(this).find('th:first').remove();
+      });
+
+      $table.find('tbody tr').each(function () {
+        $(this).find('td:first').remove();
+      });
+
     });
-  }
-
-  /**
-   * Update Current Date
-   */
-  function updateCurrentDate() {
-    const dateText = document.querySelector('.date-text');
-    
-    if (dateText) {
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = String(today.getMonth() + 1).padStart(2, '0');
-      const date = String(today.getDate()).padStart(2, '0');
-      const days = ['일', '월', '화', '수', '목', '금', '토'];
-      const dayName = days[today.getDay()];
-      
-      // Uncomment to use real date
-      // dateText.textContent = `${year}.${month}.${date}.${dayName}`;
-    }
-  }
-
-})();
+  });
+});
