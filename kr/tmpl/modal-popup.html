@@ -1,5 +1,49 @@
 <section id="modal-popup" class="krds-modal fade" role="dialog" aria-labelledby="tit_modal-popup">
-  
+  <div class="modal-dialog popup-dialog">
+            <div class="modal-content popup-content">
+                
+                <!-- Modal Header -->
+                <div class="modal-header popup-header">
+                    <div class="popup-logo">
+                        <span class="popup-zone-text">
+                            <span class="zone-popup">POPUP</span><span class="zone-text">ZONE</span>
+                        </span>
+                        <div class="popup-info">
+                          <div>총 <span class="pop-total">3</span>건의 팝업이 있습니다.</div>
+                      </div>
+                    </div>
+                    <div class="popup-actions">
+                        <div class="krds-form-check no-show-check">
+                            <input type="checkbox" id="noShowToday">
+                            <label for="noShowToday">오늘 하루 열지 않기</label>
+                        </div>
+
+                        <button type="button" class="krds-btn medium icon btn-close close-modal" id="closeModal" aria-label="닫기">
+                            <span class="sr-only">닫기</span>
+                            <i class="svg-icon ico-popup-close"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modal Contents -->
+                <div class="modal-conts popup-slider">
+
+                    <div class="conts-area popup-slides">
+                        <a href="" class="popup-slide" data-slide="1"><img src="../img/popup-img01.png"></a>
+                        <a href="" class="popup-slide" data-slide="2"><img src="../img/popup-img02.png"></a>
+                        <a href="" class="popup-slide" data-slide="3"><img src="../img/popup-img03.png"></a>
+                        <a href="" class="popup-slide" data-slide="4"><img src="../img/popup-img01.png"></a>
+                    </div>
+                    
+                </div>
+                  <button type="button" class="slider-arrow prev" id="prevSlide" aria-label="이전 팝업">
+                      <span class="sr-only">이전</span>
+                  </button>
+                  <button type="button" class="slider-arrow next" id="nextSlide" aria-label="다음 팝업">
+                      <span class="sr-only">다음</span>
+                  </button>
+            </div>
+        </div>
 
   <!-- Modal Background -->
   <div class="modal-back"></div>

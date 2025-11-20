@@ -45,6 +45,7 @@
     margin-bottom: 20px;
     white-space: nowrap;
 }
+.hero-title:before {content:''; display: block; position: absolute; background:url(../img/quotes.png) no-repeat; width:34px; height:26px; top:-26px; left:0;}
 
 
 /* Hero Search (Right) */
@@ -147,34 +148,91 @@
     gap: var(--krds-gap-6);
 }
 
+
 /* Card (일반 흰색 카드) */
 .card {
     position: relative;
-    background-color: var(--krds-light-color-background-white);
-    border-radius: var(--krds-number-10);
     padding: 0;
-    height: 238px;
-    box-shadow: 4px 4px 20px 0px rgba(181, 188, 210, 0.3);
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    width:calc(100% / 3 - var(--krds-gap-6))
+    width:calc(100% / 3 - var(--krds-gap-6));
+    border-radius: var(--krds-number-10);
+    box-shadow: 4px 4px 20px 0px rgba(181, 188, 210, 0.3);
 }
-
-.card:hover {
+.card:hover {box-shadow: none;}
+.card:hover, .action-card:hover {
     transform: translateY(-2px);
-    box-shadow: 4px 6px 24px 0px rgba(181, 188, 210, 0.4);
 }
 
 .card-content {
-    position: absolute;
-    left: 48px;
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: var(--krds-gap-5);
-    z-index: 2;
+    width:100%;
+    padding:var(--krds-number-15) var(--krds-number-16);
+    mask:url(../img/mask_img.png);
+    -webkit-mask:url(../img/mask_img.png);
+    mask-repeat:no-repeat;
+    mask-position: right -115px bottom -55px;
+    -webkit-mask-position: right -75px bottom -55px;
+    transition-property: mask-position;
+    transition-duration: 300ms;
+    transition-timing-function:ease-in-out;
+    background-color: var(--krds-light-color-background-white);
+    border-radius: var(--krds-number-10);
+    transition: transform 0.2s;
+    transition: mask-position 0.2s ease-in-out, -webkit-mask-position 0.2s ease-in-out;
+    will-change: mask-position, -webkit-mask-position;
 }
+.card .link_icon {
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 0;
+    background: transparent;
+    transform: scale(0.7) translate(10px, 10px);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+.card .link_icon:before {
+    content: '';
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background: url(../img/link_icon.svg) no-repeat;
+}
+.card .link_icon:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--krds-color-high-contrast-alpha-black75);
+}
+.cards-inner > a:hover div{ mask-position:right 0 bottom 0; -webkit-mask-position:right 0 bottom 0;}
+.cards-inner > a:hover .card-arrow {display: none;}
+.cards-inner > a:hover .link_icon {opacity:1; transform: scale(1) translate(0, 0);}
+.cards-inner > a:hover .card-content .card-header, .cards-inner > a:hover .card-content .card-subtitle, .cards-inner > a:hover .card-content .card-description {color:var(--krds-light-color-surface-white)}
+.cards-inner > a:nth-of-type(1):hover .card-content {background: linear-gradient(135deg, #00c8d4 0%, #00a0ac 100%);}
+.cards-inner > a:nth-of-type(2):hover .card-content {background: linear-gradient(135deg, #4CA7FB 0%, #076BC7 100%);}
+.cards-inner > a:nth-of-type(3):hover .card-content {background: linear-gradient(135deg, #FF96B5 0%, #EE4778 100%);}
+.cards-inner > a:nth-of-type(4):hover .card-content {background: linear-gradient(135deg, #3CA7D7 0%, #18A3BC 100%);}
+.cards-inner > a:nth-of-type(5):hover .card-content {background: linear-gradient(135deg, #A991FF 0%, #5A38D5 100%);}
 
 /* Card Header */
 .card-header {
@@ -191,6 +249,10 @@
 .card-description {
     font-size: var(--krds-pc-font-size-body-small);
     max-width: 34rem;
+    height:68px;
+    display:flex;
+    align-items:center;
+    color:var(--krds-light-color-text-subtle);
 }
 
 /* Card Icon*/
@@ -210,8 +272,8 @@
 /* Card Arrow Button */
 .card-arrow {
     position: absolute;
-    bottom: 39px;
-    right: 50px;
+    bottom: 30px;
+    right: 30px;
     width: 20px;
     height: 14.72px;
     background-color: transparent;
@@ -241,11 +303,6 @@
     box-shadow: 4px 4px 20px 0px rgba(181, 188, 210, 0.3);
     transition: transform 0.2s, box-shadow 0.2s;
     width:23rem;
-}
-
-.action-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 4px 6px 24px 0px rgba(181, 188, 210, 0.4);
 }
 
 .action-card.data { background: linear-gradient(135deg, #00c8d4 0%, #00a0ac 100%);}
@@ -507,7 +564,7 @@
 .popup-floating {
     position: fixed;
     right: 0;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     z-index: 1000;
     width: 76px;
@@ -625,3 +682,230 @@
     font-size: var(--krds-pc-font-size-body-small);
     color: var(--krds-light-color-alpha-inverse50);
 }
+
+
+/* ========================================
+   KRDS MODAL - POPUP CUSTOM
+======================================== */
+section#modal-popup.krds-modal.popup-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: var(--krds-number-5);
+}
+
+section#modal-popup.krds-modal.popup-modal.fade {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+section#modal-popup.krds-modal.popup-modal.show {
+    display: flex !important;
+    opacity: 1;
+}
+
+/* Modal Background */
+section#modal-popup.krds-modal .modal-back {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: -1;
+}
+
+/* Modal Dialog */
+section#modal-popup .modal-dialog.popup-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 1520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+/* Modal Content */
+section#modal-popup .modal-content.popup-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+}
+
+/* ========================================
+   POPUP HEADER
+======================================== */
+section#modal-popup .modal-header.popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--krds-number-8);
+    gap: var(--krds-number-4);
+    margin-bottom: 0;
+}
+
+/* Logo */
+section#modal-popup .popup-logo {
+    position:relative;
+    display: flex;
+    align-items: center;
+    gap: var(--krds-number-8);
+}
+section#modal-popup .popup-logo:before {content:''; display: block; background:url(../img/popup-icon.svg) no-repeat; width:40px; height:49px; position:absolute;top:-26px;left:-26px;}
+
+
+section#modal-popup .popup-logo .popup-zone-text {
+    font-weight: var(--krds-font-weight-bold);
+    font-size: var(--krds-pc-font-size-heading-large);
+    line-height: 1;
+}
+
+section#modal-popup .popup-logo .zone-popup {
+    color: #00C7D4;
+}
+
+section#modal-popup .popup-logo .zone-text {
+    color: var(--krds-light-color-surface-white);
+}
+
+/* Total Popup Button */
+section#modal-popup .popup-info {
+    padding: var(--krds-number-4) var(--krds-number-8);
+    background-color: #00C7D4;
+    color: var(--krds-light-color-surface-white);
+    border: none;
+    border-radius: var(--krds-radius-max);
+    white-space: nowrap;
+}
+section#modal-popup .popup-info .pop-total {font-weight:var(--krds-font-weight-bold)}
+
+
+/* Actions */
+section#modal-popup .popup-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--krds-number-4);
+    padding-right: var(--krds-number-15);
+}
+
+/* KRDS Form Check for "오늘 하루 열지 않기" */
+section#modal-popup .krds-form-check.no-show-check {
+    display: flex;
+    align-items: center;
+    gap: var(--krds-number-2);
+    margin-bottom: 0;
+}
+section#modal-popup .krds-form-check.no-show-check input[type=checkbox]~label:before {margin-top:0;}
+section#modal-popup .krds-form-check.no-show-check input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--krds-light-color-primary);
+    margin: 0;
+}
+
+section#modal-popup .krds-form-check.no-show-check label {
+    cursor: pointer;
+    font-size: var(--krds-pc-font-size-body-small);
+    color: var(--krds-color-high-contrast-alpha-white100);
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+/* Close Button */
+section#modal-popup .popup-header .krds-btn.btn-close {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    border: none !important;
+    border-radius: 50% !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+    padding: 0 !important;
+    margin: 0;
+    top:2px;
+    right: 12px;
+    transform: rotate(0deg);
+    transition: transform .4s ease-in-out;
+}
+.popup-actions .krds-btn.icon.medium .svg-icon {width:80%; height:80%; background-color: var(--krds-button--color-primary-text);}
+section#modal-popup .popup-header .krds-btn.btn-close:hover, section#modal-popup .popup-header .krds-btn.btn-close:focus {transform: rotate(360deg);}
+
+/* ========================================
+   POPUP SLIDER
+======================================== */
+section#modal-popup .modal-conts.popup-slider {
+    position: relative;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    gap: var(--krds-number-5);
+    padding: var(--krds-padding-3);
+    margin: 0;
+    overflow: hidden;
+}
+
+section#modal-popup .slider-arrow {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    z-index: 10;
+    padding: 0;
+    position:absolute;
+    top: 50%;
+}
+section#modal-popup .slider-arrow.prev {left:-80px; background:url(../img/arr_prev.svg) no-repeat 50% 50%;}
+section#modal-popup .slider-arrow.next {right:-80px;background:url(../img/arr_next.svg) no-repeat 50% 50%;}
+
+section#modal-popup .slider-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+section#modal-popup .slider-arrow svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Popup Slides Container */
+section#modal-popup .conts-area.popup-slides {
+    display: flex;
+    flex: 1;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    transition: transform 0.3s ease-in-out;
+    width:auto;
+    gap:0;
+}
+
+section#modal-popup .popup-slide {
+    transition: all 0.5s ease;
+    flex: 0 0 calc(100% / 3); 
+    box-sizing: border-box;    
+    padding: var(--krds-padding-4);
+}
+
