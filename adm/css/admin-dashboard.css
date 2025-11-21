@@ -1,6 +1,18 @@
 @charset "utf-8";
 
 /* ================================================
+   layout 초기화 및 재정의
+   ================================================ */
+.dashboard #krds-header .sub-nav-wrap {
+  display: none;
+}
+
+.dashboard #container > .inner {
+  padding: 0;
+  gap: var(--krds-gap-7);
+}
+
+/* ================================================
    Main Content
    ================================================ */
 
@@ -10,7 +22,6 @@
   padding: var(--krds-number-12);
 }
 
-
 /* ================================================
    Greeting
    ================================================ */
@@ -19,69 +30,31 @@
   display: flex;
   align-items: center;
   gap: var(--krds-number-7);
-  margin-bottom: var(--krds-number-12);
+  margin-bottom: var(--krds-number-6);
 }
 
-.greeting-title {
-
-  color: var(--krds-color-light-gray-90);
-}
+.greeting-title {font-size: var(--krds-pc-font-size-heading-medium);color: var(--krds-color-light-gray-90);}
 
 .greeting-date {
   display: flex;
   align-items: center;
-  gap: var(--krds-number-7);
+  gap: var(--krds-number-6);
 }
 
 .today-badge {
-  padding: 0.125rem var(--krds-number-5);
-  border: 0.0625rem solid var(--krds-color-light-gray-30);
-  border-radius: 2.5rem;
-
-  color: #464c53;
+  padding: var(--krds-number-2) var(--krds-number-6);
+  border: 1px solid var(--krds-color-light-gray-30);
+  border-radius: var(--krds-radius-max);
+  color: var(--krds-light-color-text-subtle);
+  font-size: var(--krds-pc-font-size-label-small);
+  font-weight: var(--c-font-weight-6);
 }
 
-.date-text {
-
-  color: #464c53;
-}
+.date-text {color: var(--krds-light-color-text-subtle);line-height: 1;}
 
 /* ================================================
    Charts Section
    ================================================ */
-
-.charts-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--krds-number-12);
-  margin-bottom: var(--krds-number-12);
-}
-
-.chart-card {
-  background: var(--krds-color-light-gray-0);
-  border-radius: var(--krds-number-6);
-  box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.05),
-              0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.08);
-  padding: var(--krds-number-11) var(--krds-number-14);
-
-}
-
-.chart-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--krds-number-9);
-}
-
-.chart-title {
-
-  color: var(--krds-color-light-gray-90);
-}
-
-.chart-date {
-
-  color: var(--krds-color-light-gray-30);
-}
 
 /* Donut Chart */
 .chart-container {
@@ -101,8 +74,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  font-weight: 700;
   color: var(--krds-color-light-gray-90);
   text-align: center;
 }
@@ -136,7 +107,6 @@
 
 /* Bar Charts */
 .bar-chart {
-
   margin-bottom: var(--krds-number-9);
 }
 
@@ -153,35 +123,6 @@
   );
   display: block;
   border-radius: var(--krds-number-3);
-}
-
-/* Chart Legend */
-.chart-legend {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--krds-number-3);
-}
-
-.chart-legend.horizontal {
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: var(--krds-number-5);
-}
-
-.chart-legend li {
-  display: flex;
-  align-items: center;
-  gap: var(--krds-number-3);
-
-  color: #464c53;
-}
-
-.legend-dot {
-
-  border-radius: 50%;
-  display: block;
-  flex-shrink: 0;
 }
 
 .legend-dot.color-1 {
@@ -202,7 +143,7 @@
 
 .legend-dot.color-5 {
   background: #537ff1;
-  border: 0.0625rem solid var(--krds-color-light-gray-0);
+  border: 1px solid var(--krds-color-light-gray-0);
 }
 
 .legend-dot.color-6 {
@@ -218,31 +159,35 @@
    ================================================ */
 
 .table-section {
+  display: flex;
   background: var(--krds-color-light-gray-0);
   border-radius: var(--krds-number-6);
-  box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.05),
-              0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.08);
-  padding: var(--krds-number-12);
-  margin-bottom: var(--krds-number-12);
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.04),    0 8px 16px 0 rgba(0,0,0,.06);
+  padding: var(--krds-number-16) var(--krds-number-17);
+  flex-direction: column;
+  gap: var(--krds-gap-6);
 }
 
 .section-header {
   display: flex;
   align-items: center;
   gap: var(--krds-number-5);
-  margin-bottom: var(--krds-number-9);
 }
 
 .section-title {
-
-  font-weight: 700;
+  font-size: var(--krds-pc-font-size-heading-small);
   color: var(--krds-color-light-gray-90);
 }
 
-.icon-arrow-right {
+.section-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 
-  background: var(--krds-color-light-gray-20);
-  display: block;
+.section-footer .btn-wrap {
+  width:unset
 }
 
 /* ================================================
@@ -259,7 +204,7 @@
 .data-table thead tr {
   background: #f4f5f9;
   border-top: 0.125rem solid var(--krds-color-light-gray-90);
-  border-bottom: 0.0625rem solid var(--krds-color-light-gray-30);
+  border-bottom: 1px solid var(--krds-color-light-gray-30);
 }
 
 .data-table thead th {
@@ -271,7 +216,7 @@
 }
 
 .data-table tbody tr {
-  border-bottom: 0.0625rem solid #e6e8ea;
+  border-bottom: 1px solid #e6e8ea;
 }
 
 .data-table tbody tr:hover {
@@ -304,31 +249,31 @@
 .badge-선택사업 {
   background: #e3f2fd;
   color: #1976d2;
-  border: 0.0625rem solid #1976d2;
+  border: 1px solid #1976d2;
 }
 
 .badge-개방형사업 {
   background: #e0f7fa;
   color: #00838f;
-  border: 0.0625rem solid #00838f;
+  border: 1px solid #00838f;
 }
 
 .badge-신규사업 {
   background: #fff3e0;
   color: #e65100;
-  border: 0.0625rem solid #e65100;
+  border: 1px solid #e65100;
 }
 
 .badge-자율사업 {
   background: #f3e5f5;
   color: #6a1b9a;
-  border: 0.0625rem solid #6a1b9a;
+  border: 1px solid #6a1b9a;
 }
 
 .badge-특교추경신규사업 {
   background: #ffebee;
   color: #c62828;
-  border: 0.0625rem solid #c62828;
+  border: 1px solid #c62828;
 }
 
 /* ================================================
@@ -365,15 +310,221 @@
 }
 
 /* ================================================
-   Table Footer
+   토탈 데이터
    ================================================ */
-
-.table-footer {
-
-  color: #8491a7;
+.total-txt {
+  color: var(--krds-light-color-text-subtle);
+  font-size: var(--krds-pc-font-size-body-medium);
+}
+.total-txt .number {
+  color: var(--krds-light-color-text-primary);
+  font-weight: var(--krds-font-weight-bold);
 }
 
 
-.dashboard #header .sub-nav-wrap {
-    display: none;
+/* ========================================
+ * Charts Layout
+ * ====================================== */
+
+.charts-section {
+  display: flex;
+  gap: var(--krds-gap-7);
 }
+
+/* 카드 공통 */
+.chart-card {
+  background-color: var(--krds-light-color-surface-white);
+  border-radius: var(--krds-radius-xlarge1);
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.04), 0 8px 16px 0 rgba(0,0,0,.06);
+  padding: var(--krds-number-14) var(--krds-number-16);
+  display: flex;
+  width: 100%;
+  max-width: 64rem;
+}
+
+.chart-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+/* 도넛 카드만 살짝 다르게 */
+.chart-card--donut {
+  max-width: 52rem
+}
+.chart-card--donut .chart-inner {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--krds-gap-2);
+}
+
+/* ========================================
+ * 공통 타이틀/헤더
+ * ====================================== */
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--krds-gap-8);
+  width: 100%;
+}
+
+.chart-title {
+  font-size: var(--krds-pc-font-size-heading-small);
+  font-weight: var(--krds-font-weight-bold);
+  color: var(--krds-light-color-text-basic);
+}
+
+.chart-date {
+  font-size: var(--krds-pc-font-size-label-xsmall);
+  color: var(--krds-color-light-gray-30);
+}
+
+/* 도넛 라벨 */
+.chart-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  font-size: var(
+  --krds-pc-font-size-heading-small);
+  font-weight: var(
+  --krds-font-weight-bold);
+  color: var(
+  --krds-light-color-text-basic);
+}
+
+/* ========================================
+ * 캔버스 영역
+ * ====================================== */
+
+.chart-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-canvas-wrap {
+  width: 100%;
+  height: 16rem;
+}
+
+.chart-card--donut .chart-wrap {
+  width: 60%;
+}
+
+#chart-program {
+  width: 100%;
+  width: 25rem;
+  height: 25rem;
+  max-height: 25rem;
+}
+
+#chart-year,
+#chart-progress {
+  width: 100%;
+  height: 100%;
+}
+
+/* canvas가 부모 크기를 따라가도록 */
+.charts-section canvas {
+  display: block;
+}
+
+/* ========================================
+ * 범례
+ * ====================================== */
+
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-2);
+}
+
+.chart-legend.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: var(--krds-gap-4);
+  gap: var(--krds-number-5);
+}
+
+.chart-legend .legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--krds-number-2);
+  font-size: var(--krds-pc-font-size-label-small);
+  color: var(--krds-light-color-text-subtle);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.legend-dot {
+  width: var(--krds-number-7);
+  height: var(--krds-number-7);
+  border-radius: var(--krds-radius-max);
+  display: inline-block;
+}
+
+/* 숨김 상태 시 스타일 */
+.legend-item.is-hidden {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+/* 색상 매핑 */
+.legend-dot.color-1 { background-color: #8979ff; }
+.legend-dot.color-2 { background-color: #ff928a; }
+.legend-dot.color-3 { background-color: #3cc3df; }
+.legend-dot.color-4 { background-color: #ffae4c; }
+.legend-dot.color-5 { background-color: #537ff1; }
+.legend-dot.color-6 { background-color: #3FA654; }
+.legend-dot.color-7 { background-color: #8A949E; }
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+ * 반응형
+ * ====================================== */
+
+/* @media (max-width: 1200px) {
+  .charts-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chart-card--donut .chart-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chart-card--donut .chart-wrap {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    padding: var(--krds-number-8, 2rem);
+  }
+
+  .chart-canvas-wrap {
+    height: 14rem;
+  }
+} */

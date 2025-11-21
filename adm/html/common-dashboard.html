@@ -22,6 +22,10 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+  <!-- chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+
   <!-- Custom -->
   <script src="../js/admin-custom.js" defer></script>
   <script src="../js/admin-tooltip.js" defer></script>
@@ -48,7 +52,7 @@
 
 
   <main id="container" class="main-content">
-    <div class="content-inner inner">
+    <div class="inner">
       <!-- Greeting -->
       <div class="greeting">
         <h1 class="greeting-title">홍길동 장학사님, 안녕하세요.</h1>
@@ -61,55 +65,62 @@
       <!-- Charts Section -->
       <section class="charts-section">
         <!-- Chart 1: 사업별 현황 (도넛 차트) -->
-        <article class="chart-card">
-          <div class="chart-container">
-            
+        <article class="chart-card chart-card--donut">
+          <div class="chart-inner">
             <div class="chart-wrap">
               <strong class="chart-label">사업별 현황</strong>
-              <div id="chart-program"></div>
+              <canvas id="chart-program"></canvas>
             </div>
 
-            <ul class="chart-legend">
-              <li><i class="legend-dot color-1"></i>선택사업</li>
+            <ul class="chart-legend" id="legend-program">
+              <!-- <li><i class="legend-dot color-1"></i>선택사업</li>
               <li><i class="legend-dot color-2"></i>선택 외 사업</li>
               <li><i class="legend-dot color-3"></i>개방형 사업</li>
               <li><i class="legend-dot color-4"></i>특교·추경신규 사업</li>
-              <li><i class="legend-dot color-5"></i>자율자업</li>
+              <li><i class="legend-dot color-5"></i>자율사업</li> -->
             </ul>
           </div>
         </article>
 
         <!-- Chart 2: 연도별 현황 (막대 차트) -->
         <article class="chart-card">
-          <div class="chart-header">
-            <h3 class="chart-title">연도별 현황</h3>
-            <p class="chart-date">2025.10.16일 기준</p>
+          <div class="chart-inner">
+            <header class="chart-header">
+              <h3 class="chart-title">연도별 현황</h3>
+              <p class="chart-date">2025.10.16일 기준</p>
+            </header>
+
+            <div class="chart-canvas-wrap">
+              <canvas id="chart-year"></canvas>
+            </div>
+
+            <ul class="chart-legend horizontal" id="legend-year">
+              <!-- <li><i class="legend-dot color-1"></i>선택사업</li>
+              <li><i class="legend-dot color-2"></i>선택 외 사업</li>
+              <li><i class="legend-dot color-3"></i>개방형 사업</li>
+              <li><i class="legend-dot color-4"></i>특교·추경신규 사업</li>
+              <li><i class="legend-dot color-5"></i>자율사업</li> -->
+            </ul>
           </div>
-
-          <div id="chart-year"></div>
-
-          <ul class="chart-legend horizontal">
-            <li><i class="legend-dot color-1"></i>선택사업</li>
-            <li><i class="legend-dot color-2"></i>선택 외 사업</li>
-            <li><i class="legend-dot color-3"></i>개방형 사업</li>
-            <li><i class="legend-dot color-4"></i>특교·추경신규 사업</li>
-            <li><i class="legend-dot color-5"></i>자율자업</li>
-          </ul>
         </article>
 
         <!-- Chart 3: 진행 현황 (막대 차트) -->
         <article class="chart-card">
-          <div class="chart-header">
-            <h3 class="chart-title">진행 현황</h3>
-            <p class="chart-date">2025.10.16일 기준</p>
+          <div class="chart-inner">
+            <header class="chart-header">
+              <h3 class="chart-title">진행 현황</h3>
+              <p class="chart-date">2025.10.16일 기준</p>
+            </header>
+
+            <div class="chart-canvas-wrap">
+              <canvas id="chart-progress"></canvas>
+            </div>
+
+            <ul class="chart-legend horizontal" id="legend-progress">
+              <!-- <li><i class="legend-dot color-6"></i>승인</li>
+              <li><i class="legend-dot color-7"></i>미승인</li> -->
+            </ul>
           </div>
-
-          <div id="chart-progress"></div>
-
-          <ul class="chart-legend horizontal">
-            <li><i class="legend-dot color-6"></i>승인</li>
-            <li><i class="legend-dot color-7"></i>미승인</li>
-          </ul>
         </article>
       </section>
 
@@ -117,24 +128,40 @@
       <section class="table-section">
         <div class="section-header">
           <h2 class="section-title">최근 사업신청</h2>
-          <i class="icon-arrow-right"></i>
         </div>
 
         <div class="krds-table-wrap" id="application-list"></div>
 
-        <p class="table-footer">총 사업 : 20,727 개</p>
+        <div class="section-footer">
+          <div class="total-txt">사업신청 전체 <em class="number">20,727</em>건</div>
+          <div class="btn-wrap">
+            <a href="../html/application-admin-all-list.html" target="_self" class="krds-btn small primary">
+              사업신청 더보기
+              <i class="svg-icon ico-login-go white"></i>
+            </a>
+          </div>
+        </div>
+        
       </section>
 
       <!-- 최근 결과보고 -->
       <section class="table-section">
         <div class="section-header">
           <h2 class="section-title">최근 결과보고</h2>
-          <i class="icon-arrow-right"></i>
         </div>
 
         <div class="krds-table-wrap" id="report-list"></div>
 
-        <p class="table-footer">총 사업 : 20,727 개</p>
+        <div class="section-footer">
+          <div class="total-txt">결과보고 전체 <em class="number">20,727</em>건</div>
+          <div class="btn-wrap">
+            <a href="../html/report-admin-list.html" target="_self" class="krds-btn small primary">
+              결과보고 더보기
+              <i class="svg-icon ico-login-go white"></i>
+            </a>
+          </div>
+        </div>
+        
       </section>
     </div>
   </main>
