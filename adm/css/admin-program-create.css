@@ -4,8 +4,6 @@
    Program Create Specific Styles
    ================================================ */
 
-
-/* Info Header */
 .info-header {
   display: flex;
   justify-content: space-between;
@@ -54,7 +52,6 @@
   height: var(--krds-number-9);
 }
 
-/* Program Number */
 .program-number {
   display: flex;
   gap: var(--krds-number-3);
@@ -85,20 +82,17 @@
   border-width: 0.2rem;
 }
 
-/* Alert Wrap */
 .alert-wrap[data-role="program-number-alert"] {
   display: flex;
   margin-top: 0;
 }
 
-/* Form Group Wrap */
 .form-group-wrap {
   display: flex;
   flex-direction: column;
   gap: var(--krds-number-10);
 }
 
-/* Target Row */
 .target-row {
   display: flex;
   align-items: center;
@@ -125,7 +119,6 @@
   display: block;
 }
 
-/* School Count */
 .school-count {
   display: flex;
   align-items: center;
@@ -150,7 +143,6 @@
   color: var(--krds-color-light-gray-90);
 }
 
-/* Disclosure Panel */
 .disclosure-panel {
   width: 100%;
   padding: var(--krds-padding-7) var(--krds-padding-8);
@@ -210,7 +202,6 @@
   display: block;
 }
 
-/* Sub Form Group */
 .sub-form-group {
   background: #f8f8f8;
   border: 0.1rem solid var(--krds-color-light-gray-20);
@@ -242,7 +233,6 @@
   align-items: center;
 }
 
-/* Radio Card Group */
 .radio-card-group {
   display: flex;
   gap: 1.125rem;
@@ -282,7 +272,6 @@
   font-weight: 700;
 }
 
-/* Budget Input */
 .budget-row {
   display: flex;
   align-items: center;
@@ -383,14 +372,12 @@
 }
 
 
-/* Radio Group */
 .radio-group {
   display: flex;
   gap: 1.125rem;
   align-items: center;
 }
 
-/* Count Badge */
 .count-badge {
   display: flex;
   color: var(--krds-color-light-gray-60);
@@ -405,7 +392,6 @@
   font-weight: var(--krds-font-weight-bold);
 }
 
-/* Placeholder Text */
 .placeholder-text {
   padding: var(--krds-number-12);
   background: var(--krds-color-light-gray-5);
@@ -416,7 +402,6 @@
 
 }
 
-/* File Upload Box */
 .file-upload-box {
   padding: var(--krds-number-14);
   background: var(--krds-color-light-gray-0);
@@ -433,10 +418,6 @@
   color: var(--krds-color-light-gray-50);
 }
 
-
-
-
-/* Info Box */
 .info-box {
   display: flex;
   align-items: center;
@@ -491,7 +472,6 @@
   color: var(--krds-color-light-primary-60);
 }
 
-/* Status Group */
 .status-group {
   display: flex;
   flex-direction: column;
@@ -512,7 +492,6 @@
   text-align: center;
 }
 
-/* Status Item */
 .status-item {
   background: var(--krds-color-light-gray-0);
   padding: var(--krds-number-1) var(--krds-number-5);
@@ -654,18 +633,6 @@
 .status-item.error * {
   color: var(--krds-color-light-danger-50) !important;
 }
-
-
-
-.alert-box.alert-box {display: none;}
-
-
-
-
-
-
-
-
 
 
 /* ================================================

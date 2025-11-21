@@ -868,3 +868,33 @@ $(function () {
   // 회원구분 변경될 때마다 상태 갱신
   $adminRadios.on('change', updateOrgRegion);
 });
+
+/* ------------------------------------------------------------------------
+ * 회원가입 :: 교사, 교장교감 급별 선택박스 변경
+ * --------------------------------------------------------------------- */
+$(function () {
+  const $gradeBoxes = $('.form-box[data-select]');
+
+  // 초기 상태: 모두 숨김
+  $gradeBoxes.hide();
+
+  // 회원 구분 라디오 변경 시
+  $('input[name="teacher"]').on('change', function () {
+    const id = this.id;
+    let target = null;
+
+    if (id === 'teacher-type1') {
+      target = 'teacher1';   // 교사
+    } else if (id === 'teacher-type2' || id === 'teacher-type3') {
+      target = 'teacher2';   // 교감 / 교장
+    }
+
+    // 일단 모두 숨기고
+    $gradeBoxes.hide();
+
+    // 해당되는 쪽만 show
+    if (target) {
+      $(`.form-box[data-select="${target}"]`).show();
+    }
+  });
+});

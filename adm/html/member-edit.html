@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="충남교육청" />
-  <title th:text="${pageTitle}">teacher 회원가입 - 정보입력</title>
+  <title th:text="${pageTitle}">teacher 회원정보수정</title>
 
   <link rel="icon" href="/favicon.ico" />
 
@@ -39,19 +39,18 @@
         <div class="logo">
             <a href="../html/auth-admin-login.html" target="_self" title="로그인페이지로 이동"><img src="../img/logo_bk.svg" alt="충청남도교육청 단위학교사업선택제"></a>
         </div>
-        <div class="btn-wrap">
+        <!-- <div class="btn-wrap">
           <a href="#!" class="krds-btn medium text" target="_self"><i class="svg-icon ico-angle left"></i>이전 페이지로 돌아가기</a>
-        </div>
+        </div> -->
     </div>
   </header>
 
-  <main id="container" class="join">
+  <main id="container" class="join edit">
     <div class="inner">
       <div class="page-title-wrap left">
         <h1 class="h-tit">
-          정보입력
-          <span class="small-txt"><em>회원가입을 위해 아래 정보를 입력</em>해주세요.<br>가입 승인 완료 후 입력하신 정보로 로그인이 가능합니다.</span>
-        </h1>
+          정보수정
+          <span class="small-txt">회원가입 시 입력한 내용에 대해 수정하실 수 있습니다.</span>
       </div>
       <div class="contents contents-box contents-box-shadow">
         <form class="form">
@@ -60,7 +59,7 @@
             <section class="form-section">
               <div class="section-header">
                 <span class="section-number">1</span>
-                <h2 class="section-title">기본정보를 입력해주세요.</h2>
+                <h2 class="section-title">기본정보</h2>
               </div>
 
               <div class="form-fields">
@@ -71,7 +70,7 @@
                   </div>
                   <div class="form-group">
                     <div class="form-group-inner grade-select">
-                      <input type="radio" class="square-btn type hide-input" id="teacher-type1" name="teacher">
+                      <input type="radio" class="square-btn type hide-input" id="teacher-type1" name="teacher" checked>
                       <label for="teacher-type1" class="square-label">
                         <span>교사</span>
                         <i class="radio-icon"></i>
@@ -197,7 +196,7 @@
             <section class="form-section">
               <header class="section-header">
                 <span class="section-number">2</span>
-                <h2 class="section-title">소속정보를 입력해주세요.</h2>
+                <h2 class="section-title">소속정보</h2>
               </header>
 
               <div class="form-fields">
@@ -397,116 +396,6 @@
                     </div>
                 </div>
 
-                <div class="form-box gradeBox" data-select="teacher1">
-                    <div class="form-tt">
-                        <h4>급별</h4>
-                    </div>
-                    <div class="form-group">
-                        <input type="radio" class="square-btn hide-input" id="kindergarten" name="grade">
-                        <input type="radio" class="square-btn hide-input" id="elementary" name="grade">
-                        <input type="radio" class="square-btn hide-input" id="middle" name="grade">
-                        <input type="radio" class="square-btn hide-input" id="high" name="grade">
-                        <input type="radio" class="square-btn hide-input" id="special" name="grade">
-                        <input type="radio" class="square-btn hide-input" id="each" name="grade">
-                        <div class="form-conts grade-box">
-                            <!-- 급별 선택 -->
-                            <div class="grade-select">
-                                <label for="kindergarten" class="square-label first">
-                                    <span>유치원</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-
-                                    <label for="elementary" class="square-label">
-                                    <span>초등</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-
-                                <label for="middle" class="square-label">
-                                    <span>중등</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-
-                                <label for="high" class="square-label">
-                                    <span>고등</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-
-                                <label for="special" class="square-label">
-                                    <span>특</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-
-                                <label for="each" class="square-label">
-                                    <span>각</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-                            </div>
-                            <!-- 유치원 선택하면 나타남 -->
-                            <div class="kindergarten-type">
-                                <input type="radio" class="square-btn type hide-input" id="single" name="kindergarten-type">
-                                <label for="single" class="square-label">
-                                    <span>단설유</span>
-                                    <i class="radio-icon minus"></i>
-                                </label>
-
-                                <input type="radio" class="square-btn type hide-input" id="attached" name="kindergarten-type">
-                                <label for="attached" class="square-label">
-                                    <span>병설유</span>
-                                    <i class="radio-icon minus"></i>
-                                </label>
-
-                                <input type="radio" class="square-btn type hide-input" id="private" name="kindergarten-type">
-                                <label for="private" class="square-label">
-                                    <span>사립유</span>
-                                    <i class="radio-icon minus"></i>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-box gradeBox" data-select="teacher2">
-                    <div class="form-tt">
-                        <h4>급별</h4>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-conts grade-box">
-                            <div class="grade-select">
-                                <input type="radio" class="square-btn hide-input" id="kindergarten-t2" name="grade-t2">
-                                <label for="kindergarten-t2" class="square-label">
-                                    <span>유치원</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-                                <input type="radio" class="square-btn hide-input" id="elementary-t2" name="grade-t2">
-                                <label for="elementary-t2" class="square-label">
-                                    <span>초등</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-                                <input type="radio" class="square-btn hide-input" id="middle-t2" name="grade-t2">
-                                <label for="middle-t2" class="square-label">
-                                    <span>중등</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-                                <input type="radio" class="square-btn hide-input" id="high-t2" name="grade-t2">
-                                <label for="high-t2" class="square-label">
-                                    <span>고등</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-                                <input type="radio" class="square-btn hide-input" id="special-t2" name="grade-t2">
-                                <label for="special-t2" class="square-label">
-                                    <span>특</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-                                <input type="radio" class="square-btn hide-input" id="each-t2" name="grade-t2">
-                                <label for="each-t2" class="square-label">
-                                    <span>각</span>
-                                    <i class="radio-icon"></i>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="form-box">
                     <div class="form-tt">
                         <h4>설립구분</h4>
@@ -536,36 +425,49 @@
                     </div>
                 </div>
 
-
-
-
-
-              </div>
-            </section>
-
-            <!-- 개인정보 수집·이용 내역 -->
-            <section class="form-section">
-              <div class="form-box">
-                <div class="form-tt">
-                  <h4>개인정보 수집·이용 내역</h4>
-                </div>
-                <div class="form-group">
-                  <div class="privacy-box">
-                    <ul class="privacy-list">
-                      <li>항목 : 이름, 연락처, 이메일</li>
-                      <li>수집 이용 목적 : 사업신청, 공모사업모집, </li>
-                      <li>보유 이용기간 : 회원탈퇴시까지</li>
-                    </ul>
+                <!-- 학급수 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>학급수(입력일기준)</h4>
                   </div>
-                  <p class="privacy-notice">
-                    위의 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 가입이 제한됩니다. <br>위와 같이 개인정보 수집·이용하는데 동의하십니까?
-                  </p>
-                  <div class="krds-check-area">
-                    <div class="krds-form-check medium">
-                      <input type="checkbox" id="privacy-agree" name="privacy-agree">
-                      <label for="privacy-agree">개인정보 수집 이용에 동의합니다.</label>
+                  <div class="form-group">
+                    <div class="form-conts">
+                        <div class="form-group-inner">
+                            <input type="text" class="krds-input number-input" placeholder="학급수를 입력해주세요.">
+                            <span>학급</span>
+                        </div>
                     </div>
                   </div>
+                </div>
+
+                <!-- 학생수 -->
+                <div class="form-box">
+                  <div class="form-tt">
+                    <h4>학생수(입력일기준)</h4>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-conts">
+                        <div class="form-group-inner">
+                            <input type="text" class="krds-input number-input" placeholder="학생수를 입력해주세요.">
+                            <span>명</span>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-box">
+                    <div class="form-tt">
+                        <h4>회원 상태(승인여부)</h4>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-conts">
+                            <input type="checkbox" class="square-btn hide-input" id="approval" name="approval">
+                            <label for="approval" class="square-label">
+                                <span>승인</span>
+                                <i class="radio-icon"></i>
+                            </label>
+                        </div>
+                    </div>
                 </div>
               </div>
             </section>
@@ -573,7 +475,7 @@
             <div class="page-btn-wrap wp100">
               <div class="btn-wrap">
                 <button type="button" class="krds-btn tertiary">취소하기</button>
-                <button type="submit" class="krds-btn primary">가입하기</button>
+                <button type="submit" class="krds-btn primary">수정하기</button>
               </div>
             </div>
           </div>

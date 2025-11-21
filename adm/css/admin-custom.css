@@ -770,8 +770,7 @@ td .btn-group  {
 }
 
 .section-title {
-  font-size: var(--krds-pc-font-size-body-medium);
-  font-weight: var(--krds-typo-font-weight-bold);
+  font-size: var(--krds-pc-font-size-heading-xsmall);
   color: var(--krds-color-light-gray-30);
 }
 
@@ -2374,7 +2373,6 @@ body:has(.main-bg) {
 
 .join .section-title {
   font-size: var(--krds-mobile-font-size-heading-medium);
-  font-weight: var(--krds-font-weight-bold);
   color:var(--krds-color-light-gray-80);
 }
 
@@ -2388,7 +2386,7 @@ body:has(.main-bg) {
 .form-section .form-fields {
   display: flex;
   flex-direction: column;
-  gap: var(--krds-gap-7);
+  gap: var(--krds-gap-9);
 }
 
 /* =========================================================
@@ -2489,4 +2487,25 @@ body:has(.main-bg) {
 /* 소속지원청 기본 숨김 */
 .form-box.org-region {
   display: none;
+}
+
+.join.edit #approval + label {
+  width: 50%;
+  justify-content: center;
+  gap: var(--krds-gap-4);
+}
+
+.join.edit .auth-form-area section:nth-of-type(2) .form-group-inner {
+  width: 100%;
+}
+
+.join.edit .number-input + span {
+  min-width: 3rem;
+  text-align: center;
+}
+
+.join.edit .readonly-txt {
+  padding: var(--krds-padding-4) 0;
+  font-size: var(--krds-pc-font-size-body-large);
+  color: var(--krds-light-color-text-disabled);
 }
