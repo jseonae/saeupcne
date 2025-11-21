@@ -10,3 +10,140 @@
     margin-bottom: var(--krds-number-14);
   }
 }
+
+
+
+
+
+/* ================================================
+   Responsive
+   ================================================ */
+
+/* @media (max-width: 1280px) {
+  .page-edit .inner.cols-2 {
+    flex-direction: column;
+  }
+
+  .right-section {
+    width: 100%;
+    position: static;
+    flex-direction: row;
+    gap: var(--krds-number-7);
+  }
+
+  .status-tracker {
+    flex: 1;
+  }
+
+  .action-box {
+    flex: 1;
+  }
+
+  .action-box .btn-wrap {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 1024px) {
+  .info-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--krds-number-8);
+  }
+
+  .target-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-group.toggle-group {
+    width: 100%;
+  }
+
+  .toggle-btn {
+    flex: 1;
+    min-width: calc(50% - 0.4rem);
+  }
+
+  .school-count {
+    width: 100%;
+  }
+
+  .radio-card-group {
+    flex-direction: column;
+  }
+
+  .budget-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .budget-btn-group {
+    width: 100%;
+  }
+
+  .period-row {
+    flex-direction: column;
+  }
+
+  .date-range {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-badges {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--krds-number-5);
+  }
+
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--krds-number-5);
+  }
+
+  .program-number {
+    flex-wrap: wrap;
+  }
+
+  .sub-form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--krds-number-7);
+  }
+
+  .checkbox-group,
+  .radio-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--krds-number-5);
+  }
+
+  .budget-input-wrap {
+    flex-wrap: wrap;
+  }
+
+  .budget-btn-group {
+    justify-content: flex-start;
+  }
+
+  .date-range {
+    flex-direction: column;
+  }
+
+  .toggle-area {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--krds-number-7);
+  }
+
+  .right-section {
+    flex-direction: column;
+  }
+
+  .action-box .btn-wrap {
+    flex-direction: column;
+  }
+} */
