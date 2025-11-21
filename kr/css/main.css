@@ -96,7 +96,7 @@
     top: 0;
     width: 72px;
     height: 72px;
-    background-color: #083891;
+    background-color: var(--krds-color-light-primary-70);
     border: none;
     border-radius: var(--krds-radius-3xl, 32px);
     cursor: pointer;
@@ -107,19 +107,13 @@
     transition: background-color 0.2s;
 }
 
-.search-button:hover {
-    background-color: #062d73;
+.search-button:hover, .search-button:active {
+    background-color: var(--krds-color-light-primary-70);
 }
 
-.search-button:active {
-    background-color: #052659;
-}
-
-.search-icon {
+.search-button .svg-icon.white {
     width: 32px;
     height: 32px;
-    position: relative;
-    background:url(../img/ico-sch-wht.svg) no-repeat;
 }
 
 
