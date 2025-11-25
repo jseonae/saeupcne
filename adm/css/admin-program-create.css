@@ -36,10 +36,6 @@
   gap: var(--krds-number-3);
 }
 
-.user-info strong {
-  font-weight: 700;
-}
-
 .user-info .phone {
   display: flex;
   align-items: center;
