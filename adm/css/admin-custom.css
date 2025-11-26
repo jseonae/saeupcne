@@ -1,47 +1,11 @@
 @charset "UTF-8";
 
 /* ========================================
- * Root Variables
- * ====================================== */
-:root {
-  /*변경*/
-  --krds-contents-wrap-size: 1816px;
-  /*추가*/
-  --c-bg-blue-5: #F5F9FC;
-  --krds-number-22: 12.8rem;
-  --krds-number-23: 14.4rem;
-  --krds-number-24: 16rem;
-  --krds-number-25: 20.8rem;
-}
-
-/* ========================================
-   공통 컴포넌트 스타일
-   ======================================== */
-
-/* 접근성을 위한 input 숨김 처리 */
-.hide-input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* ========================================
- * Layout / 공통(전역 사용)
+ * 03. Layout / 공통(전역 사용)
  * ====================================== */
 body {
   background-color: var(--c-bg-blue-5);
 }
-
-.gray {
-  color: var(--krds-color-high-contrast-gray-60);
-}
-
-.max-wd-3 {max-width:38rem;}
-.max-wd-8 {max-width:88rem;}
-.max-wd-12 {max-width:120rem;}
-
-
-.wp100 {width:100%;}
 
 header, footer, main {
   z-index: 1;
@@ -135,10 +99,11 @@ header {
   font-weight: var(--krds-font-weight-regular);
 }
 
+
 /* ========================================
- * Form (Select / Check)
+ * 04. Form (Select / Check / Input)
  * ====================================== */
- .form-group .form-conts {
+.form-group .form-conts {
   position: relative;
 }
 
@@ -190,14 +155,14 @@ input[disabled],
   background-color:var(--krds-color-high-contrast-gray-10);
 }
 
+
 /* ========================================
-* Table
-* ====================================== */
+ * 05. Table 공통
+ * ====================================== */
 .krds-table-wrap .tbl.data.center thead th,
 .krds-table-wrap .tbl.data.center tbody td {
   padding: var(--krds-table--data-tbody-padding);
 }
-
 
 .krds-table-wrap td .data-amount:first-child:not(p.data-amount) {
   margin-bottom:.4rem;
@@ -206,17 +171,10 @@ input[disabled],
   margin:0
 }
 
+
 /* ========================================
- * Search List Top / Sort Area
+ * 06. Search List Top / Sort Area
  * ====================================== */
-.search-list-top .sch-info li,
-.search-list-top .sch-sort li {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  position: relative;
-}
 
 .description {
   color: var(--krds-color-high-contrast-gray-40);
@@ -234,8 +192,6 @@ input[disabled],
 .search-list-top .sch-info li .krds-badge.text-bd {
   padding:0 var(--krds-padding-2)
 }
-
-
 
 .search-list-top {
   --search-list-color-text-primary: var(--krds-light-color-text-primary);
@@ -334,8 +290,9 @@ input[disabled],
   gap: var(--krds-gap-3);
 }
 
+
 /* ========================================
- * Search Top / Filter Section / Buttons
+ * 07. Search Top / Filter Section / Buttons
  * ====================================== */
 .search-top-box {
   display: flex;
@@ -441,8 +398,9 @@ td .btn-group  {
   gap: var(--krds-gap-3);
 }
 
+
 /* ========================================
- * Page Button Area
+ * 08. Page Button Area
  * ====================================== */
 .page-btn-wrap {
   z-index: 10;
@@ -489,9 +447,9 @@ td .btn-group  {
 }
 
 .btn-wrap .krds-btn.tertiary.line {
-    background-color: var(--krds-button--color-tertiary-fill);
-    border-color: var(--krds-button--color-tertiary-border);
-    color: var(--krds-button--color-tertiary-text);
+  background-color: var(--krds-button--color-tertiary-fill);
+  border-color: var(--krds-button--color-tertiary-border);
+  color: var(--krds-button--color-tertiary-text);
 }
 
 .btn-wrap .krds-btn.tertiary.line:hover {
@@ -502,7 +460,6 @@ td .btn-group  {
   gap: var(--krds-gap-2);
   font-weight: var(--c-font-weight-3);
 }
-
 
 .action-section .btn-wrap.flex-wrap-wrwp > * {
   flex: 1;
@@ -516,7 +473,7 @@ td .btn-group  {
 
 
 /* ========================================
- * Search List Top - Upload Button
+ * 09. Search List Top - Upload Button
  * ====================================== */
 .search-list-top .file-upload .krds-btn.secondary {
   color: var(--krds-light-color-text-basic);
@@ -533,23 +490,22 @@ td .btn-group  {
 }
 
 
-
 /* ========================================
- * Header
+ * 10. Header / GNB / Sub Nav
  * ====================================== */
 #krds-header.header-in {
-    position: relative;
-    transform: translateY(0);
+  position: relative;
+  transform: translateY(0);
 }
 #wrap[class*=scroll] #krds-header:not(.sample).header-in {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100%;
-    border-bottom: 0.1rem solid var(--krds-header--utility-color-divider);
-    background-color: var(--krds-header--color-surface);
-    transition: transform ease 0.4s 0.01s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 0.1rem solid var(--krds-header--utility-color-divider);
+  background-color: var(--krds-header--color-surface);
+  transition: transform ease 0.4s 0.01s;
 }
 #wrap.scroll-down #krds-header:not(.sample).header-in {
   transform: translateY(-100%);
@@ -738,8 +694,9 @@ td .btn-group  {
   border-bottom: var(--krds-number-3) solid var(--krds-color-light-primary-50);
 }
 
+
 /* ========================================
- * Join form
+ * 11. Join form / Left-Right Layout
  * ====================================== */
 /* Left Section */
 .left-section {
@@ -864,7 +821,6 @@ td .btn-group  {
   padding-top:15rem;
 }
 
-
 .info-card {
   position: relative;
   background-color: var(--krds-color-light-gray-0);
@@ -984,9 +940,8 @@ td .btn-group  {
 }
 
 
-
 /* ========================================
- * POP-UP
+ * 12. POP-UP (팝업 / 파일 업로드 / 기간)
  * ====================================== */
 .thumbnail {
   width: 15rem;
@@ -1013,8 +968,8 @@ td .btn-group  {
 }
 
 /* ========================================
-* list 페이지 테이블
-* ====================================== */
+ * 13. list 페이지 테이블 (사업신청/공모/결과보고/로그)
+ * ====================================== */
 .krds-table-wrap .tbl[data-table="application-list"] .project-name strong {max-width:480px;} /*사업신청*/
 .krds-table-wrap .tbl[data-table="program-list"] .project-name strong {max-width:440px;} /*공모사업*/
 .krds-table-wrap .tbl[data-table="report-list"] .project-name strong {max-width:600px;} /*결과보고*/
@@ -1028,13 +983,15 @@ td .btn-group  {
   font-weight: var(--c-font-weight-3);
 }
 
-
 .krds-form-check input[type=radio]:disabled ~ label:before,
 .krds-form-check input[type=checkbox]:disabled ~ label:before {
   background-color: var(--krds-color-high-contrast-gray-10) !important;
 }
 
 
+/* ========================================
+ * 14. judge-result 셀 (심사 결과 select)
+ * ====================================== */
 
 /* 공통 베이스 */
 .judge-result {
@@ -1061,9 +1018,10 @@ td .btn-group  {
   color: var(--krds-color-light-danger-50);
 }
 
+
 /* ========================================
-* 모달
-* ====================================== */
+ * 15. 모달 공통
+ * ====================================== */
 .custom-modal.krds-modal .modal-dialog .modal-header .modal-title {
   display: flex;
   flex-direction: column;
@@ -1082,9 +1040,10 @@ td .btn-group  {
   min-height: 20rem;
 }
 
+
 /* ========================================
-* 통계
-* ====================================== */
+ * 16. 통계 테이블 (stats-list)
+ * ====================================== */
 .krds-table-wrap .tbl[data-table="stats-list"].data.center thead th {
   padding:var(--krds-padding-3);
 }
@@ -1123,13 +1082,15 @@ td .btn-group  {
   vertical-align: middle;
 }
 
-
 .sch-form-wrap .input-group .krds-form-select:active {
   color: var(--krds-color-light-gray-90);
   border-color: var(--krds-color-light--gray-50);
 }
 
 
+/* ========================================
+ * 17. 파일 업로드 (팝업 이미지 커스텀)
+ * ====================================== */
 .krds-file-upload.custom-upload {
   display: flex;
   flex-direction: row;
@@ -1232,7 +1193,9 @@ td .btn-group  {
 }
 
 
-
+/* ========================================
+ * 18. 기간 입력 (period-wrap)
+ * ====================================== */
 .period-wrap {
   display: flex;
   flex-direction: column;
@@ -1245,7 +1208,6 @@ td .btn-group  {
   color: var(--krds-light-color-text-disabled);
 }
 
-
 .page-edit textarea.pop-tit {
   max-height: 8rem;
 }
@@ -1254,7 +1216,9 @@ td .btn-group  {
 }
 
 
-
+/* ========================================
+ * 19. 검색결과 키워드 강조 / Alert 공통
+ * ====================================== */
 /*검색결과 키워드 강조효과*/
 .tbl.data .sch {
   font-weight: var(--c-font-weight-6);
@@ -1304,11 +1268,9 @@ td .btn-group  {
 }
 
 
-
-
 /* ========================================
-   Square Radio Button Component
-   ======================================== */
+ * 20. Square Radio Button Component
+ * ====================================== */
 
 /* Square 라디오 버튼 라벨 */
 .square-label {
@@ -1369,7 +1331,6 @@ td .btn-group  {
   font-weight: var(--c-font-weight-6);
 }
 
-
 .square-btn:checked + .square-label .radio-icon,
 .square-btn:checked + .square-label .radio-icon.minus,
 .square-btn:checked + .square-label .check-icon,
@@ -1380,39 +1341,39 @@ td .btn-group  {
 
 /* 급별 선택 */
 .grade-select {
-    display: flex;
-    flex: 1;
-    gap: var(--krds-number-5);
-    align-items: flex-end;
-    width: 100%;
+  display: flex;
+  flex: 1;
+  gap: var(--krds-number-5);
+  align-items: flex-end;
+  width: 100%;
 }
 
 /* 급별 선택 - 라벨 레이아웃 */
 .grade-select .square-label {
-    flex: 1;
-    min-width: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .grade-select .square-label.first {
-    flex: 0 0 auto;
-    width: 30.8rem;
+  flex: 0 0 auto;
+  width: 30.8rem;
 }
 
 /* 유치원 타입 섹션 */
 .kindergarten-type {
-    display: none;
-    gap: var(--krds-number-3);
+  display: none;
+  gap: var(--krds-number-3);
 }
 
 /* 유치원 선택 시 유치원 타입 표시 */
 #kindergarten:checked ~ .form-conts .kindergarten-type {
-    display: flex;
+  display: flex;
 }
 
 /* 유치원 타입 라벨 레이아웃 */
 .kindergarten-type .square-label {
-    flex: 0 0 auto;
-    width: 10rem;
+  flex: 0 0 auto;
+  width: 10rem;
 }
 
 
@@ -1443,6 +1404,9 @@ td .btn-group  {
 }
 
 
+/* ========================================
+ * 21. 검색 결과 박스 (autocomplete)
+ * ====================================== */
 
 /* 검색 결과 박스 */
 .search-result-box {
@@ -1460,14 +1424,14 @@ td .btn-group  {
 
 /* 결과 리스트 */
 .result-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--krds-number-5);
-    margin: 0;
-    padding: var(--krds-number-7) var(--krds-number-8);
-    list-style: none;
-    max-height: 30rem;
-    overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-number-5);
+  margin: 0;
+  padding: var(--krds-number-7) var(--krds-number-8);
+  list-style: none;
+  max-height: 30rem;
+  overflow-y: auto;
 }
 
 /* 리스트 아이템 */
@@ -1485,54 +1449,54 @@ td .btn-group  {
 
 /* 검색 결과 */
 .search-result {
-    display: flex;
-    gap: var(--krds-number-10);
-    flex: 1;
-    align-items: center;
+  display: flex;
+  gap: var(--krds-number-10);
+  flex: 1;
+  align-items: center;
 }
 
 /* 지역 / 소속명 공통 */
 .team,
 .name {
-    display: flex;
-    align-items: center;
-    gap: var(--krds-number-6);
-    min-width: 24rem;
+  display: flex;
+  align-items: center;
+  gap: var(--krds-number-6);
+  min-width: 24rem;
 }
 
 
 /* 라벨 공통 */
 .team .label,
 .name .label {
-    font-size: var(--krds-form-group--label-pc-font-size);
-    color: var(--krds-color-light-gray-40);
-    font-weight: var(--c-font-weight-6);
-    white-space: nowrap;
+  font-size: var(--krds-form-group--label-pc-font-size);
+  color: var(--krds-color-light-gray-40);
+  font-weight: var(--c-font-weight-6);
+  white-space: nowrap;
 }
 
 /* 값 공통 */
 .team .value,
 .name .value {
-    font-size: var(--krds-mobile-font-size-body-medium);
-    color: var(--krds-color-light-gray-90);
+  font-size: var(--krds-mobile-font-size-body-medium);
+  color: var(--krds-color-light-gray-90);
 }
 
 .team .value {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .name .value {
-    flex: 1;
+  flex: 1;
 }
 
 /* 선택 버튼 */
 .select-btn {
-    padding: var(--krds-number-3) var(--krds-number-8);
-    border: 1px solid var(--krds-color-light-gray-60);
-    border-radius: var(--krds-number-3);
-    font-size: var(--krds-form-group--label-pc-font-size);
-    color: var(--krds-color-light-gray-90);
-    transition: all 0.2s;
+  padding: var(--krds-number-3) var(--krds-number-8);
+  border: 1px solid var(--krds-color-light-gray-60);
+  border-radius: var(--krds-number-3);
+  font-size: var(--krds-form-group--label-pc-font-size);
+  color: var(--krds-color-light-gray-90);
+  transition: all 0.2s;
 }
 
 .select-btn:active,
@@ -1545,23 +1509,21 @@ td .btn-group  {
 
 /* 스크롤바 커스텀 (선택적) */
 .result-list::-webkit-scrollbar {
-    width: var(--krds-number-4);
+  width: var(--krds-number-4);
 }
 
 .result-list::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 .result-list::-webkit-scrollbar-thumb {
-    background: var(--krds-color-light-gray-20);
-    border-radius: var(--krds-number-3);
+  background: var(--krds-color-light-gray-20);
+  border-radius: var(--krds-number-3);
 }
 
 .result-list::-webkit-scrollbar-thumb:hover {
-    background: var(--krds-color-light-gray-30);
+  background: var(--krds-color-light-gray-30);
 }
-
-
 
 input[data-field="org-name"].open {
   border-radius: var(--krds-input--radius-medium) var(--krds-input--radius-medium) 0 0;
@@ -1569,8 +1531,9 @@ input[data-field="org-name"].open {
 }
 
 
-
-
+/* ========================================
+ * 22. Approval group (제한없음/개수)
+ * ====================================== */
 .approval-group {
   display: flex;
   flex-direction: row;
@@ -1595,7 +1558,6 @@ input[data-field="org-name"].open {
   flex-shrink: 0;
 }
 
-
 .approval-group .krds-input.active,
 .approval-group-select .krds-form-select.active {
   border-color: var(--krds-color-light-primary-50);
@@ -1605,6 +1567,9 @@ input[data-field="org-name"].open {
 }
 
 
+/* ========================================
+ * 23. Infobox / 메뉴 탭
+ * ====================================== */
 /* 정보박스 */
 .infobox {
   display: flex;
@@ -1618,12 +1583,11 @@ input[data-field="org-name"].open {
 }
 
 .infobox > p {
-    flex: 1;
+  flex: 1;
 }
 
-
 #container > .inner.menu-tab-wrap {
-    padding: var(--krds-pc-padding-card-medium) var(--krds-pc-padding-card-medium) 0;
+  padding: var(--krds-pc-padding-card-medium) var(--krds-pc-padding-card-medium) 0;
 }
 .menu-tab-wrap .tab.full > ul > li {
   max-width: 60rem;
@@ -1636,34 +1600,31 @@ input[data-field="org-name"].open {
 }
 
 
-
-
-
 /* ========================================
-* 게시판 목록 :: 공지사항,
-* ====================================== */
+ * 24. 게시판 목록 :: 공지사항
+ * ====================================== */
 .krds-structured-list {
-    display: block;
-    width: 100%;
-    margin-top: var(--krds-number-6);
+  display: block;
+  width: 100%;
+  margin-top: var(--krds-number-6);
 }
 
 .board-notice-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--krds-number-6);
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-number-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* 리스트 아이템 공통 */
 .board-notice-list li {
-    border-radius: var(--krds-number-5);
-    transition: all 0.2s;
+  border-radius: var(--krds-number-5);
+  transition: all 0.2s;
 }
 .board-notice-list li.notice-item {
-    background: var(--krds-color-light-gray-5);
+  background: var(--krds-color-light-gray-5);
 }
 .board-notice-list li:not(.notice-item) {
   background: var(--krds-color-light-gray-0);
@@ -1698,11 +1659,10 @@ input[data-field="org-name"].open {
   color:var(--krds-color-light-primary-60);
 }
 
-
 .board-notice-list .category,
 .board-notice-list .number {
-    text-align: center;
-    width: 8rem;
+  text-align: center;
+  width: 8rem;
 }
 .board-notice-list .category {
   grid-area: category;
@@ -1715,12 +1675,12 @@ input[data-field="org-name"].open {
 }
 /* 제목 */
 .board-notice-list .title {
-    grid-area: title;
-    margin: 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
+  grid-area: title;
+  margin: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 .board-notice-list .title strong {
   display: -webkit-box;
@@ -1736,26 +1696,29 @@ input[data-field="org-name"].open {
   font-weight: var(--krds-font-weight-bold);
 }
 .board-notice-list .department {
-    grid-area: department;
-    text-align: center;
-    width: 22rem;
+  grid-area: department;
+  text-align: center;
+  width: 22rem;
 }
 .board-notice-list .date {
-    grid-area: date;
-    text-align: center;
-    width: 12rem;
+  grid-area: date;
+  text-align: center;
+  width: 12rem;
 }
 
 .board-notice-list .svg-icon.ico-file {
-    display: inline-block;
-    width: 2.1rem;
-    height: var(--krds-number-10);
-    margin-left: var(--krds-number-3);
-    vertical-align: middle;
-    position: relative;
+  display: inline-block;
+  width: 2.1rem;
+  height: var(--krds-number-10);
+  margin-left: var(--krds-number-3);
+  vertical-align: middle;
+  position: relative;
 }
 
 
+/* ========================================
+ * 25. 게시판 상세 (page-view.board)
+ * ====================================== */
 .page-view.board {
 
 }
@@ -1819,10 +1782,6 @@ input[data-field="org-name"].open {
   color: var(--krds-color-high-contrast-gray-60);
 }
 
-
-
-
-
 .board-page-cont {
   width: 100%;
   min-height: 20rem;
@@ -1844,9 +1803,6 @@ input[data-field="org-name"].open {
 }
 .board-page-file .file-list > li {width:100%;}
 
-
-
-
 .board-page-file .file-list .file-info .file-name {
   flex: 1;
   display: -webkit-box;
@@ -1867,8 +1823,6 @@ main[class^="page"].board .conts-ft,
 .page-view.board .conts-ft {
   margin-top:var(--krds-gap-8);
 }
-
-
 
 .board-page-title .krds-form-check input[type=radio] ~ label,
 .board-page-title .krds-form-check input[type=checkbox] ~ label {
@@ -1895,7 +1849,6 @@ main[class^="page"].board .conts-ft,
   font-size: var(--krds-pc-font-size-body-medium);
 }
 
-
 .krds-file-upload .file-upload {
   gap: var(--krds-gap-6);
   background-color: var(--krds-color-light-gray-5)
@@ -1904,8 +1857,6 @@ main[class^="page"].board .conts-ft,
 .krds-file-upload .file-upload .txt {
   color: var(--krds-color-high-contrast-gray-50);
 }
-
-
 
 .page-edit.board .page-title {
   margin: 1rem 0;
@@ -1918,10 +1869,13 @@ main[class^="page"].board .conts-ft,
 }
 
 
+/* ========================================
+ * 26. QnA 목록 테이블 / 답변 영역
+ * ====================================== */
 .krds-table-wrap .qna-list-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 var(--krds-number-7); 
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 var(--krds-number-7);
 }
 
 .krds-table-wrap .tbl.qna-list-table thead th {
@@ -2067,10 +2021,9 @@ main[class^="page"].board .conts-ft,
 }
 
 
-
 /* ========================================
-* 로그인
-* ====================================== */
+ * 27. 로그인 / 인증 페이지
+ * ====================================== */
 body:has(.main-bg) {
   background-color: var(--krds-light-color-background-white);
 }
@@ -2094,10 +2047,9 @@ body:has(.main-bg) {
 }
 
 .main-bg.type2::after {
-   height:calc(100% - 64rem);
-   max-height:initial;
+  height:calc(100% - 64rem);
+  max-height:initial;
 }
-
 
 .main-header {
   padding: var(--krds-mobile-padding-card-medium);
@@ -2114,8 +2066,6 @@ body:has(.main-bg) {
   width: initial;
 }
 
-
-
 .auth-page .contents-box {
   position: relative;
   border-radius: var(--krds-number-10);
@@ -2124,9 +2074,6 @@ body:has(.main-bg) {
 .auth-page #container > .inner:not(.in-between) {
   padding:var(--krds-number-17) 0 var(--krds-padding-8)
 }
-
-
-
 
 .auth-page .auth-form-area {
   display: flex;;
@@ -2178,8 +2125,6 @@ body:has(.main-bg) {
   font-weight: var(--c-font-weight-3);
 }
 
-
-
 .auth-page .page-btn-wrap .krds-btn.text:hover {
   background-color: transparent;
 }
@@ -2202,7 +2147,6 @@ body:has(.main-bg) {
 .auth-page .page-btn-wrap .join-go .krds-btn.text:hover .svg-icon {
   background-color:var(--krds-color-light-primary-70);
 }
-
 
 .auth-page #container.find .inner {
   max-width: 1060px;
@@ -2244,7 +2188,6 @@ body:has(.main-bg) {
   background-size: contain;
   pointer-events: none;
 }
-
 
 .auth-page #container.find.result .inner {
   max-width:80rem;
@@ -2308,39 +2251,36 @@ body:has(.main-bg) {
 
 
 /* ========================================
- * 회원가입 - 정보입력 signup
+ * 28. 회원가입 - 정보입력 signup
  * ====================================== */
-
 .auth-page #container.join .inner {
   max-width:1000px;
 }
 
 .auth-page #container.join .inner {
-    max-width: 110rem;
+  max-width: 110rem;
 }
 .join .square-label {
-    padding: var(--krds-number-8) var(--krds-number-9);
-    border-color: var(--krds-color-light-gray-30);
-    background-color: var(--krds-color-light-gray-5);
-    color: var(--krds-color-light-gray-50);
+  padding: var(--krds-number-8) var(--krds-number-9);
+  border-color: var(--krds-color-light-gray-30);
+  background-color: var(--krds-color-light-gray-5);
+  color: var(--krds-color-light-gray-50);
 }
 
 .join .grade-select .square-label.first {
-    width: 37.6rem;
+  width: 37.6rem;
 }
 .join .kindergarten-type {
-    gap: var(--krds-number-5);
+  gap: var(--krds-number-5);
 }
 .join .kindergarten-type .square-label {
-    width: 12rem;
+  width: 12rem;
 }
 .join .grade-select.establish .square-label {
-   max-width: 22rem;
+  max-width: 22rem;
 }
 
-/* =========================================================
- * 섹션 헤더 (1, 2 단계 표시)
- * ======================================================= */
+/* 섹션 헤더 (1, 2 단계 표시) */
 .form-section {
   display: flex;
   flex-direction: column;
@@ -2380,19 +2320,14 @@ body:has(.main-bg) {
   color:var(--krds-color-light-gray-70);
 }
 
-/* =========================================================
- * form-box : 라벨 / 컨트롤 2열 레이아웃
- * ======================================================= */
+/* form-box : 라벨 / 컨트롤 2열 레이아웃 */
 .form-section .form-fields {
   display: flex;
   flex-direction: column;
   gap: var(--krds-gap-9);
 }
 
-/* =========================================================
- * 아이디 / 비밀번호 / 경고 메시지
- * ======================================================= */
-
+/* 아이디 / 비밀번호 / 경고 메시지 */
 .form-group-inner .btn-check {
   white-space: nowrap;
 }
@@ -2431,9 +2366,7 @@ body:has(.main-bg) {
   font-size: var(--krds-pc-font-size-body-medium);
 }
 
-/* =========================================================
- * 개인정보 안내 박스
- * ======================================================= */
+/* 개인정보 안내 박스 */
 .privacy-box {
   margin-top: var(--krds-number-4);
   padding: var(--krds-number-12) var(--krds-number-16);
@@ -2461,7 +2394,6 @@ body:has(.main-bg) {
   margin-top: var(--krds-number-6);
   justify-content: flex-end;
 }
-
 
 .auth-page #container.join .inner {
   gap: var(--krds-gap-10);

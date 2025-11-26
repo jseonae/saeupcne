@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* ================================================
-   Program Create Specific Styles
+   1. 프로그램 생성 상단 영역 (정보/번호/유저)
    ================================================ */
 
 .info-header {
@@ -23,7 +23,6 @@
   gap: var(--krds-number-5);
 }
 
-
 .user-info {
   display: flex;
   align-items: center;
@@ -37,10 +36,6 @@
   gap: var(--krds-number-3);
 }
 
-.user-info strong {
-  font-weight: 700;
-}
-
 .user-info .phone {
   display: flex;
   align-items: center;
@@ -52,6 +47,8 @@
   height: var(--krds-number-9);
 }
 
+/* 프로그램 번호 입력 */
+
 .program-number {
   display: flex;
   gap: var(--krds-number-3);
@@ -62,24 +59,22 @@
   text-align: center;
   background-color: var(--krds-color-high-contrast-gray-5);
 }
+
 .program-number > input:nth-of-type(1) {
   width: 10rem;
 }
+
 .program-number > input:nth-of-type(2) {
   width: 18rem;
 }
+
 .program-number .form-conts {
   width: 16rem;
 }
+
 .program-number .form-conts > input {
   width: 100%;
   background-color: var(--krds-light-color-background-white);
-}
-
-
-.program-number input.error {
-  border: 0.2rem solid var(--krds-color-light-danger-50);
-  border-width: 0.2rem;
 }
 
 .alert-wrap[data-role="program-number-alert"] {
@@ -87,11 +82,17 @@
   margin-top: 0;
 }
 
+/* 공통 폼 그룹 래퍼 */
+
 .form-group-wrap {
   display: flex;
   flex-direction: column;
   gap: var(--krds-number-10);
 }
+
+/* ================================================
+   2. 대상/토글/학교 수/공개 패널
+   ================================================ */
 
 .target-row {
   display: flex;
@@ -108,7 +109,7 @@
 }
 
 .krds-btn.line.toggle-btn {
-  padding:var(--krds-button--padding-y-medium) var(--krds-button--padding-x-medium)
+  padding: var(--krds-button--padding-y-medium) var(--krds-button--padding-x-medium);
 }
 
 .toggle-btn .svg-icon {
@@ -118,6 +119,8 @@
 .toggle-btn.active .svg-icon {
   display: block;
 }
+
+/* 학교 수 */
 
 .school-count {
   display: flex;
@@ -139,9 +142,10 @@
 }
 
 .school-count span {
-
   color: var(--krds-color-light-gray-90);
 }
+
+/* 공개/유치원 타입 패널 */
 
 .disclosure-panel {
   width: 100%;
@@ -152,10 +156,13 @@
   border-radius: var(--krds-radius-xlarge1);
 }
 
-
 .disclosure-panel.kindergarten-type .square-label {
   width: 16rem;
 }
+
+/* ================================================
+   3. 칩/서브폼/라디오 카드/예산
+   ================================================ */
 
 .chip-group-box {
   background: var(--krds-color-light-gray-0);
@@ -173,7 +180,6 @@
   background: var(--krds-color-light-gray-0);
   border: 0.1rem solid var(--krds-color-light-gray-20);
   border-radius: 62.5rem;
-
   color: var(--krds-color-light-gray-90);
   cursor: pointer;
   transition: all 0.2s;
@@ -202,8 +208,10 @@
   display: block;
 }
 
+/* 서브 폼 그룹 (회색 박스) */
+
 .sub-form-group {
-  background: #f8f8f8;
+  background: #f8f8f8; 
   border: 0.1rem solid var(--krds-color-light-gray-20);
   border-radius: var(--krds-number-5);
   padding: var(--krds-number-9) var(--krds-number-12);
@@ -217,7 +225,6 @@
   display: flex;
   align-items: center;
   gap: var(--krds-number-3);
-
   color: var(--krds-color-light-secondary-80);
   font-weight: 700;
 }
@@ -227,50 +234,8 @@
   height: var(--krds-number-10);
 }
 
-.checkbox-group {
-  display: flex;
-  gap: 1.125rem;
-  align-items: center;
-}
 
-.radio-card-group {
-  display: flex;
-  gap: 1.125rem;
-  width: 100%;
-}
-
-.radio-card {
-  flex: 1;
-  background: var(--krds-color-light-gray-0);
-  border: 0.1rem solid var(--krds-color-light-gray-20);
-  border-radius: var(--krds-number-6);
-  padding: var(--krds-number-10) 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.radio-card:hover {
-  background: var(--krds-color-light-gray-5);
-}
-
-.radio-card strong {
-
-  color: var(--krds-color-light-gray-95);
-  font-weight: 400;
-}
-
-.radio-card.active {
-  background: #f5f8ff;
-  border-color: var(--krds-color-light-primary-50);
-}
-
-.radio-card.active strong {
-  color: var(--krds-color-light-primary-60);
-  font-weight: 700;
-}
+/* 예산 입력 */
 
 .budget-row {
   display: flex;
@@ -282,7 +247,7 @@
 .budget-input-wrap {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2rem; /* number 토큰 근사치 후보 */
 }
 
 .budget-label {
@@ -297,15 +262,12 @@
   align-items: center;
 }
 
-
-
 .budget-input input.active {
   border: 0.2rem solid var(--krds-color-light-primary-50);
   border-width: 0.2rem;
 }
 
 .budget-input-wrap .unit {
-
   color: var(--krds-color-light-gray-70);
   font-weight: 700;
   flex-shrink: 0;
@@ -334,6 +296,9 @@
   height: var(--krds-number-8);
 }
 
+/* ================================================
+   4. 기간/카운트/파일 업로드/알림
+   ================================================ */
 
 .period-label {
   background: var(--krds-color-light-gray-5);
@@ -353,6 +318,7 @@
 .date-range .krds-form-item {
   width: 100%;
 }
+
 .date-range .krds-form-item .krds-input {
   text-align: center;
 }
@@ -371,12 +337,7 @@
   color: var(--krds-color-light-danger-60);
 }
 
-
-.radio-group {
-  display: flex;
-  gap: 1.125rem;
-  align-items: center;
-}
+/* 카운트 배지 */
 
 .count-badge {
   display: flex;
@@ -387,10 +348,13 @@
   border-radius: var(--krds-radius-small1);
   background-color: var(--krds-color-light-secondary-5);
 }
+
 .count-badge em {
   color: var(--krds-color-light-primary-60);
   font-weight: var(--krds-font-weight-bold);
 }
+
+/* 플레이스홀더 박스 */
 
 .placeholder-text {
   padding: var(--krds-number-12);
@@ -399,8 +363,9 @@
   border-radius: var(--krds-number-5);
   text-align: center;
   color: var(--krds-color-light-gray-50);
-
 }
+
+/* 파일 업로드 박스 */
 
 .file-upload-box {
   padding: var(--krds-number-14);
@@ -417,6 +382,8 @@
 .upload-placeholder {
   color: var(--krds-color-light-gray-50);
 }
+
+/* 안내 박스 */
 
 .info-box {
   display: flex;
@@ -440,11 +407,15 @@
   line-height: 1.4;
 }
 
+/* 제목 영역 우측 아이콘 버튼 */
 
 .form-tt .krds-btn.icon {
   margin-left: auto;
 }
 
+/* ================================================
+   5. 상태(step) 영역
+   ================================================ */
 
 .status-header {
   display: flex;
@@ -504,6 +475,7 @@
   color: var(--krds-color-light-gray-40);
   font-size: var(--krds-mobile-font-size-body-small);
 }
+
 .status-item:not(:has(.krds-btn))::after {
   content: '';
   display: block;
@@ -512,13 +484,15 @@
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image:url(../../_common/resources/img/ico_complete_disabled.svg);
+  background-image: url(../../_common/resources/img/ico_complete_disabled.svg);
 }
+
 .status-item.completed:has(:not(.krds-btn))::after {
-  background-image:url(../../krds/node_modules/krds-uiux/resources/img/component/icon/ico_complete_fill.svg);
+  background-image: url(../../krds/node_modules/krds-uiux/resources/img/component/icon/ico_complete_fill.svg);
 }
+
 .status-item.error:has(:not(.krds-btn))::after {
-  background-image:url(../../_common/resources/img/ico_system_danger.svg);
+  background-image: url(../../_common/resources/img/ico_system_danger.svg);
 }
 
 .status-item .krds-btn.icon {
@@ -530,14 +504,37 @@
   mask-size: contain;
   -webkit-mask-image: url(../../krds/node_modules/krds-uiux/resources/img/component/icon/ico_plus.svg);
   mask-image: url(../../krds/node_modules/krds-uiux/resources/img/component/icon/ico_plus.svg);
-  background-color:var(--krds-color-light-gray-20);
+  background-color: var(--krds-color-light-gray-20);
 }
+
 .status-item.add .krds-btn.icon {
   -webkit-mask-image: url(../../_common/resources/img/ico_minus.svg);
   mask-image: url(../../_common/resources/img/ico_minus.svg);
-  background-color:var(--krds-light-color-icon-primary);
+  background-color: var(--krds-light-color-icon-primary);
 }
 
+/* 상태별 컬러 override (강제) */
+
+.status-item.completed *,
+.status-item.add * {
+  color: var(--krds-color-light-primary-50) !important;
+}
+
+.status-item.error * {
+  color: var(--krds-color-light-danger-50) !important;
+}
+
+/* 상태 토글 그룹 (하단 토글들) */
+
+.status-group.toggle-group {
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: var(--krds-padding-5);
+  margin-top: var(--krds-number-3);
+  border-top: 1px solid var(--krds-light-color-border-gray);
+}
+
+/* 중복 접수 토글 */
 
 .duplicate strong {
   font-size: var(--krds-mobile-font-size-body-medium);
@@ -549,21 +546,26 @@
   content: '중복 접수 불가';
   line-height: 1;
 }
+
 .duplicate .toggle-duplicate.active + label::after {
   content: '중복 접수 허용';
   color: var(--krds-color-light-primary-50);
 }
 
+/* ================================================
+   6. 프로그램 상세/네비게이션 커스터마이징
+   ================================================ */
 
 .program .grade-select .square-label {
   height: var(--krds-size-height-8);
   padding: var(--krds-number-7) var(--krds-number-10);
 }
 
-
 .program .form-group .grade-box > .form-group-inner.wp100:has(.count-input) {
   gap: var(--krds-gap-12);
 }
+
+/* 라디오(square-rdo) 스타일 커스터마이징 */
 
 .krds-form-check input[type=radio] ~ label.square-rdo {
   padding: var(--krds-padding-8) var(--krds-padding-10);
@@ -574,39 +576,45 @@
   border: 1px solid var(--krds-light-color-border-gray-light);
   background-color: var(--krds-light-color-background-white);
 }
-.krds-form-check input[type=radio]:checked ~ label{
+
+.krds-form-check input[type=radio]:checked ~ label {
   font-weight: var(--c-font-weight-6);
-  color:var(--krds-color-light-primary-60);
-  border-color:var(--krds-color-light-primary-50);
-  background-color:#F5F8FF;
+  color: var(--krds-color-light-primary-60);
+  border-color: var(--krds-color-light-primary-50);
+  background-color: #F5F8FF; /* 토큰 치환 후보 */
 }
+
 .krds-form-check input[type=radio] ~ label.square-rdo:after {
   position: relative;
-  top:initial;
-  left:initial;
+  top: initial;
+  left: initial;
   border-radius: initial;
-  width:var(--krds-size-height-4);
-  height:var(--krds-size-height-4);
+  width: var(--krds-size-height-4);
+  height: var(--krds-size-height-4);
   background-color: transparent;
   background-image: url(../img/radio.svg);
 }
+
 .krds-form-check input[type=radio]:checked ~ label.square-rdo:after {
   background-image: url(../img/radio-checked.svg);
 }
+
 .krds-form-check input[type=radio] ~ label.square-rdo:before {
   display: none;
 }
+
+/* 레이아웃/textarea/인페이지 네비 */
 
 .program .left-section section:nth-of-type(1):has(.info-header) {
   padding: var(--krds-number-12) var(--krds-number-16);
 }
 
-
 .program .detail-con .form-tt {
   justify-content: space-between;
 }
+
 .program .detail-con .form-tt .krds-btn.line:hover {
-  color:var(--krds-button--color-link-text);
+  color: var(--krds-button--color-link-text);
 }
 
 .program .detail-con textarea.krds-input {
@@ -620,33 +628,34 @@
 }
 
 .program .krds-in-page-navigation-type .krds-in-page-navigation-area .in-page-navigation-list li > a {
-  padding:var(--krds-number-0);
+  padding: var(--krds-number-0);
   color: var(--krds-color-light-gray-30);
 }
 
+/* detail-con 공통 */
 
-.status-item.completed * ,
-.status-item.add * {
-  color: var(--krds-color-light-primary-50) !important;
+.detail-con {
+  gap: var(--krds-number-6);
+  margin-top: var(--krds-number-10);
 }
 
-.status-item.error * {
-  color: var(--krds-color-light-danger-50) !important;
+.detail-con .textarea-wrap {
+  padding: var(--krds-padding-10);
+  border-radius: var(--krds-radius-xlarge1);
+  border: 1px solid var(--krds-light-color-border-gray);
+  background-color: var(--krds-light-color-background-gray-subtler);
 }
-
 
 /* ================================================
-   Manager Select Container
+   7. 관리자 선택(Manager Select) 영역
    ================================================ */
 
+/* 컨테이너 */
 .krds-manager-select {
   width: 100%;
 }
 
-/* ================================================
-   Search Area
-   ================================================ */
-
+/* 검색 영역 */
 .krds-search-area {
   background: var(--krds-light-color-background-gray-subtler);
   border-radius: var(--krds-number-5);
@@ -657,14 +666,13 @@
   margin-bottom: var(--krds-number-10);
 }
 
-/* Search Title */
 .krds-search-title {
   display: flex;
   align-items: center;
   gap: var(--krds-number-5);
 }
 
-.krds-search-title .svg-icon.ico-idtt{
+.krds-search-title .svg-icon.ico-idtt {
   width: var(--krds-number-10);
   height: var(--krds-number-10);
   display: block;
@@ -675,10 +683,7 @@
   color: var(--krds-light-color-text-secondary);
 }
 
-/* ================================================
-   Search Box
-   ================================================ */
-
+/* 검색 박스 */
 .krds-search-box {
   position: relative;
   display: flex;
@@ -690,17 +695,21 @@
   padding: 0 var(--krds-number-10);
 }
 
+/* 검색 결과(dropdown) 위치 */
 .krds-search-box .search-result-box {
-  left:0;
+  left: 0;
 }
+
 .krds-search-box .search-result-box .result-list {
   max-height: 20rem;
 }
+
 .krds-search-box .search-result-box .name {
   min-width: unset;
 }
 
-.krds-form-select.medium{
+/* 검색 셀렉트 */
+.krds-form-select.medium {
   border: none;
   color: var(--krds-color-light-gray-90);
   padding: 0;
@@ -714,6 +723,7 @@
   display: block;
 }
 
+/* 검색 인풋 & 아이콘 */
 .krds-search-box .krds-input {
   border: none;
   width: 38rem;
@@ -724,11 +734,7 @@
   right: var(--krds-gap-2);
 }
 
-
-/* ================================================
-   Manager List
-   ================================================ */
-
+/* 리스트 */
 .krds-manager-list {
   list-style: none;
   display: flex;
@@ -736,10 +742,6 @@
   gap: var(--krds-gap-6);
   background: var(--krds-color-light-gray-0);
 }
-
-/* ================================================
-   Manager Item
-   ================================================ */
 
 .krds-manager-item {
   border-bottom: 1px dashed var(--krds-color-light-gray-40);
@@ -749,20 +751,13 @@
   border-bottom: none;
 }
 
-/* ================================================
-   Manager Card
-   ================================================ */
-
+/* 카드/컬럼 */
 .krds-manager-card {
   display: flex;
   align-items: center;
   padding: 0 var(--krds-number-10) var(--krds-number-10);
   gap: var(--krds-gap-6);
 }
-
-/* ================================================
-   Manager Columns
-   ================================================ */
 
 .krds-manager-col.number {
   display: flex;
@@ -778,10 +773,7 @@
   flex: 1;
 }
 
-/* ================================================
-   Info Component (dl, dt, dd)
-   ================================================ */
-
+/* 정보 행 */
 .krds-info {
   display: flex;
   flex-direction: row;
@@ -815,19 +807,31 @@
 .krds-info-row dd .krds-input {
   padding: 0;
   width: 100%;
-  color:var(--krds-light-color-text-subtle);
+  color: var(--krds-light-color-text-subtle);
 }
 
+/* 투명 인풋 */
 .krds-input.trans {
   border: none;
   background-color: transparent;
 }
 
+/* 최고관리자(액션 버튼 없는 행 강조) */
+.krds-manager-card:not(:has(.action .krds-btn)) .krds-info-row {
+  background-color: var(--krds-color-high-contrast-gray-5);
+}
 
-/* ================================================
-   Remove Button
-   ================================================ */
+/* 데이터 없음 상태 */
+.krds-manager-list.no-data .krds-manager-card {
+  padding-bottom: var(--krds-number-16);
+  justify-content: center;
+}
 
+.krds-manager-list.no-data .krds-manager-card .alert-txt {
+  color: var(--krds-color-high-contrast-gray-40);
+}
+
+/* 삭제 버튼(아이콘 only) */
 .krds-btn.icon-only {
   width: var(--krds-number-15);
   height: var(--krds-number-15);
@@ -842,67 +846,22 @@
 }
 
 .krds-btn.icon-only.danger {
-  background: #ecf2fe;
-  border-color: #256ef4;
+  background-color:var(--krds-color-light-primary-5); 
+  border-color: var(--krds-color-light-primary-50); 
 }
 
-.krds-btn.icon-only.danger:hover {
-  background: #d9e7fd;
-}
-
+.krds-btn.icon-only.danger:hover,
 .krds-btn.icon-only.danger:active {
-  background: #c5dcfc;
+  background-color: var(--krds-color-light-primary-10);
 }
 
 .krds-btn.icon-only.danger:focus {
-  outline: 0.125rem solid #256ef4;
-  outline-offset: 0.125rem;
+  outline: 1.25px solid var(--krds-color-light-primary-50);
 }
 
 .svg-icon.ico-minus {
   width: var(--krds-number-9);
   height: var(--krds-number-9);
-  background-color: var(--krds-color-high-contrast-primary-50);
+  background-color: var(--krds-color-light-primary-50);
   display: block;
-}
-
-
-/* ================================================
-   none data
-   ================================================ */
-.krds-manager-list.no-data .krds-manager-card {
-  padding-bottom: var(--krds-number-16);
-  justify-content: center;
-}
-.krds-manager-list.no-data .krds-manager-card .alert-txt {
-  color: var(--krds-color-high-contrast-gray-40);
-}
-
-/* ================================================
-   추가항목
-   ================================================ */
-.detail-con {
-  gap: var(--krds-number-6);
-  margin-top: var(--krds-number-10);
-}
-.detail-con .textarea-wrap {
-  padding: var(--krds-padding-10);
-  border-radius: var(--krds-radius-xlarge1);
-  border: 1px solid var(--krds-light-color-border-gray);
-  background-color: var(--krds-light-color-background-gray-subtler);
-}
-
-/* ================================================
-   최고관리자
-   ================================================ */
-.krds-manager-card:not(:has(.action .krds-btn)) .krds-info-row {
-  background-color: var(--krds-color-high-contrast-gray-5);
-}
-
-.status-group.toggle-group {
-  flex-direction: row;
-  justify-content: space-between;
-  padding-top: var(--krds-padding-5);
-  margin-top: var(--krds-number-3);
-  border-top: 1px solid var(--krds-light-color-border-gray);
 }
