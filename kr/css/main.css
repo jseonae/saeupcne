@@ -6,11 +6,21 @@
     font-display: swap;
 }
 
+.block {
+    display: block;
+}
+@media (max-width: 1280px) {
+    .block {
+        display: inline;
+    }
+}
+
 .main-container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: url(../img/main-bg.png) no-repeat; 
     position: relative;
+    background-size: cover;
 }
 .main-inner {max-width:1520px; margin:0 auto;}
 
@@ -29,15 +39,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 100px;
+    gap: 10rem;
     position: relative;
 }
 
 /* Hero Content (Left) */
 .hero-content {
-    flex-shrink: 0;
-    width: 600px;
+    width: 100%;
+    max-width: 74rem;
     position: relative;
+    flex: 1;
 }
 .hero-title {
     font-family: 'Giants';
@@ -50,11 +61,12 @@
 
 /* Hero Search (Right) */
 .hero-search {
-    flex-shrink: 0;
-    width: 748px;
+    width: 100%;
+    max-width: 68rem;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1.2rem;
+    flex: 1;
 }
 
 /* Search Box */
@@ -242,10 +254,8 @@
 
 .card-description {
     font-size: var(--krds-pc-font-size-body-small);
-    max-width: 34rem;
     height:68px;
-    display:flex;
-    align-items:center;
+    display:inline-block;
     color:var(--krds-light-color-text-subtle);
 }
 
