@@ -23,6 +23,7 @@
 
   <!-- Custom -->
   <script src="../js/user-custome.js" defer></script>
+  <script src="../js/user-intro-custome.js" defer></script>
   <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
   <link rel="stylesheet" href="../css/user-custom.css">
   <link rel="stylesheet" href="../css/intro.css">
@@ -42,7 +43,7 @@
 
     <div class="intro-page">
         <!-- 1. 히어로 영역 -->
-        <section class="intro-section intro-hero">
+        <section class="intro-section intro-hero" id="intro-hero">
             <div class="intro-hero-inner">
                 <div class="intro-hero-text">
                     <p class="intro-hero-kicker">더 쉬운 행정, 더 폭넓은 교육!</p>
@@ -61,15 +62,15 @@
         <!-- 상단 탭 -->
         <nav class="intro-pageIn-nav" aria-label="사업선택제 탭">
             <ul class="intro-pageIn-nav-list">
-                <li class="is-active"><a href="#" class="intro-pageIn-btn">시스템의 필요성</a></li>
-                <li><a href="#" class="intro-pageIn-btn">사업유형</a></li>
-                <li><a href="#" class="intro-pageIn-btn">운영안내</a></li>
-                <li><a href="#" class="intro-pageIn-btn">추진절차</a></li>
+                <li class="is-active"><a href="#intro-feature" class="intro-pageIn-btn">시스템의 필요성</a></li>
+                <li><a href="#intro-program" class="intro-pageIn-btn">사업유형</a></li>
+                <li><a href="#intro-bands" class="intro-pageIn-btn">운영안내</a></li>
+                <li><a href="#intro-steps" class="intro-pageIn-btn">추진절차</a></li>
             </ul>
         </nav>
 
         <!-- 2. 필요성 -->
-        <section class="intro-section intro-section-feature">
+        <section class="intro-section intro-section-feature" id="intro-feature" data-nav-theme="feature">
             <div class="intro-section-head">
                 <p class="intro-section-kicker">왜 필요할까요?</p>
                 <h3 class="intro-section-title">학교 자치 실현과 행정 효율을 극대화 했어요.</h3>
@@ -152,7 +153,7 @@
         </section>
 
         <!-- 3. 사업유형 -->
-        <section class="intro-section intro-section-program">
+        <section class="intro-section intro-section-program" id="intro-program" data-nav-theme="program">
             <div class="intro-section-head">
                 <p class="intro-section-kicker">사업 유형은 무엇이 있나요?</p>
                 <h3 class="intro-section-title">우리 학교에 맞는 사업, 알아보고 선택해요.</h3>
@@ -290,7 +291,7 @@
         </section>
 
         <!-- 4. 운영안내 -->
-        <section class="intro-section intro-section-bands">
+        <section class="intro-section intro-section-bands" id="intro-bands" data-nav-theme="bands">
             <div class="intro-section-head">
                 <p class="intro-section-kicker">운영은 어떻게 되나요?</p>
                 <h3 class="intro-section-title">복잡한 절차는 줄이고, 효율은 높였습니다.</h3>
@@ -357,7 +358,7 @@
         </section>
 
         <!-- 5. 절차안내 -->
-        <section class="intro-section intro-section-steps">
+        <section class="intro-section intro-section-steps" id="intro-steps" data-nav-theme="steps">
             <div class="intro-section-head">
                 <p class="intro-section-kicker">학교가 해야 할 일, 무엇일까요?</p>
                 <h3 class="intro-section-title">사업 신청부터 결과보고까지 이대로만 하시면 돼요!</h3>
@@ -416,11 +417,11 @@
         </section>
 
         <!-- 6. 마지막 CTA 배너 -->
-        <section class="intro-section intro-section-cta">
+        <section class="intro-section intro-section-cta" id="intro-cta">
             <div class="intro-cta-box">
                 <div class="intro-cta-text">
                     <h3>학생들에게 필요한 교육환경, 직접 만들어 실행해보세요!</h3>
-                    <a href="#" class="krds-btn tertiary xsmall intro-hero-btn">사업 전체보기</a>
+                    <a href="../html/application-list.html" target="_self" class="krds-btn tertiary xsmall intro-hero-btn">사업 전체보기</a>
                 </div>
             </div>
         </section>

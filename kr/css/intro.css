@@ -21,7 +21,7 @@ INTRO PAGE 공통 스타일
 
 .intro-section {
     position: relative;
-    padding: 10rem 20rem 16rem;
+    padding: 12rem 20rem 12rem;
     display: flex;
     flex-direction: column;
     gap: var(--krds-gap-12);
@@ -133,7 +133,7 @@ INTRO PAGE 공통 스타일
 상단 탭 네비게이션
 ========================================================== */
 
-.intro-pageIn-nav {z-index: 10;position: absolute;padding: var(--krds-padding-4) 20rem;width: 100%;left: 0;}
+.intro-pageIn-nav {z-index: 10;position: absolute;padding: var(--krds-padding-6) 20rem;width: 100%;left: 0;}
 
 
 .intro-pageIn-nav-list {display: flex;justify-content: flex-start;gap: var(--krds-gap-3);max-width: 131rem;margin: 0px auto;}
@@ -142,14 +142,31 @@ INTRO PAGE 공통 스타일
 
 .intro-pageIn-nav-list .is-active .intro-pageIn-btn {color: var(--krds-light-color-text-inverse-static);font-weight: var(--krds-font-weight-bold);background-color: var(--krds-color-light-primary-50);border-color: var(--krds-color-light-primary-50);}
 
-.intro-pageIn-nav.active {position: sticky;top: 1rem; background-color: var(--krds-light-color-background-white);}
+.intro-pageIn-nav.active {position: sticky;top:0; border-bottom: 1px solid var(--krds-color-high-contrast-alpha-black10);transition: background-color 0.25s ease;}
+/* active + 섹션별 테마 */
+.intro-pageIn-nav.active.nav-theme-feature {
+  background-color: var(--intro-bg-blue-5);   /* 필요성 섹션 */
+}
+.intro-pageIn-nav.active.nav-theme-program {
+  background-color: var(--intro-bg-blue-5);  /* 사업유형 섹션 */
+}
+.intro-pageIn-nav.active.nav-theme-bands {
+  background-color: var(--krds-light-color-background-white);  /* 운영안내 섹션 */
+}
+.intro-pageIn-nav.active.nav-theme-steps {
+  background-color:var(--intro-bg-gray-5);  /* 추진절차 섹션 */
+}
+
 .intro-pageIn-nav.active .intro-pageIn-nav-list {justify-content: center;}
+
+
+
 
 /* ==========================================================
 2. FEATURE SECTION (왜 필요할까요?)
 ========================================================== */
 
-.intro-section-feature {padding-top: 16rem;background-color: var(--intro-bg-blue-5);}
+.intro-section-feature {padding: 20rem 20rem 10rem;background-color: var(--intro-bg-blue-5);}
 
 .intro-feature-grid {
     display: grid;
@@ -249,6 +266,8 @@ text-align: center;
 4. BANDS SECTION (운영안내)
 ========================================================== */
 
+.intro-section-bands {padding: 12rem 20rem 18rem;}
+
 .intro-bands {display: flex;flex-direction: column;gap: var(--krds-gap-10);}
 
 .intro-band-card {background: linear-gradient(95deg, #FFF 44.16%, #EAF4FF 82.68%, #FAF4FF 98.84%);border-radius: var(--krds-number-14);box-shadow: 0 18px 40px rgba(41, 72, 152, 0.1);border: 1px solid var(--krds-light-color-border-secondary-light);overflow: hidden;position: relative;}
@@ -276,7 +295,7 @@ flex: 1;
 ========================================================== */
 
 .intro-section-steps {
-    padding: 16rem 20rem 20rem;
+    padding: 12rem 20rem 20rem;
     background: var(--intro-bg-gray-5);
 }
 
@@ -288,7 +307,8 @@ flex: 1;
     display: block;
     width: 100%;
     height: 14.5rem;
-    background: url(../img/intro/intro-steps-bg.svg) 50% no-repeat;
+    background: url(../img/intro/intro-steps-bg.svg) 50%;
+    background-repeat: repeat-x;
 }
 
 .intro-step-list {z-index: 1;display: grid;grid-template-columns: repeat(4, 1fr);gap: 2rem;margin-top: 3rem;}
