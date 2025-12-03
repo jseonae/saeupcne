@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${pageTitle}">단위학교사업선택제 소개</title>
+
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/krds-uiux@1.0.1/resources/cdn/krds.min.css" type="text/css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/user-custome.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/user-custom.css">
+  <link rel="stylesheet" href="../css/intro.css">
+
+
+</head>
+<body>
+<div id="wrap">
+
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+
+  <header id="header"></header>
+
+  <main id="container">
+
+    <div class="intro-page">
+        <!-- 1. 히어로 영역 -->
+        <section class="intro-section intro-hero">
+            <div class="intro-hero-inner">
+                <div class="intro-hero-text">
+                    <p class="intro-hero-kicker">더 쉬운 행정, 더 폭넓은 교육!</p>
+                    <h2 class="intro-hero-title">단위학교 사업선택제</h2>
+                    <p class="intro-hero-desc">
+                        사업선택제는 학교 특성과 상황에 맞게 사업을 신청・운영하도록 교육청에서 예산을 지원하는 제도이며&nbsp;
+                        <span class="block">충청남도교육청에서 운영하는 <b>단위학교 사업선택제 누리집은 교직원의 업무 절감을 위해</b>&nbsp;</span>
+                        <span class="block"><b>사업 신청과 관리를 온라인으로 통합한 행정업무 시스템</b>&nbsp;입니다.</span>
+                    </p>
+                </div>
+
+                <div class="intro-hero-illust"></div>
+            </div>
+        </section>
+
+        <!-- 상단 탭 -->
+        <nav class="intro-pageIn-nav" aria-label="사업선택제 탭">
+            <ul class="intro-pageIn-nav-list">
+                <li class="is-active"><a href="#" class="intro-pageIn-btn">시스템의 필요성</a></li>
+                <li><a href="#" class="intro-pageIn-btn">사업유형</a></li>
+                <li><a href="#" class="intro-pageIn-btn">운영안내</a></li>
+                <li><a href="#" class="intro-pageIn-btn">추진절차</a></li>
+            </ul>
+        </nav>
+
+        <!-- 2. 필요성 -->
+        <section class="intro-section intro-section-feature">
+            <div class="intro-section-head">
+                <p class="intro-section-kicker">왜 필요할까요?</p>
+                <h3 class="intro-section-title">학교 자치 실현과 행정 효율을 극대화 했어요.</h3>
+            </div>
+
+            <div class="intro-feature-grid">
+                <!-- item 1 -->
+                <div class="intro-feature-item">
+                    <div class="intro-feature-bubble">
+                        교육청 중심의 공모 방식으로&nbsp;
+                        <span class="block">학교 맞춤형 사업 추진 어려움</span>
+                    </div>
+
+                    <article class="intro-feature-card">
+                        <span class="intro-feature-badge">Solution 01</span>
+                        <div class="intro-feature-icon feature-icon-1"></div>
+
+                        <div class="intro-feature-card-innner">
+                            <h4 class="intro-feature-title">
+                                학교 중심의 사업<br><span class="highlight">선택 방식</span>
+                            </h4>
+                            <p class="intro-feature-text">
+                                학교가 필요한 사업을 선택하여&nbsp;
+                                <span class="block">학교별 선택권을 보장하고&nbsp;</span>
+                                <span class="block">실질적인 수요를 반영하여 자치 실현</span>
+                            </p>
+                        </div>
+                </article>
+                </div>
+
+                <!-- item 2 -->
+                <div class="intro-feature-item">
+                    <div class="intro-feature-bubble">
+                        획일적인 사업과 일률적인 카테고리로&nbsp;
+                        <span class="block">선택의 폭이 좁고 사업 운영이 어려움</span>
+                    </div>
+
+                    <article class="intro-feature-card">
+                        <span class="intro-feature-badge">Solution 02</span>
+                        <div class="intro-feature-icon feature-icon-2"></div>
+
+                        <div class="intro-feature-card-innner">
+                            <h4 class="intro-feature-title">
+                                효율적인<br><span class="highlight">자원 배분과 운영</span>
+                            </h4>
+                            <p class="intro-feature-text">
+                                학교의 필요에 따라 예산을 기획하고&nbsp;
+                                <span class="block">다양한 형태의 사업 운영 형태로&nbsp;</span>
+                                <span class="block">교사들에게 확장된 자율권 제공</span>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- item 3 -->
+                <div class="intro-feature-item">
+                    <div class="intro-feature-bubble">
+                        신청부터 보고까지 복잡한 서류 작업에&nbsp;
+                        <span class="block">행정업무를 비효율적으로 소모</span>
+                    </div>
+
+                    <article class="intro-feature-card">
+                        <span class="intro-feature-badge">Solution 03</span>
+                        <div class="intro-feature-icon feature-icon-3"></div>
+
+                        <div class="intro-feature-card-innner">
+                            <h4 class="intro-feature-title">
+                                간편하게 누리집에서<br>
+                                <span class="highlight">일괄처리</span>
+                            </h4>
+                            <p class="intro-feature-text">
+                                신청, 선정, 결과보고까지&nbsp;
+                                <span class="block">한 화면에서 일괄 추진·처리하여&nbsp;</span>
+                                <span class="block">교직원의 행정업무 경감</span>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 사업유형 -->
+        <section class="intro-section intro-section-program">
+            <div class="intro-section-head">
+                <p class="intro-section-kicker">사업 유형은 무엇이 있나요?</p>
+                <h3 class="intro-section-title">우리 학교에 맞는 사업, 알아보고 선택해요.</h3>
+            </div>
+
+            <div class="intro-program-grid">
+                <!-- 선택사업 -->
+                <article class="program-card">
+                    <div class="program-card-inner">
+                        <div class="program-card-title">
+                            <h4 class="program-title">선택사업</h4>
+                            <p class="program-desc">
+                                교당 지원금 <b>3,000만원 이상</b> 시설환경 개선 사업&nbsp;
+                                <span class="block"><b>5,000만원 이하</b> 프로그램 지원 사업</span>
+                            </p>
+                        </div>
+                        
+                        <div class="program-badge-wrap">
+                            <div class="program-meta">
+                                <span class="krds-badge bg-light-primary">신청횟수</span>
+                                <span class="program-count">고정 1개</span>
+                            </div>
+                            <span class="program-divider"></span>
+                            <div class="program-tags krds-tag-wrap small">
+                                <span class="krds-btn-tag gray">#대규모</span>
+                                <span class="krds-btn-tag gray">#중점과제중심</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 선택 외 사업 -->
+                <article class="program-card">
+                    <div class="program-card-inner">
+                        <div class="program-card-title">
+                            <h4 class="program-title">선택외사업</h4>
+                            <p class="program-desc">
+                                교당 지원금 <b>3,000만원 미만</b> 시설환경 개선 사업&nbsp;
+                                <span class="block"><b>5,000만원 미만</b> 프로그램 지원 사업</span>
+                            </p>
+                        </div>
+
+                        <div class="program-badge-wrap">
+                            <div class="program-meta">
+                                <span class="krds-badge bg-light-primary">신청횟수</span>
+                                <span class="program-count">고정 3개</span>
+                            </div>
+                            <span class="program-divider"></span>
+                            <div class="program-tags krds-tag-wrap small">
+                                <span class="krds-btn-tag gray">#소규모</span>
+                                <span class="krds-btn-tag gray">#교육활동적합</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 개방형사업 -->
+                <article class="program-card">
+                    <div class="intro-program-illust" aria-hidden="true"></div>
+                    <div class="program-card-inner">
+                        <div class="program-card-title">
+                            <h4 class="program-title">개방형사업</h4>
+                            <p class="program-desc">
+                                <b>학급 또는 동아리 활동</b>을 지원하는 사업&nbsp;
+                                <span class="block">정책상 <b>교육청에서 권장</b>하는 사업</span>
+                            </p>
+                        </div>
+                        
+                        <div class="program-badge-wrap">
+                            <div class="program-meta">
+                                <span class="krds-badge bg-light-primary">신청횟수</span>
+                                <span class="program-count">제한없음</span>
+                            </div>
+                            <span class="program-divider"></span>
+                            <div class="program-tags krds-tag-wrap small">
+                                <span class="krds-btn-tag gray">#높은자율성</span>
+                                <span class="krds-btn-tag gray">#개인선택가능</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 자율사업 -->
+                <article class="program-card">
+                    <div class="program-card-inner">
+                        <div class="program-card-title">
+                            <h4 class="program-title">자율사업</h4>
+                            <p class="program-desc">
+                                <b>학교 운영상 필요한 사업을 구성원 협의</b>를 통해&nbsp;
+                                <span class="block">주체적으로 계획하여 신청하는 사업</span>
+                            </p>
+                        </div>
+
+                        <div class="program-badge-wrap">
+                            <div class="program-meta">
+                                <span class="krds-badge bg-light-primary">신청횟수</span>
+                                <span class="program-count">고정 1개</span>
+                            </div>
+                            <span class="program-divider"></span>
+                            <div class="program-tags krds-tag-wrap small">
+                                <span class="krds-btn-tag gray">#학교운영자율</span>
+                                <span class="krds-btn-tag gray">#협의중심</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 특교·추경신규사업 -->
+                <article class="program-card">
+                    <div class="program-card-inner">
+                        <div class="program-card-title">
+                            <h4 class="program-title">특교·추경신규사업</h4>
+                            <p class="program-desc">
+                                운영 시기･선정 방법 등을 일원화하여 추진하기&nbsp;
+                                <span class="block">어려운 <b>교육부 특별교부금 지원</b> 사업&nbsp;</span>
+                                <span class="block"><b>추가경정예산 신규</b>확보 사업</span>
+                            </p>
+                        </div>
+
+                        <div class="program-badge-wrap">
+                            <div class="program-meta">
+                                <span class="krds-badge bg-light-primary">신청횟수</span>
+                                <span class="program-count">제한없음</span>
+                            </div>
+                            <span class="program-divider"></span>
+                            <div class="program-tags krds-tag-wrap small">
+                                <span class="krds-btn-tag gray">#교육부지원</span>
+                                <span class="krds-btn-tag gray">#신규사업확보</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <p class="intro-program-note"><i class="svg-icon ico-tooltip samll"></i>사업 유형별로 신청 제한 횟수가 있으니 유의하여 주시기 바랍니다.</p>
+        </section>
+
+        <!-- 4. 운영안내 -->
+        <section class="intro-section intro-section-bands">
+            <div class="intro-section-head">
+                <p class="intro-section-kicker">운영은 어떻게 되나요?</p>
+                <h3 class="intro-section-title">복잡한 절차는 줄이고, 효율은 높였습니다.</h3>
+            </div>
+
+            <div class="intro-bands">
+                <!-- 카드 1 : 한 눈에 -->
+                <article class="intro-band-card">
+                    <div class="intro-band-inner">
+                        <div class="intro-band-text">
+                            <span class="intro-band-label">한 눈에</span>
+                            <h4 class="intro-band-title">
+                                <span class="highlight">도교육청 모든 공모사업을 한 눈에&nbsp;</span>
+                                <span class="block">볼 수 있도록 하나의 공모로 안내합니다.</span>
+                            </h4>
+                            <ul class="intro-band-list">
+                                <li>필요한 사업을 통합 안내문으로 제공</li>
+                                <li>훨씬 쉬워진 정보 접근과 사업 현황 파악</li>
+                            </ul>
+                        </div>
+
+                        <div class="intro-band-image intro-band-image-1" aria-hidden="true"></div>
+                    </div>
+                </article>
+
+                <!-- 카드 2 : 한 곳에 -->
+                <article class="intro-band-card">
+                    <div class="intro-band-inner">
+                        <div class="intro-band-text">
+                            <span class="intro-band-label">한 곳에</span>
+                            <h4 class="intro-band-title">
+                                사업 신청, 선정 여부 확인, 결과보고까지&nbsp;
+                                <span class="block highlight">누리집 한 곳에서 가능합니다.</span>
+                            </h4>
+                            <ul class="intro-band-list">
+                                <li>사업의 전 과정을 학교 살무에 맞추어 진행</li>
+                                <li>하나의 시스템으로 관리하여 문서관리 용이</li>
+                            </ul>
+                        </div>
+
+                        <div class="intro-band-image intro-band-image-2" aria-hidden="true"></div>
+                    </div>
+                </article>
+
+                <!-- 카드 3 : 한 번에 -->
+                <article class="intro-band-card">
+                    <div class="intro-band-inner">
+                        <div class="intro-band-text">
+                            <span class="intro-band-label">한 번에</span>
+                            <h4 class="intro-band-title">
+                                <span class="highlight">모든 사업을 정해진 신청 기간에 한 번에&nbsp;</span>
+                                <span class="block">신청할 수 있도록 일정을 일원화하여 안내합니다.</span>
+                            </h4>
+                            <ul class="intro-band-list">
+                                <li>신청 일정 조정에 대한 불편과 혼선 최소화</li>
+                                <li>같은 시기 사업들을 함께 검토하며 미리 신청 준비 가능</li>
+                            </ul>
+                        </div>
+
+                        <div class="intro-band-image intro-band-image-3" aria-hidden="true"></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 5. 절차안내 -->
+        <section class="intro-section intro-section-steps">
+            <div class="intro-section-head">
+                <p class="intro-section-kicker">학교가 해야 할 일, 무엇일까요?</p>
+                <h3 class="intro-section-title">사업 신청부터 결과보고까지 이대로만 하시면 돼요!</h3>
+            </div>
+
+            <ol class="intro-step-list">
+                <li class="intro-step-item step1">
+                    <span class="intro-step-badge">단계 1</span>
+                    <div class="intro-step-item-box">
+                        <div class="intro-step-icon step-1"></div>
+                        <h4>협의 및 선택</h4>
+                    </div>
+                    <p>
+                        모든 구성원 협의를 통해 
+                        <span class="block">학교 교육 과정에 꼭 필요한 </span>
+                        <span class="block"><b>사업을 결정</b>합니다.</span>
+                    </p>
+                </li>
+                <li class="intro-step-item step2">
+                    <span class="intro-step-badge">단계 2</span>
+                    <div class="intro-step-item-box">
+                        <div class="intro-step-icon step-2"></div>
+                        <h4>사업 신청</h4>
+                    </div>
+                    <p>
+                        단위학교 사업선택제 
+                        <span class="block">누리집을 통해 결정한 사업을 </span>
+                        <span class="block"><b>간편하게 신청</b>합니다.</span>
+                    </p>
+                </li>
+                <li class="intro-step-item step3">
+                    <span class="intro-step-badge">단계 3</span>
+                    <div class="intro-step-item-box">
+                        <div class="intro-step-icon step-3"></div>
+                        <h4>예산 교부 및 추진</h4>
+                    </div>
+                    <p>
+                        사업 선정여부와 지원액을 
+                        <span class="block">확인 후 <b>예산이 교부</b>되면 </span>
+                        <span class="block"><b>사업을 추친</b>합니다.</span>
+                    </p>
+                </li>
+                <li class="intro-step-item step4">
+                    <span class="intro-step-badge">마무리</span>
+                    <div class="intro-step-item-box">
+                        <div class="intro-step-icon step-4"></div>
+                        <h4>결과 보고</h4>
+                    </div>
+                    <p>
+                        사업 완료 후 누리집을 통해 
+                        <span class="block">결과보고를 위한 <b>정산서를</b> </span>
+                        <span class="block"><b>제출</b>합니다.</span>
+                    </p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- 6. 마지막 CTA 배너 -->
+        <section class="intro-section intro-section-cta">
+            <div class="intro-cta-box">
+                <div class="intro-cta-text">
+                    <h3>학생들에게 필요한 교육환경, 직접 만들어 실행해보세요!</h3>
+                    <a href="#" class="krds-btn tertiary xsmall intro-hero-btn">사업 전체보기</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+  </main>
+
+   <footer id="footer"></footer>
+
+</div>
+
+</body>
+</html>

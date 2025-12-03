@@ -1,66 +1,6 @@
 @charset "UTF-8";
 
-/* ========================================
- * Root Variables
- * ====================================== */
-:root {
-  --krds-contents-wrap-size: 1816px;
-
-  --c-font-edb:'EliceDigitalBaeum';
-  --c-font-weight-3: 300;
-  --c-font-weight-6: 600;
-
-  --krds-number-22: 12.8rem;
-  --krds-number-23: 14.4rem;
-  --krds-number-24: 16rem;
-  --krds-number-25: 20.8rem;
-
-  --c-bg-blue-5: #F5F9FC;
-}
-
-/* ========================================
- * 공통 컴포넌트 / 유틸리티
- * ====================================== */
-
-@font-face {/*엘리스디지털배움체-*/
-  font-family: 'EliceDigitalBaeum';
-  font-weight:700;
-  font-style: normal;
-  font-display: swap;
-  src: url('../../resources/font/EliceDigitalBaeum-Bd.woff2') format('woff2');
-}
-
-/* 접근성을 위한 input 숨김 처리 */
-.hide-input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.max-wd-3 {max-width:38rem;}
-.max-wd-8 {max-width:88rem;}
-.max-wd-12 {max-width:120rem;}
-
-.wp100 {width:100%;}
-
-.gray {color: var(--krds-color-high-contrast-gray-60);}
-
-/* 텍스트 정렬(전역 사용 클래스) */
-.align-center {text-align:center !important;}
-.align-left {text-align:left !important;}
-.align-right {text-align:right !important;}
-
-/* 정렬 */
-.flex-dire-row {flex-direction: row !important;}
-.flex-dire-col {flex-direction: column !important;}
-.flex-dire-row-rev {flex-direction: row-reverse !important;}
-.flex-dire-col-rev {flex-direction: column-reverse !important;}
-
-.flex-justify-center {justify-content: center !important;}
-.flex-justify-start {justify-content: flex-start !important;}
-.flex-justify-end {justify-content: flex-end !important;}
-.flex-justify-between {justify-content: space-between !important;}
-
+@import url(common.css);
 
 
 /* ========================================

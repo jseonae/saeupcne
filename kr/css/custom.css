@@ -1,4 +1,4 @@
-
+@charset "UTF-8";
 
 #container{display: flex;padding: var(--gap-11, 64px) 60px var(--padding-card-large, 40px) 60px;flex-direction: column;gap: var(--gap-layout-title-body-large, 24px);align-self: stretch;}
 
