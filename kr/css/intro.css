@@ -138,11 +138,11 @@ INTRO PAGE 공통 스타일
 
 .intro-pageIn-nav-list {display: flex;justify-content: flex-start;gap: var(--krds-gap-3);max-width: 131rem;margin: 0px auto;}
 
-.intro-pageIn-btn {display: flex;border: 1px solid var(--krds-color-high-contrast-gray-20);border-radius: var(--krds-radius-max);padding: var(--krds-number-6) var(--krds-number-10);font-size: var(--krds-mobile-font-size-label-large);color: var(--krds-color-light-gray-40);font-weight: var(--krds-font-weight-regular);background-color: var(--krds-light-color-background-white);}
+.intro-pageIn-btn {display: flex;border-radius: var(--krds-radius-max);padding: var(--krds-number-6) var(--krds-number-10);font-size: var(--krds-mobile-font-size-label-large);color: var(--krds-color-light-gray-40);font-weight: var(--krds-font-weight-regular);background-color: var(--krds-light-color-background-white);}
 
 .intro-pageIn-nav-list .is-active .intro-pageIn-btn {color: var(--krds-light-color-text-inverse-static);font-weight: var(--krds-font-weight-bold);background-color: var(--krds-color-light-primary-50);border-color: var(--krds-color-light-primary-50);}
 
-.intro-pageIn-nav.active {position: sticky;top:0; border-bottom: 1px solid var(--krds-color-high-contrast-alpha-black10);transition: background-color 0.25s ease;}
+.intro-pageIn-nav.active {position: sticky;top:0;transition: background-color 0.25s ease;}
 /* active + 섹션별 테마 */
 .intro-pageIn-nav.active.nav-theme-feature {
   background-color: var(--intro-bg-blue-5);   /* 필요성 섹션 */
