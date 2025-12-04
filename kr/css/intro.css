@@ -9,6 +9,12 @@ INTRO PAGE 공통 스타일
   --intro-bg-gray-5: #F8F9FB;
 }
 
+/* 줄바꿈 */
+.block {display: block;}
+@media (max-width: 1280px) {
+    .block {display: inline;}
+}
+
 .intro-page {
     width: 100%;
     margin: 0 auto;
