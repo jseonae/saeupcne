@@ -2144,3 +2144,33 @@
 .contact-list li:last-child {
     margin-bottom: 0;
 }
+
+
+
+
+/* ========================================
+   결재라인
+======================================== */
+
+.view-content-wrap:has(.approval-flow) {width:100%;}
+.view-contents.school-info-content:has(.approval-flow) {justify-content: space-between;align-items: center;border-radius: var(--krds-radius-xlarge1); margin-bottom: 2rem;}
+
+.approval-title {display: flex;align-items: center;gap: .5rem;}
+.approval-title > span {font-size: var(--krds-pc-font-size-heading-small);font-weight: var(--c-font-weight-6);}
+
+.approval-flow {display: flex;align-items: center;gap:2rem}
+.approval-step {position: relative;display: flex;align-items: center;flex-direction: column;gap: 1rem;padding-right: 4rem;}
+.approval-step::after {position: absolute; right: 0;top: 50%;transform: translateY(-50%) rotateZ(-90deg);content: '';display: block; width: 2.4rem;height: 2.4rem;background: url(../../krds/node_modules/krds-uiux/resources/img/component/icon/ico_angle.svg) 50% no-repeat;}
+.approval-step:last-child {padding:0;}
+.approval-step:last-child::after {display: none;}
+
+.approval-item {display: flex;align-items: center;}
+.approval-item > div {display: flex;align-items: center;gap:1rem;height: 5rem;padding: var(--krds-number-6) var(--krds-number-8);border: 1px solid var(--krds-color-light-gray-10);}
+.approval-item .step-info {border-right: none;}
+.approval-item .step-info .name {font-weight:var(--c-font-weight-6);}
+
+.step-status {}
+.step-status .krds-badge.custom-bd {min-width: 5.6rem;}
+.step-status .krds-badge.line.small {padding:.2rem;width: initial;height: initial;border-color:var(--krds-color-light-gray-20);}
+.step-status .krds-badge.line.small > .svg-icon {width:2rem;height:2rem;}
+.step-status time {color: var(--krds-color-light-gray-50);font-size: var(--krds-pc-font-size-label-xsmall);}
