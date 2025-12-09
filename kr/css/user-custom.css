@@ -313,8 +313,8 @@
   white-space: nowrap;
 }
 
-.utility-item.admuser_on{color:var(--krds-color-light-primary-60)};
-.utility-item.admuser_off{color:var(--krds-color-light-gray-40)};
+.utility-item.admuser_on span{color:var(--krds-color-light-primary-60)};
+.utility-item.admuser_off span{color:var(--krds-color-light-gray-40)};
 
 /* 2-Depth Navigation Menu */
 .depth-menu {
