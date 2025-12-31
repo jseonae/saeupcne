@@ -1,0 +1,55 @@
+<!--=====================================================================
+Admin Head Template (공통)
+=======================================================================-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 공공기관 대응용 -->
+    <meta name="description" content="충남교육청 단위학교 사업선택제" /><!-- 검색용 -->
+    <meta name="apple-mobile-web-app-title" content="충남교육청사업선택제"/><!-- iOS 홈 화면추가 시 타이틀표기 -->
+
+    <title th:text="${pageTitle}">::교육청 관리자:: 충남교육청 단위학교 사업선택제 </title>
+
+    <!---------::favicon::[PC ~ 모바일 공유 시 미리보기까지]----------->
+    <link rel="icon" type="image/png" href="../../_common/favicon/favicon-48x48.png" sizes="48x48"/>
+    <link rel="icon" type="image/svg+xml" href="../../_common/favicon/favicon.svg"/>
+    <link rel="shortcut icon" href="../../_common/favicon/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../_common/favicon/apple-touch-icon.png"/>
+
+    <!---------::Default::[KRDS, JQUERY ]----------->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><!-- jQuery (필수 - layout-loader.js보다 먼저 로드) -->
+    <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+    <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+    <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+    <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+    <!---------::구조 JS::----------->
+    <script src="../../adm/js/menu-config.js"></script><!-- amd 사용 :: 메뉴 설정 (동기 로드 - layout-loader.js보다 먼저 로드) -->
+    <script src="../../_common/js/layout-loader.js"></script><!-- 공통 :: 레이아웃 로더 (헤더/푸터/브레드크럼 자동 로드)-->
+
+    <!---------::커스텀 공통::----------->
+    <link rel="stylesheet" href="../../_common/css/common.css">
+    <link rel="stylesheet" href="../../_common/css/layout-base.css">
+    <link rel="stylesheet" href="../../_common/css/krds-custom.css">
+
+    <!---------::사이트::adm----------->
+    <script src="../../adm/js/admin-custom.js" defer></script>
+    <script src="../../adm/js/admin-tooltip.js" defer></script>
+    <script src="../../adm/js/admin-modal.js" defer></script>
+    <link rel="stylesheet" href="../../adm/css/admin-custom.css">
+    <link rel="stylesheet" href="../../adm/css/admin-responsive.css">
+
+    <!---------::서비스::공통---------->
+    <script src="../../_common/js/file-upload.js"></script><!-- 파일 업로드/다운로드 모듈 -->
+    <script src="../../_common/js/excel-download-log.js" defer></script><!-- 엑셀 다운로드 로그 모듈 -->
+
+    <!---------::서비스::개별---------->
+    <script src="../../adm/js/modal-return-reason.js"></script><!-- 반송사유 모달 JS, 추후 admin-modal로 정리예정 -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><!-- 대시보드 차트 JS-->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script><!-- 대시보드 차트 레이블 JS-->
+    <link rel="stylesheet" href="../../adm/css/admin-dashboard.css"><!-- 대시보드 CSS -->
+
+</head>
