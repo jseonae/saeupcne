@@ -436,6 +436,9 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
 .svg-icon.ico-cmpdisabled-fill {
     background-image: url(../../resources/img/ico_complete_disabled.svg);
 }
+.svg-icon.ico-send-fill {
+    background-image: url(../../resources/img/ico_system_send.svg);
+}
 .svg-icon.ico-reding-fill {
     background-image: url(../../resources/img/ico_sysyem_ing_red.svg);
 }
@@ -495,3 +498,118 @@ i[class*="svg-icon"] {text-indent: -999px;overflow: hidden;}
 }
 
 
+
+/* krds 버튼 레벨별 - 시스템 색상 버튼 추가 */
+/*success*/
+.krds-btn.primary.success {
+    border-color: var(--krds-color-light-success-50);
+    color: var(--krds-button--color-primary-text);
+    background-color: var(--krds-color-light-success-50);
+}
+.krds-btn.primary.success.hover,
+.krds-btn.primary.success:hover {
+    background-color:var(--krds-color-light-success-60);
+}
+.krds-btn.secondary.success {
+    border-color: var(--krds-color-light-success-50);
+    color: var(--krds-light-color-text-success);
+    background-color: var(--krds-color-light-success-5);
+}
+.krds-btn.secondary.success.hover,
+.krds-btn.secondary.success:hover {
+    background-color: var(--krds-color-light-success-10);
+}
+
+.krds-btn.tertiary.success {
+    border-color: var(--krds-color-light-success-50);
+    color: var(--krds-light-color-text-success);
+}
+.krds-btn.tertiary.success.hover,
+.krds-btn.tertiary.success:hover {
+    background-color: var(--krds-color-light-success-5);
+}
+
+/*danger*/
+.krds-btn.primary.danger {
+    border-color: var(--krds-color-light-danger-50);
+    color: var(--krds-button--color-primary-text);
+    background-color: var(--krds-color-light-danger-50);
+}
+.krds-btn.primary.danger.hover,
+.krds-btn.primary.danger:hover {
+    background-color: var(--krds-color-light-danger-60);
+}
+.krds-btn.secondary.danger {
+    border-color: var(--krds-color-light-danger-50);
+    color: var(--krds-light-color-text-danger);
+    background-color: var(--krds-color-light-danger-5);
+}
+.krds-btn.secondary.danger.hover,
+.krds-btn.secondary.danger:hover {
+    background-color: var(--krds-color-light-danger-10);
+}
+.krds-btn.tertiary.danger {
+    border-color: var(--krds-color-light-danger-50);
+    color: var(--krds-light-color-text-danger);
+}
+.krds-btn.tertiary.danger.hover,
+.krds-btn.tertiary.danger:hover {
+    background-color: var(--krds-color-light-danger-5);
+}
+
+/*warning*/
+.krds-btn.primary.warning {
+    border-color: var(--krds-color-light-warning-50);
+    color: var(--krds-button--color-primary-text);
+    background-color: var(--krds-color-light-warning-50);
+}
+.krds-btn.primary.warning.hover,
+.krds-btn.primary.warning:hover {
+    background-color:var(--krds-color-light-warning-60);
+}
+.krds-btn.secondary.warning {
+    border-color: var(--krds-color-light-warning-50);
+    color: var(--krds-light-color-text-warning);
+    background-color: var(--krds-color-light-warning-5);
+}
+.krds-btn.secondary.warning.hover,
+.krds-btn.secondary.warning:hover {
+    background-color:var(--krds-color-light-warning-10);
+}
+
+.krds-btn.tertiary.warning {
+    border-color: var(--krds-color-light-warning-50);
+    color: var(--krds-light-color-text-warning);
+}
+.krds-btn.tertiary.warning.hover,
+.krds-btn.tertiary.warning:hover {
+    background-color:var(--krds-color-light-warning-5);
+}
+
+/*point*/
+.krds-btn.primary.point {
+    border-color: var(--krds-color-light-point-50);
+    color: var(--krds-button--color-primary-text);
+    background-color: var(--krds-color-light-point-50);
+}
+.krds-btn.primary.point.hover,
+.krds-btn.primary.point:hover {
+    background-color:var(--krds-color-light-point-60);
+}
+.krds-btn.secondary.point {
+    border-color: var(--krds-color-light-point-50);
+    color: var(--krds-light-color-text-point);
+    background-color: var(--krds-color-light-point-5);
+}
+.krds-btn.secondary.point.hover,
+.krds-btn.secondary.point:hover {
+    background-color:var(--krds-color-light-point-10);
+}
+.krds-btn.tertiary.point {
+    border-color: var(--krds-color-light-point-50);
+    color: var(--krds-light-color-text-point);
+}
+.krds-btn.tertiary.point.hover,
+.krds-btn.tertiary.point:hover {
+    background-color: var(--krds-color-light-point-5);
+}
