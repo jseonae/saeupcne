@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="충남교육청" />
+  <title th:text="${pageTitle}">로그인</title>
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Pretendard GOV -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" crossorigin />
+
+  <!-- Default KRDS JS -->
+  <script src="../../krds/node_modules/krds-uiux/resources/js/component/ui-script.js" defer></script>
+  <script src="../../krds/node_modules/krds-uiux/resources/js/plugin/swiper-bundle.min.js" defer></script>
+
+  <!-- Default KRDS CSS -->
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/component/output.css" />
+  <link rel="stylesheet" href="../../krds/node_modules/krds-uiux/resources/css/plugin/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom -->
+  <script src="../js/admin-custom.js" defer></script>
+  <script src="../js/admin-tooltip.js" defer></script>
+  <script src="../js/admin-nav.js" defer></script>
+  <script src="../js/admin-modal.js" defer></script>
+  <link rel="stylesheet" href="../../_common/resources/css/krds-custom.css">
+  <link rel="stylesheet" href="../css/admin-custom.css">
+  <link rel="stylesheet" href="../css/admin-responsive.css">
+
+  <!--260122 추가-->
+  <link rel="stylesheet" href="../css/login-custom.css">
+</head>
+
+<div id="wrap" class="auth-page main-bg">
+
+  <header class="main-header">
+    <div class="header-top">
+        <div class="logo">
+            <a href="#" target="_self" title="로그인페이지로 이동"><img src="../img/logo_bk.svg" alt="충청남도교육청 단위학교사업선택제"></a>
+        </div>
+    </div>
+  </header>
+
+  <main id="container" class="login epki-login">
+    <div class="inner">
+        <div class="page-title-wrap">
+          <h1 class="h-tit">
+            <span class="small-txt">교육과정 운영 효율성을 높이기 위한 교직원 맞춤 시스템,</span>
+            충청남도교육청 단위학교 사업선택제
+          </h1>
+        </div>
+
+        <div class="contents contents-box contents-box-shadow">
+          <div class="auth-form-area">
+            <div class="auth-wrap">
+              <div class="auth-tit-wrap">
+                <strong class="auth-tit">공인인증서 로그인</strong>
+                <p class="auth-text">공인인증서를 이용하여 안전하게 로그인하세요.</p>
+              </div>
+
+              <div class="auth-message is-error" style="display: flex;"> <!--로그인 실패하면 style 추가되면서 나타나기, css에서는 display:none-->
+                <strong>로그인에 실패했습니다.</strong>
+                <p><b>승인대기</b> 회원입니다. 관리자의 승인이 필요합니다.</p>
+              </div>
+
+              <form class="form">
+                <div class="fieldset">
+                  <div class="form-group">
+                    <button type="submit" class="krds-btn large primary">인증서 로그인</button>
+                  </div>
+
+                  <div class="page-btn-wrap">
+                    <div class="btn-wrap">
+                      <a href="#" target="_self" class="krds-btn medium text">인증서 등록</a>
+                      <a href="#" target="_self" class="krds-btn medium text">인증서 오류 안내</a>
+                      <a href="#" target="_self" class="krds-btn medium text">인증서 모듈 다운로드</a>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+</div><!--//wrap-->
+
+
+</body>
+</html>
+
